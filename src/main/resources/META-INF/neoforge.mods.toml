@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="survival_boss_balance"
+version="1.0.2"
+displayName="Survival Boss Balance"
+description='''Server boss balance for this Survival pack. Optional on clients to correct Naga segment visuals.'''
+displayTest="IGNORE_SERVER_VERSION"
+
+[[dependencies.survival_boss_balance]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.survival_boss_balance]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.21.2)"
+ordering="NONE"
+side="BOTH"
