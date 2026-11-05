@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "scope": "Fresh native victory encounters only. Raw telemetry and its declared required-candidate flags remain unchanged; these reviewed source classifications apply only to the exported readiness ledger.",
+  "reviewedUtc": "2026-11-05T13:48:27.2556223Z",
+  "entries": [
+    {
+      "boss": "twilightforest:ur_ghast",
+      "key": "balance_profile/ur_ghast.fireball",
+      "classification": "native_fire_immunity_in_apple_loadout",
+      "requiredCandidate": true,
+      "reason": "UrGhastFireball.onHitEntity uses native damageSources.fireball with its Ur-Ghast owner, producing minecraft:fireball. Vanilla tags this source as fire; native Fire Resistance returns before incoming-damage processing. The winning apple-equipped encounter therefore retains its unobserved player direct-fireball profile. Native generic explosion and tear receipts did process and are independently observed. Earlier controlled direct-impact callbacks are separate evidence.",
+      "source": "UrGhastFireball.onHitEntity; DamageSources.fireball selects DamageTypes.FIREBALL for a nonnull owner; vanilla data/minecraft/tags/damage_type/is_fire.json; LivingEntity.hurt early Fire Resistance return before CommonHooks.onEntityIncomingDamage; winning queue2026-11-05T10-50-20.914724500Z",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    },
+    {
+      "boss": "twilightforest:hydra",
+      "key": "balance_profile/hydra.flame",
+      "classification": "native_fire_immunity_in_apple_loadout",
+      "requiredCandidate": true,
+      "reason": "The winning maximum-kit encounter observed native flame attack states and firing, but enchanted-golden-apple Fire Resistance rejects the installed fire-tagged hydra_fire source before the damage-processing event. The raw processed-profile gap remains required and unobserved; source-confirmed immunity is an explanation, not a fabricated processed hit. Earlier controlled unresisted callbacks remain separate evidence.",
+      "source": "Installed data/minecraft/tags/damage_type/is_fire.json contains twilightforest:hydra_fire; native LivingEntity.hurt Fire Resistance early return; winning queue2026-11-05T10-45-02.652861400Z",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    },
+    {
+      "boss": "twilightforest:hydra",
+      "key": "balance_profile/hydra.mortar",
+      "classification": "native_fire_immunity_in_apple_loadout",
+      "requiredCandidate": true,
+      "reason": "Native mortar firing, collisions and player reflections occurred in the winning maximum-kit encounter. The installed hydra_mortar damage type is fire-tagged, so native enchanted-golden-apple Fire Resistance prevents player damage processing. Reflected mortar damage to the Hydra does not satisfy the player balance-profile requirement. The raw gap is preserved; separate controlled unresisted probes are not recast as natural accepted hits.",
+      "source": "Installed data/minecraft/tags/damage_type/is_fire.json contains twilightforest:hydra_mortar; HydraMortar.detonate/onHitEntity and native LivingEntity.hurt Fire Resistance early return; winning queue2026-11-05T10-45-02.652861400Z",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    },
+    {
+      "boss": "twilightforest:knight_phantom",
+      "key": "state/getCurrentFormation=LARGE_CLOCKWISE",
+      "classification": "dormant_for_fresh_native_spawn",
+      "requiredCandidate": false,
+      "reason": "The enum has destination code and can be restored from saved/external state, but fresh native Knights begin in HOVER. The exhaustive native random selector chooses only the two SMALL formations and four directional charges; the next-formation selector adds attack/wait states or copies an existing member. No fresh-spawn path selects a LARGE formation.",
+      "source": "twilightforest.entity.ai.goal.PhantomUpdateFormationAndMoveGoal.pickRandomFormation/switchToNextFormation; KnightPhantom constructor and NBT restore; KnightPhantomSpawnerBlockEntity",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    },
+    {
+      "boss": "twilightforest:knight_phantom",
+      "key": "state/getCurrentFormation=LARGE_ANTICLOCKWISE",
+      "classification": "dormant_for_fresh_native_spawn",
+      "requiredCandidate": false,
+      "reason": "The enum has destination code and can be restored from saved/external state, but fresh native Knights begin in HOVER. The exhaustive native random selector chooses only the two SMALL formations and four directional charges; the next-formation selector adds attack/wait states or copies an existing member. No fresh-spawn path selects a LARGE formation.",
+      "source": "twilightforest.entity.ai.goal.PhantomUpdateFormationAndMoveGoal.pickRandomFormation/switchToNextFormation; KnightPhantom constructor and NBT restore; KnightPhantomSpawnerBlockEntity",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    },
+    {
+      "boss": "cataclysm:scylla",
+      "key": "state/getAttackState=25",
+      "classification": "dormant_for_fresh_native_spawn",
+      "requiredCandidate": false,
+      "reason": "The sole registered WhipAndSpearGoal receives attackrange8 and attackMinrange15. Its superclass canUse requires target distance<8 while its own canUse simultaneously requires distance>=15, so the installed fresh encounter selector cannot select state25. Review of the installed Scylla main/nested setters and exhaustive constant-pool references found no alternative native state25 assignment. Saved/external state injection is outside this classification. The raw missing candidate remains preserved and is not counted as observed.",
+      "source": "Scylla_Entity.registerGoals (WhipAndSpearGoal constructor), Scylla_Entity.WhipAndSpearGoal.canUse, InternalAttackGoal.canUse/start; installed JAR constant-pool and setter review",
+      "installedJar": "L_Ender's Cataclysm 1.21.1-3.33.jar",
+      "installedJarSha256": "371956D0C2E3B56729EE93B955E936875D210E372FE734CDB74326D89EF79875"
+    },
+    {
+      "boss": "cataclysm:maledictus",
+      "key": "balance_profile/maledictus.heavy",
+      "classification": "configuration_cap_without_separate_emitted_profile",
+      "requiredCandidate": false,
+      "reason": "The heavy setting is the upper raw-damage bound inside the mace_rage decision. The production selector returns arrow, anima.cap or mace_rage for this boss and never emits a separate heavy profile. The telemetry catalogue imported the setting as if it were another emitted profile. Native mace_rage observations establish the processing family. This classification neither claims the cap threshold was reached nor removes any required native attack state.",
+      "source": "src/main/java/survival/balance/BossDamageBalance.java lines262-271. The selector returns decision(maledictus.mace_rage, Math.min(scaledNative, raw(maledictus.heavy))). EncounterTelemetry imports configured profile candidates.",
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77"
+    }
+  ],
+  "additionalCandidates": [
+    {
+      "boss": "bosses_of_mass_destruction:obsidilith",
+      "key": "native_damage_component/obsidilith_falling_anvil_impact",
+      "requiredCandidate": true,
+      "nativeCallerContains": ".obsidilith.AnvilAction.",
+      "damageType": "minecraft:player_explosion",
+      "origin": "A connected native AnvilAction impact requires a player post event spending health, absorption or blocked damage with AnvilAction on the native stack. ObsidilithUtils.onDeath explosions share the configured anvil cap but are a separate lifecycle component. Negative-Y arenas can trigger shouldLand fallback before a real descent.",
+      "source": "com.cerbon.bosses_of_mass_destruction.entity.custom.obsidilith.AnvilAction.performAttack/shouldLand versus ObsidilithUtils.onDeath",
+      "installedJar": "BOMD-NeoForge-1.21-1.3.3.jar",
+      "installedJarSha256": "93DA8753A00229E41C5ED399E6CF849737E7BD9B4109D5D8E4AD3A20136DEB82"
+    },
+    {
+      "boss": "twilightforest:naga",
+      "key": "native_damage_component/naga_stunless_shield_disable",
+      "requiredCandidate": true,
+      "nativeCallerContains": "twilightforest.entity.boss.Naga.doHurtTarget",
+      "damageType": "minecraft:mob_attack",
+      "originalIncomingHp": 6,
+      "bossStateField": "movementPattern",
+      "bossStateValue": "STUNLESS_CHARGE",
+      "origin": "Connected guarded-STUNLESS branch: installed Naga stops native shield use, requests10 durability damage and200tick cooldown, then calls native hurt4 before returning to CIRCLE. Hard incoming6HP and STUNLESS context distinguish it from ordinary7.5HP contact. This confirms the branch; actual durability loss may be reduced by Unbreaking and is not inferred as exactly10.",
+      "source": "twilightforest.entity.boss.Naga.doHurtTarget guarded STUNLESS_CHARGE branch; native Hard player damage scaling",
+      "installedJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+      "installedJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35"
+    }
+  ]
+}

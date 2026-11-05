@@ -9,6 +9,7 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.nio.file.StandardOpenOption;
 import java.time.Instant;
 import java.util.ArrayDeque;
@@ -39,6 +40,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.MobSpawnType;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
@@ -64,7 +66,9 @@ import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
+import net.neoforged.neoforge.event.entity.living.LivingEntityUseItemEvent;
 import net.neoforged.neoforge.event.tick.ServerTickEvent;
+import net.neoforged.neoforge.event.server.ServerStoppingEvent;
 
 /** Continuous native-AI encounters with a disclosed automated input controller.
  * No damage/health/phase/cooldown rewrites are permitted after encounter start.
@@ -91,6 +95,8 @@ public final class FullFightCases {
     private static boolean installed;
     private static int serial;
     private static ServerPlayer awaitingRespawn;
+    private static Method ragRevivalIsDowned;
+    private static final Path CLIENT_ENCOUNTER = Path.of("../run-client-playtest/bossfight-encounter.json");
     private record CrystalSetup(Vec3 position,boolean showBottom,boolean invulnerable){}
     private static List<CrystalSetup> initialCrystals;
 
@@ -102,6 +108,8 @@ public final class FullFightCases {
         NeoForge.EVENT_BUS.addListener(FullFightCases::joined);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST,true,FullFightCases::death);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST,true,FullFightCases::heal);
+        NeoForge.EVENT_BUS.addListener(FullFightCases::finishedItemUse);
+        NeoForge.EVENT_BUS.addListener(FullFightCases::stopping);
     }
     public static int start(CommandSourceStack sender,String boss,String gear,int maxTicks){
         return startQueue(sender,boss,gear,maxTicks,null);
@@ -113,9 +121,28 @@ public final class FullFightCases {
     private static int startQueue(CommandSourceStack sender,String boss,String gear,int maxTicks,String playerName){
         guard();if(current!=null||!QUEUE.isEmpty())throw new IllegalStateException("A fight queue is already running; cancel it first");
         if(maxTicks<200||maxTicks>24000)throw new IllegalArgumentException("Fight duration must be 200..24000 ticks");
-        List<String> ids=boss.equals("all")?BOSSES:List.of(boss);
+        List<String> ids=switch(boss){
+            case "all" -> BOSSES;
+            case "minecraft:twilight" -> BOSSES.stream().filter(id->id.startsWith("twilightforest:")).toList();
+            case "minecraft:bmd" -> BOSSES.stream().filter(id->id.startsWith("bosses_of_mass_destruction:")).toList();
+            case "minecraft:cataclysm" -> BOSSES.stream().filter(id->id.startsWith("cataclysm:")).toList();
+            case "minecraft:vanilla" -> BOSSES.stream().filter(id->id.startsWith("minecraft:")).toList();
+            default -> List.of(boss);
+        };
+        if(boss.equals("all")&&gear.equals("netherite_max")){
+            List<String> priority=List.of("minecraft:ender_dragon","twilightforest:lich","twilightforest:hydra",
+                "bosses_of_mass_destruction:obsidilith","cataclysm:ignis");
+            ids=new ArrayList<>(priority);
+            for(String candidate:BOSSES)if(!priority.contains(candidate))ids.add(candidate);
+        }
         for(String id:ids)if(!BOSSES.contains(id))throw new IllegalArgumentException("Unknown managed boss: "+id);
         List<String> gears=gear.equals("both")||gear.equals("all")?List.of("diamond","netherite_p4"):List.of(normalizeGear(gear));
+        if(gears.contains("netherite_max")){
+            if(playerName==null)throw new IllegalArgumentException("netherite_max requires a real client for native apple recovery");
+            try{
+                ragRevivalIsDowned=Class.forName("com.biguzi.ragrevival.DownedManager").getMethod("isDowned",Player.class);
+            }catch(ReflectiveOperationException error){throw new IllegalStateException("RagRevival required for this survival fixture",error);}
+        }
         source=sender;FINISHED.clear();serial=0;awaitingRespawn=null;initialCrystals=null;
         output=Path.of("../tests/results/full-fights",Instant.now().toString().replace(':','-'));
         for(String chosen:gears)for(String id:ids)QUEUE.add(new Request(id,chosen,maxTicks,playerName));
@@ -127,6 +154,7 @@ public final class FullFightCases {
         guard();String text="BBFIGHT_STATUS "+JSON.toJson(current==null?Map.of("state",awaitingRespawn==null?"idle":"waiting_for_native_respawn","queued",QUEUE.size(),"finished",FINISHED.size()):current.snapshot("status"));
         sender.sendSuccess(()->Component.literal(text),false);return 1;
     }
+    public static boolean isRunning(){return current!=null||!QUEUE.isEmpty();}
     public static int cancel(CommandSourceStack sender){
         guard();QUEUE.clear();if(current!=null)finish("cancelled","Explicit command cancellation");
         sender.sendSuccess(()->Component.literal("BBFIGHT_CANCELLED"),true);return 1;
@@ -135,11 +163,16 @@ public final class FullFightCases {
     private static String normalizeGear(String gear){return switch(gear){
         case "diamond","plain_diamond" -> "diamond";
         case "netherite","netherite_p4" -> "netherite_p4";
-        default -> throw new IllegalArgumentException("Gear must be diamond, netherite_p4, or both");};}
+        case "netherite_max" -> "netherite_max";
+        default -> throw new IllegalArgumentException("Gear must be diamond, netherite_p4, netherite_max, or both");};}
 
     private static void pre(ServerTickEvent.Pre event){
         if(source==null||event.getServer()!=source.getServer())return;
         try {
+            if(current!=null){
+                current.logWriter.flush();
+                if(current.terminalSummary!=null){completeFinish(current);return;}
+            }
             if(current==null&&!QUEUE.isEmpty()){
                 Request next=QUEUE.peekFirst();
                 ServerPlayer client=next.playerName==null?null:source.getServer().getPlayerList().getPlayerByName(next.playerName);
@@ -169,7 +202,7 @@ public final class FullFightCases {
     }
     private static void death(LivingDeathEvent event){
         Encounter fight=current;if(fight==null||!fight.running)return;
-        if(event.getEntity()==fight.player){fight.lethalSeen=true;fight.lethalCancelled=event.isCanceled();
+        if(event.getEntity()==fight.player){fight.lethalSeen=true;fight.lethalCancelled=event.isCanceled();fight.lethalEvents++;
             fight.emit("player_lethal_event",Map.of("cancelledByMod",event.isCanceled(),"source",event.getSource().getMsgId()));}
         else if(fight.bosses.contains(event.getEntity())){
             if(!event.isCanceled())fight.deadBosses.add(event.getEntity().getUUID());
@@ -181,38 +214,86 @@ public final class FullFightCases {
         if(event.getEntity()==fight.player||fight.bosses.contains(event.getEntity()))
             fight.emit("native_heal",Map.of("entity",id(event.getEntity()),"amount",event.getAmount(),"cancelled",event.isCanceled()));
     }
+    private static void finishedItemUse(LivingEntityUseItemEvent.Finish event){
+        Encounter fight=current;
+        if(fight==null||!fight.running||event.getEntity()!=fight.player||!event.getItem().is(Items.ENCHANTED_GOLDEN_APPLE))return;
+        fight.applesEaten++;
+        fight.emit("enchanted_apple_eaten",Map.of("count",fight.applesEaten));
+    }
     private static void finish(String outcome,String reason){
         Encounter fight=current;if(fight==null)return;
+        if(fight.terminalSummary!=null){completeFinish(fight);return;}
         Map<String,Object> summary=fight.snapshot("finished");summary.put("outcome",outcome);summary.put("reason",reason);
         summary.put("damageTaken",fight.damageTaken);summary.put("damageDealt",fight.damageDealt);
         summary.put("hitsTaken",fight.hitsTaken);summary.put("hitsDealt",fight.hitsDealt);
+        summary.put("playerLethalEvents",fight.lethalEvents);summary.put("nativeKnockdowns",fight.knockdowns);
+        summary.put("nativeRevivals",fight.revivals);summary.put("enchantedApplesEaten",fight.applesEaten);
+        summary.put("enchantedApplesRemaining",fight.applesRemaining());
+        if(fight.telemetry!=null)summary.put("telemetry",fight.telemetry.finish(outcome,fight.ticks));
         summary.put("deathOrDowningObserved",fight.lethalSeen||fight.player!=null&&!fight.player.isAlive());
         summary.put("scope",fight.clientMode?"Real Minecraft client connection with automated client controls; continuous native server AI. No human-play or all-move coverage claim.":"Automated input controller and simulated connection; continuous native server AI, not human play. No guaranteed wins or all-move coverage.");
         if(fight.clientMode&&outcome.startsWith("lost"))awaitingRespawn=fight.player;
-        FINISHED.add(summary);fight.emit("finished",summary);fight.cleanup();current=null;
-        try{Files.createDirectories(output);Files.writeString(output.resolve("summary.json"),new GsonBuilder().setPrettyPrinting().create().toJson(FINISHED));}
-        catch(Exception error){throw new RuntimeException(error);}
+        fight.terminalSummary=summary;fight.emit("finished",summary);fight.cleanup();completeFinish(fight);
+    }
+    private static void completeFinish(Encounter fight){
+        fight.logWriter.flush();
+        if(fight.logWriter.pendingRows()!=0)return;
+        Map<String,Object> summary=fight.terminalSummary;
+        List<Map<String,Object>> completed=new ArrayList<>(FINISHED);completed.add(summary);
+        try{
+            Files.createDirectories(output);
+            Path staging=output.resolve("summary.pending.json");
+            Files.writeString(staging,new GsonBuilder().setPrettyPrinting().create().toJson(completed));
+            Files.move(staging,output.resolve("summary.json"),StandardCopyOption.REPLACE_EXISTING,StandardCopyOption.ATOMIC_MOVE);
+        }catch(java.io.IOException error){
+            if(!fight.summaryDelayed)System.err.println("BBFIGHT_SUMMARY_DELAYED file="+output+" error="+error);
+            fight.summaryDelayed=true;return;
+        }
+        FINISHED.add(summary);current=null;
         System.out.println("BBFIGHT_FINISHED "+JSON.toJson(summary));
-        if(source!=null)source.sendSuccess(()->Component.literal("BBFIGHT_FINISHED "+fight.request.boss+" "+fight.request.gear+" "+outcome+" ticks="+fight.ticks+" remaining="+QUEUE.size()),true);
+        if(source!=null)source.sendSuccess(()->Component.literal("BBFIGHT_FINISHED "+fight.request.boss+" "+fight.request.gear+" "+summary.get("outcome")+" ticks="+fight.ticks+" remaining="+QUEUE.size()),true);
+    }
+    private static void stopping(ServerStoppingEvent event){
+        if(current!=null&&source!=null&&event.getServer()==source.getServer())current.logWriter.preservePending();
     }
 
     private static final class Encounter {
         final Request request;final ServerLevel level;final Path log;final int cx,cz,floor;
         final List<LivingEntity> bosses=new ArrayList<>();final Set<UUID> existing=new HashSet<>(),deadBosses=new HashSet<>(),spawned=new HashSet<>();
         final List<Long> forced=new ArrayList<>(),chunksToLoad=new ArrayList<>();final List<String> setupNotes=new ArrayList<>();
-        final boolean water,dragonFight,clientMode;final AABB arena;
+        final boolean water,dragonFight,clientMode,appleRun;final AABB arena;
         ServerPlayer player;int buildCursor,chunkCursor,ticks,drawTicks,lastDamageTick,lastSample;boolean running,lethalSeen,lethalCancelled;
+        boolean knocked;int knockdowns,revivals,applesEaten,lethalEvents,deathSequenceStart=-1;
+        int metadataPublishFailures;
+        final RetryingJsonlWriter logWriter;
+        long logSequence;
+        Map<String,Object> terminalSummary;
+        boolean summaryDelayed;
+        VanillaBmdVictorySetup.DragonPreparation dragonPreparation;
+        EnderDragon ritualDragon;
+        EncounterTelemetry telemetry;
+        Vec3 entry;
+        int ritualPreparationTicks;
         double damageTaken,damageDealt;int hitsTaken,hitsDealt;String lastPhase="";boolean oldRegen,oldSpawning,oldGriefing;
         BlockPos miningBlock;float miningProgress;
         Encounter(Request request,int number)throws Exception{
             this.request=request;clientMode=request.playerName!=null;water=request.boss.equals("cataclysm:the_leviathan");dragonFight=request.boss.equals("minecraft:ender_dragon");
+            appleRun=request.gear.equals("netherite_max");
             level=dragonFight?source.getServer().getLevel(Level.END):source.getServer().overworld();
             if(level==null)throw new IllegalStateException("Required dimension unavailable");
-            cx=dragonFight?0:1536;cz=dragonFight?0:1536;floor=dragonFight?64:-60;
-            arena=new AABB(cx-96,floor-20,cz-96,cx+96,floor+160,cz+96);
+            int arenaBase=65536;
+            if(water)arenaBase=32768;
+            if(request.boss.equals("bosses_of_mass_destruction:obsidilith"))arenaBase=24576;
+            cx=dragonFight?0:appleRun?arenaBase+512*((number-1)%6):1536;
+            cz=dragonFight?0:appleRun?arenaBase+512*((number-1)/6):1536;
+            if(dragonFight||(appleRun&&request.boss.equals("bosses_of_mass_destruction:obsidilith")))floor=64;
+            else floor=appleRun?-55:-60;
+            int observationRadius=appleRun&&!dragonFight&&!water?160:96;
+            arena=new AABB(cx-observationRadius,floor-20,cz-observationRadius,cx+observationRadius,floor+160,cz+observationRadius);
             log=output.resolve(String.format("%02d-%s-%s.jsonl",number,request.boss.replace(':','_'),request.gear));
+            logWriter=new RetryingJsonlWriter(log);
             for(Entity entity:level.getAllEntities())if(arena.contains(entity.position()))existing.add(entity.getUUID());
-            int radius=dragonFight?8:4;
+            int radius=dragonFight?8:appleRun?water?5:8:4;
             for(int x=(cx>>4)-radius;x<=(cx>>4)+radius;x++)for(int z=(cz>>4)-radius;z<=(cz>>4)+radius;z++){
                 long key=net.minecraft.world.level.ChunkPos.asLong(x,z);
                 chunksToLoad.add(key);
@@ -221,20 +302,54 @@ public final class FullFightCases {
             rules.getRule(GameRules.RULE_NATURAL_REGENERATION).set(true,source.getServer());
             rules.getRule(GameRules.RULE_DOMOBSPAWNING).set(false,source.getServer());
             rules.getRule(GameRules.RULE_MOBGRIEFING).set(true,source.getServer());
-            setupNotes.add("Hard; natural food regeneration enabled; incidental natural mob spawning off; mob griefing on. Non-End arena stone over bedrock at the flat world's ground level (-60), so leaving its edge adds no artificial elevated fall.");
+            setupNotes.add("Hard; natural food regeneration enabled; incidental natural mob spawning off; mob griefing on.");
+            if(!dragonFight)setupNotes.add(appleRun?"Separate prepared arena for each case, with a solid bedrock foundation below the stone floor to reduce below-world ragdoll escapes.":"Non-End arena stone over bedrock at the flat world's ground level (-60), so leaving its edge adds no artificial elevated fall.");
+            if(appleRun&&!dragonFight)setupNotes.add("Raised Obsidilith terrain, deep-water Leviathan pools and dry-ground fixtures use separate plot origins, keeping old foundations and source water outside later arenas.");
+            if(appleRun&&!water&&!dragonFight)setupNotes.add("Five walkable perimeter terraces soften the edge of the raised arena. The normal low arena meets the surrounding flat ground, while the positive-Y Obsidilith arena uses its protected terrain buffer.");
+            if(appleRun&&!water&&!dragonFight)setupNotes.add("The protected ground surface spans 256 by 256 blocks, extending beyond the observed long native knockbacks and exterior pits. Central navigation bounds stay separate from this terrain buffer.");
+            if(appleRun&&request.boss.equals("minecraft:wither"))setupNotes.add("Low bedrock ceiling models a confined underground Wither fight, keeping its projectile-immune second phase reachable with a sword.");
+            if(appleRun&&request.boss.equals("twilightforest:alpha_yeti"))setupNotes.add("Packed-ice ceiling gives native falling-ice attacks their required overhead ICE-tag blocks with air below. The ceiling is placed only before combat.");
+            if(appleRun&&request.boss.equals("twilightforest:naga"))setupNotes.add("A four-block cobblestone entry pillar permits the native height-dependent CRUMBLE choice. It is built before combat. Ordinary client inputs decide when to leave it.");
+            if(appleRun&&request.boss.equals("bosses_of_mass_destruction:obsidilith"))setupNotes.add("Positive-Y ground allows the native AnvilAction to fall and land, without triggering its below-zero early-landing fallback.");
+            if(appleRun&&request.boss.equals("twilightforest:ur_ghast"))setupNotes.add("Four inactive sky-visible native ghast traps supply flight targets and minion spawn locations. No trap is charged or triggered by the harness.");
+            if(appleRun&&water)setupNotes.add("Leviathan uses a 160-by-160, 32-block-deep water arena. Entry is near the center and surface, with a narrow player navigation anchor so native circling remains in water.");
+            if(appleRun&&request.boss.equals("cataclysm:netherite_monstrosity"))setupNotes.add("Shallow lava patches supply the native lava-drain mechanic with its environmental prerequisite. They are placed only before combat.");
+            if(appleRun&&request.boss.equals("cataclysm:ancient_remnant"))setupNotes.add("Durable perimeter walls permit the native charge collision and stun, with no attack-state forcing.");
+            if(appleRun&&request.boss.equals("cataclysm:the_harbinger"))setupNotes.add("An unpowered native EMP block and floor button allow ordinary player-triggered EMP stun. The harness does not charge or trigger it.");
             setupNotes.add(clientMode?"Real client connection; this server harness does not set movement, aim, item-use or attack inputs. An external client controller supplies them.":"Simulated connection: server inventory, player ticks, movement inputs, collision, hunger, cooldowns, projectile travel, armor durability and lethal outcomes are native. Network latency and human choices are not represented.");
             if(clientMode)setupNotes.add("Real-client fights retain the requested overall tick limit; no early no-HP-damage cutoff, because shield counters, native summons, crystals and other protected-phase progress need not damage a managed boss.");
             emit("preparing",Map.of());
+            publishClientEncounter(false);
         }
         void beforeTick()throws Exception{
-            if(!running){if(build())spawn();return;}
+            if(!running){if(build()&&prepareNativeDragon())spawn();return;}
             ticks++;
-            if(lethalSeen||!player.isAlive()||player.isRemoved()){finish(lethalCancelled?"lost_downed":"lost",lethalCancelled?"A native lethal event was cancelled by a mod (downing/other death replacement)":"Player died");return;}
+            if(!player.isAlive()||player.isRemoved()||lethalSeen&&!appleRun){finish(lethalCancelled&&!appleRun?"lost_downed":"lost","Native lethal outcome ended the attempt");return;}
             if(clientMode)return;
             control();
             // Real clients advance this through their connection tick. Fake connections do not.
             // doTick calls Player.tick once, including food/effects/item use/attack cooldowns.
             player.doTick();
+        }
+        boolean prepareNativeDragon()throws Exception{
+            if(!appleRun||!dragonFight)return true;
+            if(dragonPreparation==null){
+                player=source.getServer().getPlayerList().getPlayerByName(request.playerName);
+                if(player==null||!player.isAlive())throw new IllegalStateException("Client unavailable during End ritual setup");
+                player.setGameMode(GameType.SPECTATOR);
+                dragonPreparation=VanillaBmdVictorySetup.beginDragonRitual(level,true);
+                Vec3 arrival=dragonPreparation.arrivalPosition();
+                player.teleportTo(level,arrival.x,arrival.y,arrival.z,0,0);
+            }
+            ritualPreparationTicks++;
+            ritualDragon=dragonPreparation.pollReady().orElse(null);
+            if(ritualPreparationTicks%40==0)emit("dragon_ritual_preparation",Map.of("status",dragonPreparation.status()));
+            if(ritualDragon!=null){
+                setupNotes.add("Dragon spawned through the native End ritual and fight manager. Tower crystals verified before combat.");
+                return true;
+            }
+            if(ritualPreparationTicks>=6000)throw new IllegalStateException("Native End ritual failed to finish: "+dragonPreparation.status());
+            return false;
         }
         boolean build(){
             if(chunkCursor<chunksToLoad.size()){
@@ -243,12 +358,34 @@ public final class FullFightCases {
                 level.getChunk(pos.x,pos.z);return false;
             }
             if(dragonFight)return true; // Actual End terrain, towers and fight manager are used.
-            final int side=96,height=42,total=side*side*height;
+            final int foundation=appleRun?floor-level.getMinBuildHeight():1;
+            final int side=appleRun?water?160:256:96,height=41+foundation,total=side*side*height;
             for(int n=0;n<8192&&buildCursor<total;n++,buildCursor++){
-                int x=buildCursor%side-side/2,z=(buildCursor/side)%side-side/2,y=buildCursor/(side*side);
-                BlockPos pos=new BlockPos(cx+x,floor-1+y,cz+z);
-                var state=y==0?Blocks.BEDROCK.defaultBlockState():y==1?Blocks.STONE.defaultBlockState():
-                    water&&y<=10&&Math.abs(x)<40&&Math.abs(z)<40?Blocks.WATER.defaultBlockState():Blocks.AIR.defaultBlockState();
+                int x=buildCursor%side-side/2,z=(buildCursor/side)%side-side/2,y=buildCursor/(side*side)-foundation;
+                BlockPos pos=new BlockPos(cx+x,floor+y,cz+z);
+                int edge=Math.min(Math.min(x+side/2,side/2-1-x),Math.min(z+side/2,side/2-1-z));
+                int surface=appleRun&&!water?-Math.max(0,5-edge):0;
+                var state=y<surface?Blocks.BEDROCK.defaultBlockState():y==surface?Blocks.STONE.defaultBlockState():
+                    water&&y<=(appleRun?32:9)&&Math.abs(x)<(appleRun?80:40)&&Math.abs(z)<(appleRun?80:40)?Blocks.WATER.defaultBlockState():Blocks.AIR.defaultBlockState();
+                if(appleRun&&request.boss.equals("minecraft:wither")&&y==5)state=Blocks.BEDROCK.defaultBlockState();
+                if(appleRun&&request.boss.equals("twilightforest:naga")&&x==0&&z==-14&&y>=1&&y<=4)state=Blocks.COBBLESTONE.defaultBlockState();
+                if(appleRun&&request.boss.equals("twilightforest:alpha_yeti")&&y>=16&&y<=21&&Math.abs(x)<=40&&Math.abs(z)<=40)state=Blocks.PACKED_ICE.defaultBlockState();
+                if(appleRun&&request.boss.equals("twilightforest:ur_ghast")&&Math.abs(x)+Math.abs(z)==20&&(x==0||z==0)){
+                    if(y==0)state=BuiltInRegistries.BLOCK.get(ResourceLocation.parse("twilightforest:ghast_trap")).defaultBlockState();
+                    if(y==1)state=Blocks.STONE_BUTTON.defaultBlockState().setValue(
+                        net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock.FACE,
+                        net.minecraft.world.level.block.state.properties.AttachFace.FLOOR);
+                }
+                if(appleRun&&request.boss.equals("cataclysm:netherite_monstrosity")&&y==0&&
+                    (Math.abs(x-12)<=3&&Math.abs(z)<=3||Math.abs(x+12)<=3&&Math.abs(z)<=3||Math.abs(x+4)<=3&&Math.abs(z-12)<=3))state=Blocks.LAVA.defaultBlockState();
+                if(appleRun&&request.boss.equals("cataclysm:ancient_remnant")&&y>=surface+1&&y<=surface+10&&
+                    (Math.abs(x)==44&&Math.abs(z)<=44||Math.abs(z)==44&&Math.abs(x)<=44))state=Blocks.REINFORCED_DEEPSLATE.defaultBlockState();
+                if(appleRun&&request.boss.equals("cataclysm:the_harbinger")&&x==0&&z==0){
+                    if(y==0)state=BuiltInRegistries.BLOCK.getOptional(ResourceLocation.parse("cataclysm:emp")).orElseThrow().defaultBlockState();
+                    if(y==1)state=Blocks.STONE_BUTTON.defaultBlockState().setValue(
+                        net.minecraft.world.level.block.FaceAttachedHorizontalDirectionalBlock.FACE,
+                        net.minecraft.world.level.block.state.properties.AttachFace.FLOOR);
+                }
                 if(level.getBlockState(pos)!=state)level.setBlock(pos,state,2);
             }
             return buildCursor>=total;
@@ -258,17 +395,23 @@ public final class FullFightCases {
             player=clientMode?source.getServer().getPlayerList().getPlayerByName(request.playerName):new FightPlayer(level,new GameProfile(UUID.randomUUID(),"BBFightBot"));
             if(player==null||!player.isAlive())throw new IllegalStateException("Client disconnected or died while preparing encounter");
             if(!clientMode)set(player.connection.getConnection(),"channel",new io.netty.channel.embedded.EmbeddedChannel());
+            player.stopUsingItem();
             player.getInventory().clearContent();
             player.setGameMode(GameType.SURVIVAL);player.getAbilities().invulnerable=false;player.getAbilities().flying=false;player.getAbilities().mayfly=false;
             player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(20);player.setHealth(20);player.setAbsorptionAmount(0);
             player.getFoodData().setFoodLevel(20);player.getFoodData().setSaturation(5);set(player,"spawnInvulnerableTime",0);
-            if(clientMode)player.teleportTo(level,cx,water?floor+9:floor+1,cz-14,0,0);
-            else player.moveTo(cx,water?floor+9:floor+1,cz-14,0,0);
+            entry=ritualDragon==null?new Vec3(cx,water?floor+(appleRun?30:9):floor+1,water&&appleRun?cz:cz-14):dragonPreparation.combatArrival();
+            if(appleRun&&request.boss.equals("twilightforest:naga"))entry=entry.add(0,4,0);
+            if(ritualDragon!=null)setupNotes.add("Precombat perch access: "+JSON.toJson(dragonPreparation.status()));
+            if(clientMode)player.teleportTo(level,entry.x,entry.y,entry.z,0,0);
+            else player.moveTo(entry.x,entry.y,entry.z,0,0);
             player.removeAllEffects();
             player.setNoGravity(false);player.setOnGround(!water);
             equip();if(!clientMode)level.addNewPlayer(player);
+            if(clientMode)player.onUpdateAbilities();
+            setupNotes.add("Native item use is stopped before the precombat inventory replacement. Survival abilities are explicitly synchronized to the client after equipment and arrival setup.");
             setupNotes.add("Initial setup clears prior effects, including login/dimension-transition immunity; combat represents an established survival session. No effect is cleared after combat begins.");
-            if(dragonFight){
+            if(dragonFight&&!appleRun){
                 for(EnderDragon old:level.getEntitiesOfClass(EnderDragon.class,arena))old.discard();
                 var crystals=level.getEntitiesOfClass(EndCrystal.class,arena);
                 if(initialCrystals==null)initialCrystals=crystals.stream().map(c->new CrystalSetup(c.position(),c.showsBottom(),c.isInvulnerable())).toList();
@@ -280,13 +423,40 @@ public final class FullFightCases {
                 if(initialCrystals.isEmpty())setupNotes.add("LIMITATION: no original End crystals were present; this run cannot validate crystal removal/healing mechanics.");
             }
             int count=request.boss.equals("twilightforest:knight_phantom")?6:1;
-            for(int i=0;i<count;i++){
+            boolean nativeGuardian=appleRun&&request.boss.equals("cataclysm:ender_guardian");
+            boolean nativeRemnant=appleRun&&request.boss.equals("cataclysm:ancient_remnant");
+            if(ritualDragon!=null)bosses.add(ritualDragon);
+            if(nativeGuardian){
+                LivingEntity boss=NativeAltarSpawn.guardian(level,player,new BlockPos(cx-4,floor+1,cz+12));
+                boss.addTag("bbfight_entity");
+                if(boss instanceof Mob mob)mob.setPersistenceRequired();
+                bosses.add(boss);
+                setupNotes.add("Guardian is spawned by the installed altar_of_void block entity's native commonTick, with its actual nearby Survival player check. The altar supplies native SPAWNER initialization, home and unused mass destruction; the temporary precombat player position is restored before combat.");
+            }
+            if(nativeRemnant){
+                LivingEntity boss=NativeAltarSpawn.remnant(level,new BlockPos(cx-4,floor+1,cz+12));
+                boss.addTag("bbfight_entity");
+                bosses.add(boss);
+                setupNotes.add("Remnant is created by the installed cursed-pyramid lower2 remnant data-marker callback. Only the marker cell is placed in the prepared arena. Native structure initialization supplies its asleep necklace state; the normal necklace interaction below performs awakening state 2.");
+            }
+            for(int i=0;ritualDragon==null&&!nativeGuardian&&!nativeRemnant&&i<count;i++){
                 Entity created=BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.parse(request.boss)).create(level);
                 if(!(created instanceof LivingEntity boss))throw new IllegalStateException("Unknown/nonliving boss");
-                boss.moveTo(cx+(i%3-1)*4,water?floor+6:dragonFight?floor+28:floor+1,cz+12+(i/3)*4,180,0);
-                if(boss instanceof Mob mob){mob.finalizeSpawn(level,level.getCurrentDifficultyAt(boss.blockPosition()),MobSpawnType.COMMAND,null);mob.setPersistenceRequired();mob.setNoAi(false);}
+                boss.moveTo(cx+(i%3-1)*4,water?floor+(appleRun?16:6):dragonFight?floor+28:floor+1,cz+12+(i/3)*4,180,0);
+                if(boss instanceof Mob mob){
+                    MobSpawnType spawnType=appleRun&&request.boss.equals("minecraft:warden")?MobSpawnType.TRIGGERED:
+                        appleRun&&request.boss.equals("cataclysm:netherite_monstrosity")?MobSpawnType.STRUCTURE:MobSpawnType.COMMAND;
+                    mob.finalizeSpawn(level,level.getCurrentDifficultyAt(boss.blockPosition()),spawnType,null);
+                    mob.setPersistenceRequired();mob.setNoAi(false);
+                }
                 boss.setInvulnerable(false);boss.addTag("bbfight_entity");
-                if(request.boss.equals("twilightforest:knight_phantom"))call(boss,"setNumber",new Class[]{int.class},i);
+                if(request.boss.equals("twilightforest:knight_phantom")){
+                    if(i==5&&level.getDifficulty()==Difficulty.HARD){
+                        boss.setItemSlot(EquipmentSlot.OFFHAND,new ItemStack(BuiltInRegistries.ITEM.get(ResourceLocation.parse("twilightforest:knightmetal_shield"))));
+                        setupNotes.add("Knight #5 receives the native Hard spawner's knightmetal shield before setNumber. All six native weapon roles remain assigned by setNumber.");
+                    }
+                    call(boss,"setNumber",new Class[]{int.class},i);
+                }
                 if(request.boss.startsWith("twilightforest:"))call(boss,"setRestrictionPoint",new Class[]{GlobalPos.class},GlobalPos.of(level.dimension(),new BlockPos(cx,floor+1,cz)));
                 if(request.boss.equals("twilightforest:ur_ghast"))boss.setPos(boss.getX(),floor+14,boss.getZ());
                 if(request.boss.equals("bosses_of_mass_destruction:lich"))boss.setPos(boss.getX(),floor+9,boss.getZ());
@@ -294,13 +464,21 @@ public final class FullFightCases {
                 if(!level.addFreshEntity(boss))throw new IllegalStateException("Boss spawn rejected");
                 bosses.add(boss);
             }
-            activate();
-            for(LivingEntity boss:bosses)if(boss instanceof Mob mob)mob.setTarget(player); // Initial encounter acquisition only; later target choices remain native.
+            if(ritualDragon==null)activate();
+            for(LivingEntity boss:bosses)if(boss instanceof Mob mob&&!request.boss.equals("minecraft:warden"))mob.setTarget(player); // Warden acquires anger natively.
             setupNotes.add("Initial boss spawn/home/target supplied once. Lich shields, Snow Queen summons and all later attack phases remain at native values.");
-            setupNotes.add("No potions, golden apples, extra HP, damage immunity or post-start health/cooldown resets supplied.");
+            setupNotes.add(appleRun?"Legal max enchanted netherite kit; 320 enchanted golden apples. Healing and self revival use native item inputs. No replenishment or mid-fight health/cooldown overrides.":"No potions, golden apples, extra HP, damage immunity or post-start health/cooldown resets supplied.");
             running=true;emit("started",Map.of("loadout",gearItems()));
+            if(appleRun)telemetry=EncounterTelemetry.start(level,player,bosses,request.boss,
+                log.resolveSibling(log.getFileName().toString().replace(".jsonl",".telemetry.jsonl")));
+            publishClientEncounter(true);
         }
         void equip()throws Exception{
+            if(appleRun){
+                FightLoadouts.maxNetherite(player);
+                call(player,"detectEquipmentUpdates",new Class[0]);
+                return;
+            }
             boolean netherite=request.gear.equals("netherite_p4");
             Item[] items=netherite?new Item[]{Items.NETHERITE_HELMET,Items.NETHERITE_CHESTPLATE,Items.NETHERITE_LEGGINGS,Items.NETHERITE_BOOTS}:new Item[]{Items.DIAMOND_HELMET,Items.DIAMOND_CHESTPLATE,Items.DIAMOND_LEGGINGS,Items.DIAMOND_BOOTS};
             EquipmentSlot[] slots={EquipmentSlot.HEAD,EquipmentSlot.CHEST,EquipmentSlot.LEGS,EquipmentSlot.FEET};
@@ -326,7 +504,10 @@ public final class FullFightCases {
                 case "cataclysm:the_harbinger" -> interact(boss,"minecraft:nether_star");
                 case "cataclysm:ancient_remnant" -> interact(boss,"cataclysm:necklace_of_the_desert");
                 case "cataclysm:scylla" -> interact(boss,null);
-                case "cataclysm:netherite_monstrosity" -> {call(boss,"setIsAwaken",new Class[]{boolean.class},true);setupNotes.add("Monstrosity awake flag supplied once; native awakening/attack states are not skipped.");}
+                case "cataclysm:netherite_monstrosity" -> {
+                    if(appleRun)setupNotes.add("Monstrosity uses native STRUCTURE spawn initialization. Its awake flag and state are left to the native player-approach goal, including awakening state 2.");
+                    else {call(boss,"setIsAwaken",new Class[]{boolean.class},true);setupNotes.add("Monstrosity awake flag supplied once; native awakening/attack states are not skipped.");}
+                }
                 case "bosses_of_mass_destruction:gauntlet" -> {
                     Object handler=field(boss,"nbtHandler");net.minecraft.nbt.CompoundTag tag=new net.minecraft.nbt.CompoundTag();tag.putBoolean("isAggroed",true);
                     call(handler,"fromTag",new Class[]{net.minecraft.nbt.CompoundTag.class},tag);
@@ -427,13 +608,35 @@ public final class FullFightCases {
             for(Mob mob:level.getEntitiesOfClass(Mob.class,player.getBoundingBox().inflate(8),m->m.isAlive()&&m.getTarget()==player&&!bosses.contains(m)))targets.add(mob);
             return targets.stream().min(java.util.Comparator.comparingDouble(e->e.getBoundingBox().distanceToSqr(player.getEyePosition()))).orElse(null);
         }
-        void afterTick(){
-            if(lethalSeen||!player.isAlive()){finish(lethalCancelled?"lost_downed":"lost","Native lethal outcome observed; no respawn or health reset");return;}
-            if(bosses.stream().allMatch(b->b.isDeadOrDying()||deadBosses.contains(b.getUUID()))){finish("won","All encounter bosses reached native death");return;}
+        void afterTick()throws Exception{
+            if(telemetry!=null)telemetry.sample(ticks);
+            if(!player.isAlive()||player.isRemoved()||lethalSeen&&!appleRun){finish(lethalCancelled&&!appleRun?"lost_downed":"lost","Native lethal outcome ended the attempt");return;}
+            if(appleRun){
+                boolean nativeKnocked=(boolean)ragRevivalIsDowned.invoke(null,player);
+                if(nativeKnocked!=knocked){
+                    knocked=nativeKnocked;
+                    if(knocked)knockdowns++;else revivals++;
+                    emit(knocked?"native_knockdown":"native_revival",Map.of("enchantedApplesRemaining",applesRemaining()));
+                    publishClientEncounter(true);
+                }else if(ticks%10==0||metadataPublishFailures>0)publishClientEncounter(true);
+            }
+            if(bosses.stream().allMatch(b->b.isDeadOrDying()||deadBosses.contains(b.getUUID()))){
+                if(!appleRun||bosses.stream().allMatch(Entity::isRemoved)){
+                    if(!knocked){finish("won","All encounter bosses reached native death and the avatar survived");return;}
+                }
+                if(deathSequenceStart<0)deathSequenceStart=ticks;
+                if(ticks-deathSequenceStart>=400){finish("death_sequence_incomplete","Native deaths observed but the death sequence or player recovery did not complete");return;}
+                return;
+            }
             if(bosses.stream().anyMatch(b->b.isRemoved()&&!b.isDeadOrDying()&&!deadBosses.contains(b.getUUID()))){finish("boss_removed","A boss disappeared without observed native death; not counted as a win");return;}
             String phase=JSON.toJson(phases());if(!phase.equals(lastPhase)){lastPhase=phase;emit("native_phase_change",Map.of("states",phases()));}
             if(ticks-lastSample>=20){lastSample=ticks;emit("sample",Map.of());}
-            if(ticks>=request.ticks){finish("time_limit","Bounded continuous fight ended without a win/loss; unfinished mechanics are not counted as passed");return;}
+            if(ticks>=request.ticks){
+                if(knocked&&ticks<request.ticks+240)return; // Finish a native self-feed that was underway at the deadline.
+                if(knocked)finish("lost_downed","Still knocked after the encounter deadline and native recovery interval");
+                else finish("time_limit","Bounded continuous fight ended without a win/loss; unfinished mechanics are not counted as passed");
+                return;
+            }
             if(!clientMode&&ticks-lastDamageTick>=1200&&ticks>=1200){finish("stalled","60 seconds without accepted damage to player or managed bosses; controller/arena limitations remain visible");}
         }
         Map<String,Object> phases(){
@@ -444,21 +647,91 @@ public final class FullFightCases {
                     Object value=call(boss,getter,new Class[0]);if(value!=null)values.put(getter,value.toString());
                 }catch(Exception absent){}
                 if(boss instanceof EnderDragon dragon)values.put("dragonPhase",dragon.getPhaseManager().getCurrentPhase().getPhase().toString());
+                if(appleRun)values.put("nativeMechanics",VanillaBmdVictorySetup.snapshot(boss));
                 states.put(id(boss)+"#"+i,values);
             }return states;
         }
         List<String> gearItems(){List<String> gear=new ArrayList<>();for(EquipmentSlot slot:EquipmentSlot.values())if(!player.getItemBySlot(slot).isEmpty())gear.add(slot+":"+BuiltInRegistries.ITEM.getKey(player.getItemBySlot(slot).getItem()));return gear;}
+        int applesRemaining(){
+            if(player==null)return 0;
+            int count=0;
+            for(int slot=0;slot<player.getInventory().getContainerSize();slot++){
+                ItemStack stack=player.getInventory().getItem(slot);
+                if(stack.is(Items.ENCHANTED_GOLDEN_APPLE))count+=stack.getCount();
+            }
+            return count;
+        }
+        void publishClientEncounter(boolean active){
+            if(!appleRun||!Files.isDirectory(CLIENT_ENCOUNTER.getParent()))return;
+            Map<String,Object> state=new LinkedHashMap<>();
+            state.put("running",active);state.put("boss",request.boss);state.put("gear",request.gear);
+            state.put("bossUuids",bosses.stream().map(boss->boss.getUUID().toString()).toList());
+            Vec3 anchor=entry==null?new Vec3(cx,water?floor+9:floor+1,cz-14):entry;
+            state.put("x",anchor.x);state.put("y",anchor.y);state.put("z",anchor.z);
+            int navigationRadius=46;
+            if(dragonFight||(appleRun&&request.boss.equals("twilightforest:alpha_yeti")))navigationRadius=96;
+            else if(water&&appleRun)navigationRadius=16;
+            else if(appleRun&&request.boss.equals("bosses_of_mass_destruction:gauntlet"))navigationRadius=24;
+            state.put("radius",navigationRadius);
+            state.put("tick",ticks);state.put("timestamp",Instant.now().toString());state.put("playerKnocked",knocked);
+            if(dragonPreparation!=null)state.put("dragonAccess",dragonPreparation.combatGeometry());
+            if(request.boss.equals("twilightforest:ur_ghast"))state.put("trapButtons",List.of(
+                List.of(cx+20,floor+1,cz),List.of(cx-20,floor+1,cz),List.of(cx,floor+1,cz+20),List.of(cx,floor+1,cz-20)));
+            if(request.boss.equals("cataclysm:the_harbinger"))state.put("empButtons",List.of(List.of(cx,floor+1,cz)));
+            Path staging=CLIENT_ENCOUNTER.resolveSibling("bossfight-encounter.tmp");
+            java.io.IOException failure=null;
+            for(int attempt=0;attempt<3;attempt++){
+                try{
+                    Files.writeString(staging,JSON.toJson(state));
+                    Files.move(staging,CLIENT_ENCOUNTER,StandardCopyOption.REPLACE_EXISTING,StandardCopyOption.ATOMIC_MOVE);
+                    if(metadataPublishFailures>0)emit("metadata_publication_recovered",Map.of("delayedTicks",metadataPublishFailures));
+                    metadataPublishFailures=0;
+                    return;
+                }catch(java.io.IOException error){failure=error;}
+            }
+            metadataPublishFailures++;
+            if(metadataPublishFailures==1)emit("metadata_publication_delayed",Map.of("error",String.valueOf(failure)));
+            // A concurrent Windows reader may briefly deny replacement. Retain the
+            // previous complete JSON and retry on the next native tick.
+            if(active&&metadataPublishFailures>=100)throw new java.io.UncheckedIOException("Persistent isolated client metadata publication failure",failure);
+        }
         Map<String,Object> snapshot(String kind){
             Map<String,Object> row=new LinkedHashMap<>();row.put("record",kind);row.put("controllerMode",clientMode?"real_client":"simulated_server_player");row.put("playerName",request.playerName==null?"BBFightBot":request.playerName);row.put("boss",request.boss);row.put("gear",request.gear);row.put("tick",ticks);row.put("gameSeconds",ticks/20d);row.put("timestamp",Instant.now().toString());row.put("running",running);row.put("setup",setupNotes);
-            if(player!=null){row.put("playerHP",player.getHealth());row.put("playerMaxHP",player.getMaxHealth());row.put("food",player.getFoodData().getFoodLevel());row.put("saturation",player.getFoodData().getSaturationLevel());row.put("playerPosition",position(player));row.put("armor",player.getAttributeValue(Attributes.ARMOR));row.put("usingItem",player.getUseItem().isEmpty()?"":BuiltInRegistries.ITEM.getKey(player.getUseItem().getItem()).toString());row.put("blocking",player.isBlocking());row.put("gearRemaining",gearItems());row.put("inventory",inventoryState());row.put("playerPhysics",physicsState());}
+            if(player!=null){row.put("playerHP",player.getHealth());row.put("playerMaxHP",player.getMaxHealth());row.put("food",player.getFoodData().getFoodLevel());row.put("saturation",player.getFoodData().getSaturationLevel());row.put("playerPosition",position(player));row.put("armor",player.getAttributeValue(Attributes.ARMOR));row.put("usingItem",player.getUseItem().isEmpty()?"":BuiltInRegistries.ITEM.getKey(player.getUseItem().getItem()).toString());row.put("blocking",player.isBlocking());row.put("gearRemaining",gearItems());row.put("inventory",inventoryState());row.put("playerPhysics",physicsState());row.put("nativeItemUse",itemUseState());}
             List<Map<String,Object>> enemies=new ArrayList<>();for(LivingEntity boss:bosses)enemies.add(Map.of("entity",id(boss),"hp",boss.getHealth(),"maxHP",boss.getMaxHealth(),"position",position(boss),"removed",boss.isRemoved()));row.put("bosses",enemies);return row;
         }
-        void emit(String kind,Map<String,?> extra){try{Files.createDirectories(log.getParent());Map<String,Object> row=snapshot(kind);row.putAll(extra);Files.writeString(log,JSON.toJson(row)+"\n",StandardOpenOption.CREATE,StandardOpenOption.APPEND);}catch(Exception error){throw new RuntimeException(error);}}
+        void emit(String kind,Map<String,?> extra){Map<String,Object> row=snapshot(kind);row.putAll(extra);row.put("logSequence",++logSequence);row.put("logPendingRows",logWriter.pendingRows());row.put("logWriteFailures",logWriter.failures());logWriter.append(JSON.toJson(row));}
         List<Map<String,Object>> inventoryState(){List<Map<String,Object>> result=new ArrayList<>();for(int i=0;i<player.getInventory().getContainerSize();i++){ItemStack stack=player.getInventory().getItem(i);if(!stack.isEmpty())result.add(Map.of("slot",i,"item",BuiltInRegistries.ITEM.getKey(stack.getItem()).toString(),"count",stack.getCount(),"damage",stack.getDamageValue(),"maxDamage",stack.getMaxDamage()));}return result;}
-        Map<String,Object> physicsState(){Map<String,Object> result=new LinkedHashMap<>();Vec3 velocity=player.getDeltaMovement();result.put("velocity",List.of(velocity.x,velocity.y,velocity.z));result.put("onGround",player.onGround());result.put("noGravity",player.isNoGravity());result.put("noPhysics",player.noPhysics);result.put("gravityAttribute",player.getAttributeValue(Attributes.GRAVITY));result.put("horizontalCollision",player.horizontalCollision);result.put("verticalCollision",player.verticalCollision);result.put("passenger",player.isPassenger());result.put("vehicle",id(player.getVehicle()));result.put("pose",player.getPose().toString());result.put("blockBelow",BuiltInRegistries.BLOCK.getKey(level.getBlockState(player.blockPosition().below()).getBlock()).toString());return result;}
+        Map<String,Object> physicsState(){
+            Map<String,Object> result=new LinkedHashMap<>();Vec3 velocity=player.getDeltaMovement();
+            result.put("velocity",List.of(velocity.x,velocity.y,velocity.z));result.put("onGround",player.onGround());
+            result.put("noGravity",player.isNoGravity());result.put("noPhysics",player.noPhysics);
+            result.put("gravityAttribute",player.getAttributeValue(Attributes.GRAVITY));
+            result.put("horizontalCollision",player.horizontalCollision);result.put("verticalCollision",player.verticalCollision);
+            result.put("passenger",player.isPassenger());result.put("vehicle",id(player.getVehicle()));
+            result.put("isVehicle",player.isVehicle());result.put("passengerTypes",player.getPassengers().stream().map(FullFightCases::id).toList());
+            result.put("flying",player.getAbilities().flying);result.put("mayFly",player.getAbilities().mayfly);
+            result.put("invulnerableAbility",player.getAbilities().invulnerable);
+            result.put("pose",player.getPose().toString());
+            result.put("blockBelow",BuiltInRegistries.BLOCK.getKey(level.getBlockState(player.blockPosition().below()).getBlock()).toString());
+            return result;
+        }
+        Map<String,Object> itemUseState(){
+            Map<String,Object> result=new LinkedHashMap<>();
+            result.put("using",player.isUsingItem());result.put("elapsedTicks",player.getTicksUsingItem());
+            result.put("remainingTicks",player.getUseItemRemainingTicks());
+            try{result.put("managedUse",call(player,"ragrevival$isManagedUse",new Class[0]));}
+            catch(Exception error){result.put("managedUseLookup",error.toString());}
+            try{
+                Class<?> compat=Class.forName("com.biguzi.ragrevival.compat.CarryOnCompat");
+                result.put("carrying",compat.getMethod("isCarrying",Player.class).invoke(null,player));
+            }catch(Exception error){result.put("carryingLookup",error.toString());}
+            return result;
+        }
         void cleanup(){
             running=false;if(player!=null&&!clientMode)player.discard();
-            if(dragonFight&&level.getDragonFight()!=null)try{Object uuid=field(level.getDragonFight(),"dragonUUID");if(bosses.stream().anyMatch(b->b.getUUID().equals(uuid)))set(level.getDragonFight(),"dragonKilled",true);}catch(Exception error){System.err.println("BBFIGHT cleanup dragon manager: "+error);}
+            publishClientEncounter(false);
+            if(dragonFight&&!appleRun&&level.getDragonFight()!=null)try{Object uuid=field(level.getDragonFight(),"dragonUUID");if(bosses.stream().anyMatch(b->b.getUUID().equals(uuid)))set(level.getDragonFight(),"dragonKilled",true);}catch(Exception error){System.err.println("BBFIGHT cleanup dragon manager: "+error);}
             List<Entity> discard=new ArrayList<>();for(Entity entity:level.getAllEntities())if(!(entity instanceof ServerPlayer)&&!existing.contains(entity.getUUID())&&(arena.contains(entity.position())||spawned.contains(entity.getUUID())||entity.getTags().contains("bbfight_entity")))discard.add(entity);
             for(Entity entity:discard)entity.discard();
             for(long key:forced){var pos=new net.minecraft.world.level.ChunkPos(key);level.setChunkForced(pos.x,pos.z,false);}

@@ -1,0 +1,226 @@
+[
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 160,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=6; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 1740,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=27; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 1750,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=28; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 4800,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=112; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 4810,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=113; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 4820,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=114; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 4830,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=115; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 4840,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=116; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7080,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=172; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7090,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=173; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7140,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=174; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7150,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=175; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7160,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=176; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7170,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=177; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7180,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=178; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7290,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=179; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7860,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=195; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 7870,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=196; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 8060,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=215; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 8470,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=236; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 9040,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=268; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 9050,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=269; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 9060,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=271; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T10-50-20.914724500Z/01-twilightforest_ur_ghast-netherite_max",
+    "tick": 9070,
+    "check": "processed_minus_reductions",
+    "residual_hp": 0.5000000100000002,
+    "context": "attemptId=272; victim=minecraft:player; profiles=ur_ghast.tantrum"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67280,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.0070563294,
+    "context": "clientUtc=2026-11-05T09:04:01.142835200Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67300,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.023456365,
+    "context": "clientUtc=2026-11-05T09:04:02.149669900Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67320,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.05396043,
+    "context": "clientUtc=2026-11-05T09:04:03.148874Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67340,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.056256436,
+    "context": "clientUtc=2026-11-05T09:04:04.155771500Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67360,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:05.142915600Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67380,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:06.151409900Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67400,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:07.143243300Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67420,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:08.158933500Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  }
+]

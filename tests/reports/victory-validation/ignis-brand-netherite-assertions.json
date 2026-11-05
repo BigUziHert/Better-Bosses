@@ -1,0 +1,4039 @@
+{
+  "phase": "ignis_brand_netherite",
+  "total": 504,
+  "failed": 0,
+  "checks": [
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 2.279293505963451,
+      "actual": 2.2792930603027344,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 2.279293505963451,
+      "actual": 2.279294013977051,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 29.254833995939045,
+      "actual": 29.254833221435547,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.571182546641869,
+      "actual": 4.5711822509765625,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.571182546641869,
+      "actual": 4.5711822509765625,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 34.721359549995796,
+      "actual": 34.72135925292969,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.97198757751994,
+      "actual": 5.971987724304199,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.97198757751994,
+      "actual": 5.971987724304199,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand0_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 3.4637619811099194,
+      "actual": 3.4637622833251953,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 3.4637619811099194,
+      "actual": 3.463761806488037,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 25.06063499269007,
+      "actual": 25.06063461303711,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.303246962736843,
+      "actual": 5.303247451782227,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.303246962736843,
+      "actual": 5.303247451782227,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 28.212160496872926,
+      "actual": 28.212160110473633,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.2611447273444965,
+      "actual": 6.261144638061523,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.2611447273444965,
+      "actual": 6.261144638061523,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand1_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6896918619277566,
+      "actual": 4.689692497253418,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6896918619277566,
+      "actual": 4.689692497253418,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 20.584054900408198,
+      "actual": 20.584054946899414,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.458947643793117,
+      "actual": 5.458949089050293,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.458947643793117,
+      "actual": 5.458949089050293,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 23.38868633485272,
+      "actual": 23.388687133789062,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.451320328718593,
+      "actual": 6.451320648193359,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.451320328718593,
+      "actual": 6.451320648193359,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand2_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.94915254237288,
+      "actual": 16.94915199279785,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.685952312553862,
+      "actual": 5.685952186584473,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.685952312553862,
+      "actual": 5.685952186584473,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.94915254237288,
+      "actual": 16.94915199279785,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.685952312553862,
+      "actual": 5.685952186584473,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.685952312553862,
+      "actual": 5.685952186584473,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 20.127118644067792,
+      "actual": 20.127119064331055,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.839999999999998,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.839999999999998,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand3_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.393442622950822,
+      "actual": 16.393442153930664,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.760000000000001,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.760000000000001,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.393442622950822,
+      "actual": 16.393442153930664,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.760000000000001,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.760000000000001,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 19.467213114754095,
+      "actual": 19.467212677001953,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.839999999999998,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.839999999999998,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand4_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.76,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.76,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.76,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.76,
+      "actual": 5.760000228881836,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": -1.0,
+      "actual": -1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 19.0,
+      "actual": 19.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.84,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 6.84,
+      "actual": 6.840000152587891,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_fresh_brand5_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 1.823434804770761,
+      "actual": 1.823434829711914,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 1.823434804770761,
+      "actual": 1.823434829711914,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 29.254833995939045,
+      "actual": 29.254833221435547,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 3.6569460373134954,
+      "actual": 3.6569461822509766,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 3.6569460373134954,
+      "actual": 3.6569457054138184,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 34.721359549995796,
+      "actual": 34.72135925292969,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.777590062015952,
+      "actual": 4.777589797973633,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.777590062015952,
+      "actual": 4.777589797973633,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand0_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 2.7710095848879357,
+      "actual": 2.7710094451904297,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 2.7710095848879357,
+      "actual": 2.7710094451904297,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 25.06063499269007,
+      "actual": 25.06063461303711,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.242597570189474,
+      "actual": 4.242597579956055,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.242597570189474,
+      "actual": 4.242598056793213,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 9.600000000000001,
+      "actual": 9.600000000000001,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 28.212160496872926,
+      "actual": 28.212160110473633,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 5.008915781875597,
+      "actual": 5.008915901184082,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.008915781875597,
+      "actual": 5.008915901184082,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand1_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 18.284271247461902,
+      "actual": 18.284271240234375,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 3.7517534895422053,
+      "actual": 3.7517528533935547,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 3.7517534895422053,
+      "actual": 3.751753330230713,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 20.584054900408198,
+      "actual": 20.584054946899414,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.367158115034494,
+      "actual": 4.367158889770508,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.367158115034494,
+      "actual": 4.36715841293335,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 12.0,
+      "actual": 12.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 7.199999999999999,
+      "actual": 7.199999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 23.38868633485272,
+      "actual": 23.388687133789062,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 5.161056262974874,
+      "actual": 5.161057472229004,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.161056262974874,
+      "actual": 5.161057472229004,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand2_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.94915254237288,
+      "actual": 16.94915199279785,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.54876185004309,
+      "actual": 4.548761367797852,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.54876185004309,
+      "actual": 4.548761367797852,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.94915254237288,
+      "actual": 16.94915199279785,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.54876185004309,
+      "actual": 4.548761367797852,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.54876185004309,
+      "actual": 4.548761367797852,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 7.999999999999998,
+      "actual": 7.999999999999998,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 4.799999999999999,
+      "actual": 4.799999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 20.127118644067792,
+      "actual": 20.127119064331055,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 5.471999999999999,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.471999999999999,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand3_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.393442622950822,
+      "actual": 16.393442153930664,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6080000000000005,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6080000000000005,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.393442622950822,
+      "actual": 16.393442153930664,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6080000000000005,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.6080000000000005,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 3.999999999999999,
+      "actual": 3.999999999999999,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 2.3999999999999995,
+      "actual": 2.3999999999999995,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 19.467213114754095,
+      "actual": 19.467212677001953,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 5.471999999999999,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.471999999999999,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand4_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.608,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.608,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_opening_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 4.608,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 4.608,
+      "actual": 4.608000755310059,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_heavy_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_maximum_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_initial_hp",
+      "entity": "cataclysm:ignis",
+      "expected": 20.0,
+      "actual": 20.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_armor",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_toughness",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_initial_absorption",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_protection_levels",
+      "entity": "cataclysm:ignis",
+      "expected": 16.0,
+      "actual": 16.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_resistance_amplifier",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_native_post_count",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_incoming_stage_count",
+      "entity": "cataclysm:ignis",
+      "expected": 2.0,
+      "actual": 2.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_processed_raw",
+      "entity": "cataclysm:ignis",
+      "expected": 19.0,
+      "actual": 19.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_health_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_absorption_spent",
+      "entity": "cataclysm:ignis",
+      "expected": 5.472,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_accepted_damage",
+      "entity": "cataclysm:ignis",
+      "expected": 5.472,
+      "actual": 5.4720001220703125,
+      "passed": true
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "test": "ignis_netherite_apple_brand5_ultimate_native_ignis_caller",
+      "entity": "cataclysm:ignis",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    }
+  ]
+}

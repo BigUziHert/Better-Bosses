@@ -1,0 +1,35 @@
+{
+  "generatedUtc": "2026-11-05T14:31:09.0821354Z",
+  "liveReadPolicy": "Explicit FileAccess.Read and FileShare.ReadWrite|Delete. Node client audits consume closed shared snapshots.",
+  "liveSourceHashing": false,
+  "concurrentAppendCheck": {
+    "utc": "2026-11-05T14:19:50.5779309Z",
+    "readerAccess": "ReadWrite|Delete",
+    "concurrentDefaultAppend": "passed",
+    "powershellParse": "passed",
+    "scope": "Task-owned small fixture. No game process or live log mutated."
+  },
+  "files": [
+    {
+      "path": "tests/shared-evidence-io.ps1",
+      "sha256": "571E7A479946D91FF73C10EF589018F276EEAEE74920DEEB2947A93BF66E5E4F"
+    },
+    {
+      "path": "tests/snapshot-client-evidence.ps1",
+      "sha256": "E0324B8033D6132722A998DC2EF7D577B9548EF3C37922EFF79ABB59F227A2A0"
+    },
+    {
+      "path": "tests/export-encounter-coverage.ps1",
+      "sha256": "E815752C3DB4B4D858C11FA23AC2A1FF945A8A69E470A2CFCF4FC6D9AF0D1A57"
+    },
+    {
+      "path": "tests/audit-client-flight.mjs",
+      "sha256": "5643DCC0C2F9EA9E8523C7C78EAC8D5CF0DCE37D5B0C5E4DE275B158880DA201"
+    },
+    {
+      "path": "tests/audit-receipt-review.mjs",
+      "sha256": "55B342D74BA4A6F5DEE32E55BBD16784A622122BD2A787D5A1F986445BD62ED3"
+    }
+  ],
+  "closedCaseCommitGuard": "A coverage file is insufficient. The ordinary log must end in a finished record before an attempt enters completed counts."
+}

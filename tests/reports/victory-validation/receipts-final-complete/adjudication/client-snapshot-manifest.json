@@ -1,0 +1,11 @@
+{
+  "generatedUtc": "2026-11-05T22:06:21.6374428Z",
+  "source": "run-client-playtest/client-fight-events.jsonl",
+  "access": "FileAccess.Read with FileShare.ReadWrite | FileShare.Delete",
+  "sourceLengthAtOpen": 80672631,
+  "completeSnapshotBytes": 80672631,
+  "omittedTrailingIncompleteBytes": 0,
+  "snapshot": "tests/evidence/shared-reader-snapshots/client-fight-events-armor.jsonl",
+  "snapshotSha256": "B7BF27FFA215B2F5414A2036AB1AE6A2E1048A1D9E3C39CB0B753544514CF278",
+  "sourceWasHashed": false
+}

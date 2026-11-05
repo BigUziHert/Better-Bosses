@@ -1,0 +1,27 @@
+{
+  "generatedUtc": "2026-11-05T05:50:54.3648592+00:00",
+  "suite": "ignis_brand_netherite",
+  "completionLog": "[04Nov2026 23:44:49.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: BBTEST_COMPLETE ignis_brand_netherite checks=504 failed=0",
+  "warningCount": 24,
+  "reportedEntityCounts": [
+    151
+  ],
+  "positions": [
+    "BlockPos{x=14, y=220, z=26}",
+    "BlockPos{x=14, y=220, z=42}"
+  ],
+  "firstWarning": "[04Nov2026 23:44:48.570] [Server thread/WARN] [com.leaky.Leaky/]: Detected large amount of entities: 151 in: ResourceKey[minecraft:dimension / minecraft:overworld] pos:BlockPos{x=14, y=220, z=26}",
+  "lastWarning": "[04Nov2026 23:44:49.271] [Server thread/WARN] [com.leaky.Leaky/]: Detected large amount of entities: 151 in: ResourceKey[minecraft:dimension / minecraft:overworld] pos:BlockPos{x=14, y=220, z=42}",
+  "emissionCaller": "Ignis_Entity.UltimateAttack -> ServerLevel.addFreshEntity -> EntitySection.add",
+  "leakyJar": "leaky-1.21-3.6.jar",
+  "leakySha256": "8AD71C8D1499916DA8AD11F1CD4E08D5494F98A88F70752722C0556F57FFF0EE",
+  "diagnosticBytecodeFile": "ignis-brand-leaky-bytecode.txt",
+  "diagnosticBytecodeSha256": "1F9B9E81A9871195BF5E9481BB0B7A469D44662E7A1449BD9D24823E05536772",
+  "excerptFile": "ignis-brand-leaky-excerpt.log",
+  "excerptSha256": "BBEF1A267AFAE602EAF37945A98F0359105C0C8A840A08CB7086610BC2D220A6",
+  "bytecodeFinding": "EntitySectionMixin allocates an Exception and passes it to Logger.warn(String, Throwable), then returns. The printed stack is a diagnostic, not a thrown suite failure.",
+  "cleanupSource": "tests/src/main/java/survival/balance/tests/IgnisBrandNetheriteCases.java",
+  "cleanupSourceSha256": "632AE809D93C17A269C155996DB3597AC5D166781E72CCF96C42F3ECA307F8CE",
+  "cleanupFinding": "Each probe snapshots existing level entities, then in finally discards all newly introduced entities except the shared measuring victim; it also discards the boss reference. The run finally discards the measuring victim. No global deletion of pre-existing fixtures occurs.",
+  "interpretation": "24 warnings correspond to two logged sections during each of12 ultimate probes; all report151 rather than an increasing series. This is consistent with repeated transient native effect spawns. No live post-cleanup entity census was collected, so an independently measured zero-residual count is not claimed."
+}

@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T12:59:20.0560125Z",
+  "phase": "dragon_death_transition",
+  "sourceResultLastWriteUtc": "2026-11-05T12:52:08.7451382Z",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "executedHelperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+  "runtimeIdentityBasis": "Parent confirmed the installed B340 helper and 1.2.1 production for the idle command. Installed helper hash was independently read after execution.",
+  "sourceResult": "tests/results/dragon_death_transition.json",
+  "resultBytes": 4862,
+  "resultSha256": "C77B5DD1BB46E27F7835A56B4ECA8F6A7BF5222030DC739F54150A40B19BA668",
+  "sourceBeforeAfterAndSnapshotHashesMatch": true,
+  "assertions": 19,
+  "failed": 0,
+  "nativeVictory": false,
+  "continuousNaturalPhaseCoverage": false,
+  "scope": "Controlled native airborne lethal-hit and death-phase method probe; not a continuous encounter or native victory",
+  "fixture": "Unjoined Dragon in the isolated overworld; profile1100HP; Holding phase and10HP staged before native head/playerAttack20. Native hurt must select DYING and1HP. Native death ticks compute destination and preserve1HP in flight; position-only arrival fixture precedes native zeroHP tick. No DYING phase setter or post-hit health setter.",
+  "baseline": {
+    "manifest": "../../test-run-manifest.json",
+    "manifestSha256": "97B0F803FF2CD5E176AC9162FB403E37012EA922F0FD3101DAC9C55EA24461AB",
+    "assertions": 8364,
+    "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+  },
+  "baselinePlusSeparateSupplementAssertions": 8383
+}

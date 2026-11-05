@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "observedSource": "S:\\Survival",
+  "startedUtc": "2026-11-05T21:41:52.5104933Z",
+  "finishedUtc": "2026-11-05T21:42:06.0149764Z",
+  "scope": [
+    "mods",
+    "config",
+    "defaultconfigs",
+    "world/serverconfig",
+    "kubejs"
+  ],
+  "baselineFiles": 871,
+  "currentFiles": 871,
+  "contentChanges": 1,
+  "metadataOnlyChanges": 111,
+  "added": 0,
+  "removed": 0,
+  "unstableReads": 0,
+  "readErrors": 0,
+  "sourceOperations": "Read-only enumeration,metadata and hashes. No source-folder writes or process actions by this task.",
+  "contentQualification": "The sole content difference is the previously established zfastnoise generated timestamp comment. Its setting body matches the historical baseline.111 other files retain their content hashes with changed modification times. No new gameplay-content changes observed.",
+  "sourceComparisonSha256": "9651F5EC716A25F05EF279412DBE09BF8B18311E46F6EBE44BEC4B63F3053DD2",
+  "datapacks": {
+    "observedUtc": "2026-11-05T21:42:47.2675373+00:00",
+    "comparisonBasis": "Prior 871-file manifest did not include world/datapacks; comparison here is to previously staged isolated test-world copies, not a historical timestamp claim",
+    "files": [
+      {
+        "path": "enchanting_infuser_treasure\\pack.mcmeta",
+        "length": 158,
+        "sha256": "325D9E8017AA6FF5B3450689F4FD044C520C536C9B40295029AB1223A364DA4F",
+        "stableDuringRead": true,
+        "copiedTestWorldSha256": "325D9E8017AA6FF5B3450689F4FD044C520C536C9B40295029AB1223A364DA4F"
+      },
+      {
+        "path": "enchanting_infuser_treasure\\data\\enchantinginfuser\\tags\\enchantment\\in_advanced_enchanting_infuser.json",
+        "length": 98,
+        "sha256": "5D8911D201C304A54394586F70184E81A898BDC2A10F3BE13BFF03AC1151E8BA",
+        "stableDuringRead": true,
+        "copiedTestWorldSha256": "5D8911D201C304A54394586F70184E81A898BDC2A10F3BE13BFF03AC1151E8BA"
+      }
+    ],
+    "sourceOperations": "Read-only metadata and hashes; no source writes or process actions"
+  },
+  "productionJar": {
+    "name": "survival-boss-balance-1.2.1.jar",
+    "bytes": 45981,
+    "sha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T20:27:29.0167605Z",
+  "queue": "2026-11-05T20-13-21.261957700Z",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "helperSha256": "6D53D34B272F8342769C36277251FD8E0F49C998CCADF9A9F87352F98512714B",
+  "pilotSourceSha256": "527D19183672A1CF281CA94AD145B9B81F8063AD6CCCE148236D0AEB2FBE4449",
+  "pilotCompiledArtifactSha256": "C2C8ACE42339415C4A81597ACD6452185177CD70507A7C4A3E1C5F9D1B7885C3",
+  "sourceFiles": [
+    {
+      "path": "tests/results/full-fights/2026-11-05T20-13-21.261957700Z/01-cataclysm_ignis-netherite_max.jsonl",
+      "sha256": "9E6A9A7F22160BEEFAAC739D1B387016A496831A3C18B94D63C880B355EECBB1"
+    },
+    {
+      "path": "tests/results/full-fights/2026-11-05T20-13-21.261957700Z/01-cataclysm_ignis-netherite_max.telemetry.jsonl",
+      "sha256": "017173CFD363B331ED30D34157CFAA51388EF3D5FDD4E02FD0506526B41BAEAB"
+    },
+    {
+      "path": "tests/evidence/ignis-native-counter-2026-11-05T20-15-40.client.jsonl",
+      "sha256": "A8EADA0A7C596F78786CC54136F9530B9757E4D606A618C6C45718B05CF5641D"
+    }
+  ],
+  "clientInput": {
+    "pickedDistance": 2.076834961522473,
+    "event": "projectile_counter_input",
+    "nativeCrosshair": true,
+    "clientTick": 435710,
+    "projectile": "cataclysm:ignis_abyss_fireball",
+    "utc": "2026-11-05T20:15:40.232337Z",
+    "nativeReach": 3.0,
+    "physicalBodyDistance": 3.094841133901975
+  },
+  "nativeOwnership": {
+    "newOwnerRole": "fixture_player",
+    "utc": "2026-11-05T20:15:40.324953400Z",
+    "previousOwnerType": "cataclysm:ignis",
+    "tick": 2093,
+    "sequence": 7277
+  },
+  "nativeHit": {
+    "hpBefore": 1100.0,
+    "damageHp": 18.4,
+    "hpAfter": 1081.6,
+    "nativeCaller": "com.github.L_Ender.cataclysm.entity.projectile.Ignis_Abyss_Fireball_Entity.onHitEntity",
+    "victim": "cataclysm:ignis",
+    "tick": 2098,
+    "originalHp": 20.0,
+    "utc": "2026-11-05T20:15:40.564240700Z",
+    "sequence": 7285,
+    "ownerRole": "fixture_player"
+  },
+  "nativeShield": {
+    "tick": 2098,
+    "broken": false,
+    "durability": 1,
+    "phase": 0,
+    "sequence": 7286,
+    "utc": "2026-11-05T20:15:40.569750100Z"
+  },
+  "completedOutcome": {
+    "naturalVictory": false,
+    "tick": 8166,
+    "outcome": "cancelled",
+    "bossHp": 1083.5471,
+    "nativeKnockdowns": 0,
+    "timestamp": "2026-11-05T20:20:44.023225500Z",
+    "nativeRevivals": 0,
+    "armor": 20.0,
+    "normalFood": 19,
+    "inventoryStart": 320,
+    "inventoryEnd": 301,
+    "playerHp": 20.0,
+    "allFourArmorPresent": true,
+    "inventorySpent": 19
+  },
+  "scope": "Executed native pick-radius counter, owner change, accepted reflected hit and shield0-to1. The attempt ended in explicit cancellation. Shield2/3, completed shield break and native victory receive no credit."
+}

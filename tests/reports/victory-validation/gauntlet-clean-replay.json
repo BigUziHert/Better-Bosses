@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T21:06:03.3096380Z",
+  "queue": "2026-11-05T20-55-55.930980500Z",
+  "runtime": {
+    "queue": "2026-11-05T20-55-55.930980500Z",
+    "boss": "bosses_of_mass_destruction:gauntlet",
+    "nativeTelemetryStartedUtc": "2026-11-05T20:56:30.467737500Z",
+    "completedUtc": "2026-11-05T21:02:34.914471600Z",
+    "catalogueVersion": "installed-native-1.21.1-2026-11-05-r2",
+    "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+    "helperSha256": "6D53D34B272F8342769C36277251FD8E0F49C998CCADF9A9F87352F98512714B",
+    "pilotSourceSha256": "DB491379CE15BED86BA9B5D7B1E26ADB57791711E6A2F82FE9BCF10A10C3D03C",
+    "pilotCompiledArtifactSha256": "C83410376EE707383BB00DDFC5B4125AD8D019AF6DE88D56A450FB08E72A822D",
+    "status": "won",
+    "basis": "Parent declared same loaded artifacts. Native death, committed completion and full matched client interval independently reviewed.",
+    "completionQualification": "Native death21:02:32.394287200Z,win7290ticks.20HP,all4netherite intact,9normalfood=9inventoryspent,0knockdowns/revivals/errors,0missing candidates.345client samples allflyingfalse,firstsamplegroundedandfullbossHP. Sampled movement-qualified replacement for earlier flaggedGauntlet; priorattemptretained.",
+    "primaryEvidenceForBoss": true,
+    "supersedesMovementQualificationFrom": "2026-11-05T07-32-10.692488400Z"
+  },
+  "clientFlightAudit": {
+    "attempt": "2026-11-05T20-55-55.930980500Z/01-bosses_of_mass_destruction_gauntlet-netherite_max",
+    "boss": "bosses_of_mass_destruction:gauntlet",
+    "startUtc": "2026-11-05T20:56:30.458215600Z",
+    "endUtc": "2026-11-05T21:02:34.914471600Z",
+    "firstNativeBossDeathUtc": "2026-11-05T21:02:32.394287200Z",
+    "samples": 345,
+    "missingPhysicsSamples": 0,
+    "flyingSamples": 0,
+    "nonPassengerFlyingSamples": 0,
+    "nonPassengerFlyingBeforeBossDeathAndNotKnockedSamples": 0,
+    "largestSampleGapSeconds": 3.006,
+    "firstClearSampleAfterLastFlagUtc": null,
+    "flaggedIntervals": [],
+    "assessment": "no_nonpassenger_flight_flag_observed"
+  },
+  "clientSnapshotSha256": "3E21662BAC5AFF169D81CBEB3D98CAC2212972FC516B8F4CBD8E2EDA84706CEA",
+  "firstClientSample": {
+    "noPhysics": false,
+    "blockBelow": "minecraft:stone",
+    "onGround": true,
+    "playerHp": 20,
+    "noGravity": false,
+    "passenger": false,
+    "mayFly": false,
+    "bossHp": 1500,
+    "utc": "2026-11-05T20:56:31.258418Z",
+    "flying": false
+  },
+  "lastCombatClientSample": {
+    "bossHp": 1.8405895,
+    "passenger": false,
+    "blockBelow": "minecraft:stone",
+    "flying": false,
+    "onGround": true,
+    "playerHp": 20,
+    "mayFly": false,
+    "utc": "2026-11-05T21:02:32.258718400Z"
+  },
+  "scope": "345 recorded client samples span the encounter with zero flight flags and complete physics fields. First sample is0.800seconds after native start. Largest intersample gap3.006seconds. Sampling cannot exclude an unsampled transient. Uncancelled native death and all declared candidate coverage are independently established."
+}

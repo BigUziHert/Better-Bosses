@@ -1,0 +1,168 @@
+Compiled from "EntitySectionMixin.java"
+public class com.leaky.mixin.EntitySectionMixin<T extends net.minecraft.world.level.entity.EntityAccess> {
+  private net.minecraft.util.ClassInstanceMultiMap<T> storage;
+
+  private long lastReportTime;
+
+  private long lastReportAmount;
+
+  public com.leaky.mixin.EntitySectionMixin();
+    Code:
+       0: aload_0
+       1: invokespecial #1                  // Method java/lang/Object."<init>":()V
+       4: aload_0
+       5: lconst_0
+       6: putfield      #7                  // Field lastReportTime:J
+       9: aload_0
+      10: lconst_0
+      11: putfield      #13                 // Field lastReportAmount:J
+      14: return
+
+  private void leaky$addEntity(T, org.spongepowered.asm.mixin.injection.callback.CallbackInfo);
+    Code:
+       0: aload_0
+       1: getfield      #16                 // Field storage:Lnet/minecraft/util/ClassInstanceMultiMap;
+       4: invokevirtual #20                 // Method net/minecraft/util/ClassInstanceMultiMap.size:()I
+       7: istore_3
+       8: aload_1
+       9: instanceof    #26                 // class net/minecraft/world/entity/item/ItemEntity
+      12: ifeq          184
+      15: iload_3
+      16: getstatic     #28                 // Field com/leaky/config/CommonConfiguration.config:Lcom/cupboard/config/CupboardConfig;
+      19: invokevirtual #34                 // Method com/cupboard/config/CupboardConfig.getCommonConfig:()Lcom/cupboard/config/ICommonConfig;
+      22: checkcast     #29                 // class com/leaky/config/CommonConfiguration
+      25: getfield      #40                 // Field com/leaky/config/CommonConfiguration.autoremovethreshold:I
+      28: if_icmple     184
+      31: aload_0
+      32: getfield      #16                 // Field storage:Lnet/minecraft/util/ClassInstanceMultiMap;
+      35: ldc           #26                 // class net/minecraft/world/entity/item/ItemEntity
+      37: invokevirtual #44                 // Method net/minecraft/util/ClassInstanceMultiMap.find:(Ljava/lang/Class;)Ljava/util/Collection;
+      40: astore        4
+      42: aload         4
+      44: invokeinterface #48,  1           // InterfaceMethod java/util/Collection.size:()I
+      49: getstatic     #28                 // Field com/leaky/config/CommonConfiguration.config:Lcom/cupboard/config/CupboardConfig;
+      52: invokevirtual #34                 // Method com/cupboard/config/CupboardConfig.getCommonConfig:()Lcom/cupboard/config/ICommonConfig;
+      55: checkcast     #29                 // class com/leaky/config/CommonConfiguration
+      58: getfield      #40                 // Field com/leaky/config/CommonConfiguration.autoremovethreshold:I
+      61: if_icmple     184
+      64: aload_1
+      65: checkcast     #26                 // class net/minecraft/world/entity/item/ItemEntity
+      68: invokevirtual #51                 // Method net/minecraft/world/entity/item/ItemEntity.level:()Lnet/minecraft/world/level/Level;
+      71: getfield      #55                 // Field net/minecraft/world/level/Level.isClientSide:Z
+      74: ifeq          134
+      77: getstatic     #28                 // Field com/leaky/config/CommonConfiguration.config:Lcom/cupboard/config/CupboardConfig;
+      80: invokevirtual #34                 // Method com/cupboard/config/CupboardConfig.getCommonConfig:()Lcom/cupboard/config/ICommonConfig;
+      83: checkcast     #29                 // class com/leaky/config/CommonConfiguration
+      86: getfield      #61                 // Field com/leaky/config/CommonConfiguration.highlightitems:Z
+      89: ifeq          134
+      92: aload         4
+      94: invokeinterface #64,  1           // InterfaceMethod java/util/Collection.iterator:()Ljava/util/Iterator;
+      99: astore        5
+     101: aload         5
+     103: invokeinterface #68,  1           // InterfaceMethod java/util/Iterator.hasNext:()Z
+     108: ifeq          134
+     111: aload         5
+     113: invokeinterface #74,  1           // InterfaceMethod java/util/Iterator.next:()Ljava/lang/Object;
+     118: checkcast     #26                 // class net/minecraft/world/entity/item/ItemEntity
+     121: astore        6
+     123: aload         6
+     125: bipush        6
+     127: iconst_1
+     128: invokevirtual #78                 // Method net/minecraft/world/entity/item/ItemEntity.setSharedFlag:(IZ)V
+     131: goto          101
+     134: aload_1
+     135: checkcast     #26                 // class net/minecraft/world/entity/item/ItemEntity
+     138: invokevirtual #51                 // Method net/minecraft/world/entity/item/ItemEntity.level:()Lnet/minecraft/world/level/Level;
+     141: astore        6
+     143: aload         6
+     145: instanceof    #82                 // class com/leaky/storage/ServerLevelClusterManager
+     148: ifeq          184
+     151: aload         6
+     153: checkcast     #82                 // class com/leaky/storage/ServerLevelClusterManager
+     156: astore        5
+     158: aload         5
+     160: invokeinterface #84,  1           // InterfaceMethod com/leaky/storage/ServerLevelClusterManager.leaky$getItemClusterManager:()Lcom/leaky/storage/ItemClusterManager;
+     165: aload_1
+     166: checkcast     #26                 // class net/minecraft/world/entity/item/ItemEntity
+     169: new           #88                 // class java/util/ArrayList
+     172: dup
+     173: aload         4
+     175: invokespecial #90                 // Method java/util/ArrayList."<init>":(Ljava/util/Collection;)V
+     178: getstatic     #93                 // Field com/leaky/storage/DetectionSource.ENTITY_SECTION:Lcom/leaky/storage/DetectionSource;
+     181: invokevirtual #99                 // Method com/leaky/storage/ItemClusterManager.detectedItemLeak:(Lnet/minecraft/world/entity/item/ItemEntity;Ljava/util/List;Lcom/leaky/storage/DetectionSource;)V
+     184: aload_1
+     185: instanceof    #26                 // class net/minecraft/world/entity/item/ItemEntity
+     188: ifne          362
+     191: iload_3
+     192: getstatic     #28                 // Field com/leaky/config/CommonConfiguration.config:Lcom/cupboard/config/CupboardConfig;
+     195: invokevirtual #34                 // Method com/cupboard/config/CupboardConfig.getCommonConfig:()Lcom/cupboard/config/ICommonConfig;
+     198: checkcast     #29                 // class com/leaky/config/CommonConfiguration
+     201: getfield      #105                // Field com/leaky/config/CommonConfiguration.entitySectionLogThreshold:I
+     204: if_icmple     362
+     207: aload_1
+     208: instanceof    #108                // class net/minecraft/world/entity/Entity
+     211: ifeq          362
+     214: aload_1
+     215: checkcast     #108                // class net/minecraft/world/entity/Entity
+     218: astore        4
+     220: aload         4
+     222: invokevirtual #110                // Method net/minecraft/world/entity/Entity.level:()Lnet/minecraft/world/level/Level;
+     225: ifnull        362
+     228: aload         4
+     230: invokevirtual #110                // Method net/minecraft/world/entity/Entity.level:()Lnet/minecraft/world/level/Level;
+     233: invokevirtual #111                // Method net/minecraft/world/level/Level.getGameTime:()J
+     236: aload_0
+     237: getfield      #7                  // Field lastReportTime:J
+     240: lsub
+     241: ldc2_w        #115                // long 6000l
+     244: lcmp
+     245: ifle          362
+     248: aload_0
+     249: getfield      #16                 // Field storage:Lnet/minecraft/util/ClassInstanceMultiMap;
+     252: ldc           #26                 // class net/minecraft/world/entity/item/ItemEntity
+     254: invokevirtual #44                 // Method net/minecraft/util/ClassInstanceMultiMap.find:(Ljava/lang/Class;)Ljava/util/Collection;
+     257: astore        5
+     259: iload_3
+     260: aload         5
+     262: invokeinterface #48,  1           // InterfaceMethod java/util/Collection.size:()I
+     267: isub
+     268: istore        6
+     270: iload         6
+     272: getstatic     #28                 // Field com/leaky/config/CommonConfiguration.config:Lcom/cupboard/config/CupboardConfig;
+     275: invokevirtual #34                 // Method com/cupboard/config/CupboardConfig.getCommonConfig:()Lcom/cupboard/config/ICommonConfig;
+     278: checkcast     #29                 // class com/leaky/config/CommonConfiguration
+     281: getfield      #105                // Field com/leaky/config/CommonConfiguration.entitySectionLogThreshold:I
+     284: if_icmple     362
+     287: iload         6
+     289: i2l
+     290: aload_0
+     291: getfield      #13                 // Field lastReportAmount:J
+     294: ldc2_w        #117                // long 10l
+     297: ladd
+     298: lcmp
+     299: ifle          362
+     302: aload_0
+     303: iload         6
+     305: i2l
+     306: putfield      #13                 // Field lastReportAmount:J
+     309: aload_0
+     310: aload         4
+     312: invokevirtual #110                // Method net/minecraft/world/entity/Entity.level:()Lnet/minecraft/world/level/Level;
+     315: invokevirtual #111                // Method net/minecraft/world/level/Level.getGameTime:()J
+     318: putfield      #7                  // Field lastReportTime:J
+     321: getstatic     #119                // Field com/leaky/Leaky.LOGGER:Lorg/apache/logging/log4j/Logger;
+     324: iload         6
+     326: aload         4
+     328: invokevirtual #110                // Method net/minecraft/world/entity/Entity.level:()Lnet/minecraft/world/level/Level;
+     331: invokevirtual #125                // Method net/minecraft/world/level/Level.dimension:()Lnet/minecraft/resources/ResourceKey;
+     334: invokevirtual #129                // Method net/minecraft/resources/ResourceKey.toString:()Ljava/lang/String;
+     337: aload         4
+     339: invokevirtual #135                // Method net/minecraft/world/entity/Entity.blockPosition:()Lnet/minecraft/core/BlockPos;
+     342: invokestatic  #139                // Method java/lang/String.valueOf:(Ljava/lang/Object;)Ljava/lang/String;
+     345: invokedynamic #145,  0            // InvokeDynamic #0:makeConcatWithConstants:(ILjava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+     350: new           #149                // class java/lang/Exception
+     353: dup
+     354: invokespecial #151                // Method java/lang/Exception."<init>":()V
+     357: invokeinterface #152,  3          // InterfaceMethod org/apache/logging/log4j/Logger.warn:(Ljava/lang/String;Ljava/lang/Throwable;)V
+     362: return
+}

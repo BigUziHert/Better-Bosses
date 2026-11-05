@@ -1,0 +1,2360 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T21:24:41.7056540Z",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "sourceInputs": [
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_cataclysm-attacks.json",
+      "sha256": "DD69EB4CE041D43F8852B8E3AF80E990FCE37A29392D87FE4550E33049EA6B53",
+      "helperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_cataclysm.json",
+      "sha256": "A0A2E7F63B92366AC9BBC0B3EC67B2ED59FD2AEC77661B1E24EEB68F9094030A",
+      "helperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_twilight-attacks.json",
+      "sha256": "882D0298CE225B323DE6E06886086D4B38D714C33781FB36ABE916AB64101293",
+      "helperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_twilight.json",
+      "sha256": "70A387F51794D121119893BF987D1139309F3C6C89E030EB765CE395BD3E8AF4",
+      "helperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "path": "tests/evidence/1.2.1-dragon-death-transition-2026-11-05T12-52-08Z/dragon_death_transition.json",
+      "sha256": "C77B5DD1BB46E27F7835A56B4ECA8F6A7BF5222030DC739F54150A40B19BA668",
+      "helperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7"
+    },
+    {
+      "path": "tests/reports/victory-validation/unfinished-leviathan/native-observations.json",
+      "sha256": "A16F6066730379E2C7940EAABB574DE17418D223327B0054ACEC47C4B8D03068"
+    },
+    {
+      "path": "tests/reports/victory-validation/hydra-fire-tag-evidence.json",
+      "sha256": "370C84DE0CDE72E66B2DE09EF5ECB3036125D4B2B97ADC53CE35093A7A527CE7"
+    },
+    {
+      "path": "tests/reports/victory-validation/ur-ghast-fire-tag-evidence.json",
+      "sha256": "F9FD75B97461416EC17E656FD849129FB6F46A137D8A5571030ACC45014E4AF4"
+    }
+  ],
+  "candidateCount": 8,
+  "candidates": [
+    {
+      "boss": "cataclysm:maledictus",
+      "candidate": "state/getAttackState=12",
+      "coverage": "staged_native_charge_goal_and_aiStep",
+      "executedRecords": [
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=full_health_rage0, healthFraction=1.0, value=0, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "full_health_rage0/state12_rush_without_backstep"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "full_health_rage0/state12_rush_without_backstep/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 6.423757553100586,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 13.576242446899414,
+              "originalIncomingHp": 22.950000762939453,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 7.368951797485352,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 12.631048202514648,
+              "originalIncomingHp": 27.239999771118164,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 8.312590599060059,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 11.687409400939941,
+              "originalIncomingHp": 31.530000686645508,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 9.255632400512695,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 10.744367599487305,
+              "originalIncomingHp": 35.81999969482422,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 10.198583602905273,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 9.801416397094727,
+              "originalIncomingHp": 40.11000061035156,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "full_health_rage0/state12_rush_without_backstep"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=half_health_rage0, healthFraction=0.4, value=0, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "half_health_rage0/state12_rush_without_backstep"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "half_health_rage0/state12_rush_without_backstep/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 6.423757553100586,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 13.576242446899414,
+              "originalIncomingHp": 22.950000762939453,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 7.368951797485352,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 12.631048202514648,
+              "originalIncomingHp": 27.239999771118164,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 8.312590599060059,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 11.687409400939941,
+              "originalIncomingHp": 31.530000686645508,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 9.255632400512695,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 10.744367599487305,
+              "originalIncomingHp": 35.81999969482422,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 10.198583602905273,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 9.801416397094727,
+              "originalIncomingHp": 40.11000061035156,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "half_health_rage0/state12_rush_without_backstep"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=quarter_health_rage5, healthFraction=0.2, value=5, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "quarter_health_rage5/state12_rush_without_backstep"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "quarter_health_rage5/state12_rush_without_backstep/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.141714096069336,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.858285903930664,
+              "originalIncomingHp": 44.400001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "quarter_health_rage5/state12_rush_without_backstep"
+        }
+      ],
+      "acceptedIndependentContacts": 30,
+      "maximumSingleContactHp": 11.141714096069336,
+      "scope": "Explicit numbered state/frame and phase/rage context. Native MaledictusChargeState callbacks and Rushattack/aiStep ran. Player reset between frames. Random selection,path and fullcombo remain separate.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "cataclysm:maledictus",
+      "candidate": "state/getAttackState=15",
+      "coverage": "staged_native_charge_goal_and_aiStep",
+      "executedRecords": [
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=full_health_rage0, healthFraction=1.0, value=0, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "full_health_rage0/state15_dash2"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "full_health_rage0/state15_dash2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 7.243770599365234,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 12.756229400634766,
+              "originalIncomingHp": 24.900001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 8.336210250854492,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 11.663789749145508,
+              "originalIncomingHp": 29.580001831054688,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 9.428342819213867,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 10.571657180786133,
+              "originalIncomingHp": 34.26000213623047,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 10.521132469177246,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 9.478867530822754,
+              "originalIncomingHp": 38.94000244140625,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.615018844604492,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.384981155395508,
+              "originalIncomingHp": 43.619998931884766,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "full_health_rage0/state15_dash2"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=half_health_rage0, healthFraction=0.4, value=0, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "half_health_rage0/state15_dash2"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "half_health_rage0/state15_dash2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 7.243770599365234,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 12.756229400634766,
+              "originalIncomingHp": 24.900001525878906,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 8.336210250854492,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 11.663789749145508,
+              "originalIncomingHp": 29.580001831054688,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 9.428342819213867,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 10.571657180786133,
+              "originalIncomingHp": 34.26000213623047,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 10.521132469177246,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 9.478867530822754,
+              "originalIncomingHp": 38.94000244140625,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 11.615018844604492,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 8.384981155395508,
+              "originalIncomingHp": 43.619998931884766,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "half_health_rage0/state15_dash2"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "Native goal start/tick plus aiStep; frames 0..55 inclusive; pose front 2.0 blocks; phase staged: Context[label=quarter_health_rage5, healthFraction=0.2, value=5, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity$MaledictusChargeState]",
+          "status": "setup",
+          "move": "quarter_health_rage5/state15_dash2"
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "move": "quarter_health_rage5/state15_dash2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 10,
+          "balanceProfiles": {
+            "maledictus.mace_rage": 10
+          },
+          "hits": [
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 12.71020221710205,
+              "type": "cataclysm:maledictio",
+              "directType": "cataclysm:maledictus",
+              "ownerType": "cataclysm:maledictus",
+              "beforeHp": 20.0,
+              "afterHp": 7.289797782897949,
+              "originalIncomingHp": 48.30000305175781,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.Rushattack",
+                "com.github.L_Ender.cataclysm.entity.InternalAnimationMonster.IABossMonsters.Maledictus.Maledictus_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:maledictus",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "quarter_health_rage5/state15_dash2"
+        }
+      ],
+      "acceptedIndependentContacts": 30,
+      "maximumSingleContactHp": 12.71020221710205,
+      "scope": "Explicit numbered state/frame and phase/rage context. Native MaledictusChargeState callbacks and Rushattack/aiStep ran. Player reset between frames. Random selection,path and fullcombo remain separate.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "twilightforest:knight_phantom",
+      "candidate": "state/getCurrentFormation=CHARGE_MINUSZ",
+      "coverage": "native_formation_setter_getter_duration_plus_separate_native_weapon_damage",
+      "executedRecords": [
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 16.0; hearts=2.0; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "sword_formation_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "sword_formation_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.ordinary": 1
+          },
+          "hits": [
+            {
+              "damageHp": 4.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 16.0,
+              "originalIncomingHp": 10.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 13.0; hearts=3.5; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "sword_charge_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "sword_charge_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 13.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.charge": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 21.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 16.0; hearts=2.0; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "axe_formation_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "axe_formation_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.ordinary": 1
+          },
+          "hits": [
+            {
+              "damageHp": 4.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 16.0,
+              "originalIncomingHp": 15.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 13.0; hearts=3.5; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "axe_charge_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "axe_charge_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 13.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.charge": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 25.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 16.0; hearts=2.0; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "pickaxe_formation_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "pickaxe_formation_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.ordinary": 1
+          },
+          "hits": [
+            {
+              "damageHp": 4.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 16.0,
+              "originalIncomingHp": 7.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 13.0; hearts=3.5; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "pickaxe_charge_melee"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "pickaxe_charge_melee",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 13.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.charge": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "twilightforest:haunt",
+              "directType": "twilightforest:knight_phantom",
+              "ownerType": "twilightforest:knight_phantom",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 18.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.util.entities.EntityUtil.properlyApplyCustomDamageSource",
+                "twilightforest.entity.boss.KnightPhantom.doHurtTarget"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 16.0; hearts=2.0; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "thrown_axe"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "thrown_axe",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.ordinary": 1
+          },
+          "hits": [
+            {
+              "damageHp": 4.0,
+              "type": "twilightforest:thrown_axe",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 20.0,
+              "afterHp": 16.0,
+              "originalIncomingHp": 6.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.projectile.ThrownWep.onHitEntity"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Actual health20 -> 16.0; hearts=2.0; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "eight_pick_volley"
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "move": "eight_pick_volley",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "knight_phantom.ordinary": 1
+          },
+          "hits": [
+            {
+              "damageHp": 4.0,
+              "type": "twilightforest:thrown_pickaxe",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 20.0,
+              "afterHp": 16.0,
+              "originalIncomingHp": 3.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.projectile.ThrownWep.onHitEntity"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:knight_phantom",
+          "detail": "Native formation setter; charging=false; duration=180",
+          "status": "mechanic",
+          "move": "CHARGE_MINUSZ"
+        }
+      ],
+      "assertions": [
+        {
+          "phase": "exhaustive_twilight",
+          "test": "exhaustive_tf_formation_CHARGE_MINUSZ",
+          "entity": "twilightforest:knight_phantom",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        }
+      ],
+      "sourceQualification": "switchToFormation sets charging only for ATTACK_PLAYER_START/ATTACK_PLAYER_ATTACK. CHARGE_MINUSZ calls movement destination getMoveAcrossPosition(false,false),duration180,chargingfalse. No unique HP/damage formula. Actual full MINUSZ path was not exercised by this setter fixture.",
+      "numericalNativeCallbackGapRemaining": false,
+      "movementPathOrSelectorGapRemaining": true,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "cataclysm:the_leviathan",
+      "candidate": "state/animation=LEVIATHAN_STUN",
+      "coverage": "staged_native_stun_goal_and_aiStep_plus_actual_unfinished_counter_transition",
+      "executedRecords": [
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "Native goal start/tick plus aiStep; frames 0..90 inclusive; pose front 2.0 blocks; phase staged: Context[label=normal, healthFraction=1.0, value=0, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanStunGoal]",
+          "status": "setup",
+          "move": "normal/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "move": "normal/LEVIATHAN_STUN/native_frames",
+          "status": "no_damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 0,
+          "balanceProfiles": {},
+          "hits": []
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "No direct contact damage in this pose. Emitted effects are tested separately; a movement/landing/grab prerequisite may still be missing.",
+          "status": "uncovered",
+          "move": "normal/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "{}",
+          "status": "emissions",
+          "move": "normal/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "Native goal start/tick plus aiStep; frames 0..90 inclusive; pose front 2.0 blocks; phase staged: Context[label=meltdown, healthFraction=0.4, value=1, alternate=false]. Independent reference player reset between frames. Matching goal classes: [com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanStunGoal]",
+          "status": "setup",
+          "move": "meltdown/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "move": "meltdown/LEVIATHAN_STUN/native_frames",
+          "status": "no_damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 0,
+          "balanceProfiles": {},
+          "hits": []
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "No direct contact damage in this pose. Emitted effects are tested separately; a movement/landing/grab prerequisite may still be missing.",
+          "status": "uncovered",
+          "move": "meltdown/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "{cataclysm:abyss_orb=12}",
+          "status": "emissions",
+          "move": "meltdown/LEVIATHAN_STUN"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "detail": "Native emitted projectile onHit(EntityHitResult); owner retains emission animation/state. Native direct damage/explosion ordering and hurt cooldown retained within this impact; no trajectory test.",
+          "status": "setup",
+          "move": "meltdown/LEVIATHAN_STUN/emitted_cataclysm:abyss_orb"
+        },
+        {
+          "boss": "cataclysm:the_leviathan",
+          "move": "meltdown/LEVIATHAN_STUN/emitted_cataclysm:abyss_orb/onHit",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.041399,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "leviathan.bite.cap": 1,
+            "leviathan.orb": 1
+          },
+          "hits": [
+            {
+              "damageHp": 3.0,
+              "type": "minecraft:mob_projectile",
+              "directType": "cataclysm:abyss_orb",
+              "ownerType": "cataclysm:the_leviathan",
+              "beforeHp": 20.0,
+              "afterHp": 17.0,
+              "originalIncomingHp": 6.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.Abyss_Orb_Entity.onHitEntity",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.Abyss_Orb_Entity.onHit"
+              ]
+            },
+            {
+              "damageHp": 0.9586002826690674,
+              "type": "minecraft:player_explosion",
+              "directType": "cataclysm:the_leviathan",
+              "ownerType": "cataclysm:the_leviathan",
+              "beforeHp": 17.0,
+              "afterHp": 16.041399002075195,
+              "originalIncomingHp": 13.994999885559082,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.Abyss_Orb_Entity.onHitEntity",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.Abyss_Orb_Entity.onHit"
+              ]
+            }
+          ]
+        }
+      ],
+      "actualNaturalCounterHit": {
+        "event": "damage_post",
+        "sequence": 3466,
+        "tick": 5426,
+        "utc": "2026-11-05T13:31:57.424621800Z",
+        "boss": "cataclysm:the_leviathan",
+        "victim": {
+          "type": "cataclysm:the_leviathan",
+          "id": 17541
+        },
+        "damageType": "minecraft:player_attack",
+        "direct": {
+          "type": "minecraft:player",
+          "id": 28,
+          "role": "fixture_player"
+        },
+        "owner": {
+          "type": "minecraft:player",
+          "id": 28,
+          "role": "fixture_player"
+        },
+        "armor": 10.0,
+        "toughness": 0.0,
+        "blocking": false,
+        "hurtCooldown": 20,
+        "bossContext": [
+          {
+            "state": {
+              "getMeltDown": true,
+              "isMeltDown": false,
+              "animation": "LEVIATHAN_RUSH",
+              "runningGoals": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanRushAttackGoal"
+              ]
+            },
+            "entity": {
+              "type": "cataclysm:the_leviathan",
+              "id": 17541
+            },
+            "animationFrame": 45
+          }
+        ],
+        "attemptId": 725,
+        "hpBefore": 782.0194091796875,
+        "absorptionBefore": 0.0,
+        "originalHp": 11.0,
+        "amountAtObserver": 9.019999504089355,
+        "nativeCallers": [
+          "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.LLibrary_Boss_Monster.hurt",
+          "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity.hurt",
+          "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity.attackEntityFromPart",
+          "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Part.hurt"
+        ],
+        "hpAfter": 772.9994,
+        "absorptionAfter": 0.0,
+        "damageHp": 9.0199995,
+        "blockedHp": 0.0,
+        "shieldDurabilityDamage": 0.0,
+        "reductionsHp": {
+          "INVULNERABILITY": 0.0,
+          "ARMOR": 1.9800005,
+          "ENCHANTMENTS": 0.0,
+          "MOB_EFFECTS": 0.0,
+          "ABSORPTION": 0.0,
+          "INNATE_RESISTANCE": 0.0
+        },
+        "result": "hp_damage"
+      },
+      "actualNaturalStun": {
+        "event": "state_transition",
+        "sequence": 3467,
+        "tick": 5427,
+        "utc": "2026-11-05T13:31:57.458690300Z",
+        "boss": "cataclysm:the_leviathan",
+        "state": {
+          "getMeltDown": true,
+          "isMeltDown": false,
+          "animation": "LEVIATHAN_STUN",
+          "runningGoals": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanStunGoal"
+          ]
+        },
+        "subject": "cataclysm:the_leviathan#17541",
+        "entity": {
+          "type": "cataclysm:the_leviathan",
+          "id": 17541
+        },
+        "animationFrame": 1
+      },
+      "actualRun": "2026-11-05T13-04-36.346328200Z",
+      "actualRuntime": {
+        "production": "53C2399B",
+        "helper": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+        "pilot": "3556AA8C833F0EB92FA81825573FF4E9039014602FCA65124F847D1D87C0D0F0"
+      },
+      "scope": "Real playerhit dealt9.0199995HP toLeviathan duringRUSHframe45,then nativeSTUN. Later serverstall left no finished outcome. Controlledstun0..90 has no directbody damage and meltdown emits12abyssorbs,one representative nativeimpacttested. No new victory credit.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "minecraft:ender_dragon",
+      "candidate": "state/dragonPhaseId=9",
+      "coverage": "separate_native_lethal_head_hit_and_dying_phase_supplement",
+      "assertions": [
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_initial_max_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1100.0,
+          "actual": 1100.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_initial_current_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1100.0,
+          "actual": 1100.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_prerequisite_holding",
+          "entity": "minecraft:ender_dragon",
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_prerequisite_not_sitting",
+          "entity": "minecraft:ender_dragon",
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_prerequisite_health",
+          "entity": "minecraft:ender_dragon",
+          "expected": 10.0,
+          "actual": 10.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_lethal_head_hit_accepted",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_lethal_hit_selects_dying",
+          "entity": "minecraft:ender_dragon",
+          "expected": 9.0,
+          "actual": 9.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_lethal_hit_retains_one_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_target_x",
+          "entity": "minecraft:ender_dragon",
+          "expected": 0.5,
+          "actual": 0.5,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_target_y",
+          "entity": "minecraft:ender_dragon",
+          "expected": -59.0,
+          "actual": -59.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_target_z",
+          "entity": "minecraft:ender_dragon",
+          "expected": 0.5,
+          "actual": 0.5,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_far_fixture_within_native_flight_bounds",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_far_one_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_fly_speed",
+          "entity": "minecraft:ender_dragon",
+          "expected": 3.0,
+          "actual": 3.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_repeated_far_one_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_arrival_zero_hp",
+          "entity": "minecraft:ender_dragon",
+          "expected": 0.0,
+          "actual": 0.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_arrival_dead_or_dying",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_phase_retained",
+          "entity": "minecraft:ender_dragon",
+          "expected": 9.0,
+          "actual": 9.0,
+          "passed": true
+        },
+        {
+          "phase": "dragon_death_transition",
+          "test": "controlled_dragon_native_dying_max_hp_retained",
+          "entity": "minecraft:ender_dragon",
+          "expected": 1100.0,
+          "actual": 1100.0,
+          "passed": true
+        }
+      ],
+      "passedAssertions": 19,
+      "helperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+      "scope": "Holding/priorHP10/farposition staged. Native headhurt selectsDYING9/HP1. Nativephasefar ticks retain1,position-only arrival followedbynativephase ticksets0. No directDYINGsetter. Autonomousflight and naturalvictory notclaimed bysupplement.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "twilightforest:hydra",
+      "candidate": "balance_profile/hydra.flame",
+      "coverage": "native_head_executeAttacks_with_primary_secondary_and_burn_followup",
+      "executedRecords": [
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 18.5; hearts=0.75; fireTicks=60; effects=[]",
+          "status": "native_attack",
+          "move": "primary_flame"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "primary_flame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 18.5,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "hydra.flame": 1
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "twilightforest:hydra_fire",
+              "directType": "twilightforest:hydra",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 28.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraHeadContainer.executeAttacks"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 18.5; hearts=0.75; fireTicks=60; effects=[]",
+          "status": "native_attack",
+          "move": "secondary_flame"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "secondary_flame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 18.5,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "hydra.flame": 1
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "twilightforest:hydra_fire",
+              "directType": "twilightforest:hydra",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 28.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraHeadContainer.executeAttacks"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Native flame HP=18.5, after100 real ServerPlayer lifecycle ticks=16.5; no further boss contact.",
+          "status": "mechanic",
+          "move": "flame_full_burn"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 16.5; hearts=1.75; fireTicks=-20; effects=[]",
+          "status": "native_attack",
+          "move": "flame_hit_and_full_burn_followup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "flame_hit_and_full_burn_followup",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 16.5,
+          "maxHp": 20.0,
+          "incomingEvents": 4,
+          "balanceProfiles": {
+            "hydra.flame": 1
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "twilightforest:hydra_fire",
+              "directType": "twilightforest:hydra",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 28.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraHeadContainer.executeAttacks"
+              ]
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 18.5,
+              "afterHp": 17.5,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 17.5,
+              "afterHp": 16.5,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            }
+          ]
+        }
+      ],
+      "immunity": "Installed hydra_fire damage is fire-tagged. EGA FireResistance may reject before incoming hooks. Controlled non-resistant native rays accepted1.5HP each. Native burn follows separately.",
+      "scope": "Head FLAMING state and ray alignment staged. Native raytarget/execution observed. Damage-family raw gap in EGA completed fight remains visible.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "twilightforest:hydra",
+      "candidate": "balance_profile/hydra.mortar",
+      "coverage": "native_emission_and_entity_block_fuse_detonation_callbacks",
+      "executedRecords": [
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 10.514954; hearts=4.742523193359375; fireTicks=100; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_contact_and_burn"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_contact_and_burn",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 10.514954,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 2
+          },
+          "hits": [
+            {
+              "damageHp": 0.849600076675415,
+              "type": "minecraft:player_explosion",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 19.150400161743164,
+              "originalIncomingHp": 3.6000001430511475,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            },
+            {
+              "damageHp": 8.635446548461914,
+              "type": "twilightforest:hydra_mortar",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 19.150400161743164,
+              "afterHp": 10.51495361328125,
+              "originalIncomingHp": 27.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 9.000001; hearts=5.499999523162842; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_megablast"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_megablast",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 9.000001,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 2
+          },
+          "hits": [
+            {
+              "damageHp": 10.999999046325684,
+              "type": "minecraft:player_explosion",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 9.000000953674316,
+              "originalIncomingHp": 85.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 9.000001; hearts=5.499999523162842; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_megablast_unobstructed"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_megablast_unobstructed",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 9.000001,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 2
+          },
+          "hits": [
+            {
+              "damageHp": 10.999999046325684,
+              "type": "minecraft:player_explosion",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 9.000000953674316,
+              "originalIncomingHp": 85.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 6.5149536; hearts=6.742523193359375; fireTicks=-20; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_hit_and_full_burn_followup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_hit_and_full_burn_followup",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 6.5149536,
+          "maxHp": 20.0,
+          "incomingEvents": 7,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 2
+          },
+          "hits": [
+            {
+              "damageHp": 0.849600076675415,
+              "type": "minecraft:player_explosion",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 19.150400161743164,
+              "originalIncomingHp": 3.6000001430511475,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            },
+            {
+              "damageHp": 8.635446548461914,
+              "type": "twilightforest:hydra_mortar",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 19.150400161743164,
+              "afterHp": 10.51495361328125,
+              "originalIncomingHp": 27.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitEntity"
+              ]
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 10.51495361328125,
+              "afterHp": 9.51495361328125,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 9.51495361328125,
+              "afterHp": 8.51495361328125,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 8.51495361328125,
+              "afterHp": 7.51495361328125,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            },
+            {
+              "damageHp": 1.0,
+              "type": "minecraft:on_fire",
+              "directType": "",
+              "ownerType": "",
+              "beforeHp": 7.51495361328125,
+              "afterHp": 6.51495361328125,
+              "originalIncomingHp": 1.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": []
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 10.514954; hearts=4.742523193359375; fireTicks=100; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_wall_impact"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_wall_impact",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 10.514954,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 2
+          },
+          "hits": [
+            {
+              "damageHp": 0.849600076675415,
+              "type": "minecraft:player_explosion",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 19.150400161743164,
+              "originalIncomingHp": 3.6000001430511475,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitBlock"
+              ]
+            },
+            {
+              "damageHp": 8.635446548461914,
+              "type": "twilightforest:hydra_mortar",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 19.150400161743164,
+              "afterHp": 10.51495361328125,
+              "originalIncomingHp": 27.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.onHitBlock"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Head LOS=true; native megaBlast=false",
+          "status": "mechanic",
+          "move": "native_mortar_setup"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "detail": "Actual health20 -> 9.000001; hearts=5.499999523162842; fireTicks=100; effects=[]",
+          "status": "native_attack",
+          "move": "mortar_ground_fuse"
+        },
+        {
+          "boss": "twilightforest:hydra",
+          "move": "mortar_ground_fuse",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 9.000001,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "hydra.mortar.cap": 1
+          },
+          "hits": [
+            {
+              "damageHp": 10.999999046325684,
+              "type": "twilightforest:hydra_mortar",
+              "directType": "twilightforest:hydra_mortar",
+              "ownerType": "twilightforest:hydra",
+              "beforeHp": 20.0,
+              "afterHp": 9.000000953674316,
+              "originalIncomingHp": 27.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.boss.HydraMortar.detonate",
+                "twilightforest.entity.boss.HydraMortar.tick"
+              ]
+            }
+          ]
+        }
+      ],
+      "immunity": "Hydra_mortar typed component is fire-tagged. Generic explosion remains damage-eligible under FireResistance,so immunity is not a blanket explanation for every possible blast. Controlledcases captureboth components with nativehurtcooldowns.",
+      "scope": "MORTAR_SHOOTING/ticksProgress10 staged,native executeAttacks emittedactualmortar. Native contact,wallimpact and tick/fuse paths used. Mega mode/fuse/geometry explicitly staged.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    },
+    {
+      "boss": "twilightforest:ur_ghast",
+      "candidate": "balance_profile/ur_ghast.fireball",
+      "coverage": "native_goal_volley_emission_and_projectile_entity_hit",
+      "executedRecords": [
+        {
+          "boss": "twilightforest:ur_ghast",
+          "detail": "Actual health20 -> 11.0; hearts=4.5; fireTicks=0; effects=[]",
+          "status": "native_attack",
+          "move": "normal_fireball_direct"
+        },
+        {
+          "boss": "twilightforest:ur_ghast",
+          "move": "normal_fireball_direct",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 11.0,
+          "maxHp": 20.0,
+          "incomingEvents": 2,
+          "balanceProfiles": {
+            "ur_ghast.explosion.cap": 1,
+            "ur_ghast.fireball": 1
+          },
+          "hits": [
+            {
+              "damageHp": 9.0,
+              "type": "minecraft:fireball",
+              "directType": "minecraft:fireball",
+              "ownerType": "twilightforest:ur_ghast",
+              "beforeHp": 20.0,
+              "afterHp": 11.0,
+              "originalIncomingHp": 24.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "twilightforest.entity.projectile.UrGhastFireball.onHitEntity"
+              ]
+            }
+          ]
+        }
+      ],
+      "immunity": "Vanilla minecraft:fireball is fire-tagged and FireResistance rejects its direct component before incominghooks. Genericexplosion is separate and remains eligible.",
+      "scope": "Native UrGhastAttackGoal.spitFireball emits3projectiles. One realprojectile is placed atvictim andnativeonHitEntity executes. Accepted9HP directhit matches4.5hearts. Trajectory/randomselection is outsidefixture.",
+      "numericalNativeCallbackGapRemaining": false,
+      "completedNaturalCandidateStillVisible": true
+    }
+  ],
+  "reviewConclusion": "Existing numerical/nativecallback evidence coversall8withscopequalifications. KnightMINUSZ retains an unexecuted fullmovementpath/randomselector observation,withno unique damageformula. No naturalcatalogue rows are erased and no additional victory is inferred.",
+  "existingIdleRerunCommands": [
+    "bbtest exhaustive cataclysm cataclysm:maledictus",
+    "bbtest exhaustive cataclysm cataclysm:the_leviathan",
+    "bbtest exhaustive twilight twilightforest:knight_phantom",
+    "bbtest exhaustive twilight twilightforest:hydra",
+    "bbtest exhaustive twilight twilightforest:ur_ghast",
+    "bbtest dragon_death_transition"
+  ],
+  "noRuntimeCommandsExecutedByThisAudit": true,
+  "noTestOrProductionImplementationChanged": true
+}

@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T21:44:27.1122662Z",
+  "runtime": {
+    "queue": "2026-11-05T21-31-58.436218300Z",
+    "boss": "bosses_of_mass_destruction:obsidilith",
+    "nativeTelemetryStartedUtc": "2026-11-05T21:33:20.576461500Z",
+    "completedUtc": "2026-11-05T21:40:12.755953900Z",
+    "status": "won",
+    "basis": "Parent full executed hashes received after completion. Native death,finishedrecord,runechanges,AnvilActionhits and407clientphysics samples independently reviewed.",
+    "completionQualification": "Nativewin8245ticks,20HP,all4netheriteintact,20food=20inventoryspent,0KO/revivals/errors/missing. All407samplesflyingfalse. Nativewaves4to0,4to0,3to0. FouractualAnvilActionimpactPostsdistinctfromdeathblast.",
+    "primaryEvidenceForBoss": true,
+    "supersedesMovementQualificationFrom": [
+      "2026-11-05T07-41-32.811446900Z",
+      "2026-11-05T08-09-09.863110600Z"
+    ],
+    "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+    "helperSha256": "6D53D34B272F8342769C36277251FD8E0F49C998CCADF9A9F87352F98512714B",
+    "pilotSourceSha256": "F82B14359DEB62960A03D09679BA1FE19DEE2299E530CFBF3DF32B0033BB5658",
+    "pilotCompiledArtifactSha256": "5229BF8E6E1D941DCB9B0F273D3CABA54A3EEE7200822BCB0ADBA83C5419AAB6",
+    "defenseSourceSha256": "C2C5788D0673B7F17E61C1B6F427CE667A7F5BDE621616405C687D29A93735F7",
+    "defenseCompiledArtifactSha256": "C3FB8C0E42DAADBEF96D73B31903A1B1FE541BD0349AAB878B75051E673BA8A7"
+  },
+  "sourceFiles": [
+    {
+      "path": "tests/results/full-fights/2026-11-05T21-31-58.436218300Z/01-bosses_of_mass_destruction_obsidilith-netherite_max.jsonl",
+      "sha256": "3932B143C1C8F76CF0E4E4A6853637EE0779E1EE0DCC0862472C991C2E3D366F"
+    },
+    {
+      "path": "tests/results/full-fights/2026-11-05T21-31-58.436218300Z/01-bosses_of_mass_destruction_obsidilith-netherite_max.telemetry.jsonl",
+      "sha256": "F162E6660042F3E4390FE367CE9014D9E6E60EA55A698AAB83C8B0C936B4A68B"
+    },
+    {
+      "path": "tests/results/full-fights/2026-11-05T21-31-58.436218300Z/01-bosses_of_mass_destruction_obsidilith-netherite_max.telemetry.coverage.json",
+      "sha256": "A7255E310EBD53C1FA284E56CA52589D7027C326B7906AD8F5F53213BD26C120"
+    }
+  ],
+  "flight": {
+    "attempt": "2026-11-05T21-31-58.436218300Z/01-bosses_of_mass_destruction_obsidilith-netherite_max",
+    "boss": "bosses_of_mass_destruction:obsidilith",
+    "startUtc": "2026-11-05T21:33:20.570954300Z",
+    "endUtc": "2026-11-05T21:40:12.755953900Z",
+    "firstNativeBossDeathUtc": "2026-11-05T21:40:11.799800700Z",
+    "samples": 407,
+    "missingPhysicsSamples": 0,
+    "flyingSamples": 0,
+    "nonPassengerFlyingSamples": 0,
+    "nonPassengerFlyingBeforeBossDeathAndNotKnockedSamples": 0,
+    "largestSampleGapSeconds": 1.999,
+    "firstClearSampleAfterLastFlagUtc": null,
+    "flaggedIntervals": [],
+    "assessment": "no_nonpassenger_flight_flag_observed"
+  },
+  "clientSnapshotSha256": "DA6AD257B84DDD83A14B376D4BC20D310555C5F8F1E4D0C74CBEA65E259F8274",
+  "firstClientSample": {
+    "grounded": true,
+    "mayFly": false,
+    "playerHp": 20,
+    "y": 65,
+    "passenger": false,
+    "utc": "2026-11-05T21:33:21.695758500Z",
+    "blockBelow": "minecraft:stone",
+    "bossHp": 1700,
+    "flying": false
+  },
+  "lastCombatClientSample": {
+    "flying": false,
+    "passenger": false,
+    "playerHp": 20,
+    "grounded": true,
+    "utc": "2026-11-05T21:40:11.706647900Z",
+    "mayFly": false,
+    "bossHp": 1.1581521
+  },
+  "nativeRuneTransitions": [
+    {
+      "tick": 0,
+      "utc": "2026-11-05T21:33:20.583478900Z",
+      "activeRunes": 0,
+      "shielded": false
+    },
+    {
+      "tick": 1730,
+      "utc": "2026-11-05T21:34:46.943576800Z",
+      "activeRunes": 4,
+      "shielded": true
+    },
+    {
+      "tick": 1822,
+      "utc": "2026-11-05T21:34:51.544035300Z",
+      "activeRunes": 3,
+      "shielded": true
+    },
+    {
+      "tick": 2086,
+      "utc": "2026-11-05T21:35:04.743122600Z",
+      "activeRunes": 2,
+      "shielded": true
+    },
+    {
+      "tick": 2290,
+      "utc": "2026-11-05T21:35:14.945175100Z",
+      "activeRunes": 1,
+      "shielded": true
+    },
+    {
+      "tick": 2402,
+      "utc": "2026-11-05T21:35:20.543941Z",
+      "activeRunes": 0,
+      "shielded": false
+    },
+    {
+      "tick": 3810,
+      "utc": "2026-11-05T21:36:30.944557600Z",
+      "activeRunes": 4,
+      "shielded": true
+    },
+    {
+      "tick": 3903,
+      "utc": "2026-11-05T21:36:35.595008600Z",
+      "activeRunes": 3,
+      "shielded": true
+    },
+    {
+      "tick": 3960,
+      "utc": "2026-11-05T21:36:38.446200800Z",
+      "activeRunes": 2,
+      "shielded": true
+    },
+    {
+      "tick": 4123,
+      "utc": "2026-11-05T21:36:46.596844700Z",
+      "activeRunes": 1,
+      "shielded": true
+    },
+    {
+      "tick": 4278,
+      "utc": "2026-11-05T21:36:54.345241500Z",
+      "activeRunes": 0,
+      "shielded": false
+    },
+    {
+      "tick": 6170,
+      "utc": "2026-11-05T21:38:28.949197700Z",
+      "activeRunes": 3,
+      "shielded": true
+    },
+    {
+      "tick": 6264,
+      "utc": "2026-11-05T21:38:33.649871800Z",
+      "activeRunes": 2,
+      "shielded": true
+    },
+    {
+      "tick": 6334,
+      "utc": "2026-11-05T21:38:37.148682Z",
+      "activeRunes": 1,
+      "shielded": true
+    },
+    {
+      "tick": 6602,
+      "utc": "2026-11-05T21:38:50.550326200Z",
+      "activeRunes": 0,
+      "shielded": false
+    }
+  ],
+  "nativeAnvilImpactPosts": [
+    {
+      "utc": "2026-11-05T21:34:56.794809600Z",
+      "tick": 1927,
+      "victimRole": "fixture_player",
+      "damageHp": 0.0,
+      "absorptionHp": 3.8016005,
+      "nativeCallers": [
+        "com.cerbon.bosses_of_mass_destruction.entity.custom.obsidilith.AnvilAction.lambda$performAttack$5"
+      ]
+    },
+    {
+      "utc": "2026-11-05T21:35:08.795163100Z",
+      "tick": 2167,
+      "victimRole": "fixture_player",
+      "damageHp": 0.0,
+      "absorptionHp": 0.25517154,
+      "nativeCallers": [
+        "com.cerbon.bosses_of_mass_destruction.entity.custom.obsidilith.AnvilAction.lambda$performAttack$5"
+      ]
+    },
+    {
+      "utc": "2026-11-05T21:36:40.797813500Z",
+      "tick": 4007,
+      "victimRole": "fixture_player",
+      "damageHp": 0.0,
+      "absorptionHp": 0.25533083,
+      "nativeCallers": [
+        "com.cerbon.bosses_of_mass_destruction.entity.custom.obsidilith.AnvilAction.lambda$performAttack$5"
+      ]
+    },
+    {
+      "utc": "2026-11-05T21:36:58.798572900Z",
+      "tick": 4367,
+      "victimRole": "fixture_player",
+      "damageHp": 0.0,
+      "absorptionHp": 3.8016005,
+      "nativeCallers": [
+        "com.cerbon.bosses_of_mass_destruction.entity.custom.obsidilith.AnvilAction.lambda$performAttack$5"
+      ]
+    }
+  ],
+  "scope": "PositiveY nativevictory with3shieldwaves andactualAnvilActionimpacts.407client sampleszero flightflags,maxgap1.999s. Sampling doesnotexcludeunsampledtransients. EarliernegativeY/startupflight attemptsremainhistorical."
+}

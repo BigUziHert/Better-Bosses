@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "run": "2026-11-05T13-55-05.227990100Z",
+  "boss": "cataclysm:ignis",
+  "classification": "harness_interrupted",
+  "nativeVictory": false,
+  "cleanFinishedRecord": false,
+  "lastObservedTick": 16640,
+  "failureUtc": "2026-11-05T14:09:32Z",
+  "failure": "FullFightCases.emit propagated a Windows FileSystemException while appending the primary encounter JSONL, causing a server ticking-entity crash.",
+  "readerQualification": "A concurrent audit used System.IO.File.ReadLines on the active primary log. Its default share mode can deny writes and is the likely trigger; the exception itself does not identify the owning reader handle. This is a test-harness I/O interruption, not a native boss defeat or a proved Sable movement hang.",
+  "preservedMeasurements": "Native shield durability1 and phase0 were observed. Accepted native damage observations remain observations; there is no complete final inventory/outcome accounting.",
+  "mitigation": "All owned live tactic readers now use FileShare.ReadWrite|Delete. The parent assigned separate non-throwing queued test-log writes to another agent. No production boss behavior or source survival-server files changed.",
+  "evidence": [
+    {
+      "path": "audit/ignis-io-crash-2026-11-05/crash-report.txt",
+      "sha256": "623EFCE5ADF1C61E78DEDEA57B664B0E390193FFFD845B92AE748EA7162D7589"
+    },
+    {
+      "path": "audit/ignis-io-crash-2026-11-05/server.log",
+      "sha256": "798AE278EED28C8EBB712490A205B082D727B3DBA64FF9BA6BAD6E6959D9E164"
+    }
+  ],
+  "sourceEvidenceSha256": "83C57C0E626660BC91A39ABA1673995AB422659E513722DD36BF0FAF679E5939",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "helperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+  "pilotSourceSha256": "5343921BC58E88F51CF979E18BFF5BFFCB9537E39D068B352DED350095A3DC96"
+}

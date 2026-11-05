@@ -1,0 +1,16 @@
+{
+  "observedUtc": "2026-11-05T10:55:44.4568131Z",
+  "jar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+  "jarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35",
+  "entry": "data/minecraft/tags/damage_type/is_fire.json",
+  "data": {
+    "values": [
+      "twilightforest:hydra_fire",
+      "twilightforest:hydra_mortar",
+      "twilightforest:fiery",
+      "twilightforest:fire_jet",
+      "twilightforest:scorched"
+    ]
+  },
+  "scope": "Read-only installed copied JAR. Native fire immunity explains unobserved player processing in the enchanted-apple fight; it is not accepted-hit evidence."
+}

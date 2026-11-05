@@ -120,6 +120,7 @@ public final class BossBalanceTests {
                         .executes(c -> FullFightCases.start(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),3600))
                         .then(Commands.argument("ticks",IntegerArgumentType.integer(200,24000)).executes(c -> FullFightCases.start(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),IntegerArgumentType.getInteger(c,"ticks"))))))))
             .then(Commands.literal("combined_projectiles").executes(c -> runExtra(c.getSource(),"combined_projectiles")))
+            .then(Commands.literal("ignis_brand_netherite").executes(c -> runExtra(c.getSource(),"ignis_brand_netherite")))
             .then(Commands.literal("config_migration").executes(c -> runExtra(c.getSource(),"config_migration")))
             .then(Commands.literal("preinstall_prepare").executes(c -> runLegacy(c.getSource(),false)))
             .then(Commands.literal("preinstall_verify").executes(c -> runLegacy(c.getSource(),true)))
@@ -128,6 +129,7 @@ public final class BossBalanceTests {
             .then(Commands.literal("armor_effects").executes(c -> runExtra(c.getSource(),"armor_effects")))
             .then(Commands.literal("armor_matrix").executes(c -> runExtra(c.getSource(),"armor_matrix")))
             .then(Commands.literal("vanilla").executes(c -> runExtra(c.getSource(),"vanilla")))
+            .then(Commands.literal("dragon_death_transition").executes(c -> runExtra(c.getSource(),"dragon_death_transition")))
             .then(Commands.literal("boss_bars").executes(c -> runExtra(c.getSource(),"boss_bars")))
             .then(Commands.literal("health").executes(c -> runHealth(c.getSource())))
             .then(Commands.literal("fixed_health").executes(c -> runFixedHealth(c.getSource())))
@@ -141,6 +143,10 @@ public final class BossBalanceTests {
     }
 
     private static int runExtra(CommandSourceStack source,String suite) {
+        if(FullFightCases.isRunning()){
+            source.sendFailure(Component.literal("A continuous encounter is active; finish it before controlled probes"));
+            return 0;
+        }
         ServerLevel level=setup(source,suite);
         try {
             switch(suite){
@@ -149,7 +155,9 @@ public final class BossBalanceTests {
                 case "armor_effects" -> Class.forName("survival.balance.tests.ArmorEffectsCases").getDeclaredMethod("run",ServerLevel.class,Path.class).invoke(null,level,RESULTS.resolve("armor-effects.json"));
                 case "armor_matrix" -> Class.forName("survival.balance.tests.ArmorMatrixCases").getDeclaredMethod("run",ServerLevel.class,Path.class).invoke(null,level,RESULTS.resolve("armor-matrix.json"));
                 case "vanilla" -> Class.forName("survival.balance.tests.VanillaBossCases").getDeclaredMethod("run",ServerLevel.class,TestPlayer.class).invoke(null,level,damagePlayer(level));
+                case "dragon_death_transition" -> VanillaBossCases.dragonDeathTransition(level,damagePlayer(level));
                 case "boss_bars" -> Class.forName("survival.balance.tests.BossBarCases").getDeclaredMethod("run",ServerLevel.class).invoke(null,level);
+                case "ignis_brand_netherite" -> Class.forName("survival.balance.tests.IgnisBrandNetheriteCases").getDeclaredMethod("run",ServerLevel.class,Path.class).invoke(null,level,RESULTS.resolve("ignis-brand-netherite.json"));
             }
         }catch(Throwable error){failure(suite,"all",error);if(error.getCause()!=null)error.getCause().printStackTrace();}
         return finish(source);
@@ -252,6 +260,11 @@ public final class BossBalanceTests {
         cleanupPlayers();
         long failed=CHECKS.stream().filter(c -> !Boolean.TRUE.equals(c.get("passed"))).count();
         Map<String,Object> report=new LinkedHashMap<>();report.put("phase",phase);report.put("total",CHECKS.size());report.put("failed",failed);report.put("checks",CHECKS);
+        if("dragon_death_transition".equals(phase)) {
+            report.put("scope","Controlled native airborne lethal-hit and death-phase method probe; not a continuous encounter or native victory");
+            report.put("fixture","Unjoined Dragon in the isolated overworld; profile1100HP; Holding phase and10HP staged before native head/playerAttack20. Native hurt must select DYING and1HP. Native death ticks compute destination and preserve1HP in flight; position-only arrival fixture precedes native zeroHP tick. No DYING phase setter or post-hit health setter.");
+            report.put("nativeVictory",false);
+        }
         try {Files.createDirectories(RESULTS);Files.writeString(RESULTS.resolve(phase+".json"),new GsonBuilder().setPrettyPrinting().create().toJson(report),StandardCharsets.UTF_8);}catch(Exception ex){throw new RuntimeException(ex);}
         source.sendSuccess(() -> Component.literal("BBTEST_COMPLETE "+phase+" checks="+CHECKS.size()+" failed="+failed),true);
         return (int)(CHECKS.size()-failed);

@@ -15,6 +15,7 @@ import net.minecraft.server.level.ServerBossEvent;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
@@ -149,11 +150,50 @@ final class BossBarCases {
 
     private static void leviathanPhaseOne(String id,LivingEntity boss,ServerBossEvent bar)throws Exception {
         call(boss,"setMeltDown",new Class<?>[]{boolean.class},false);
-        for(float fraction:new float[]{1f,.75f,.5f}){
+        // The old suite stopped at half health and missed the native interval
+        // below half while the previous attack / phase-two animation finishes.
+        // These are controlled native-tick probes, not natural phase coverage.
+        for(float fraction:new float[]{1f,.75f,.501f,.5f,.499f,.1f}){
             boss.setHealth(boss.getMaxHealth()*fraction);update(id,boss);
-            eq(id,"phase_one_segmented_bar_"+fraction,2d*fraction-1d,bar.getProgress());
+            eq(id,"phase_one_segmented_bar_"+fraction,Math.max(0d,2d*fraction-1d),bar.getProgress());
+            eq(id,"phase_one_native_flag_"+fraction,0,(boolean)call(boss,"getMeltDown",new Class<?>[0])?1:0);
+            eq(id,"phase_one_native_style_"+fraction,5,((Number)call(bar,"getRenderType",new Class<?>[0])).intValue());
+            eq(id,"phase_one_health_unchanged_"+fraction,boss.getMaxHealth()*fraction,boss.getHealth());
         }
-        call(boss,"setMeltDown",new Class<?>[]{boolean.class},true);
+        ServerLevel level=(ServerLevel)boss.level();
+        java.util.Set<Entity> existing=new java.util.HashSet<>();
+        for(Entity entity:level.getAllEntities())existing.add(entity);
+        Field phaseField=boss.getClass().getField("LEVIATHAN_PHASE2");
+        Object phase=phaseField.get(null);
+        try {
+            boss.setHealth(boss.getMaxHealth()*.4f);
+            call(boss,"setAnimation",new Class<?>[]{phaseField.getType()},phase);
+            call(boss,"setAnimationTick",new Class<?>[]{int.class},89);
+            boss.aiStep(); // Native phase code has not reached its frame-90 switch.
+            eq(id,"pending_phase_before90_flag",0,(boolean)call(boss,"getMeltDown",new Class<?>[0])?1:0);
+            update(id,boss);
+            eq(id,"pending_phase_before90_bar",0,bar.getProgress());
+            eq(id,"pending_phase_before90_style",5,((Number)call(bar,"getRenderType",new Class<?>[0])).intValue());
+            eq(id,"pending_phase_animation_preserved",1,call(boss,"getAnimation",new Class<?>[0])==phase?1:0);
+
+            call(boss,"setAnimationTick",new Class<?>[]{int.class},90);
+            boss.aiStep(); // The installed boss itself changes the flag and emits its native orbs.
+            eq(id,"native_phase_frame90_flag",1,(boolean)call(boss,"getMeltDown",new Class<?>[0])?1:0);
+            call(boss,"setAnimationTick",new Class<?>[]{int.class},91);
+            update(id,boss);
+            eq(id,"native_phase_after90_bar",.4,bar.getProgress());
+            eq(id,"native_phase_after90_style",6,((Number)call(bar,"getRenderType",new Class<?>[0])).intValue());
+            eq(id,"native_phase_health_unchanged",boss.getMaxHealth()*.4f,boss.getHealth());
+        } finally {
+            // Only entities emitted by this synchronous staged phase probe are
+            // removed. Pre-existing players, fixtures and migration entities stay.
+            List<Entity> emitted=new ArrayList<>();
+            for(Entity entity:level.getAllEntities())if(!existing.contains(entity))emitted.add(entity);
+            for(Entity entity:emitted)entity.discard();
+            Field idle=boss.getClass().getField("NO_ANIMATION");
+            call(boss,"setAnimation",new Class<?>[]{idle.getType()},idle.get(null));
+            call(boss,"setAnimationTick",new Class<?>[]{int.class},0);
+        }
     }
 
     private static void rage(String id,LivingEntity boss,Map<String,ServerBossEvent> bars)throws Exception {

@@ -1,0 +1,58 @@
+[
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67280,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.0070563294,
+    "context": "clientUtc=2026-11-05T09:04:01.142835200Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67300,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.023456365,
+    "context": "clientUtc=2026-11-05T09:04:02.149669900Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67320,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.05396043,
+    "context": "clientUtc=2026-11-05T09:04:03.148874Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67340,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.056256436,
+    "context": "clientUtc=2026-11-05T09:04:04.155771500Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67360,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:05.142915600Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67380,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:06.151409900Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67400,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:07.143243300Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  },
+  {
+    "attempt": "2026-11-05T08-21-27.453392900Z/05-cataclysm_the_leviathan-netherite_max",
+    "tick": 67420,
+    "check": "received_bar_not_finite_or_out_of_range",
+    "residual_hp": -0.072656415,
+    "context": "clientUtc=2026-11-05T09:04:08.158933500Z; name=The Leviathan; uuid=4cfdb582-268d-4a13-9bd5-edb17602100b"
+  }
+]

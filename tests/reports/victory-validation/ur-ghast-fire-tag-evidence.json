@@ -1,0 +1,18 @@
+{
+  "observedUtc": "2026-11-05T11:08:39.9576454Z",
+  "jar": "server-1.21.1-20240808.144430-extra.jar",
+  "jarSha256": "24A5D2D162CFAD2A1A574C4D552E99DC6C6303A49D1E68B43A7B638F3B0930FD",
+  "entry": "data/minecraft/tags/damage_type/is_fire.json",
+  "data": {
+    "values": [
+      "minecraft:in_fire",
+      "minecraft:campfire",
+      "minecraft:on_fire",
+      "minecraft:lava",
+      "minecraft:hot_floor",
+      "minecraft:unattributed_fireball",
+      "minecraft:fireball"
+    ]
+  },
+  "scope": "Native direct fireball is fire-tagged; generic explosion is not in this tag. Fire Resistance early rejection does not count as a processed native hit."
+}

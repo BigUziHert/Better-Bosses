@@ -1,0 +1,32 @@
+{
+  "generatedUtc": "2026-11-05T05:50:54.5668421+00:00",
+  "queue": "2026-11-05T05-47-26.735553700Z",
+  "scope": "Test-harness metadata transport and controlled-command guard; not a boss move, combat phase or native victory.",
+  "stress": {
+    "utc": "2026-11-05T05:48:27.6291803Z",
+    "action": "metadata_reader_sharing_lock",
+    "durationMs": 900,
+    "queue": "2026-11-05T05-47-26.735553700Z",
+    "scope": "Test-only metadata transport stress; native fight state and player inputs continue"
+  },
+  "nativeEncounterEvents": [
+    {
+      "record": "metadata_publication_delayed",
+      "tick": 1080,
+      "timestamp": "2026-11-05T05:48:27.640622Z",
+      "error": "java.nio.file.AccessDeniedException: ..\\run-client-playtest\\bossfight-encounter.tmp -> ..\\run-client-playtest\\bossfight-encounter.json"
+    },
+    {
+      "record": "metadata_publication_recovered",
+      "tick": 1099,
+      "timestamp": "2026-11-05T05:48:28.589248700Z",
+      "error": null
+    }
+  ],
+  "recoveryTicks": 19,
+  "activeProbeRefusalLog": [
+    "[04Nov2026 23:48:35.037] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: A continuous encounter is active; finish it before controlled probes"
+  ],
+  "guardSource": "BossBalanceTests.runExtra checks FullFightCases.isRunning and returns before setup(source,suite).",
+  "productionChanged": false
+}

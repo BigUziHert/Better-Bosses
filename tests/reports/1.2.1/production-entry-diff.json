@@ -1,0 +1,99 @@
+{
+  "fromVersion": "1.2.0",
+  "toVersion": "1.2.1",
+  "beforeSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "afterSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "entries": [
+    {
+      "entry": "META-INF/MANIFEST.MF",
+      "status": "identical",
+      "sha256": "566AD1A80220026D05099562645CE968FF0E7C36CDE22634332605BB34CC3EFF"
+    },
+    {
+      "entry": "survival/balance/BalanceSettings.class",
+      "status": "identical",
+      "sha256": "728E02EC33F698982F37AEA2E31109E824C6DAD0EC41C095F5747CFE9976989A"
+    },
+    {
+      "entry": "survival/balance/BossDamageBalance$1.class",
+      "status": "identical",
+      "sha256": "D6A5188B08EDB3EC5E30199D372BA99A1EC887A83FB845858508D8DD09358842"
+    },
+    {
+      "entry": "survival/balance/BossDamageBalance$Context.class",
+      "status": "identical",
+      "sha256": "58D3A4016D51A4A8B6233F617782F87D209BFB4010BD8B497BFE494354758B33"
+    },
+    {
+      "entry": "survival/balance/BossDamageBalance$Decision.class",
+      "status": "identical",
+      "sha256": "5950DD660EE07D355DF763CDBCE78791C51F2C9ED3F440CEB8E137056030E718"
+    },
+    {
+      "entry": "survival/balance/BossDamageBalance.class",
+      "status": "identical",
+      "sha256": "ED50EE998601709854B058D23FB01DCC9E370CE782CC10FA984B4769C770CF46"
+    },
+    {
+      "entry": "survival/balance/BossHealthBalance$KnightAccess.class",
+      "status": "identical",
+      "sha256": "994DF431E0C128C218464AE0EDC4368C2170C6D1AFA44BFF63CA1774B1BF26F6"
+    },
+    {
+      "entry": "survival/balance/BossHealthBalance.class",
+      "status": "identical",
+      "sha256": "8368B6E90B22A0F6747C92F77EED329117867835A1F0ED2EA0D59B469B6076A0"
+    },
+    {
+      "entry": "survival/balance/LegacyDamageDefaults.class",
+      "status": "identical",
+      "sha256": "BB0560CC39A8B078430537845398C20A0A6A4CB7793F26A53971BC4A53B697C4"
+    },
+    {
+      "entry": "survival/balance/ProjectileDamageBudget$Accepted.class",
+      "status": "identical",
+      "sha256": "131E7B5B5A77C3AFF6FA429B429D5BEE240B2E499D0598C7945EDDC3237679A2"
+    },
+    {
+      "entry": "survival/balance/ProjectileDamageBudget$ExplosionScope.class",
+      "status": "identical",
+      "sha256": "4A8C69204EB5C06CB1A3447EC2BCD7FE80B23ABFFEEA24A1B86D87C0EB95A60F"
+    },
+    {
+      "entry": "survival/balance/ProjectileDamageBudget$Pending.class",
+      "status": "identical",
+      "sha256": "CF57BCAD8C7845B78ED9EB4B4AFDCFA6D6E8CFBEA7528166D0B0FC03FE72911D"
+    },
+    {
+      "entry": "survival/balance/ProjectileDamageBudget.class",
+      "status": "identical",
+      "sha256": "C11D26D23FB68114C80B663D777E3CB63B59A65FAE510B897C339E7EC039B3B7"
+    },
+    {
+      "entry": "survival/balance/SurvivalBossBalance.class",
+      "status": "changed",
+      "sha256": "08D4795837A4B05C29414AB15E83736C83348B27A25F00D2785AA5A608439A48"
+    },
+    {
+      "entry": "survival/balance/mixin/LeviathanBossBarMixin.class",
+      "status": "added",
+      "sha256": "927C595A39408E9B95A8D5EDF628EC134B2DE167036156B80234CF725A6D6F3A"
+    },
+    {
+      "entry": "survival/balance/mixin/UrGhastExplosionMixin.class",
+      "status": "identical",
+      "sha256": "9A80DB873A7EDA65CB7D3C078AE414F69F0A1AA3C919262A34FF7C29D2407890"
+    },
+    {
+      "entry": "survival_boss_balance.mixins.json",
+      "status": "changed",
+      "sha256": "41FEFA4C6A9D3009075606B12123FC47BD1C9482B5BF042DE1E20556132F9DE1"
+    },
+    {
+      "entry": "META-INF/neoforge.mods.toml",
+      "status": "changed",
+      "sha256": "0F2F7A836D2C0D66C1C8F0623B2F1E4147C9214CBEA5216795AB15D57E110223"
+    }
+  ],
+  "removedEntries": []
+}

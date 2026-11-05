@@ -3,6 +3,6 @@
   "minVersion": "0.8",
   "package": "survival.balance.mixin",
   "compatibilityLevel": "JAVA_21",
-  "mixins": ["UrGhastExplosionMixin"],
+  "mixins": ["UrGhastExplosionMixin", "LeviathanBossBarMixin"],
   "injectors": {"defaultRequire": 1}
 }

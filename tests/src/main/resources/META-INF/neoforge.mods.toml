@@ -8,6 +8,9 @@ version="1.0.0"
 displayName="Survival Boss Balance Tests (TEST ONLY)"
 description='''Disposable test commands; never install on the real server.'''
 
+[[mixins]]
+config="survival_boss_balance_tests.mixins.json"
+
 [[dependencies.survival_boss_balance_tests]]
 modId="neoforge"
 type="required"

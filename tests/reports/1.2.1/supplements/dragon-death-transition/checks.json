@@ -1,0 +1,162 @@
+{
+  "phase": "dragon_death_transition",
+  "total": 19,
+  "failed": 0,
+  "checks": [
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_initial_max_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1100.0,
+      "actual": 1100.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_initial_current_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1100.0,
+      "actual": 1100.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_prerequisite_holding",
+      "entity": "minecraft:ender_dragon",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_prerequisite_not_sitting",
+      "entity": "minecraft:ender_dragon",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_prerequisite_health",
+      "entity": "minecraft:ender_dragon",
+      "expected": 10.0,
+      "actual": 10.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_lethal_head_hit_accepted",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_lethal_hit_selects_dying",
+      "entity": "minecraft:ender_dragon",
+      "expected": 9.0,
+      "actual": 9.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_lethal_hit_retains_one_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_target_x",
+      "entity": "minecraft:ender_dragon",
+      "expected": 0.5,
+      "actual": 0.5,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_target_y",
+      "entity": "minecraft:ender_dragon",
+      "expected": -59.0,
+      "actual": -59.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_target_z",
+      "entity": "minecraft:ender_dragon",
+      "expected": 0.5,
+      "actual": 0.5,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_far_fixture_within_native_flight_bounds",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_far_one_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_fly_speed",
+      "entity": "minecraft:ender_dragon",
+      "expected": 3.0,
+      "actual": 3.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_repeated_far_one_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_arrival_zero_hp",
+      "entity": "minecraft:ender_dragon",
+      "expected": 0.0,
+      "actual": 0.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_arrival_dead_or_dying",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1.0,
+      "actual": 1.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_phase_retained",
+      "entity": "minecraft:ender_dragon",
+      "expected": 9.0,
+      "actual": 9.0,
+      "passed": true
+    },
+    {
+      "phase": "dragon_death_transition",
+      "test": "controlled_dragon_native_dying_max_hp_retained",
+      "entity": "minecraft:ender_dragon",
+      "expected": 1100.0,
+      "actual": 1100.0,
+      "passed": true
+    }
+  ],
+  "scope": "Controlled native airborne lethal-hit and death-phase method probe; not a continuous encounter or native victory",
+  "fixture": "Unjoined Dragon in the isolated overworld; profile1100HP; Holding phase and10HP staged before native head/playerAttack20. Native hurt must select DYING and1HP. Native death ticks compute destination and preserve1HP in flight; position-only arrival fixture precedes native zeroHP tick. No DYING phase setter or post-hit health setter.",
+  "nativeVictory": false
+}

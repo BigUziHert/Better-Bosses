@@ -1,0 +1,28 @@
+{
+  "generatedUtc": "2026-11-05T05:50:06.7509827+00:00",
+  "executedCompletionUtc": "2026-11-05T05:44:49.298Z",
+  "nativeCases": 36,
+  "assertions": 504,
+  "failed": 0,
+  "productionSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "helperSha256": "F7C31050460FD6EAF75DE3673860C62A5181F0DFC429078151C579F13CD6D1E7",
+  "nativeResultSha256": "4F455F0EFC20D94711A6ADD4C48AEE7049FEADD9C79EE07D88E264495E758179",
+  "assertionResultSha256": "F6D2A594788DD87C4C02C89C8A9F17DCBDAE5B0D86EB22360EC4DAF81D004CEE",
+  "nativePostEvents": 36.0,
+  "maximumHealthLostHp": 6.840000152587891,
+  "maximumHealthLostCases": [
+    "fresh_brand3_ultimate",
+    "fresh_brand4_ultimate",
+    "fresh_brand5_ultimate"
+  ],
+  "maximumAbsorptionSpentHp": 5.4720001220703125,
+  "maximumAbsorptionSpentCases": [
+    "apple_brand3_ultimate",
+    "apple_brand4_ultimate",
+    "apple_brand5_ultimate"
+  ],
+  "minimumFinalHealthHp": 13.16,
+  "appleHealthDamageHp": 0.0,
+  "scope": "36 independent native single-hit probes: intact full Protection IV netherite, 20 maximum HP, Brand0-V, opening/shield-smash melee component/ultimate. Fresh and native enchanted-golden-apple effect snapshots are separate. Apple effects come from ItemStack.finishUsingItem; the snapshot does not simulate the 32-tick eating interval. No player/world ticks occur between applying pre-hit effects and the native hit, so regeneration/fire damage are excluded. Each probe resets its own fixture only before combat. Native armor/toughness modifiers and post-hit Brand application, where the native recipe applies it, remain active. Shield-smash tests its exact frame34 AreaAttack component; the separate wave from that AI frame is excluded, not counted as covered. This is staged native-method evidence, not continuous-fight victory evidence.",
+  "expectations": "Approved independent BalanceExpectations targets plus the vanilla armor, Protection IV and Resistance I equations. Production evaluation/raw conversion APIs are not used to manufacture expected values. Reference caps are converted with branded diamond defenses, then actual netherite defenses and native effects are applied."
+}

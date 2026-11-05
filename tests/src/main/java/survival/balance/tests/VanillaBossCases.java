@@ -24,6 +24,7 @@ import net.minecraft.world.entity.ai.behavior.warden.Digging;
 import net.minecraft.world.entity.ai.memory.MemoryModuleType;
 import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.boss.enderdragon.phases.DragonSittingFlamingPhase;
+import net.minecraft.world.entity.boss.enderdragon.phases.DragonDeathPhase;
 import net.minecraft.world.entity.boss.enderdragon.phases.EnderDragonPhase;
 import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.boss.enderdragon.EndCrystal;
@@ -36,6 +37,8 @@ import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
+import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.level.levelgen.feature.EndPodiumFeature;
 
 /** Native methods from the installed Minecraft build, with real Player.hurt. */
 final class VanillaBossCases {
@@ -81,6 +84,70 @@ final class VanillaBossCases {
         } catch(Throwable error) {BossBalanceTests.error("wither_status","minecraft:wither",error);}
         phases(level,victim);
         wardenLifecycle(level,victim);
+    }
+
+    /** Controlled native transition probe, not an autonomous encounter or victory.
+     * Holding phase, low health and unobstructed flight position are prerequisite
+     * fixtures. Only the native player attack may select DYING. After that attack,
+     * health is changed only by native code; moving to its computed destination is
+     * a separate arrival fixture, not evidence that the dragon flew there. */
+    static void dragonDeathTransition(ServerLevel level,BossBalanceTests.TestPlayer attacker) {
+        final String id="minecraft:ender_dragon";
+        EnderDragon dragon=null;
+        try {
+            BossBalanceTests.resetActualPlayer(attacker);
+            dragon=(EnderDragon)BossBalanceTests.damageBoss(level,id);
+            profile(dragon);
+            BossBalanceTests.result("controlled_dragon_initial_max_hp",id,1100,dragon.getMaxHealth());
+            BossBalanceTests.result("controlled_dragon_initial_current_hp",id,1100,dragon.getHealth());
+            Vec3 nativeDestination=Vec3.atBottomCenterOf(level.getHeightmapPos(
+                Heightmap.Types.MOTION_BLOCKING,EndPodiumFeature.getLocation(dragon.getFightOrigin())));
+            dragon.getPhaseManager().setPhase(EnderDragonPhase.HOLDING_PATTERN);
+            dragon.moveTo(nativeDestination.add(40,20,0));
+            dragon.horizontalCollision=false;
+            dragon.verticalCollision=false;
+            dragon.setInvulnerable(false);
+            dragon.setHealth(10);
+            dragon.invulnerableTime=0;
+            BossBalanceTests.result("controlled_dragon_prerequisite_holding",id,
+                EnderDragonPhase.HOLDING_PATTERN.getId(),dragon.getPhaseManager().getCurrentPhase().getPhase().getId());
+            BossBalanceTests.result("controlled_dragon_prerequisite_not_sitting",id,0,
+                dragon.getPhaseManager().getCurrentPhase().isSitting()?1:0);
+            BossBalanceTests.result("controlled_dragon_prerequisite_health",id,10,dragon.getHealth());
+
+            boolean accepted=dragon.hurt(dragon.head,level.damageSources().playerAttack(attacker),20);
+            BossBalanceTests.result("controlled_dragon_native_lethal_head_hit_accepted",id,1,accepted?1:0);
+            BossBalanceTests.result("controlled_dragon_native_lethal_hit_selects_dying",id,
+                EnderDragonPhase.DYING.getId(),dragon.getPhaseManager().getCurrentPhase().getPhase().getId());
+            BossBalanceTests.result("controlled_dragon_native_lethal_hit_retains_one_hp",id,1,dragon.getHealth());
+            if(dragon.getPhaseManager().getCurrentPhase().getPhase()!=EnderDragonPhase.DYING)
+                throw new IllegalStateException("Native airborne lethal head hit did not select DYING; no death phase was forced");
+
+            DragonDeathPhase dying=dragon.getPhaseManager().getPhase(EnderDragonPhase.DYING);
+            dying.doServerTick();
+            Vec3 actualDestination=dying.getFlyTargetLocation();
+            if(actualDestination==null)throw new IllegalStateException("Native death tick supplied no fly target");
+            BossBalanceTests.result("controlled_dragon_native_dying_target_x",id,nativeDestination.x,actualDestination.x);
+            BossBalanceTests.result("controlled_dragon_native_dying_target_y",id,nativeDestination.y,actualDestination.y);
+            BossBalanceTests.result("controlled_dragon_native_dying_target_z",id,nativeDestination.z,actualDestination.z);
+            double distanceSquared=actualDestination.distanceToSqr(dragon.position());
+            BossBalanceTests.result("controlled_dragon_far_fixture_within_native_flight_bounds",id,1,
+                distanceSquared>=100 && distanceSquared<=22500?1:0);
+            BossBalanceTests.result("controlled_dragon_native_dying_far_one_hp",id,1,dragon.getHealth());
+            BossBalanceTests.result("controlled_dragon_native_dying_fly_speed",id,3,dying.getFlySpeed());
+            for(int i=0;i<3;i++)dying.doServerTick();
+            BossBalanceTests.result("controlled_dragon_native_dying_repeated_far_one_hp",id,1,dragon.getHealth());
+
+            // Explicit position-only arrival fixture. No setHealth or phase setter.
+            dragon.moveTo(actualDestination);
+            dying.doServerTick();
+            BossBalanceTests.result("controlled_dragon_native_dying_arrival_zero_hp",id,0,dragon.getHealth());
+            BossBalanceTests.result("controlled_dragon_native_dying_arrival_dead_or_dying",id,1,dragon.isDeadOrDying()?1:0);
+            BossBalanceTests.result("controlled_dragon_native_dying_phase_retained",id,
+                EnderDragonPhase.DYING.getId(),dragon.getPhaseManager().getCurrentPhase().getPhase().getId());
+            BossBalanceTests.result("controlled_dragon_native_dying_max_hp_retained",id,1100,dragon.getMaxHealth());
+        } catch(Throwable error) {BossBalanceTests.error("controlled_dragon_death_transition",id,error);}
+        finally {if(dragon!=null)dragon.discard();}
     }
 
     /** Matrix caller supplies equipment and reset health. Does not alter either. */

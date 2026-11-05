@@ -27,7 +27,7 @@ function ItemCount($inventory,[string]$item){
 }
 function JsonCompact($value){return ConvertTo-Json -InputObject $value -Depth 12 -Compress}
 function ParseUtc([string]$value){return [DateTimeOffset]::Parse(($value -replace '(\.\d{7})\d+Z$','$1Z'))}
-foreach($file in (Get-ChildItem -LiteralPath $InputDirectory -File -Filter '*.jsonl' | Sort-Object Name)){
+foreach($file in (Get-ChildItem -LiteralPath $InputDirectory -File -Filter '*.jsonl' | Where-Object Name -NotLike '*.telemetry.jsonl' | Sort-Object Name)){
     $state=@{boss='';gear='';mode='';outcome='preparing';tick=0;start='';finish='';hp=$null;food=$null;bossHp=$null;bossMax=$null;maxPlayerHp=0;initialBossHp=$null;damageTaken=0d;damageDealt=0d;maxHit=0d;hitsTaken=0;hitsDealt=0;heals=0;lethal=$false;phases=0;errors=0;foodMin=64;arrowsMin=256;lastInventory=@();setup=@();damageTypes=@{};samples=0;blockingSamples=0}
     Get-Content -LiteralPath $file.FullName | ForEach-Object {
         try{$row=ConvertFrom-Json -InputObject $_ -AsHashtable -DateKind String}catch{$parseWarnings++;return}

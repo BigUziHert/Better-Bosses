@@ -1,0 +1,3611 @@
+{
+  "suite": "ignis_brand_netherite",
+  "rows": [
+    {
+      "case": "fresh_brand0_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 2.279293505963451,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 2.279293505963451,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 2.279294,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 17.720707,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 11.9529,
+            "ENCHANTMENTS": 4.0520773,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 17.720707,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 2.2792930603027344,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand0_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [],
+      "expectedProcessedRawHp": 29.254833995939045,
+      "expectedDamageBeforeAbsorptionHp": 4.571182546641869,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 4.571182546641869,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 29.254833
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 4.5711823,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 15.428818,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 16.557106,
+            "ENCHANTMENTS": 8.126545,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 15.428818,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [],
+      "healthDamageHp": 4.5711822509765625,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand0_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [],
+      "expectedProcessedRawHp": 34.721359549995796,
+      "expectedDamageBeforeAbsorptionHp": 5.97198757751994,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.97198757751994,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 34.72136
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.9719877,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 14.028012,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 18.132505,
+            "ENCHANTMENTS": 10.616866,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 14.028012,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 5.971987724304199,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand1_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 3.4637619811099194,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 3.4637619811099194,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 3.4637618,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 16.536238,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 8.662711,
+            "ENCHANTMENTS": 6.1577983,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 16.536238,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 3.4637622833251953,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand1_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 25.06063499269007,
+      "expectedDamageBeforeAbsorptionHp": 5.303246962736843,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.303246962736843,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 25.060635
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.3032475,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 14.696753,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 10.329392,
+            "ENCHANTMENTS": 9.427995,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.696753,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.303247451782227,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand1_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 28.212160496872926,
+      "expectedDamageBeforeAbsorptionHp": 6.2611447273444965,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 6.2611447273444965,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 28.21216
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 6.2611446,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 13.738855,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 10.820093,
+            "ENCHANTMENTS": 11.130922,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 13.738855,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 6.261144638061523,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand2_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 4.6896918619277566,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 4.6896918619277566,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 4.6896925,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 15.3103075,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.25735,
+            "ENCHANTMENTS": 8.337229,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 15.3103075,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 4.689692497253418,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand2_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 20.584054900408198,
+      "expectedDamageBeforeAbsorptionHp": 5.458947643793117,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.458947643793117,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 20.584055
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.458949,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 14.541051,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.42031,
+            "ENCHANTMENTS": 9.704796,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.541051,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.458949089050293,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand2_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 23.38868633485272,
+      "expectedDamageBeforeAbsorptionHp": 6.451320328718593,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 6.451320328718593,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 23.388687
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 6.4513206,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 13.548679,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.4683514,
+            "ENCHANTMENTS": 11.469015,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 13.548679,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 6.451320648193359,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand3_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.94915254237288,
+      "expectedDamageBeforeAbsorptionHp": 5.685952312553862,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.685952312553862,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.949152
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.685952,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 14.314048,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1548414,
+            "ENCHANTMENTS": 10.108358,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.314048,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.685952186584473,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand3_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.94915254237288,
+      "expectedDamageBeforeAbsorptionHp": 5.685952312553862,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.685952312553862,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.949152
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.685952,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 14.314048,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1548414,
+            "ENCHANTMENTS": 10.108358,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.314048,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.685952186584473,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand3_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 20.127118644067792,
+      "expectedDamageBeforeAbsorptionHp": 6.839999999999998,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 6.839999999999998,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 20.12712
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 6.84,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 13.16,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1271191,
+            "ENCHANTMENTS": 12.16,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 13.16,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 6.840000152587891,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand4_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.393442622950822,
+      "expectedDamageBeforeAbsorptionHp": 5.760000000000001,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.760000000000001,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.393442
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.76,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 14.24,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.39344215,
+            "ENCHANTMENTS": 10.24,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.24,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.760000228881836,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand4_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.393442622950822,
+      "expectedDamageBeforeAbsorptionHp": 5.760000000000001,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.760000000000001,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.393442
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.76,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 14.24,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.39344215,
+            "ENCHANTMENTS": 10.24,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.24,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.760000228881836,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand4_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 19.467213114754095,
+      "expectedDamageBeforeAbsorptionHp": 6.839999999999998,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 6.839999999999998,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 19.467213
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 6.84,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 13.16,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.46721268,
+            "ENCHANTMENTS": 12.16,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 13.16,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 6.840000152587891,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand5_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "fresh",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.0,
+      "expectedDamageBeforeAbsorptionHp": 5.76,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.76,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.76,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 22.5,
+          "hpAfter": 14.24,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 10.24,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.24,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.760000228881836,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand5_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "fresh",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 16.0,
+      "expectedDamageBeforeAbsorptionHp": 5.76,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 5.76,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 5.76,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 36.0,
+          "hpAfter": 14.24,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 10.24,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 14.24,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "healthDamageHp": 5.760000228881836,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "fresh_brand5_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "fresh",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 0.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        }
+      ],
+      "expectedProcessedRawHp": 19.0,
+      "expectedDamageBeforeAbsorptionHp": 6.84,
+      "expectedAbsorptionSpentHp": 0.0,
+      "expectedHealthDamageHp": 6.84,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 19.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 6.84,
+          "absorbedHp": 0.0,
+          "originalNativeHp": 49.5,
+          "hpAfter": 13.16,
+          "absorptionAfter": 0.0,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 12.16,
+            "MOB_EFFECTS": 0.0,
+            "ABSORPTION": 0.0,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 13.16,
+      "absorptionAfter": 0.0,
+      "effectsAfter": [
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 240
+        }
+      ],
+      "healthDamageHp": 6.840000152587891,
+      "absorptionSpentHp": 0.0,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand0_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 1.823434804770761,
+      "expectedAbsorptionSpentHp": 1.823434804770761,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 1.8234348,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 14.176565,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 11.9529,
+            "ENCHANTMENTS": 3.241662,
+            "MOB_EFFECTS": 1.2662745,
+            "ABSORPTION": 1.8234348,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 14.176565,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 1.823434829711914,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand0_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 29.254833995939045,
+      "expectedDamageBeforeAbsorptionHp": 3.6569460373134954,
+      "expectedAbsorptionSpentHp": 3.6569460373134954,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 29.254833
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 3.6569457,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 12.343054,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 16.557106,
+            "ENCHANTMENTS": 6.5012364,
+            "MOB_EFFECTS": 2.539545,
+            "ABSORPTION": 3.6569457,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 12.343054,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 3.6569461822509766,
+      "itemDamageAfter": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand0_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 0,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 20.0,
+      "effectiveIntegerArmor": 20,
+      "toughnessBefore": 12.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 34.721359549995796,
+      "expectedDamageBeforeAbsorptionHp": 4.777590062015952,
+      "expectedAbsorptionSpentHp": 4.777590062015952,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 34.72136
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.77759,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.22241,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 18.132505,
+            "ENCHANTMENTS": 8.493493,
+            "MOB_EFFECTS": 3.317771,
+            "ABSORPTION": 4.77759,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.22241,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.777589797973633,
+      "itemDamageAfter": [
+        8,
+        8,
+        8,
+        8
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand1_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 2.7710095848879357,
+      "expectedAbsorptionSpentHp": 2.7710095848879357,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 2.7710094,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 13.228991,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 8.662711,
+            "ENCHANTMENTS": 4.9262385,
+            "MOB_EFFECTS": 1.9243121,
+            "ABSORPTION": 2.7710094,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 13.228991,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 2.7710094451904297,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand1_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 25.06063499269007,
+      "expectedDamageBeforeAbsorptionHp": 4.242597570189474,
+      "expectedAbsorptionSpentHp": 4.242597570189474,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 25.060635
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.242598,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.757402,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 10.329392,
+            "ENCHANTMENTS": 7.542396,
+            "MOB_EFFECTS": 2.946248,
+            "ABSORPTION": 4.242598,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.757402,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.242597579956055,
+      "itemDamageAfter": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand1_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 1,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 16.0,
+      "effectiveIntegerArmor": 16,
+      "toughnessBefore": 9.600000000000001,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 0,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 28.212160496872926,
+      "expectedDamageBeforeAbsorptionHp": 5.008915781875597,
+      "expectedAbsorptionSpentHp": 5.008915781875597,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 28.21216
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 5.008916,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 10.991084,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 10.820093,
+            "ENCHANTMENTS": 8.904737,
+            "MOB_EFFECTS": 3.4784136,
+            "ABSORPTION": 5.008916,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 10.991084,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 5.008915901184082,
+      "itemDamageAfter": [
+        7,
+        7,
+        7,
+        7
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand2_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 18.284271247461902,
+      "expectedDamageBeforeAbsorptionHp": 3.7517534895422053,
+      "expectedAbsorptionSpentHp": 3.7517534895422053,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 18.284271
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 3.7517533,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 12.248247,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.25735,
+            "ENCHANTMENTS": 6.669783,
+            "MOB_EFFECTS": 2.6053848,
+            "ABSORPTION": 3.7517533,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 12.248247,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 3.7517528533935547,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand2_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 20.584054900408198,
+      "expectedDamageBeforeAbsorptionHp": 4.367158115034494,
+      "expectedAbsorptionSpentHp": 4.367158115034494,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 20.584055
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.3671584,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.632841,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.42031,
+            "ENCHANTMENTS": 7.7638373,
+            "MOB_EFFECTS": 3.0327492,
+            "ABSORPTION": 4.3671584,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.632841,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.367158889770508,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand2_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 2,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 12.0,
+      "effectiveIntegerArmor": 12,
+      "toughnessBefore": 7.199999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 1,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 23.38868633485272,
+      "expectedDamageBeforeAbsorptionHp": 5.161056262974874,
+      "expectedAbsorptionSpentHp": 5.161056262974874,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 23.388687
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 5.1610575,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 10.838943,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 5.4683514,
+            "ENCHANTMENTS": 9.175211,
+            "MOB_EFFECTS": 3.5840673,
+            "ABSORPTION": 5.1610575,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 10.838943,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 5.161057472229004,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand3_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.94915254237288,
+      "expectedDamageBeforeAbsorptionHp": 4.54876185004309,
+      "expectedAbsorptionSpentHp": 4.54876185004309,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.949152
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.5487614,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.451239,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1548414,
+            "ENCHANTMENTS": 8.086687,
+            "MOB_EFFECTS": 3.158862,
+            "ABSORPTION": 4.5487614,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.451239,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.548761367797852,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand3_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.94915254237288,
+      "expectedDamageBeforeAbsorptionHp": 4.54876185004309,
+      "expectedAbsorptionSpentHp": 4.54876185004309,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.949152
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.5487614,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.451239,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1548414,
+            "ENCHANTMENTS": 8.086687,
+            "MOB_EFFECTS": 3.158862,
+            "ABSORPTION": 4.5487614,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.451239,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.548761367797852,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand3_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 3,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 7.999999999999998,
+      "effectiveIntegerArmor": 7,
+      "toughnessBefore": 4.799999999999999,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 2,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 20.127118644067792,
+      "expectedDamageBeforeAbsorptionHp": 5.471999999999999,
+      "expectedAbsorptionSpentHp": 5.471999999999999,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 20.12712
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 5.472,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 10.528,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 1.1271191,
+            "ENCHANTMENTS": 9.728,
+            "MOB_EFFECTS": 3.8000002,
+            "ABSORPTION": 5.472,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 10.528,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 5.4720001220703125,
+      "itemDamageAfter": [
+        5,
+        5,
+        5,
+        5
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand4_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.393442622950822,
+      "expectedDamageBeforeAbsorptionHp": 4.6080000000000005,
+      "expectedAbsorptionSpentHp": 4.6080000000000005,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.393442
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.6080008,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.391999,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.39344215,
+            "ENCHANTMENTS": 8.191999,
+            "MOB_EFFECTS": 3.1999998,
+            "ABSORPTION": 4.6080008,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.391999,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.608000755310059,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand4_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.393442622950822,
+      "expectedDamageBeforeAbsorptionHp": 4.6080000000000005,
+      "expectedAbsorptionSpentHp": 4.6080000000000005,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.393442
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.6080008,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.391999,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.39344215,
+            "ENCHANTMENTS": 8.191999,
+            "MOB_EFFECTS": 3.1999998,
+            "ABSORPTION": 4.6080008,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.391999,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.608000755310059,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand4_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 4,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 3.999999999999999,
+      "effectiveIntegerArmor": 3,
+      "toughnessBefore": 2.3999999999999995,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 3,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 19.467213114754095,
+      "expectedDamageBeforeAbsorptionHp": 5.471999999999999,
+      "expectedAbsorptionSpentHp": 5.471999999999999,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 19.467213
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 5.472,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 10.528,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.46721268,
+            "ENCHANTMENTS": 9.728,
+            "MOB_EFFECTS": 3.8000002,
+            "ABSORPTION": 5.472,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 10.528,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 5.4720001220703125,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand5_opening",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "opening",
+      "nativeRecipe": "SWING_ATTACK AreaAttack(6.5,6,70,1,.05,80,2,200,5,false,0)",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.0,
+      "expectedDamageBeforeAbsorptionHp": 4.608,
+      "expectedAbsorptionSpentHp": 4.608,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 22.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.6080008,
+          "originalNativeHp": 22.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.391999,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 8.191999,
+            "MOB_EFFECTS": 3.1999998,
+            "ABSORPTION": 4.6080008,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.391999,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.608000755310059,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand5_heavy",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "heavy",
+      "nativeRecipe": "SHIELD_SMASH_ATTACK frame34 AreaAttack(4.85,2.5,45,1.5,.15,200,0,0,5,false,0); melee component only, separate wave excluded",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 16.0,
+      "expectedDamageBeforeAbsorptionHp": 4.608,
+      "expectedAbsorptionSpentHp": 4.608,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 36.0
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 16.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 4.6080008,
+          "originalNativeHp": 36.0,
+          "hpAfter": 20.0,
+          "absorptionAfter": 11.391999,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 8.191999,
+            "MOB_EFFECTS": 3.1999998,
+            "ABSORPTION": 4.6080008,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 11.391999,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 4.608000755310059,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    },
+    {
+      "case": "apple_brand5_ultimate",
+      "boss": "cataclysm:ignis",
+      "armor": "minecraft:netherite",
+      "protection": 4,
+      "preHitBrand": 5,
+      "condition": "native_enchanted_apple_effects",
+      "attack": "ultimate",
+      "nativeRecipe": "ULTIMATE_ATTACK frame74 through native aiStep",
+      "maximumHealth": 20.0,
+      "hpBefore": 20.0,
+      "absorptionBefore": 16.0,
+      "armorBefore": 0.0,
+      "effectiveIntegerArmor": 0,
+      "toughnessBefore": 0.0,
+      "effectsBefore": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 200
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "expectedProcessedRawHp": 19.0,
+      "expectedDamageBeforeAbsorptionHp": 5.472,
+      "expectedAbsorptionSpentHp": 5.472,
+      "expectedHealthDamageHp": 0.0,
+      "incoming": [
+        {
+          "stage": "native_incoming_before_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 49.5
+        },
+        {
+          "stage": "after_incoming_handlers",
+          "damageType": "minecraft:mob_attack",
+          "cancelled": false,
+          "amountHp": 19.0
+        }
+      ],
+      "nativePostEvents": [
+        {
+          "damageHp": 0.0,
+          "absorbedHp": 5.472,
+          "originalNativeHp": 49.5,
+          "hpAfter": 20.0,
+          "absorptionAfter": 10.528,
+          "blockedHp": 0.0,
+          "damageType": "minecraft:mob_attack",
+          "reductionsHp": {
+            "INVULNERABILITY": 0.0,
+            "ARMOR": 0.0,
+            "ENCHANTMENTS": 9.728,
+            "MOB_EFFECTS": 3.8000002,
+            "ABSORPTION": 5.472,
+            "INNATE_RESISTANCE": 0.0
+          },
+          "nativeCallers": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+          ]
+        }
+      ],
+      "hpAfter": 20.0,
+      "absorptionAfter": 10.528,
+      "effectsAfter": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "minecraft:regeneration",
+          "amplifier": 1,
+          "duration": 400
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration": 6000
+        },
+        {
+          "id": "cataclysm:blazing_brand",
+          "amplifier": 4,
+          "duration": 240
+        },
+        {
+          "id": "minecraft:absorption",
+          "amplifier": 3,
+          "duration": 2400
+        }
+      ],
+      "healthDamageHp": 0.0,
+      "absorptionSpentHp": 5.4720001220703125,
+      "itemDamageAfter": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "survived": true
+    }
+  ],
+  "scope": "36 independent native single-hit probes: intact full Protection IV netherite, 20 maximum HP, Brand0-V, opening/shield-smash melee component/ultimate. Fresh and native enchanted-golden-apple effect snapshots are separate. Apple effects come from ItemStack.finishUsingItem; the snapshot does not simulate the 32-tick eating interval. No player/world ticks occur between applying pre-hit effects and the native hit, so regeneration/fire damage are excluded. Each probe resets its own fixture only before combat. Native armor/toughness modifiers and post-hit Brand application, where the native recipe applies it, remain active. Shield-smash tests its exact frame34 AreaAttack component; the separate wave from that AI frame is excluded, not counted as covered. This is staged native-method evidence, not continuous-fight victory evidence.",
+  "expectations": "Approved independent BalanceExpectations targets plus the vanilla armor, Protection IV and Resistance I equations. Production evaluation/raw conversion APIs are not used to manufacture expected values. Reference caps are converted with branded diamond defenses, then actual netherite defenses and native effects are applied."
+}

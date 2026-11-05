@@ -1,0 +1,61 @@
+{
+  "generatedUtc": "2026-11-05T13:42:26.4352348Z",
+  "queue": "2026-11-05T13-04-36.346328200Z",
+  "case": "05",
+  "boss": "cataclysm:the_leviathan",
+  "recordedOutcome": null,
+  "adjudicatedStatus": "unfinished_server_stall",
+  "nativeVictory": false,
+  "rawFinishExists": false,
+  "lastOrdinaryRecord": "player_damage",
+  "lastRecordedTick": 5668,
+  "lastRecordedUtc": "2026-11-05T13:32:09.560687600Z",
+  "lastObservedBossHP": 734.75934,
+  "lastObservedPlayerHP": 20.0,
+  "lastObservedArmor": 20.0,
+  "finalInventoryAccountingAvailable": false,
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "helperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+  "pilotSourceSha256": "3556AA8C833F0EB92FA81825573FF4E9039014602FCA65124F847D1D87C0D0F0",
+  "inputs": [
+    {
+      "source": "tests\\results\\full-fights\\2026-11-05T13-04-36.346328200Z\\05-cataclysm_the_leviathan-netherite_max.jsonl",
+      "name": "05-cataclysm_the_leviathan-netherite_max.jsonl",
+      "bytes": 3898673,
+      "sourceLastWriteUtc": "2026-11-05T13:32:09.5606876Z",
+      "sha256": "E8ED1077A3995AE4C148486B5AAFE481E82B7F4CF8EE77173A249806C74F3E0A",
+      "sourceBeforeAfterAndSnapshotMatch": true
+    },
+    {
+      "source": "tests\\results\\full-fights\\2026-11-05T13-04-36.346328200Z\\05-cataclysm_the_leviathan-netherite_max.telemetry.jsonl",
+      "name": "05-cataclysm_the_leviathan-netherite_max.telemetry.jsonl",
+      "bytes": 3909850,
+      "sourceLastWriteUtc": "2026-11-05T13:32:09.7612055Z",
+      "sha256": "1EBDA1A15C894A95D15467D964AFF9EC428FDC8D783998CA8C33CA201F8FF42E",
+      "sourceBeforeAfterAndSnapshotMatch": true
+    },
+    {
+      "source": "tests/evidence/levi-1.2.1-stun-bar-observations.json",
+      "name": "levi-1.2.1-stun-bar-observations.json",
+      "bytes": 6869,
+      "sourceLastWriteUtc": "2026-11-05T13:39:10.1494966Z",
+      "sha256": "F2E6EF8D75000B4E2B6453993C68DE541685DD7187ECFE02EC1E08F1A06EC1BA",
+      "sourceBeforeAfterAndSnapshotMatch": true
+    },
+    {
+      "source": "audit/levi-stall-2026-11-05-thread-dump.txt",
+      "name": "levi-stall-2026-11-05-thread-dump.txt",
+      "bytes": 174794,
+      "sourceLastWriteUtc": "2026-11-05T13:39:05.4341457Z",
+      "sha256": "E30C5338548561A484E6F7C78A164D2319834F2D1C352A2AABB24B501BA27894",
+      "sourceBeforeAfterAndSnapshotMatch": true
+    }
+  ],
+  "observedBeforeStall": [
+    "Accepted player attack during native RUSH frame45 at tick5426",
+    "Native LEVIATHAN_STUN at tick5427",
+    "Received bar clamps to zero below half before native meltdown flag",
+    "Received post-meltdown bar follows HP/max"
+  ],
+  "assessment": "The last progress coincided with a Sable bounds error involving the native portal ray. A later thread sample found the server running inside Lithium collision traversal through Sable movement hooks. Root cause remains under review."
+}

@@ -12,6 +12,7 @@ $sources=Get-ChildItem -LiteralPath (Join-Path $testRoot 'src\main\java') -Recur
 & javac -encoding UTF-8 -cp $classpath -d $classes @sources
 if($LASTEXITCODE -ne 0){throw 'Test mod compilation failed'}
 Copy-Item -LiteralPath (Join-Path $testRoot 'src\main\resources\META-INF') -Destination $classes -Recurse -Force
+Get-ChildItem -LiteralPath (Join-Path $testRoot 'src\main\resources') -File | ForEach-Object { Copy-Item -LiteralPath $_.FullName -Destination $classes -Force }
 $jarPath=Join-Path $testRoot 'build\survival-boss-balance-tests-1.0.0.jar'
 & jar --create --file $jarPath -C $classes .
 if($LASTEXITCODE -ne 0){throw 'Test jar creation failed'}

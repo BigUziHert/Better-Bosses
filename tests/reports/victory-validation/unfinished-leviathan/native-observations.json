@@ -1,0 +1,196 @@
+{
+  "scope": "Executed observations from an unfinished native encounter; no victory credit. Server stopped advancing after tick5668 following Sable/portal-ray errors. The listed observations preceded that stall.",
+  "run": "2026-11-05T13-04-36.346328200Z",
+  "boss": "cataclysm:the_leviathan",
+  "production": "1.2.1 / 53C2399B (parent-confirmed runtime)",
+  "helperSha256": "B34017BB173BA9126AD43AA6A7BB7EE5BF9594A2150A6C482200318C156AD3A7",
+  "pilotSourceSha256": "3556AA8C833F0EB92FA81825573FF4E9039014602FCA65124F847D1D87C0D0F0",
+  "barSamples": [
+    {
+      "utc": "2026-11-05T13:29:34.982413300Z",
+      "clientTick": 46040,
+      "bossHealth": 547.3194,
+      "receivedBossBars": [
+        {
+          "name": "The Leviathan",
+          "color": "PURPLE",
+          "music": false,
+          "finiteAndInRange": true,
+          "darkenScreen": false,
+          "fog": false,
+          "overlay": "PROGRESS",
+          "progress": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-05T13:29:35.976549500Z",
+      "clientTick": 46060,
+      "bossHealth": 538.2994,
+      "receivedBossBars": [
+        {
+          "name": "The Leviathan",
+          "color": "PURPLE",
+          "music": false,
+          "finiteAndInRange": true,
+          "darkenScreen": false,
+          "fog": false,
+          "overlay": "PROGRESS",
+          "progress": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-05T13:29:36.980124600Z",
+      "clientTick": 46080,
+      "bossHealth": 518.09937,
+      "receivedBossBars": [
+        {
+          "name": "The Leviathan",
+          "color": "PURPLE",
+          "music": false,
+          "finiteAndInRange": true,
+          "darkenScreen": false,
+          "fog": false,
+          "overlay": "PROGRESS",
+          "progress": 0.0
+        }
+      ]
+    },
+    {
+      "utc": "2026-11-05T13:30:31.976451700Z",
+      "clientTick": 47180,
+      "bossHealth": 482.0194,
+      "receivedBossBars": [
+        {
+          "name": "The Leviathan",
+          "color": "PURPLE",
+          "music": false,
+          "finiteAndInRange": true,
+          "darkenScreen": false,
+          "fog": false,
+          "overlay": "PROGRESS",
+          "progress": 0.43819946
+        }
+      ]
+    }
+  ],
+  "nativeMeltdownTransition": [
+    {
+      "event": "state_transition",
+      "sequence": 2088,
+      "tick": 2789,
+      "utc": "2026-11-05T13:29:45.567248100Z",
+      "boss": "cataclysm:the_leviathan",
+      "state": {
+        "getMeltDown": true,
+        "isMeltDown": true,
+        "animation": "LEVIATHAN_PHASE2",
+        "runningGoals": [
+          "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanPhase2Goal"
+        ]
+      },
+      "subject": "cataclysm:the_leviathan#17541",
+      "entity": {
+        "type": "cataclysm:the_leviathan",
+        "id": 17541
+      },
+      "animationFrame": 91
+    }
+  ],
+  "acceptedNativeRushHit": {
+    "event": "damage_post",
+    "sequence": 3466,
+    "tick": 5426,
+    "utc": "2026-11-05T13:31:57.424621800Z",
+    "boss": "cataclysm:the_leviathan",
+    "victim": {
+      "type": "cataclysm:the_leviathan",
+      "id": 17541
+    },
+    "damageType": "minecraft:player_attack",
+    "direct": {
+      "type": "minecraft:player",
+      "id": 28,
+      "role": "fixture_player"
+    },
+    "owner": {
+      "type": "minecraft:player",
+      "id": 28,
+      "role": "fixture_player"
+    },
+    "armor": 10.0,
+    "toughness": 0.0,
+    "blocking": false,
+    "hurtCooldown": 20,
+    "bossContext": [
+      {
+        "state": {
+          "getMeltDown": true,
+          "isMeltDown": false,
+          "animation": "LEVIATHAN_RUSH",
+          "runningGoals": [
+            "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanRushAttackGoal"
+          ]
+        },
+        "entity": {
+          "type": "cataclysm:the_leviathan",
+          "id": 17541
+        },
+        "animationFrame": 45
+      }
+    ],
+    "attemptId": 725,
+    "hpBefore": 782.0194091796875,
+    "absorptionBefore": 0.0,
+    "originalHp": 11.0,
+    "amountAtObserver": 9.019999504089355,
+    "nativeCallers": [
+      "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.LLibrary_Boss_Monster.hurt",
+      "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity.hurt",
+      "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity.attackEntityFromPart",
+      "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Part.hurt"
+    ],
+    "hpAfter": 772.9994,
+    "absorptionAfter": 0.0,
+    "damageHp": 9.0199995,
+    "blockedHp": 0.0,
+    "shieldDurabilityDamage": 0.0,
+    "reductionsHp": {
+      "INVULNERABILITY": 0.0,
+      "ARMOR": 1.9800005,
+      "ENCHANTMENTS": 0.0,
+      "MOB_EFFECTS": 0.0,
+      "ABSORPTION": 0.0,
+      "INNATE_RESISTANCE": 0.0
+    },
+    "result": "hp_damage"
+  },
+  "nativeStunTransition": {
+    "event": "state_transition",
+    "sequence": 3467,
+    "tick": 5427,
+    "utc": "2026-11-05T13:31:57.458690300Z",
+    "boss": "cataclysm:the_leviathan",
+    "state": {
+      "getMeltDown": true,
+      "isMeltDown": false,
+      "animation": "LEVIATHAN_STUN",
+      "runningGoals": [
+        "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.The_Leviathan.The_Leviathan_Entity$LeviathanStunGoal"
+      ]
+    },
+    "subject": "cataclysm:the_leviathan#17541",
+    "entity": {
+      "type": "cataclysm:the_leviathan",
+      "id": 17541
+    },
+    "animationFrame": 1
+  },
+  "inputPolicy": "Bounded ordinary ranged10 spacing without deliberate offense, then ordinary sword pursuit when native RUSH was observed. Watcher stopped on native STUN and restored auto offense. No entity-state/health/velocity/phase/cooldown setters.",
+  "watcherSha256": "25B01109F684F71C52085C58C9355714D9AE044DE34A76CC9FC003BBE8F22A94",
+  "nativeSource": "tests\\results\\full-fights\\2026-11-05T13-04-36.346328200Z\\05-cataclysm_the_leviathan-netherite_max.telemetry.jsonl",
+  "clientSource": "run-client-playtest/client-fight-events.jsonl",
+  "originalEvidenceSha256": "F2E6EF8D75000B4E2B6453993C68DE541685DD7187ECFE02EC1E08F1A06EC1BA",
+  "reportSanitization": "Dynamic entity and bossbar UUIDs omitted. Native event times, frames, damage and phase fields retained."
+}

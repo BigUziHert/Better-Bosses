@@ -1,0 +1,162 @@
+{
+  "version": "1.2.1",
+  "status": "controlled_checks_passed",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "preparedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598",
+  "exporter": "tests/export-release-1.2.1.ps1",
+  "exporterSha256": "CDF2208748C2BDE4AEF41E20431B5C152BF6AEA799561F298EA2A37F3B7F3191",
+  "setupChecks": {
+    "freshRuntimeAssertions": "8364passed,0failed across18fresh suites",
+    "staleResultsGuard": "rejected historical actual_attacks.json as expected",
+    "powershellParse": "passed"
+  },
+  "updatedUtc": "2026-11-05T13:56:59.7911114Z",
+  "completedSuites": [
+    {
+      "phase": "actual_attacks",
+      "assertions": 76,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "armor_effects",
+      "assertions": 3,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "armor_matrix",
+      "assertions": 95,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "boss_bars",
+      "assertions": 396,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "combined_projectiles",
+      "assertions": 448,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "config_migration",
+      "assertions": 186,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "damage",
+      "assertions": 221,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_bmd",
+      "assertions": 1111,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_cataclysm",
+      "assertions": 585,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_twilight",
+      "assertions": 247,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "fixed_health",
+      "assertions": 3031,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "health",
+      "assertions": 639,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "assertions": 504,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "installed_restart_verify",
+      "assertions": 322,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "multiplayer_targets",
+      "assertions": 155,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "preinstall_prepare",
+      "assertions": 46,
+      "failed": 0,
+      "productionPresent": false,
+      "productionSha256": null,
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "preinstall_verify_keep",
+      "assertions": 230,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "vanilla",
+      "assertions": 69,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    }
+  ],
+  "continuousLeviathanTransition": "Observed before server stall in native case05 of2026-11-05T13-04-36.346328200Z. Received progress0 belowhalf before native flag, then0.43819946 at482.0194HP afterflag. Encounter unfinished.",
+  "continuousLeviathanTransitionEvidence": "../victory-validation/unfinished-leviathan/native-observations.json"
+}

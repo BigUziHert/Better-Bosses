@@ -132,6 +132,29 @@ final class ActualCataclysmAttacks {
         return ((Number)Class.forName("com.github.L_Ender.cataclysm.config.CMCommonConfig$"+boss)
             .getField(field).get(null)).floatValue();
     }
+    /** Shared native recipes for the separate netherite Brand sweep. No victim damage is synthesized. */
+    static void ignisProbe(LivingEntity boss,String attack) throws Exception {
+        switch(attack) {
+            case "opening" -> {
+                animation(boss,"SWING_ATTACK");
+                invoke(boss,"AreaAttack",IGNIS,6.5f,6f,70f,1f,.05f,80,2,200,5,false,0f);
+            }
+            case "heavy" -> {
+                animation(boss,"SHIELD_SMASH_ATTACK");
+                invoke(boss,"setAnimationTick",new Class<?>[]{I},34);
+                // Exact installed frame-34 melee component; its separate ShieldSmashDamage wave is not invoked.
+                invoke(boss,"AreaAttack",IGNIS,4.85f,2.5f,45f,1.5f,.15f,200,0,0,5,false,0f);
+            }
+            case "ultimate" -> {
+                invoke(boss,"setBossPhase",new Class<?>[]{I},2);
+                invoke(boss,"setIsShieldBreak",new Class<?>[]{Z},true);
+                animation(boss,"ULTIMATE_ATTACK");
+                invoke(boss,"setAnimationTick",new Class<?>[]{I},74);
+                boss.aiStep();
+            }
+            default -> throw new IllegalArgumentException(attack);
+        }
+    }
     private static void animation(LivingEntity boss,String name) throws Exception {
         Field field=boss.getClass().getField(name);
         Object animation=field.get(null);

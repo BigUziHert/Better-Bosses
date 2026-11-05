@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "survival.balance.tests.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": ["BmdActionTelemetryMixin", "ServerEntityEventTelemetryMixin", "DragonPhaseTelemetryMixin"],
+  "injectors": {"defaultRequire": 1}
+}

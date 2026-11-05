@@ -1,0 +1,68 @@
+{
+  "startedUtc": "2026-11-05T10:45:48.8425390Z",
+  "updatedUtc": "2026-11-05T10:52:16.4607505Z",
+  "status": "complete",
+  "operation": "Native PowerShell Move-Item, verified SHA256 manifest, original-path junction",
+  "allowedTaskRelativePaths": [
+    "work\\boss-balance-test-server",
+    "work\\client-test",
+    "outputs\\twilight-3x-test",
+    "outputs\\twilight-3x-pack"
+  ],
+  "destinationRoot": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies",
+  "sourceSurvivalAccessed": false,
+  "activeFixturesAndResultsMoved": false,
+  "cFreeBeforeBytes": 931536896,
+  "cFreeNowBytes": 4931756032,
+  "completed": [
+    {
+      "taskRelativePath": "work\\boss-balance-test-server",
+      "source": "C:\\Users\\caleb\\Documents\\Codex\\2026-11-01\\do\\work\\boss-balance-test-server",
+      "destination": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\work\\boss-balance-test-server",
+      "completedUtc": "2026-11-05T10:49:44.6778097Z",
+      "files": 15008,
+      "bytes": 1178037343.0,
+      "manifest": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\_relocation-evidence\\work-boss-balance-test-server.manifest.json",
+      "manifestSha256": "C6360B28CDD817DAD83F4C91BCEB8F5AF821BBCC24ADB92B4412797A28A8AA30",
+      "hashesAndSizesMatch": true,
+      "originalPathJunctionVerified": true
+    },
+    {
+      "taskRelativePath": "work\\client-test",
+      "source": "C:\\Users\\caleb\\Documents\\Codex\\2026-11-01\\do\\work\\client-test",
+      "destination": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\work\\client-test",
+      "completedUtc": "2026-11-05T10:50:27.2607530Z",
+      "files": 2581,
+      "bytes": 867739238.0,
+      "manifest": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\_relocation-evidence\\work-client-test.manifest.json",
+      "manifestSha256": "39A3149C8624D829A03D04607C99B9E6125F05D3B3D688E280B16D2DE15AC0F1",
+      "hashesAndSizesMatch": true,
+      "originalPathJunctionVerified": true
+    },
+    {
+      "taskRelativePath": "outputs\\twilight-3x-test",
+      "source": "C:\\Users\\caleb\\Documents\\Codex\\2026-11-01\\do\\outputs\\twilight-3x-test",
+      "destination": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\outputs\\twilight-3x-test",
+      "completedUtc": "2026-11-05T10:51:54.7006418Z",
+      "files": 5146,
+      "bytes": 1127326831.0,
+      "manifest": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\_relocation-evidence\\outputs-twilight-3x-test.manifest.json",
+      "manifestSha256": "20A2D1DC46DB3F60B2C82C270FE11D667344DB7E5A51E28289018A77D9E8D7D6",
+      "hashesAndSizesMatch": true,
+      "originalPathJunctionVerified": true
+    },
+    {
+      "taskRelativePath": "outputs\\twilight-3x-pack",
+      "source": "C:\\Users\\caleb\\Documents\\Codex\\2026-11-01\\do\\outputs\\twilight-3x-pack",
+      "destination": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\outputs\\twilight-3x-pack",
+      "completedUtc": "2026-11-05T10:52:16.4141023Z",
+      "files": 852,
+      "bytes": 824035049.0,
+      "manifest": "D:\\Codex-Test-Runtimes\\Better-Bosses-1.2-2026-11-04\\archived-copies\\_relocation-evidence\\outputs-twilight-3x-pack.manifest.json",
+      "manifestSha256": "B031FF9FD10E63BF187C52D4557CE793F805A09EFD803A38E971C9147258CEB9",
+      "hashesAndSizesMatch": true,
+      "originalPathJunctionVerified": true
+    }
+  ],
+  "failure": ""
+}

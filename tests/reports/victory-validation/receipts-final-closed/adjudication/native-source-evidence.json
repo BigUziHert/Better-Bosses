@@ -1,0 +1,18 @@
+{
+  "installedTwilightJar": "twilightforest-1.21.1-4.8.3345-universal.jar",
+  "installedTwilightJarSha256": "493DA16D10210F9F53A3C33B3D8FCB4AE9B14016EE420D753C894562BD9ABA35",
+  "damageTagEntry": "data/minecraft/tags/damage_type/damages_helmet.json",
+  "damageTag": {
+    "values": [
+      "twilightforest:ghast_tear",
+      "twilightforest:thrown_block"
+    ]
+  },
+  "patchedMinecraftVersion": "1.21.1 with NeoForge21.1.264",
+  "patchedSourceArchiveSha256": "ADF2140ADC676F9EEF134DEB658A6802901B37D4E2B69EB54C8FBF7264F2C322",
+  "sourceEntry": "net/minecraft/world/entity/LivingEntity.java",
+  "sourceFirstLine": 1154,
+  "sourceLastLine": 1159,
+  "sourceExcerpt": "            if (p_21016_.is(DamageTypeTags.DAMAGES_HELMET) && !this.getItemBySlot(EquipmentSlot.HEAD).isEmpty()) {\n                this.hurtHelmet(p_21016_, p_21017_);\n                p_21017_ *= 0.75F;\n            }\n\n            this.damageContainers.peek().setNewDamage(p_21017_); //update container with vanilla changes",
+  "interpretation": "With an equipped helmet, this native step reduces the processed incoming amount by25percent before later defenses. It updates container newDamage directly and therefore is absent from the named reduction sum."
+}

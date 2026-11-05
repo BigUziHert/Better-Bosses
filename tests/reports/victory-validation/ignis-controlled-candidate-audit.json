@@ -1,0 +1,1757 @@
+{
+  "schemaVersion": 1,
+  "generatedUtc": "2026-11-05T21:20:00.3866845Z",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "helperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598",
+  "sourceInputs": [
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_cataclysm-attacks.json",
+      "sha256": "DD69EB4CE041D43F8852B8E3AF80E990FCE37A29392D87FE4550E33049EA6B53",
+      "lastWriteUtc": "2026-11-05T11:17:56.2661239Z"
+    },
+    {
+      "path": "tests/evidence/1.2.1-controlled-final-results/exhaustive_cataclysm.json",
+      "sha256": "A0A2E7F63B92366AC9BBC0B3EC67B2ED59FD2AEC77661B1E24EEB68F9094030A",
+      "lastWriteUtc": "2026-11-05T11:17:56.2701238Z"
+    }
+  ],
+  "candidateCount": 9,
+  "allNineHaveExecutedNativeCallbackEvidence": true,
+  "allNineNaturallyObserved": false,
+  "reference": "Plain diamond,20HP,Hard. HP/gear/effects/cooldowns/pose reset between independent framecontacts. Supplemental netherite Brand and armor suites are separate.",
+  "candidates": [
+    {
+      "candidate": "state/animation=BODY_CHECK_ATTACK_SOUL2",
+      "coverageClass": "staged_animation_native_aiStep",
+      "scopeLimit": "Native BodyCheckAttack accepted hits after explicit animation/frame assignment. Follow-up selection gate was bypassed. No matching goal was found for this animation.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/BODY_CHECK_ATTACK_SOUL2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/BODY_CHECK_ATTACK_SOUL2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/BODY_CHECK_ATTACK_SOUL2/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "state/animation=BODY_CHECK_ATTACK_SOUL3",
+      "coverageClass": "staged_animation_native_aiStep",
+      "scopeLimit": "Native BodyCheckAttack accepted hits after explicit animation/frame assignment. Phase1/intact-shield SHIELD_SMASH follow-up selection was not tested. No matching goal was found for this animation.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/BODY_CHECK_ATTACK_SOUL3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/BODY_CHECK_ATTACK_SOUL3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/BODY_CHECK_ATTACK_SOUL3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "state/animation=BODY_CHECK_ATTACK_SOUL4",
+      "coverageClass": "staged_animation_native_aiStep",
+      "scopeLimit": "Native BodyCheckAttack accepted hits after explicit animation/frame assignment. Failed-poke follow-up selection gate was bypassed. No matching goal was found for this animation.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/BODY_CHECK_ATTACK_SOUL4/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/BODY_CHECK_ATTACK_SOUL4/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/BODY_CHECK_ATTACK_SOUL4/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.806963920593262,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.193036079406738,
+              "originalIncomingHp": 19.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.BodyCheckAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "state/animation=SWING_ATTACK_BERSERK",
+      "coverageClass": "staged_animation_native_goal_and_aiStep",
+      "scopeLimit": "Matching Swing_Attack_Goal start/tick and aiStep executed with explicit animation/frame assignments. Natural selection and moving approach remain separate.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/SWING_ATTACK_BERSERK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 22.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/SWING_ATTACK_BERSERK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 22.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/SWING_ATTACK_BERSERK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.sword": 1
+          },
+          "hits": [
+            {
+              "damageHp": 7.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 13.0,
+              "originalIncomingHp": 22.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "state/animation=PHASE_3",
+      "coverageClass": "native_health_gate_plus_staged_animation_frames",
+      "scopeLimit": "A real boss.tick selected PHASE_3 with priorphase1,stagedhealth justbelow1/3 and no target. Animation progression was advanced by staged frames with native aiStep.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Native boss.tick at health just below 0.33333334 max HP selected PHASE_3; no player target. The animation's native damage frames are separate scenarios.",
+          "status": "transition",
+          "move": "phase2"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/PHASE_3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 5,
+          "balanceProfiles": {
+            "ignis.heavy.cap": 4,
+            "ignis.fireball.cap": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.9738006591796875,
+              "type": "minecraft:player_explosion",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.026199340820312,
+              "originalIncomingHp": 16.4079532623291,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.util.CustomExplosion.IgnisExplosion.explode",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.ShieldExplode",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/PHASE_3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 5,
+          "balanceProfiles": {
+            "ignis.heavy.cap": 4,
+            "ignis.fireball.cap": 1
+          },
+          "hits": [
+            {
+              "damageHp": 5.9738006591796875,
+              "type": "minecraft:player_explosion",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 14.026199340820312,
+              "originalIncomingHp": 16.4079532623291,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.util.CustomExplosion.IgnisExplosion.explode",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.ShieldExplode",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/PHASE_3/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 4,
+          "balanceProfiles": {
+            "ignis.heavy.cap": 4
+          },
+          "hits": [
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            },
+            {
+              "damageHp": 14.100000381469727,
+              "type": "minecraft:indirect_magic",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.899999618530273,
+              "originalIncomingHp": 14.100000381469727,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.Phase_Transition",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": [
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_native_tick",
+          "entity": "cataclysm:ignis",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_native_completion",
+          "entity": "cataclysm:ignis",
+          "expected": 2.0,
+          "actual": 2.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_returns_idle",
+          "entity": "cataclysm:ignis",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_nbt_reload",
+          "entity": "cataclysm:ignis",
+          "expected": 2.0,
+          "actual": 2.0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate": "state/getBossPhase=2",
+      "coverageClass": "native_completion_and_nbt_assertions",
+      "scopeLimit": "Native transition completion reached2 and NBT reload retained2. This starts from stagedhealth/priorphase and does not establish an autonomous fight.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Completed native transition and verified phase survives entity NBT save/load. This is a serialization test, not a server process restart.",
+          "status": "transition",
+          "move": "ignis_phase2"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Native boss.tick at health just below 0.33333334 max HP selected PHASE_3; no player target. The animation's native damage frames are separate scenarios.",
+          "status": "transition",
+          "move": "phase2"
+        }
+      ],
+      "assertions": [
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_native_tick",
+          "entity": "cataclysm:ignis",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_native_completion",
+          "entity": "cataclysm:ignis",
+          "expected": 2.0,
+          "actual": 2.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_returns_idle",
+          "entity": "cataclysm:ignis",
+          "expected": 1.0,
+          "actual": 1.0,
+          "passed": true
+        },
+        {
+          "phase": "exhaustive_cataclysm",
+          "test": "exhaustive_ignis_phase2_nbt_reload",
+          "entity": "cataclysm:ignis",
+          "expected": 2.0,
+          "actual": 2.0,
+          "passed": true
+        }
+      ]
+    },
+    {
+      "candidate": "state/animation=ULTIMATE_ATTACK",
+      "coverageClass": "staged_animation_native_goal_and_aiStep",
+      "scopeLimit": "Native animation callbacks plus six outer-lane hit probes executed. Animation/frame,pose and phase were explicitly staged. This is not natural move selection or a fullcombo.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/directional_ultimate_outer_lane1.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/directional_ultimate_outer_lane-5.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/directional_ultimate_outer_lane1.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/directional_ultimate_outer_lane-5.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/directional_ultimate_outer_lane1.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/directional_ultimate_outer_lane-5.5/native_frame",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 5.59058,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 14.409420013427734,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 5.590579986572266,
+              "originalIncomingHp": 36.0,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.UltimateAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "balance_profile/ignis.flame_pulse",
+      "coverageClass": "native_emitted_effect_tick",
+      "scopeLimit": "Ultimate natively emitted seven flame_strikes per context. One retained representative was placed into contact and ticked up to140ticks. Victim reset between ticks. Not every emitted strike/trajectory or cumulativeDOT.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/ULTIMATE_ATTACK/emitted_cataclysm:flame_strike/effect_ticks",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 18.5,
+          "maxHp": 20.0,
+          "incomingEvents": 8,
+          "balanceProfiles": {
+            "ignis.flame_pulse.cap": 8
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/ULTIMATE_ATTACK/emitted_cataclysm:flame_strike/effect_ticks",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 18.5,
+          "maxHp": 20.0,
+          "incomingEvents": 8,
+          "balanceProfiles": {
+            "ignis.flame_pulse.cap": 8
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/ULTIMATE_ATTACK/emitted_cataclysm:flame_strike/effect_ticks",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 18.5,
+          "maxHp": 20.0,
+          "incomingEvents": 8,
+          "balanceProfiles": {
+            "ignis.flame_pulse.cap": 8
+          },
+          "hits": [
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            },
+            {
+              "damageHp": 1.5,
+              "type": "cataclysm:flame_strike",
+              "directType": "cataclysm:flame_strike",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 18.5,
+              "originalIncomingHp": 13.799999237060547,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.damage",
+                "com.github.L_Ender.cataclysm.entity.effect.Flame_Strike_Entity.tick"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    },
+    {
+      "candidate": "balance_profile/ignis.ultimate",
+      "coverageClass": "native_aiStep_accepted_profile",
+      "scopeLimit": "Accepted AreaAttack through nativeaiStep matched ignis.ultimate. Explicit frame74 and stageddefenses/Brand are independent hits, not continuous combat.",
+      "naturalContinuousCoverageCredit": false,
+      "executedScenarios": [
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_0/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 1.0000019,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 0; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_0/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_1/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 1.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 19.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0,
+              "originalIncomingHp": 49.5,
+              "armor": 16.0,
+              "toughness": 6.4,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 1; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_1/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_2/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 0.9999981,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 19.000001907348633,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 0.9999980926513672,
+              "originalIncomingHp": 49.5,
+              "armor": 12.0,
+              "toughness": 4.8,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 2; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_2/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_3/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 1.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 19.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0,
+              "originalIncomingHp": 49.5,
+              "armor": 7.999999999999998,
+              "toughness": 3.1999999999999993,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 3; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_3/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_4/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 1.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 19.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0,
+              "originalIncomingHp": 49.5,
+              "armor": 3.999999999999999,
+              "toughness": 1.5999999999999996,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 4; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_4/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "brand_5/ultimate_frame74",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 1.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 19.0,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0,
+              "originalIncomingHp": 49.5,
+              "armor": 0.0,
+              "toughness": 0.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "detail": "Pre-existing Brand 5; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.",
+          "status": "mechanic",
+          "move": "brand_5/ultimate_frame74"
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase0/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase1/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        },
+        {
+          "boss": "cataclysm:ignis",
+          "move": "phase2_shield_broken/ULTIMATE_ATTACK/native_frames",
+          "status": "damage_observed",
+          "startHp": 20.0,
+          "endHp": 20.0,
+          "maxHp": 20.0,
+          "incomingEvents": 1,
+          "balanceProfiles": {
+            "ignis.ultimate": 1
+          },
+          "hits": [
+            {
+              "damageHp": 18.999998092651367,
+              "type": "minecraft:mob_attack",
+              "directType": "cataclysm:ignis",
+              "ownerType": "cataclysm:ignis",
+              "beforeHp": 20.0,
+              "afterHp": 1.0000019073486328,
+              "originalIncomingHp": 49.5,
+              "armor": 20.0,
+              "toughness": 8.0,
+              "nativeCallers": [
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.AreaAttack",
+                "com.github.L_Ender.cataclysm.entity.AnimationMonster.BossMonsters.Ignis_Entity.aiStep"
+              ]
+            }
+          ]
+        }
+      ],
+      "assertions": []
+    }
+  ],
+  "existingRerunCommand": "bbtest exhaustive cataclysm cataclysm:ignis",
+  "rerunScope": "Isolatedserveridleonly. Executes all existing Ignis controlled probes and writes filtered result files. Does not close natural randomfollowup/chase prerequisite gaps.",
+  "noRuntimeCommandsExecutedByThisAudit": true,
+  "noTestOrProductionImplementationChanged": true
+}

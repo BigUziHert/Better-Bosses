@@ -1,0 +1,20 @@
+{
+  "generatedUtc": "2026-11-05T11:25:32.5333809Z",
+  "previousSha256": "C845EB9D60C0F64652FD61F97DA4109B3AF6ACD86734F179E66E17719B206868",
+  "currentSha256": "33EEA7D5681EAC588B43C3CAAD8481C66839949769E25C5D29B4BC581287E1EC",
+  "matchedMeasurements": 13120,
+  "comparisonToleranceHearts": 0.0001,
+  "differentMeasurements": 42,
+  "groups": [
+    {
+      "armor": "alexsmobs:emu",
+      "differences": 23
+    },
+    {
+      "armor": "cataclysm:cursium",
+      "differences": 19
+    }
+  ],
+  "allDifferencesHaveAZeroOutcome": true,
+  "scope": "Offline comparison of two executed single-probe matrices. Source-based native dodge interpretation is documented separately. No dodge probability is estimated from this sample."
+}

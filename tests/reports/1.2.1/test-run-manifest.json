@@ -1,0 +1,346 @@
+{
+  "version": "1.2.1",
+  "generatedUtc": "2026-11-05T11:22:00.5521871Z",
+  "runStartedUtc": "2026-11-05T11:10:00.0000000+00:00",
+  "status": "controlled_checks_passed",
+  "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+  "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598",
+  "suiteProvenanceBasis": "Explicit executed helper identity supplied with the completed snapshot. Each source file is hashed and its timestamp checked against the new run start.",
+  "suites": [
+    {
+      "phase": "actual_attacks",
+      "assertions": 76,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "armor_effects",
+      "assertions": 3,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "armor_matrix",
+      "assertions": 95,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "boss_bars",
+      "assertions": 396,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "combined_projectiles",
+      "assertions": 448,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "config_migration",
+      "assertions": 186,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "damage",
+      "assertions": 221,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_bmd",
+      "assertions": 1111,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_cataclysm",
+      "assertions": 585,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "exhaustive_twilight",
+      "assertions": 247,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "fixed_health",
+      "assertions": 3031,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "health",
+      "assertions": 639,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "ignis_brand_netherite",
+      "assertions": 504,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "installed_restart_verify",
+      "assertions": 322,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "multiplayer_targets",
+      "assertions": 155,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "preinstall_prepare",
+      "assertions": 46,
+      "failed": 0,
+      "productionPresent": false,
+      "productionSha256": null,
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "preinstall_verify_keep",
+      "assertions": 230,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    },
+    {
+      "phase": "vanilla",
+      "assertions": 69,
+      "failed": 0,
+      "productionPresent": true,
+      "productionSha256": "53C2399B5040778E76EDE113793AAC6C263A6EEB5779AD52FA80F4D4B0F37C77",
+      "executedHelperSha256": "C1C5ACEC1E30CA930457CB2B3B05448AA06F2C81849A4F8E00BAC4C184E3F598"
+    }
+  ],
+  "assertions": 8364.0,
+  "failed": 0,
+  "leviathanTransitionAssertions": 32,
+  "approvedProfiles": 73,
+  "armorOutfits": 90,
+  "armorMeasurements": 13120,
+  "setEffectMeasurements": 258,
+  "inputs": [
+    {
+      "file": "actual_attacks.json",
+      "bytes": 38234,
+      "lastWriteUtc": "2026-11-05T11:17:45.5336624Z",
+      "sha256": "2D78716E60B3D3C3B492FB11FDDBDE669A714442971D17049505F7961FBE4583"
+    },
+    {
+      "file": "armor_effects.json",
+      "bytes": 637,
+      "lastWriteUtc": "2026-11-05T11:18:16.5788295Z",
+      "sha256": "44872EFAA8365177F489E640AB394F941EA543BAC9343F41A03130727776D2BB"
+    },
+    {
+      "file": "armor_matrix.json",
+      "bytes": 19366,
+      "lastWriteUtc": "2026-11-05T11:18:14.3511282Z",
+      "sha256": "5202D16BB44202D7DF781B37D9EA34D83A6E9EA2DA14F1E5A1BDA10CCD3846E7"
+    },
+    {
+      "file": "armor-effects.json",
+      "bytes": 219284,
+      "lastWriteUtc": "2026-11-05T11:18:16.5778278Z",
+      "sha256": "F2DAB33AC97D930D5CB81471C4C09DBE97D28DA68416426D6D639F1E24F447FE"
+    },
+    {
+      "file": "armor-matrix.json",
+      "bytes": 9609942,
+      "lastWriteUtc": "2026-11-05T11:18:14.3491262Z",
+      "sha256": "D1160BFD822D48E4DA590FE6850FE3F383D149300D7C225A2CB9B91654FA16A0"
+    },
+    {
+      "file": "boss_bars.json",
+      "bytes": 78929,
+      "lastWriteUtc": "2026-11-05T11:17:22.1730567Z",
+      "sha256": "50E7F62B4C168DF417418FC269E44E7DED3C4C41E783FB430B577C46FBACC2D5"
+    },
+    {
+      "file": "combined_projectiles.json",
+      "bytes": 117081,
+      "lastWriteUtc": "2026-11-05T11:18:16.8179754Z",
+      "sha256": "17F944A72535E51871767536F3A062B96C7DF2C6A12B2D98FB717A0AF119F407"
+    },
+    {
+      "file": "combined-projectiles.json",
+      "bytes": 124837,
+      "lastWriteUtc": "2026-11-05T11:18:16.8159731Z",
+      "sha256": "EAE88A685EE2E19D2A46A283E07FE06C9E82E47F499DB155FB0965B9C26BC55E"
+    },
+    {
+      "file": "config_migration.json",
+      "bytes": 36713,
+      "lastWriteUtc": "2026-11-05T11:17:42.9583244Z",
+      "sha256": "B4A86B56870C8B377EB3948AF1C93047EA33AA8E2F3185512BDFD88E82C59022"
+    },
+    {
+      "file": "damage.json",
+      "bytes": 41310,
+      "lastWriteUtc": "2026-11-05T11:17:45.3756221Z",
+      "sha256": "5D42484CB5BDE3077FF2EF45026D726BF5B6B93D667842A7BD58E4F579CE4E50"
+    },
+    {
+      "file": "exhaustive_bmd-attacks.json",
+      "bytes": 420171,
+      "lastWriteUtc": "2026-11-05T11:17:50.5919452Z",
+      "sha256": "9F0B9EB8EEDC59B60CFF0C8FB2197B0EEC6545ACA2A5CC3D0C7488F18386B6F4"
+    },
+    {
+      "file": "exhaustive_bmd.json",
+      "bytes": 252923,
+      "lastWriteUtc": "2026-11-05T11:17:50.5969432Z",
+      "sha256": "042D962014012DFF964B6C6B1EAFE412433C0734EF34EE0D3168426ABFD8E539"
+    },
+    {
+      "file": "exhaustive_cataclysm-attacks.json",
+      "bytes": 2439305,
+      "lastWriteUtc": "2026-11-05T11:17:56.2661239Z",
+      "sha256": "DD69EB4CE041D43F8852B8E3AF80E990FCE37A29392D87FE4550E33049EA6B53"
+    },
+    {
+      "file": "exhaustive_cataclysm.json",
+      "bytes": 139643,
+      "lastWriteUtc": "2026-11-05T11:17:56.2701238Z",
+      "sha256": "A0A2E7F63B92366AC9BBC0B3EC67B2ED59FD2AEC77661B1E24EEB68F9094030A"
+    },
+    {
+      "file": "exhaustive_twilight-attacks.json",
+      "bytes": 91174,
+      "lastWriteUtc": "2026-11-05T11:17:48.5413695Z",
+      "sha256": "882D0298CE225B323DE6E06886086D4B38D714C33781FB36ABE916AB64101293"
+    },
+    {
+      "file": "exhaustive_twilight.json",
+      "bytes": 53211,
+      "lastWriteUtc": "2026-11-05T11:17:48.5433688Z",
+      "sha256": "70A387F51794D121119893BF987D1139309F3C6C89E030EB765CE395BD3E8AF4"
+    },
+    {
+      "file": "fixed_health.json",
+      "bytes": 628929,
+      "lastWriteUtc": "2026-11-05T11:17:45.1265218Z",
+      "sha256": "97A5E3F2CAB70A6261666FFB813641E6F455EDEB6E65E94145E7ECF0D15B5CF4"
+    },
+    {
+      "file": "health.json",
+      "bytes": 120941,
+      "lastWriteUtc": "2026-11-05T11:17:43.6401917Z",
+      "sha256": "0AE902B129C83300A0858BE1D9A2A10D689F2F2D08E13DDF3281A38BDCC29FC9"
+    },
+    {
+      "file": "ignis_brand_netherite.json",
+      "bytes": 116165,
+      "lastWriteUtc": "2026-11-05T11:18:17.0376907Z",
+      "sha256": "F6D2A594788DD87C4C02C89C8A9F17DCBDAE5B0D86EB22360EC4DAF81D004CEE"
+    },
+    {
+      "file": "ignis-brand-netherite.json",
+      "bytes": 102054,
+      "lastWriteUtc": "2026-11-05T11:18:17.0356906Z",
+      "sha256": "EAC24CEC57D699B2F02C086E258D47EED67A357C67E2737935E77ADCDEE5EEBC"
+    },
+    {
+      "file": "installed_restart_verify.json",
+      "bytes": 71634,
+      "lastWriteUtc": "2026-11-05T11:17:21.5416988Z",
+      "sha256": "54BDE176A84119234BC7AD7AE32B6040513FB96AD2DF48B916D0787E737DDD2E"
+    },
+    {
+      "file": "installed-restart-load-evidence.json",
+      "bytes": 15366,
+      "lastWriteUtc": "2026-11-05T11:17:21.5376967Z",
+      "sha256": "EE1D9D1D61E60CE062533D3FEF125A838D18284D92B9EDA5B745708DA2050A85"
+    },
+    {
+      "file": "installed-restart-manifest.json",
+      "bytes": 8224,
+      "lastWriteUtc": "2026-11-05T11:13:17.9809380Z",
+      "sha256": "1083BA2DFDDE504BFC2280C18B575491ABAB9D143D2D59C27FA7222390F36AD6"
+    },
+    {
+      "file": "multiplayer_targets.json",
+      "bytes": 34281,
+      "lastWriteUtc": "2026-11-05T11:17:46.6007834Z",
+      "sha256": "BEE518845FE27F3E3E92CFB010C7C6CCD1B566294F6ECFC54516FCB802FFAE68"
+    },
+    {
+      "file": "multiplayer-target-selection.json",
+      "bytes": 132116,
+      "lastWriteUtc": "2026-11-05T11:17:46.5987810Z",
+      "sha256": "7DFA4036EA9225FF5DFEB9D7216C8024661878877F835F98A9F1484A39640D67"
+    },
+    {
+      "file": "preinstall_prepare.json",
+      "bytes": 9571,
+      "lastWriteUtc": "2026-11-05T11:10:26.7876266Z",
+      "sha256": "6DED256CE5332DA98A8D94BD9DE95C6A2A30FA35D27E2131F9F90047AE970CF6"
+    },
+    {
+      "file": "preinstall_verify_keep.json",
+      "bytes": 48562,
+      "lastWriteUtc": "2026-11-05T11:13:18.1022648Z",
+      "sha256": "1D07347D44CB657A7BC87486BE8138C1C5C643DF8BD8A60DEE9EE7768F97E39B"
+    },
+    {
+      "file": "preinstall-load-evidence.json",
+      "bytes": 15361,
+      "lastWriteUtc": "2026-11-05T11:13:17.9799382Z",
+      "sha256": "A4FB909854566B0B986EC2D7C90005CF72A2C3B3F962830987FA1DF1A38DECEA"
+    },
+    {
+      "file": "preinstall-manifest.json",
+      "bytes": 9304,
+      "lastWriteUtc": "2026-11-05T11:10:26.3317752Z",
+      "sha256": "08640B3DDD73F014DC7381E5996F24F968B9AD45EC5088EDABD2CDE05E99121C"
+    },
+    {
+      "file": "vanilla.json",
+      "bytes": 20322,
+      "lastWriteUtc": "2026-11-05T11:17:45.6791938Z",
+      "sha256": "ACD5DB1E0D073A2C16BFEB24B461D31E4DEB64A4A91BEEFC4A4610FAB3B56CF8"
+    }
+  ],
+  "naturalVictoryLedger": "../victory-validation/coverage-ledger.md",
+  "allMovesAndPhasesCertified": false
+}

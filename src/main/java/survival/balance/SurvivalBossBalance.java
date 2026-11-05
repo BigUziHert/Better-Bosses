@@ -19,6 +19,6 @@ public final class SurvivalBossBalance {
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, ProjectileDamageBudget::beforeDamage);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, ProjectileDamageBudget::afterDamage);
         NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, ProjectileDamageBudget::onExplosionStart);
-        BalanceSettings.LOG.info("Survival Boss Balance 1.2.0 loaded: 23 fixed-health bosses, plain-diamond attack reference, per-projectile combined budgets");
+        BalanceSettings.LOG.info("Survival Boss Balance 1.2.1 loaded: 23 fixed-health bosses, plain-diamond attack reference, per-projectile combined budgets");
     }
 }
