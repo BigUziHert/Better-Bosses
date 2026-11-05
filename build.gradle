@@ -18,6 +18,34 @@ neoForge {
     version = neo_version
 }
 
+// Isolated client playthrough driver: never included in the production JAR.
+sourceSets {
+    clientPlaytest {
+        java.srcDir 'tests/client/java'
+        resources.srcDir 'tests/client/resources'
+    }
+}
+neoForge {
+    addModdingDependenciesTo sourceSets.clientPlaytest
+    mods {
+        survival_boss_balance { sourceSet sourceSets.main }
+        bossfight_clientpilot { sourceSet sourceSets.clientPlaytest }
+    }
+    runs {
+        clientPlaytest {
+            client()
+            gameDirectory = project.file('run-client-playtest')
+            sourceSet = sourceSets.clientPlaytest
+            loadedMods = [mods.survival_boss_balance, mods.bossfight_clientpilot]
+            systemProperty 'survival.bossBalance.clientPlaytest', 'true'
+            // oωo otherwise enables a different handshake only in development.
+            systemProperty 'owo.handshake.enabled', 'false'
+            jvmArgument '-Xmx4G'
+            programArguments = ['--username', 'BossPlaytest', '--width', '1280', '--height', '720', '--quickPlayMultiplayer', '127.0.0.1:25576']
+        }
+    }
+}
+
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
     options.release = 21

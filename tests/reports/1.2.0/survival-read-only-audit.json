@@ -1,0 +1,842 @@
+{
+  "source": "S:\\Survival",
+  "baselineSha256": "1567D809A736283CEE06289AF7B05A018E3C62686B27B7DA5D051C8182D034B7",
+  "startedUtc": "2026-11-05T03:21:12.1705131Z",
+  "finishedUtc": "2026-11-05T03:21:20.2035953Z",
+  "scope": [
+    "mods",
+    "config",
+    "defaultconfigs",
+    "world/serverconfig",
+    "kubejs"
+  ],
+  "baselineFiles": 871,
+  "currentFiles": 871,
+  "contentChanged": 1,
+  "metadataOnlyChanged": 111,
+  "added": 0,
+  "removed": 0,
+  "unstableReads": 0,
+  "readErrors": 0,
+  "comparison": "SHA-256, file length and LastWriteTimeUtc compared per file; source opened only for enumeration, metadata and hashing",
+  "writesToSource": false,
+  "sourceOperations": "Read-only enumeration, metadata and SHA-256. No writes, launches, deletions or configuration changes in S:\\Survival.",
+  "scopeLimit": "This comparison covers the listed 871 mod/config/script files, not continuously changing world saves or server logs",
+  "rawAuditSha256": "0DC1A91C4B772CF370A29006DEEFD236A7799DD6923BEF0DF8F8DF450EFAF4E6",
+  "previousComparison": {
+    "startedUtc": "2026-11-05T01:44:43.1940793Z",
+    "finishedUtc": "2026-11-05T01:45:03.0502316Z",
+    "contentChanged": 0,
+    "metadataOnlyChanged": 0,
+    "added": 0,
+    "removed": 0,
+    "rawAuditSha256": "C62353FD0D70668A026C66C2806AECBF04AC7E66E3A544A757D01741448D711F"
+  },
+  "contentChangeDetails": [
+    {
+      "path": "config\\zfastnoise.mixin.properties",
+      "beforeSha256": "69DE923F11B7A768DC9B2B71911B2A767B8D4CEC92F3551F4BDA90BECD95F7D8",
+      "afterSha256": "EC3C45DAAE1F547777DB69BC8A57329CE612B72083B791316A318E92128F6309",
+      "beforeLength": 80,
+      "afterLength": 80,
+      "beforeLastWriteUtc": "2026-11-04T23:41:27.6401135Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:19.4063358Z",
+      "change": "Generated timestamp comment only; configuration values unchanged",
+      "beforeGeneratedComment": "#Wed Nov 04 17:41:27 CST 2026",
+      "afterGeneratedComment": "#Wed Nov 04 21:01:19 CST 2026",
+      "baselineReconstruction": "Replacing only the generated timestamp comment in the current text reproduces the baseline SHA-256 exactly",
+      "reconstructedBaselineSha256": "69DE923F11B7A768DC9B2B71911B2A767B8D4CEC92F3551F4BDA90BECD95F7D8"
+    }
+  ],
+  "metadataOnlyChangeDetails": [
+    {
+      "path": "config\\alloyed.toml",
+      "sha256": "B3575DD01154BB9C146ABD84FACBDAC202FB81B501F2AE24DA4B9D347CCDD484",
+      "length": 120,
+      "beforeLastWriteUtc": "2026-11-04T23:41:49.8721416Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:47.759918Z"
+    },
+    {
+      "path": "config\\alltheleaks.json",
+      "sha256": "2437057BDA7E53D91E7A8C400DA308A8D848FBDCC80ED845A9C8DBDABD071482",
+      "length": 398,
+      "beforeLastWriteUtc": "2026-11-04T23:41:29.2336677Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:21.5210365Z"
+    },
+    {
+      "path": "config\\amc.json",
+      "sha256": "8C017ECFAD868F8D33E972EBB81C49B2FBB2AF88D41FDB91F7D9545258D94CB2",
+      "length": 45561,
+      "beforeLastWriteUtc": "2026-11-04T23:41:43.5387588Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:38.2174842Z"
+    },
+    {
+      "path": "config\\bosses_of_mass_destruction.json5",
+      "sha256": "E95B34243F4370F41CC61AA2C39DE0EBAF57134B349A46107EFFF544CFBEE559",
+      "length": 1475,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.9555439Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:44.0179854Z"
+    },
+    {
+      "path": "config\\c2me.toml",
+      "sha256": "CEA89D4947F9EE0F27ADE6592B195259DE79C0975B006C7F62B89A3CBCD07F2E",
+      "length": 12810,
+      "beforeLastWriteUtc": "2026-11-04T23:41:56.8910584Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.2021164Z"
+    },
+    {
+      "path": "config\\comforts-common.toml",
+      "sha256": "1F21C10BFCE9CD25AEA641046A79DF88867F68BA8BA3838A5E1662521F9F06A2",
+      "length": 189,
+      "beforeLastWriteUtc": "2026-11-04T23:42:11.5045988Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:15.5569469Z"
+    },
+    {
+      "path": "config\\comforts-server.toml",
+      "sha256": "F6DF47D3F1002FDE8D9E59C8068ACBC39E976B3392E8FD528DC9B38B2856C5A0",
+      "length": 1852,
+      "beforeLastWriteUtc": "2026-11-04T23:42:11.5065969Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:15.5654798Z"
+    },
+    {
+      "path": "config\\DistantHorizons.toml",
+      "sha256": "B319A5426FBC881E209A226DCA6DFCF80E24E5546E26EC1B0FB97E9D3CF5ED9F",
+      "length": 37986,
+      "beforeLastWriteUtc": "2026-11-04T23:42:13.6128646Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:17.398674Z"
+    },
+    {
+      "path": "config\\fallingtree.json",
+      "sha256": "9704D03D869A866E68C5E783025C8720DF6D35E3E76C56080E08E9BF6473A341",
+      "length": 1313,
+      "beforeLastWriteUtc": "2026-11-04T23:41:43.3832268Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.8413084Z"
+    },
+    {
+      "path": "config\\ferritecore-mixin.toml",
+      "sha256": "1356F9D52B2DCB2AFA5A593E53C286D9C1C3778A6F8B1CF761953B185B7DCE78",
+      "length": 1603,
+      "beforeLastWriteUtc": "2026-11-04T23:41:27.7622212Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:19.5961507Z"
+    },
+    {
+      "path": "config\\flyhigher.json",
+      "sha256": "65DB01EB2FDAFEDFA0BE9085492C0CB5BF11FBA1E3C0B3065432E4F87F55D8EB",
+      "length": 372,
+      "beforeLastWriteUtc": "2026-11-04T23:41:56.8790601Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.1750598Z"
+    },
+    {
+      "path": "config\\fml.toml",
+      "sha256": "CC59FB1039726FDA3AB1EB69B06D9B9AEBB7496604EA579CFB735BC5377E7825",
+      "length": 1550,
+      "beforeLastWriteUtc": "2026-11-04T23:41:14.3492513Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:08.1472888Z"
+    },
+    {
+      "path": "config\\krypton_fnp.yaml",
+      "sha256": "7637131DBF6D97F0EDCA39274FA1AFDF43260052C0B62649FAF51283C5A1F0BE",
+      "length": 947,
+      "beforeLastWriteUtc": "2026-11-04T23:41:26.9032977Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:18.7801496Z"
+    },
+    {
+      "path": "config\\letmedespawn.json",
+      "sha256": "6AF411644E22EDE34383135509CB96B2A636D8ED45494B28976514A95537105E",
+      "length": 72,
+      "beforeLastWriteUtc": "2026-11-04T23:41:42.557951Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.0256344Z"
+    },
+    {
+      "path": "config\\lithostitched.json",
+      "sha256": "CE8AB190281862B0554C92043C2BF8AF106FBE4116BCD6DAB433F6506781DBC0",
+      "length": 273,
+      "beforeLastWriteUtc": "2026-11-04T23:41:43.6042763Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:38.3956203Z"
+    },
+    {
+      "path": "config\\modernfix-mixins.properties",
+      "sha256": "F5A0F49486F11B4B5CE143B5F81729E018DAC9425CCB2766134A5A84F1A2256F",
+      "length": 5548,
+      "beforeLastWriteUtc": "2026-11-04T23:41:26.7359146Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:18.6590261Z"
+    },
+    {
+      "path": "config\\moogs_structures.json",
+      "sha256": "67E258D9BBFE88B87458902F47F1F3E4DA91C35AD7413E94F9A93F416D786CC7",
+      "length": 696,
+      "beforeLastWriteUtc": "2026-11-04T23:42:11.5265983Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:15.5930197Z"
+    },
+    {
+      "path": "config\\mostructures-config-v5.json5",
+      "sha256": "59B10F9F4BE2D5A4C9EA1BD46D210C9A3AF56A7DB65FA65316783B699E4818CD",
+      "length": 2592,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.503531Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.4648043Z"
+    },
+    {
+      "path": "config\\rightclickharvest.json5",
+      "sha256": "6EB5169563472AE96184C94E9F42FF7D76FDBA403ED3190FFB308E817EA0A21E",
+      "length": 609,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.6285433Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.7070596Z"
+    },
+    {
+      "path": "config\\structure_layout_optimizer.jsonc",
+      "sha256": "5A9058652BC0B88B8810E0B94EBA0E1A90CBFF2472845C53A7E67442682A1579",
+      "length": 1058,
+      "beforeLastWriteUtc": "2026-11-04T23:41:43.2633465Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.7368476Z"
+    },
+    {
+      "path": "config\\tectonic.json",
+      "sha256": "F8159CD49FEC4F6FAEFA98CFF420DB36861D71BBA7AAA0A55C898B860DA75F09",
+      "length": 4366,
+      "beforeLastWriteUtc": "2026-11-04T23:41:44.5490429Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:39.5193463Z"
+    },
+    {
+      "path": "config\\terrablender.toml",
+      "sha256": "CFF6A9A0D415B19B9852844C0AD5BB2B1CFDB9FCE12E729E7228A6521FC95927",
+      "length": 988,
+      "beforeLastWriteUtc": "2026-11-04T23:41:44.2856318Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:39.4370856Z"
+    },
+    {
+      "path": "config\\terralith.json",
+      "sha256": "EADC7FAD5CE55FBCEC25DF521820D36C222D5B12F17006ED9FEA34EBEB6FD01D",
+      "length": 212,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.9465443Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.9879271Z"
+    },
+    {
+      "path": "config\\vss-client-config.json",
+      "sha256": "28AF00D83CFADA4144F0416044C551E919D77BF4609AF7A52A2C0A91BFC28E50",
+      "length": 1142,
+      "beforeLastWriteUtc": "2026-11-04T23:42:48.9222887Z",
+      "afterLastWriteUtc": "2026-11-05T03:04:15.6529739Z"
+    },
+    {
+      "path": "config\\vss-server-config.json",
+      "sha256": "1BC3FA89F103DF117C8D212F823B67B20628FDBE10A6E69C960B37D70727378C",
+      "length": 6486,
+      "beforeLastWriteUtc": "2026-11-04T23:42:06.1052924Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:07.3301161Z"
+    },
+    {
+      "path": "config\\aether\\sun_altar_whitelist.json",
+      "sha256": "4F53CDA18C2BAA0C0354BB5F9A3ECBE5ED12AB4D8E11BA873C2F11161202B945",
+      "length": 2,
+      "beforeLastWriteUtc": "2026-11-04T23:41:56.9420599Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.2387121Z"
+    },
+    {
+      "path": "config\\attributefix\\aether\\moa_max_jumps.json",
+      "sha256": "F4141221FEB1E43056DA711FCDA29F9091344A48876C62E6F1D1A61FAC8AF44A",
+      "length": 387,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2972519Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6506677Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.attack_burning_duration.json",
+      "sha256": "2B35471191429CB7B18BE98F70F23A3EA36DDF0D984A5A3F6A492CE3B3A1DBA5",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3272548Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7102731Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.drinking_speed.json",
+      "sha256": "EA105C9BB954B8CC9E60749B9A304A1FF80FA0C80873099C569E94C6EA5D6C67",
+      "length": 417,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3292536Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.71879Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.eating_speed.json",
+      "sha256": "EA105C9BB954B8CC9E60749B9A304A1FF80FA0C80873099C569E94C6EA5D6C67",
+      "length": 417,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3312521Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.72079Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.flatulence.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3332521Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7238495Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.invincibility_ticks.json",
+      "sha256": "F2B86540287515290388F49A96E00E5E9AE90ABE7332B9BEEB44870D0E30C206",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3352524Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7333646Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.mount_speed.json",
+      "sha256": "C568F31255BB84CE497127463BDEAA91D597A4336320D84BF669E630CCF169EA",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3372532Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7403749Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.movement_speed_on_snow.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3402551Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7438958Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.slip_resistance.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3422524Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7468953Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.sprinting_speed.json",
+      "sha256": "C568F31255BB84CE497127463BDEAA91D597A4336320D84BF669E630CCF169EA",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3442531Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7498973Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\generic.sprinting_step_height.json",
+      "sha256": "93B4ADF5C49377098F3767E46DEA7AB8228AD0EDD2D0F59904FF9E12A429E8C0",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3472552Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7544027Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\player.entity_experience.json",
+      "sha256": "137E8A8052B2264BC1C881B91B97011E4C33726819F4C434753AD5480EE3D19F",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3222525Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7042709Z"
+    },
+    {
+      "path": "config\\attributefix\\artifacts\\player.villager_reputation.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.325253Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.7072749Z"
+    },
+    {
+      "path": "config\\attributefix\\cataclysm\\additional_critical_damage.json",
+      "sha256": "2E6AD079BDD14DB3412092F91245B2CF6F73A86EECC71F17E7CB1A9C8558131E",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3072536Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6657176Z"
+    },
+    {
+      "path": "config\\attributefix\\cataclysm\\charge_time.json",
+      "sha256": "ED4CE7E552F749258CBAF28F9D52EEB79FC26F6FD632D91E852F980CE3685343",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3142565Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6938986Z"
+    },
+    {
+      "path": "config\\attributefix\\cataclysm\\eat_speed.json",
+      "sha256": "3E05221436880D09FBAC95DFC9CDE9D2225E8CFDB81EA0C4A41A453934ACF938",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3112523Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6903813Z"
+    },
+    {
+      "path": "config\\attributefix\\cataclysm\\nature_heal.json",
+      "sha256": "753BDBB0CFF81CA77562A88EBCDA6AE1C633D0042A12F2F9EC016A966C6EE6C7",
+      "length": 391,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3092561Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6778648Z"
+    },
+    {
+      "path": "config\\attributefix\\combat_roll\\count.json",
+      "sha256": "F874427DD6754EFF702EF41FD35649493094DDD0C79E01623A2CC9CCFE8CE8D7",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2742561Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6176139Z"
+    },
+    {
+      "path": "config\\attributefix\\combat_roll\\distance.json",
+      "sha256": "1CE1D993EACF6127A56DB7CAB0C58913325E0669C978478DC125EB3E5CF7F650",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2682544Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6060969Z"
+    },
+    {
+      "path": "config\\attributefix\\combat_roll\\recharge.json",
+      "sha256": "EA7104E2B74187ED3EF3267BE09A516141759DFC79009C94F833F3BE43FE76D9",
+      "length": 383,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2712524Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6146155Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\air_drag_modifier.json",
+      "sha256": "43AA2701D17E26C045533A5B0500FA8C0639D4E62ADCCCD389BA3426378A80C0",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2872529Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6411473Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\bounciness.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2902547Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6446649Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\friction_modifier.json",
+      "sha256": "43AA2701D17E26C045533A5B0500FA8C0639D4E62ADCCCD389BA3426378A80C0",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2942564Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6476686Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.armor_toughness.json",
+      "sha256": "B6AA33F20FBC7BB14C930DFCFD93591F37F2CCF12DF0B6DA9551F7A6FAD1E439",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.176249Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4663326Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.armor.json",
+      "sha256": "B6AA33F20FBC7BB14C930DFCFD93591F37F2CCF12DF0B6DA9551F7A6FAD1E439",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1732521Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.46181Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.attack_damage.json",
+      "sha256": "B6AA33F20FBC7BB14C930DFCFD93591F37F2CCF12DF0B6DA9551F7A6FAD1E439",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1792486Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4703332Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.attack_knockback.json",
+      "sha256": "B6AA33F20FBC7BB14C930DFCFD93591F37F2CCF12DF0B6DA9551F7A6FAD1E439",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1822532Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4738491Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.attack_speed.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1852503Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4778588Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.burning_time.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1942499Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4928914Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.explosion_knockback_resistance.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1982543Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5044166Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.fall_damage_multiplier.json",
+      "sha256": "6217856E9BB2355A468BBE03FE24BC97BAE91F8DEB54E9DF42F8A4021CDE99E6",
+      "length": 383,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2042518Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.517937Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.flying_speed.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2072514Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5199393Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.follow_range.json",
+      "sha256": "43AA2701D17E26C045533A5B0500FA8C0639D4E62ADCCCD389BA3426378A80C0",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2092541Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5224415Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.gravity.json",
+      "sha256": "84207D0866413A367D92222BD193912A418615F5EB9DA342057BAFEC30173A79",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2112519Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5319618Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.jump_strength.json",
+      "sha256": "220B18479D9B6497FC95E3B2FFCCA5014D93ECA33153FAB8F343151C9A553BDE",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2142525Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5344761Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.knockback_resistance.json",
+      "sha256": "2DC48ADC1768AB6F1DDF3F5D7526F6FF6A83E8409F98B64FC998F1C9AD34C94B",
+      "length": 380,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2172546Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5374792Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.luck.json",
+      "sha256": "6BCE4756F23CEDF273E963254625FA594A32208F99DE05DB1ABD1E77EC671372",
+      "length": 393,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2202513Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5470011Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.max_absorption.json",
+      "sha256": "43AA2701D17E26C045533A5B0500FA8C0639D4E62ADCCCD389BA3426378A80C0",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.225251Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5499983Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.max_health.json",
+      "sha256": "9D0AE1C8FDA340E80AAC17DF9999EC1E9C7396A2327F63A40EA8006991201305",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2272539Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5575125Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.movement_efficiency.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2362524Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5630294Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.movement_speed.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2402527Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5660348Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.oxygen_bonus.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2422525Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5690328Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.safe_fall_distance.json",
+      "sha256": "6BCE4756F23CEDF273E963254625FA594A32208F99DE05DB1ABD1E77EC671372",
+      "length": 393,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2452542Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5710341Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.scale.json",
+      "sha256": "0E28210686E7F216D46BA0FEE2508C263C7C39E26FB6D8380404789D3185E73A",
+      "length": 387,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2482513Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5735407Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.step_height.json",
+      "sha256": "93B4ADF5C49377098F3767E46DEA7AB8228AD0EDD2D0F59904FF9E12A429E8C0",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2582519Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5830583Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\generic.water_movement_efficiency.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2662513Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5935732Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.block_break_speed.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1892495Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4818585Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.block_interaction_range.json",
+      "sha256": "137E8A8052B2264BC1C881B91B97011E4C33726819F4C434753AD5480EE3D19F",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.1922482Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.4903784Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.entity_interaction_range.json",
+      "sha256": "137E8A8052B2264BC1C881B91B97011E4C33726819F4C434753AD5480EE3D19F",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2002491Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5074152Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.mining_efficiency.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2312508Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5605132Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.sneaking_speed.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2512529Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5765461Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.submerged_mining_speed.json",
+      "sha256": "F874427DD6754EFF702EF41FD35649493094DDD0C79E01623A2CC9CCFE8CE8D7",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2612535Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5870654Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\player.sweeping_damage_ratio.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2642546Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5910655Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\waypoint_receive_range.json",
+      "sha256": "2D8EF79FF6CBF914B4080E290DAFD2BCDDD8F497CEBC08502F657350035AE323",
+      "length": 383,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2842556Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6381453Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\waypoint_transmit_range.json",
+      "sha256": "2D8EF79FF6CBF914B4080E290DAFD2BCDDD8F497CEBC08502F657350035AE323",
+      "length": 383,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2822535Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6341446Z"
+    },
+    {
+      "path": "config\\attributefix\\minecraft\\zombie.spawn_reinforcements.json",
+      "sha256": "17EF1233E3020B53A3835793BC771C00114AF5B167F57CB03506098DBC49E535",
+      "length": 379,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2542513Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.5805469Z"
+    },
+    {
+      "path": "config\\attributefix\\neoforge\\nametag_distance.json",
+      "sha256": "137E8A8052B2264BC1C881B91B97011E4C33726819F4C434753AD5480EE3D19F",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2792532Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6231274Z"
+    },
+    {
+      "path": "config\\attributefix\\neoforge\\swim_speed.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.2762521Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6206171Z"
+    },
+    {
+      "path": "config\\attributefix\\sable\\player.sub_level_punch_cooldown.json",
+      "sha256": "93B4ADF5C49377098F3767E46DEA7AB8228AD0EDD2D0F59904FF9E12A429E8C0",
+      "length": 381,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3202542Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.700898Z"
+    },
+    {
+      "path": "config\\attributefix\\sable\\player.sub_level_punch_strength.json",
+      "sha256": "3E05221436880D09FBAC95DFC9CDE9D2225E8CFDB81EA0C4A41A453934ACF938",
+      "length": 389,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3172537Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6978965Z"
+    },
+    {
+      "path": "config\\attributefix\\twilightforest\\clone_count.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3002535Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6551984Z"
+    },
+    {
+      "path": "config\\attributefix\\twilightforest\\max_shield_strength.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3022584Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.6581985Z"
+    },
+    {
+      "path": "config\\attributefix\\twilightforest\\minion_count.json",
+      "sha256": "6B9B3D0281E3D07F12580D39983E2AC2EAC90F30C739D743B84D55024C3651ED",
+      "length": 385,
+      "beforeLastWriteUtc": "2026-11-04T23:41:58.3042566Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:59.661705Z"
+    },
+    {
+      "path": "config\\bettercombat\\fallback_compatibility.json",
+      "sha256": "754FEB4474A3F4D9FE6BD08F38C248FD5A796ED51F38D7D5704680250F3A34CA",
+      "length": 2995,
+      "beforeLastWriteUtc": "2026-11-04T23:41:42.8257613Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.3156636Z"
+    },
+    {
+      "path": "config\\bettercombat\\server.json5",
+      "sha256": "3F50D34E55861D3CA4D9557BF21C154D297ABE01F37D11C6A84D70A2255B5E83",
+      "length": 6207,
+      "beforeLastWriteUtc": "2026-11-04T23:41:42.8227594Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.3097274Z"
+    },
+    {
+      "path": "config\\bettercombat\\weapon_trails.json",
+      "sha256": "FD14CC025B6D6C54BC2DDFF136F0298C0BA132DBE98C2C9C845B47B8286FC45C",
+      "length": 7127,
+      "beforeLastWriteUtc": "2026-11-04T23:41:42.7283545Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.1933629Z"
+    },
+    {
+      "path": "config\\biomesoplenty\\gameplay.toml",
+      "sha256": "B9ABD11468B8F1A0A56024F78E27CC6D79C2CCE4CCE8754B1BA4F0F44289A741",
+      "length": 109,
+      "beforeLastWriteUtc": "2026-11-04T23:41:44.3846366Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:39.5068273Z"
+    },
+    {
+      "path": "config\\biomesoplenty\\generation.toml",
+      "sha256": "428C8BE557854161E82B21B5654D2865B9B0C53BBA969F20398568F94D4AE030",
+      "length": 521,
+      "beforeLastWriteUtc": "2026-11-04T23:41:44.3806346Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:39.5013012Z"
+    },
+    {
+      "path": "config\\biomeswevegone\\misc.json",
+      "sha256": "CBFAC13949317E4E49F95E9CF16A7D9CB36D6D4B873EADF2329BAE57BC3FF742",
+      "length": 494,
+      "beforeLastWriteUtc": "2026-11-04T23:41:57.2806167Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.4648807Z"
+    },
+    {
+      "path": "config\\biomeswevegone\\mob_spawn.json",
+      "sha256": "B84DC298E495D19EB4B4C19482FAC644AEE55414B7E6E4BB1EA238DE989E7970",
+      "length": 62,
+      "beforeLastWriteUtc": "2026-11-04T23:41:57.2766137Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.4607387Z"
+    },
+    {
+      "path": "config\\biomeswevegone\\trades.json",
+      "sha256": "0B05A8814F09FEAD55B1901B7EFAB7D3AB87227EA3FC6B5E65A6197261832710",
+      "length": 639,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.5705314Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.2755424Z"
+    },
+    {
+      "path": "config\\biomeswevegone\\world_generation.json",
+      "sha256": "6FB6FF3E2CB4D1C47431B2E9FB48090FD985E0B43777949EC0C346CDA85E532D",
+      "length": 4196,
+      "beforeLastWriteUtc": "2026-11-04T23:41:57.3076196Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.5284228Z"
+    },
+    {
+      "path": "config\\combat_roll\\server.json5",
+      "sha256": "A289501687111C3D290F526493E256266165E53230DD9508CA17DDF57DCE4B78",
+      "length": 1278,
+      "beforeLastWriteUtc": "2026-11-04T23:41:42.7123541Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:37.1678141Z"
+    },
+    {
+      "path": "config\\flyhigher_datapack\\pack.mcmeta",
+      "sha256": "0570DFAFAA6D6112136531502A0E7554EDDF9008BF91387EB97B2456E8FF11A2",
+      "length": 94,
+      "beforeLastWriteUtc": "2026-11-04T23:41:56.8790601Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.1750598Z"
+    },
+    {
+      "path": "config\\flyhigher_datapack\\data\\flyhigher\\dimension_physics\\overworld.json",
+      "sha256": "28DB12D46E40512AB50B6D2B2CE0AD7CE454B1AB742F958DAD9A2DA086C055E3",
+      "length": 534,
+      "beforeLastWriteUtc": "2026-11-04T23:41:56.8800598Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.1750598Z"
+    },
+    {
+      "path": "config\\spark\\tmp-client\\about.txt",
+      "sha256": "D7514C0DDB6AE8611A281527BF04CA6CBCEA1FA21758534FDCD08ED0F51C19C0",
+      "length": 585,
+      "beforeLastWriteUtc": "2026-11-04T23:42:11.1145471Z",
+      "afterLastWriteUtc": "2026-11-05T03:02:14.9290454Z"
+    },
+    {
+      "path": "config\\voicechat\\translations.properties",
+      "sha256": "693643B1D393CBB3EA7F062AFC4474FCD66E4036C4F8D7C056434979CBF512D1",
+      "length": 1182,
+      "beforeLastWriteUtc": "2026-11-04T23:41:57.1050626Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.3644546Z"
+    },
+    {
+      "path": "config\\voicechat\\voicechat-server.properties",
+      "sha256": "AA5A4D65460B8D1EC0D7FA1FA353B6F9785704DD2200C875906BFA36C2F34850",
+      "length": 3214,
+      "beforeLastWriteUtc": "2026-11-04T23:41:57.103063Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:58.3549309Z"
+    },
+    {
+      "path": "config\\xaero\\lib\\common.cfg",
+      "sha256": "98F698D96A6D21D830A455B4AD045B70516FA63C298021742D8499E7F0366CD2",
+      "length": 236,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.6935355Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.4818287Z"
+    },
+    {
+      "path": "config\\xaero\\lib\\server_profiles\\default.cfg",
+      "sha256": "D438AEA41CA41E93697E059F523686935C0ADD482F6ABE96B532BBF10C6ED80A",
+      "length": 75,
+      "beforeLastWriteUtc": "2026-11-04T23:41:46.6955366Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:43.4898474Z"
+    },
+    {
+      "path": "config\\xaero\\minimap\\common.cfg",
+      "sha256": "2B49DF024C03A369C62A303C72755E7FEDEB4F4653FF53A12FD37BD83CCD4ED0",
+      "length": 147,
+      "beforeLastWriteUtc": "2026-11-04T23:41:45.3884718Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:40.9406414Z"
+    },
+    {
+      "path": "config\\xaero\\minimap\\server_profiles\\default.cfg",
+      "sha256": "D438AEA41CA41E93697E059F523686935C0ADD482F6ABE96B532BBF10C6ED80A",
+      "length": 75,
+      "beforeLastWriteUtc": "2026-11-04T23:41:45.3994726Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:40.9755614Z"
+    },
+    {
+      "path": "config\\xaero\\world-map\\common.cfg",
+      "sha256": "0C229EB0DAF85BD09AF51F21EEEB99497A3BD50A825D5AB1CA695FB21BF6CF9D",
+      "length": 141,
+      "beforeLastWriteUtc": "2026-11-04T23:41:45.4204723Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:41.0453225Z"
+    },
+    {
+      "path": "config\\xaero\\world-map\\server_profiles\\default.cfg",
+      "sha256": "D438AEA41CA41E93697E059F523686935C0ADD482F6ABE96B532BBF10C6ED80A",
+      "length": 75,
+      "beforeLastWriteUtc": "2026-11-04T23:41:45.4224718Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:41.0518298Z"
+    },
+    {
+      "path": "kubejs\\config\\common.json",
+      "sha256": "E00A67922942660D77C213379B5128A46C5ABC894178B0BE04006D325FF5F6B3",
+      "length": 446,
+      "beforeLastWriteUtc": "2026-11-04T23:41:37.8292979Z",
+      "afterLastWriteUtc": "2026-11-05T03:01:31.1796861Z"
+    }
+  ],
+  "sourceServerRestartEvidence": {
+    "sourceLog": "logs/latest.log",
+    "timezone": "America/Winnipeg, CST UTC-06:00 at these timestamps",
+    "launchUtc": "2026-11-05T03:01:06.934Z",
+    "readyUtc": "2026-11-05T03:02:27.629Z",
+    "loadedBalanceVersion": "1.0.2",
+    "loadedBalanceLogUtc": "2026-11-05T03:01:36.897Z",
+    "observedProductionLaunchProcessId": 25808,
+    "observedProcessStartUtc": "2026-11-05T03:01:02.1756850Z",
+    "processClassificationLimit": "Process command line indicates a production server launch but lacks an absolute working directory; its start time corroborates the separate source log, not independent proof of working directory",
+    "attribution": "The source log records a server restart during the file modification window. The timestamp-only rewrites are consistent with native mod startup. Filesystem hashing alone cannot identify the writer. This task did not launch, stop, or write to the source server."
+  }
+}

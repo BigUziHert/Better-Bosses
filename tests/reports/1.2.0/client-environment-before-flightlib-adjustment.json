@@ -1,0 +1,24 @@
+{
+  "purpose": "Isolated native client playthroughs against the unchanged copied survival-server modpack",
+  "serverNeoForge": "21.1.264",
+  "serverSource": "S:/Survival (read only)",
+  "clientBase": "Copied server mods and config, not CurseForge profile",
+  "clientOnlyDependencies": [
+    "sodium-neoforge-0.8.13+mc1.21.1.jar",
+    "SimplyTooltips-neoforge-0.1.5.jar",
+    "fusion-1.3.16-neoforge-mc1.21.1.jar"
+  ],
+  "clientExcludedServerUtility": "Chunky-NeoForge-1.4.23.jar: unused on remote client; its presence triggered Distant Horizons ChunkyProvider-not-loaded exception",
+  "clientGraphicsOverrides": [
+    "Voxy disabled, including ingestion/rendering, after native buffer allocation failure",
+    "Distant Horizons rendererMode DISABLED",
+    "6-chunk render distance, 5-chunk simulation distance, 60 FPS"
+  ],
+  "clientDevelopmentProperty": "owo.handshake.enabled=false matches ordinary dedicated production mode",
+  "controller": "Test-only native key input, including installed Better Combat input hooks; not human play",
+  "gameplayConfigOverrides": "None in the copied server combat configuration; test harness stages arenas/gamerules and loadouts explicitly recorded per encounter",
+  "productionSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "testServerPort": 25576,
+  "sourceFilesAudited": 871,
+  "sourceFilesChanged": 0
+}

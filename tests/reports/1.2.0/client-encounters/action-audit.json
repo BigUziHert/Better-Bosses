@@ -1,0 +1,319 @@
+{
+  "queue": "2026-11-05T02-22-16.715609400Z",
+  "loggedBetweenCaseKills": 24,
+  "loggedNativeRecoveryOrAccessibilityActions": 29,
+  "allLoggedKillsAfterRecordedLossBeforeNextEncounter": true,
+  "checks": [
+    {
+      "case": 2,
+      "boss": "twilightforest:lich",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:25:57.028360500Z",
+      "cleanupUtc": "2026-11-05T02:26:13.5145598Z",
+      "nextStartedUtc": "2026-11-05T02:26:23.169953200Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 3,
+      "boss": "twilightforest:minoshroom",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:29:19.830644800Z",
+      "cleanupUtc": "2026-11-05T02:29:38.3144554Z",
+      "nextStartedUtc": "2026-11-05T02:29:47.985328800Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 6,
+      "boss": "twilightforest:hydra",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:36:23.499268300Z",
+      "cleanupUtc": "2026-11-05T02:37:23.0602083Z",
+      "nextStartedUtc": "2026-11-05T02:37:32.720361100Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 8,
+      "boss": "twilightforest:snow_queen",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:41:53.331893Z",
+      "cleanupUtc": "2026-11-05T02:42:47.1117526Z",
+      "nextStartedUtc": "2026-11-05T02:42:56.786383900Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 10,
+      "boss": "bosses_of_mass_destruction:void_blossom",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:46:17.460114400Z",
+      "cleanupUtc": "2026-11-05T02:46:45.2696545Z",
+      "nextStartedUtc": "2026-11-05T02:46:55.056584500Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 11,
+      "boss": "bosses_of_mass_destruction:gauntlet",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:47:04.646051100Z",
+      "cleanupUtc": "2026-11-05T02:47:57.1249014Z",
+      "nextStartedUtc": "2026-11-05T02:48:06.768158700Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 12,
+      "boss": "bosses_of_mass_destruction:obsidilith",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:48:24.523400400Z",
+      "cleanupUtc": "2026-11-05T02:49:09.3999770Z",
+      "nextStartedUtc": "2026-11-05T02:49:19.076710800Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 13,
+      "boss": "cataclysm:netherite_monstrosity",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:52:02.190217600Z",
+      "cleanupUtc": "2026-11-05T02:52:25.3009801Z",
+      "nextStartedUtc": "2026-11-05T02:52:34.990694700Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 14,
+      "boss": "cataclysm:ender_guardian",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:52:50.146271600Z",
+      "cleanupUtc": "2026-11-05T02:53:20.3576600Z",
+      "nextStartedUtc": "2026-11-05T02:53:30.195746400Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 15,
+      "boss": "cataclysm:the_harbinger",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:53:36.753712600Z",
+      "cleanupUtc": "2026-11-05T02:54:16.1482894Z",
+      "nextStartedUtc": "2026-11-05T02:54:25.719923Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 16,
+      "boss": "cataclysm:ancient_remnant",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:54:48.769967Z",
+      "cleanupUtc": "2026-11-05T02:55:19.3630992Z",
+      "nextStartedUtc": "2026-11-05T02:55:29.027610100Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 17,
+      "boss": "cataclysm:the_leviathan",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:56:16.817192800Z",
+      "cleanupUtc": "2026-11-05T02:56:40.9621636Z",
+      "nextStartedUtc": "2026-11-05T02:56:50.572685300Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 18,
+      "boss": "cataclysm:scylla",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:57:01.250732900Z",
+      "cleanupUtc": "2026-11-05T02:57:54.4054424Z",
+      "nextStartedUtc": "2026-11-05T02:58:04.037925400Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 19,
+      "boss": "cataclysm:maledictus",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T02:58:12.325173500Z",
+      "cleanupUtc": "2026-11-05T02:58:55.1723712Z",
+      "nextStartedUtc": "2026-11-05T02:59:04.772542Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 21,
+      "boss": "minecraft:wither",
+      "loadout": "diamond",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:02:14.152966100Z",
+      "cleanupUtc": "2026-11-05T03:03:08.6175764Z",
+      "nextStartedUtc": "2026-11-05T03:03:29.530004300Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 25,
+      "boss": "twilightforest:lich",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:14:36.798136300Z",
+      "cleanupUtc": "2026-11-05T03:15:03.3967318Z",
+      "nextStartedUtc": "2026-11-05T03:15:13.111596800Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 34,
+      "boss": "bosses_of_mass_destruction:gauntlet",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:40:04.162194100Z",
+      "cleanupUtc": "2026-11-05T03:40:25.1369017Z",
+      "nextStartedUtc": "2026-11-05T03:40:34.790367700Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 36,
+      "boss": "cataclysm:netherite_monstrosity",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:45:18.562846600Z",
+      "cleanupUtc": "2026-11-05T03:45:48.9235305Z",
+      "nextStartedUtc": "2026-11-05T03:45:58.499648600Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 38,
+      "boss": "cataclysm:the_harbinger",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:50:52.020000600Z",
+      "cleanupUtc": "2026-11-05T03:51:25.5349174Z",
+      "nextStartedUtc": "2026-11-05T03:51:35.110975400Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 40,
+      "boss": "cataclysm:the_leviathan",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:56:07.332735700Z",
+      "cleanupUtc": "2026-11-05T03:56:29.5192961Z",
+      "nextStartedUtc": "2026-11-05T03:56:39.120127Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 41,
+      "boss": "cataclysm:scylla",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:57:13.632367400Z",
+      "cleanupUtc": "2026-11-05T03:57:32.6694334Z",
+      "nextStartedUtc": "2026-11-05T03:57:42.271241Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 42,
+      "boss": "cataclysm:maledictus",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:58:07.485765400Z",
+      "cleanupUtc": "2026-11-05T03:58:29.0268710Z",
+      "nextStartedUtc": "2026-11-05T03:58:38.621758Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 43,
+      "boss": "cataclysm:ignis",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T03:58:57.844183900Z",
+      "cleanupUtc": "2026-11-05T03:59:18.5063116Z",
+      "nextStartedUtc": "2026-11-05T03:59:28.073431300Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    },
+    {
+      "case": 44,
+      "boss": "minecraft:wither",
+      "loadout": "netherite_p4",
+      "recordedOutcome": "lost_downed",
+      "finishedUtc": "2026-11-05T04:00:14.090128600Z",
+      "cleanupUtc": "2026-11-05T04:00:47.6805755Z",
+      "nextStartedUtc": "2026-11-05T04:01:05.333013500Z",
+      "afterRecordedLoss": true,
+      "beforeNextEncounter": true,
+      "passed": true
+    }
+  ],
+  "lossesWithoutLoggedKill": [
+    {
+      "case": 20,
+      "boss": "cataclysm:ignis",
+      "loadout": "diamond"
+    },
+    {
+      "case": 37,
+      "boss": "cataclysm:ender_guardian",
+      "loadout": "netherite_p4"
+    },
+    {
+      "case": 39,
+      "boss": "cataclysm:ancient_remnant",
+      "loadout": "netherite_p4"
+    },
+    {
+      "case": 46,
+      "boss": "minecraft:warden",
+      "loadout": "netherite_p4"
+    }
+  ],
+  "scope": "Only final-queue actions are included. Native nonlethal get-up/accessibility inputs are separate from lethal knockout cleanup. Each cleanup follows an already-recorded loss and does not change its result. Cases20,37,39 used native bleedout; final46 had no next encounter and no cleanup. Recovery input requests alone are not proof of successful native recovery."
+}

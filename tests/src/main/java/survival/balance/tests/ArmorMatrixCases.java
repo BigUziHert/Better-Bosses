@@ -52,6 +52,7 @@ final class ArmorMatrixCases {
                 nativeProjectile(level,player,outfit,protection,"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:petal_blade","native_blossom_blade");
                 nativeProjectile(level,player,outfit,protection,"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:spore_ball","native_blossom_spore");
                 for(String attack:VanillaBossCases.ATTACKS.keySet())nativeVanilla(level,player,outfit,protection,attack);
+                nativeIgnisUltimate(level,player,outfit,protection);
             }
         }
         Map<String,Object> report=new LinkedHashMap<>();
@@ -234,7 +235,7 @@ final class ArmorMatrixCases {
             double before=player.getHealth();double armor=player.getAttributeValue(Attributes.ARMOR), toughness=player.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
             boolean accepted=player.hurt(source,input);
             record(outfit,protection,test.boss(),test.name(),"captured_input_damage_fixture",player,before,armor,toughness,accepted);
-            if(outfit.id.equals("minecraft:netherite")&&protection==4)BossBalanceTests.result("armor_reference_"+test.name(),test.boss(),test.hearts(),(before-player.getHealth())/2);
+            if(outfit.id.equals("minecraft:diamond")&&protection==0)BossBalanceTests.result("armor_reference_"+test.name(),test.boss(),test.hearts(),(before-player.getHealth())/2);
         } catch(Throwable error) { failure(outfit,protection,test.boss(),test.name(),error); }
         finally {if(direct!=null&&direct!=boss)direct.discard();if(boss!=null)boss.discard();}
     }
@@ -271,7 +272,7 @@ final class ArmorMatrixCases {
             double before=player.getHealth(),armor=player.getAttributeValue(Attributes.ARMOR),toughness=player.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
             VanillaBossCases.perform(name,level,player,boss);
             record(outfit,protection,id,name,"native_minecraft_attack_method",player,before,armor,toughness,before>player.getHealth());
-            if(outfit.id.equals("minecraft:netherite")&&protection==4)BossBalanceTests.result("armor_reference_"+name,id,VanillaBossCases.ATTACKS.get(name),(before-player.getHealth())/2);
+            if(outfit.id.equals("minecraft:diamond")&&protection==0)BossBalanceTests.result("armor_reference_"+name,id,VanillaBossCases.ATTACKS.get(name),(before-player.getHealth())/2);
             if(name.equals("warden_sonic_boom")&&(outfit.id.equals("none")||outfit.id.startsWith("minecraft:")))BossBalanceTests.result("armor_sonic_bypass_"+outfit.id+"_prot"+protection,id,5.5,(before-player.getHealth())/2);
         }catch(Throwable error){failure(outfit,protection,id,name,error);}finally{if(boss!=null)boss.discard();}
     }
@@ -287,6 +288,27 @@ final class ArmorMatrixCases {
         row.put("itemDamageAfter",SLOTS.stream().map(slot->player.getItemBySlot(slot).getDamageValue()).toList());
         row.put("itemMaxDurabilityAfter",SLOTS.stream().map(slot->player.getItemBySlot(slot).getMaxDamage()).toList());
         rows.add(row);
+    }
+
+    private static void nativeIgnisUltimate(ServerLevel level,BossBalanceTests.TestPlayer player,Outfit outfit,int protection) {
+        LivingEntity boss=null;
+        java.util.Set<Entity> existing=new java.util.HashSet<>();for(Entity entity:level.getAllEntities())existing.add(entity);
+        try {
+            equip(player,outfit,protection);boss=BossBalanceTests.damageBoss(level,"cataclysm:ignis");
+            boss.moveTo(8,220,8,0,0);boss.yBodyRot=0;boss.yHeadRot=0;boss.tickCount=40;
+            player.moveTo(8,220,10,180,0);((net.minecraft.world.entity.Mob)boss).setTarget(player);
+            Object animation=boss.getClass().getField("ULTIMATE_ATTACK").get(null);
+            boss.getClass().getMethod("setAnimation",animation.getClass()).invoke(boss,animation);
+            boss.getClass().getMethod("setAnimationTick",int.class).invoke(boss,74);
+            double before=player.getHealth(),armor=player.getAttributeValue(Attributes.ARMOR),toughness=player.getAttributeValue(Attributes.ARMOR_TOUGHNESS);
+            boss.aiStep();
+            record(outfit,protection,"cataclysm:ignis","native_ignis_ultimate","native_ULTIMATE_ATTACK_frame74_capped_hit",player,before,armor,toughness,before>player.getHealth());
+            if(outfit.id.equals("minecraft:diamond")&&protection==0)BossBalanceTests.result("armor_reference_native_ignis_ultimate","cataclysm:ignis",9.5,(before-player.getHealth())/2);
+            if(outfit.id.equals("minecraft:netherite")&&protection==4)BossBalanceTests.result("armor_netherite_native_ignis_ultimate","cataclysm:ignis",2.98599378875997,(before-player.getHealth())/2);
+        }catch(Throwable error){failure(outfit,protection,"cataclysm:ignis","native_ignis_ultimate",error);}finally{
+            java.util.List<Entity> spawned=new java.util.ArrayList<>();for(Entity entity:level.getAllEntities())if(entity!=player&&!existing.contains(entity))spawned.add(entity);
+            for(Entity entity:spawned)entity.discard();if(boss!=null)boss.discard();
+        }
     }
 
     private static void failure(Outfit outfit,int protection,String boss,String attack,Throwable error) {

@@ -1,0 +1,51 @@
+{
+  "generated_utc": "2026-11-05T04:05:25.0760255+00:00",
+  "encounter_files": 46,
+  "client_log_rows": 18075,
+  "skipped_incomplete_or_invalid_json_lines": 0,
+  "outcomes": [
+    {
+      "outcome": "lost_downed",
+      "count": 28
+    },
+    {
+      "outcome": "time_limit",
+      "count": 17
+    },
+    {
+      "outcome": "won",
+      "count": 1
+    }
+  ],
+  "client_event_counts": {
+    "sample": 4555,
+    "arena_return_end": 20,
+    "bow_draw_input": 2641,
+    "defense_select_sword": 82,
+    "native_respawn_request": 27,
+    "received_boss_overlay": 6150,
+    "bow_release_input": 2246,
+    "eat_input": 258,
+    "arena_return_start": 27,
+    "defense_bow_release_input": 77,
+    "melee_input": 324,
+    "new_target": 250,
+    "projectile_counter_input": 31,
+    "defense_shield_input": 1340,
+    "arena_anchor": 47
+  },
+  "client_overlay_observation_error_count": 0,
+  "client_overlay_observation_errors": [],
+  "excluded_untimed_client_rows": 571,
+  "excluded_client_rows_outside_encounter_window": 1368,
+  "scope": [
+    "Automated inputs, not a human playthrough. Loss, downing, stall, time limit and controller error are not passing encounters.",
+    "Client records carrying UTC are matched to server encounter intervals. Untimed client records are excluded unless explicitly requested, and are never assigned to an encounter by guessing.",
+    "Incoming damage event totals are native event amounts, not net HP loss; healing and death replacement can change net HP.",
+    "Diamond: plain diamond armor, diamond sword, plain bow. Netherite_p4: Protection IV netherite armor, netherite sword, Power V bow. These are loadout comparisons, not isolated armor comparisons.",
+    "Food/ammunition counts are observed net inventory use before a lethal event; recovered arrows can reduce net use. Durability is the last live observation before death inventory drops.",
+    "Native blocking samples report server isBlocking at one-second intervals, not blocked-hit counts. Shield input counts are requests, not proof of successful blocks; inspect native blocking and shield durability together.",
+    "Client bars are real received/registered events. Screenshots are still required to assess custom rendering, HUD placement and clipping. The client log can span multiple encounter queues.",
+    "Natural attack selection in these runs does not establish every move or phase was reached. Separate controlled move/phase regressions provide that coverage."
+  ]
+}

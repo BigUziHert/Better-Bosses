@@ -1,0 +1,76 @@
+{
+  "InspectedUtc": "2026-11-05T01:45:10.2514584Z",
+  "Artifact": "survival-boss-balance-1.2.0.jar",
+  "Length": 45150,
+  "SHA256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "ExpectedSHA256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "GitBase": "1407791d514004a1bb1a14ac74023fbe9ee214d6",
+  "CompiledClassCount": 14,
+  "ContainsOnlyProductionModMetadata": true,
+  "MetadataVersionIs120": true,
+  "ExcludedTestEntries": [],
+  "Entries": [
+    "META-INF/",
+    "META-INF/MANIFEST.MF",
+    "survival/",
+    "survival/balance/",
+    "survival/balance/BalanceSettings.class",
+    "survival/balance/BossDamageBalance$1.class",
+    "survival/balance/BossDamageBalance$Context.class",
+    "survival/balance/BossDamageBalance$Decision.class",
+    "survival/balance/BossDamageBalance.class",
+    "survival/balance/BossHealthBalance$KnightAccess.class",
+    "survival/balance/BossHealthBalance.class",
+    "survival/balance/LegacyDamageDefaults.class",
+    "survival/balance/ProjectileDamageBudget$Accepted.class",
+    "survival/balance/ProjectileDamageBudget$ExplosionScope.class",
+    "survival/balance/ProjectileDamageBudget$Pending.class",
+    "survival/balance/ProjectileDamageBudget.class",
+    "survival/balance/SurvivalBossBalance.class",
+    "survival/balance/mixin/",
+    "survival/balance/mixin/UrGhastExplosionMixin.class",
+    "survival_boss_balance.mixins.json",
+    "META-INF/neoforge.mods.toml"
+  ],
+  "ProductionSourceHashes": [
+    {
+      "Path": "src\\main\\java\\survival\\balance\\BalanceSettings.java",
+      "SHA256": "BB4DF6E24F5ABB50E170C1712BC2D3F163E5830C538A5219FAE29D6C34959B8D"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\BossDamageBalance.java",
+      "SHA256": "2EFBCC7EFDC4E0CEB392AB447B74A2F059EC5A4BE08F390FCC0BEC7736010B63"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\BossHealthBalance.java",
+      "SHA256": "95A0562E10D8019742687AE28FF582AF4805D0256ECDD361396C708B3A5F000D"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\LegacyDamageDefaults.java",
+      "SHA256": "2D57C5FFA717B21363132E3DB3041E46879632E2B5F81B05431D8FEE93AD67A6"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\ProjectileDamageBudget.java",
+      "SHA256": "E4EFF60F39CF7D343352A39280AE78A17D225CAFEFE0ADCFED9EA6493CF5AE09"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\SurvivalBossBalance.java",
+      "SHA256": "444E3A44B8277FF85C0B1ECAF549937281440193B2039CB914F4E98A3EB0F1F8"
+    },
+    {
+      "Path": "src\\main\\java\\survival\\balance\\mixin\\UrGhastExplosionMixin.java",
+      "SHA256": "D26DA962FA19A1A47D8BD2D08A5089EE2F32960ADA2CADEFCFB8F445792D159F"
+    },
+    {
+      "Path": "src\\main\\resources\\survival_boss_balance.mixins.json",
+      "SHA256": "99C7B52FD48C9C4157AFBB55364609136CA2779A699560FEB0FAA3F05DEE3027"
+    },
+    {
+      "Path": "src\\main\\resources\\META-INF\\neoforge.mods.toml",
+      "SHA256": "3AF85D0C82F64594EBAE387AD98944C9CF837F212E732FFE18ADAE977ECD3092"
+    }
+  ],
+  "BuildProvenance": "Production built by Gradle build --offline. Main source set only; isolated clientPlaytest and tests helper are separate. Source remains modified relative to GitBase pending final commit.",
+  "HashRecheckedUtc": "2026-11-05T02:11:32.0858141Z",
+  "SourceHashesRechecked": true
+}

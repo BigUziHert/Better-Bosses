@@ -1,0 +1,14 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+[[mods]]
+modId="bossfight_clientpilot"
+version="1.0.0"
+displayName="Isolated Boss Fight Client Pilot (TEST ONLY)"
+description='''An explicitly automated client combat driver for disposable loopback test servers. Never install on a real server.'''
+[[dependencies.bossfight_clientpilot]]
+modId="neoforge"
+type="required"
+versionRange="[21.1.264,)"
+ordering="NONE"
+side="CLIENT"

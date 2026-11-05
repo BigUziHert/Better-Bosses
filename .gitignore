@@ -11,3 +11,4 @@ tests/build/
 tests/results/
 tests/evidence/
 outputs/
+run-client-playtest/

@@ -1,0 +1,43 @@
+{
+  "productionVersion": "1.2.0",
+  "controlledResults": "tests/evidence/1.2-controlled-final-results",
+  "note": "All controlled suites used the same unchanged production JAR. Final combined-projectile coverage was rerun with helper5022 including12 explicitly labeled budget-exhaustion compatibility stress cases. The earlier246-check compound run remains archived separately; it is not counted twice.",
+  "controlledHelpers": [
+    {
+      "sha256": "5F065867E3758A5ABB3F309F4681942570247E809F3D4654FA49B33C48172424",
+      "suites": [
+        "config_migration",
+        "damage",
+        "health",
+        "boss_bars",
+        "multiplayer_targets",
+        "actual_attacks",
+        "vanilla",
+        "exhaustive_twilight",
+        "exhaustive_bmd",
+        "exhaustive_cataclysm"
+      ]
+    },
+    {
+      "sha256": "B28200733D87A607A63024F55A1AC96C322DC80D84DCA85E775E8142FDE6CF58",
+      "suites": [
+        "fixed_health",
+        "armor_matrix",
+        "armor_effects",
+        "preinstall_verify_keep",
+        "installed_restart_verify"
+      ]
+    },
+    {
+      "sha256": "5022EA4143297AD7256C980024495BC19F9D5E4642DB5C3132C10D01DB06886D",
+      "suites": [
+        "combined_projectiles"
+      ]
+    }
+  ],
+  "subsequentFightCommandHelper": "6876AE7F5746CC18DD065BD1BA54A576919D51790CAAF11E3D6AE6C71CAD4059",
+  "historicalOrdinaryCompoundResults": "tests/evidence/1.2-compound-ordinary-prior",
+  "finalCompoundHelper": "5022EA4143297AD7256C980024495BC19F9D5E4642DB5C3132C10D01DB06886D",
+  "currentContinuousFightHelper": "2CA3BA0D197C345B5CE1CFABD22833BB1EE2A22AD8BCC9EA39960D9662B78EF0",
+  "continuousHelperChange": "Real-client encounters now use their requested 3600-tick overall bound without a 60-second no-HP-loss early cutoff, because shield/crystal/minion phases can progress while the boss remains invulnerable. Simulated-bot cutoff unchanged. Controlled suites retain their recorded helper provenance."
+}

@@ -46,16 +46,16 @@ final class ExhaustiveTwilight {
         naga();lich();minoshroom();phantoms();yeti();hydra();urGhast();snowQueen();
         note("naga","environmental_crumble","mechanic","One actual elevated stone-pillar destruction case is covered, including mobGriefing off/on. Arbitrary terrain-dependent falls and trajectories are not enumerated.");
         note("alpha_yeti","throw_landing","mechanic","Native grab/release/launch and fall-distance8/20 landing handlers are exercised; terrain-dependent flight trajectories and all possible landing distances are not enumerated.");
-        note("all","scope","mechanic","Each case resets a real Minecraft FakePlayer implementation to20HP/full ProtectionIV netherite. Native attack/goal/projectile methods calculate damage; this is controlled runtime coverage, not natural multiplayer fights. Motion/animation states without distinct damage are recorded as mechanics.");
+        note("all","scope","mechanic","Each case resets a real Minecraft FakePlayer implementation to20HP/full unenchanted diamond. Native attack/goal/projectile methods calculate damage; this is controlled runtime coverage, not natural multiplayer fights. Motion/animation states without distinct damage are recorded as mechanics.");
     }
 
     private static void naga() {
-        for(String mode:List.of("normal","charge","stunless_charge")) test("naga","head_"+mode,1.5,b->{
+        for(String mode:List.of("normal","charge","stunless_charge")) test("naga","head_"+mode,4.5,b->{
             call(b,"setCharging",new Class<?>[]{boolean.class},!mode.equals("normal"));
             call(b,"setStunlessCharging",new Class<?>[]{boolean.class},mode.equals("stunless_charge"));
             b.doHurtTarget(player);
         });
-        test("naga","body_collision",.45,b->{
+        test("naga","body_collision",1.5,b->{
             Object segment=Class.forName("twilightforest.entity.boss.NagaSegment").getConstructor(b.getClass()).newInstance(b);
             call(segment,"collideWithEntity",new Class<?>[]{Entity.class},player);
         });
@@ -67,7 +67,7 @@ final class ExhaustiveTwilight {
             check("naga","shield_recoil_damages_naga",b.getHealth()<before);
             eq("naga","shield_durability_cost",5,player.getOffhandItem().getDamageValue());
         });
-        test("naga","stunless_charge_breaks_shield",1.5,b->{
+        test("naga","stunless_charge_breaks_shield",4.5,b->{
             raiseShield();Object pattern=call(b,"getMovementPattern",NONE);call(pattern,"doCharge",new Class<?>[]{boolean.class},true);
             b.doHurtTarget(player);eq("naga","stunless_shield_returns_circle","CIRCLE",call(pattern,"getState",NONE).toString());
             check("naga","stunless_shield_disabled",player.getCooldowns().isOnCooldown(Items.SHIELD)&&!player.isUsingItem());
@@ -107,7 +107,7 @@ final class ExhaustiveTwilight {
 
     private static void lich() {
         for(int phase:new int[]{1,2})for(int kind:new int[]{0,1}){
-            test("lich","phase"+phase+(kind==0?"_bolt":"_bomb"),kind==0?2:-3,b->{
+            test("lich","phase"+phase+(kind==0?"_bolt":"_bomb"),kind==0?3.75:-6,b->{
                 lichPhase(b,phase);call(b,"setNextAttackType",new Class<?>[]{int.class},kind);
                 Set<Entity> before=entities();
                 if(phase==1){
@@ -125,13 +125,13 @@ final class ExhaustiveTwilight {
                 if(kind==0)hit(projectile,player);else call(projectile,"onHit",new Class<?>[]{HitResult.class},new EntityHitResult(player));
             });
         }
-        test("lich","phase2_close_melee",1.5,b->{
+        test("lich","phase2_close_melee",3.75,b->{
             lichPhase(b,2);player.moveTo(b.getX(),b.getY(),b.getZ()+1,180,0);
             call(b,"setAttackCooldown",new Class<?>[]{int.class},0);
             Object goal=construct("twilightforest.entity.ai.goal.LichMinionsGoal",new Class<?>[]{b.getClass()},b);
             call(goal,"tick",NONE);
         });
-        test("lich","phase3_sword",1.5,b->{lichPhase(b,3);call(b,"detectEquipmentUpdates",NONE);b.doHurtTarget(player);});
+        test("lich","phase3_sword",3.75,b->{lichPhase(b,3);call(b,"detectEquipmentUpdates",NONE);b.doHurtTarget(player);});
         mechanic("lich","native_reflection_breaks_shields",b->{
             lichPhase(b,1);int initial=((Number)call(b,"getShieldStrength",NONE)).intValue();
             for(int i=0;i<initial;i++){
@@ -141,7 +141,7 @@ final class ExhaustiveTwilight {
             }
             eq("lich","shield_to_minions",2,((Number)call(b,"getPhase",NONE)).intValue());
         });
-        for(int kind:new int[]{0,1})test("lich",kind==0?"phase1_clone_bolt":"phase1_clone_bomb",kind==0?2:-3,b->{
+        for(int kind:new int[]{0,1})test("lich",kind==0?"phase1_clone_bolt":"phase1_clone_bomb",kind==0?3.75:-6,b->{
             Set<Entity> before=entities();Object goal=construct("twilightforest.entity.ai.goal.LichShadowsGoal",new Class<?>[]{b.getClass(),float.class},b,30f);
             call(goal,"checkAndSpawnClones",new Class<?>[]{LivingEntity.class},player);
             Mob clone=(Mob)newEntities(before).stream().filter(e->e instanceof Mob&&id(e).equals("twilightforest:lich")).findFirst().orElseThrow();
@@ -173,10 +173,10 @@ final class ExhaustiveTwilight {
     }
 
     private static void minoshroom() {
-        for(boolean charge:new boolean[]{false,true})test("minoshroom",charge?"charge_axe":"ordinary_axe",2,b->{
+        for(boolean charge:new boolean[]{false,true})test("minoshroom",charge?"charge_axe":"ordinary_axe",3.5,b->{
             call(b,"setCharging",new Class<?>[]{boolean.class},charge);b.doHurtTarget(player);
         });
-        test("minoshroom","ground_slam_native_goal",3.25,b->{
+        test("minoshroom","ground_slam_native_goal",5.5,b->{
             Object goal=construct("twilightforest.entity.ai.goal.GroundAttackGoal",new Class<?>[]{b.getClass()},b);
             set(goal,"attackTarget",player);call(goal,"start",NONE);
             check("minoshroom","slam_windup",(boolean)call(b,"isGroundAttackCharge",NONE));
@@ -187,11 +187,11 @@ final class ExhaustiveTwilight {
 
     private static void phantoms() {
         for(String weapon:List.of("sword","axe","pickaxe"))for(boolean charging:new boolean[]{false,true})
-            test("knight_phantom",weapon+(charging?"_charge_melee":"_formation_melee"),charging?1.625:1,b->{
+            test("knight_phantom",weapon+(charging?"_charge_melee":"_formation_melee"),charging?3.5:2,b->{
                 b.setItemSlot(EquipmentSlot.MAINHAND,item("twilightforest:knightmetal_"+weapon));call(b,"detectEquipmentUpdates",NONE);
                 call(b,"setChargingAtPlayer",new Class<?>[]{boolean.class},charging);b.doHurtTarget(player);
             });
-        for(boolean axe:new boolean[]{true,false})test("knight_phantom",axe?"thrown_axe":"eight_pick_volley",1,b->{
+        for(boolean axe:new boolean[]{true,false})test("knight_phantom",axe?"thrown_axe":"eight_pick_volley",2,b->{
             call(b,"setChargingAtPlayer",new Class<?>[]{boolean.class},true);
             Object goal=construct("twilightforest.entity.ai.goal.PhantomThrowWeaponGoal",new Class<?>[]{b.getClass()},b);
             Set<Entity> before=entities();
@@ -200,7 +200,7 @@ final class ExhaustiveTwilight {
             eq("knight_phantom",axe?"axe_count":"pick_count",axe?1:8,weapons.size());
             if(weapons.isEmpty())throw new IllegalStateException("Native throw produced no weapon");
             hit(weapons.getFirst(),player);
-            note("knight_phantom","thrown_source_provenance","mechanic","Installed ThrownWep constructs ownerless/directless damage sources. Native raw6 axe/raw3 pick therefore use ordinary1heart policy, independently of owner's charging state;1.625 applies charging melee.");
+            note("knight_phantom","thrown_source_provenance","mechanic","Installed ThrownWep constructs ownerless/directless damage sources. Native raw6 axe/raw3 pick therefore use ordinary2heart policy, independently of owner's charging state;3.5 applies charging melee.");
         });
         mechanic("knight_phantom","all_native_formations",b->{
             Class<?> type=Class.forName("twilightforest.entity.boss.KnightPhantom$Formation");
@@ -213,13 +213,13 @@ final class ExhaustiveTwilight {
     }
 
     private static void yeti() {
-        test("alpha_yeti","rampage_stomp",1.5,b->{call(b,"setRampaging",new Class<?>[]{boolean.class},true);call(b,"hitNearbyEntities",NONE);});
-        test("alpha_yeti","thrown_ice_direct",-.75,b->{
+        test("alpha_yeti","rampage_stomp",4.5,b->{call(b,"setRampaging",new Class<?>[]{boolean.class},true);call(b,"hitNearbyEntities",NONE);});
+        test("alpha_yeti","thrown_ice_direct",-1.5,b->{
             Set<Entity> before=entities();call(b,"performRangedAttack",new Class<?>[]{LivingEntity.class,float.class},player,1f);
             Entity ice=oneNew(before,"twilightforest:thrown_ice");ice.moveTo(player.position());hit(ice,player);
             note("alpha_yeti","direct_frosted","mechanic","Native status after direct ice: "+player.getActiveEffects());
         });
-        test("alpha_yeti","ice_cloud_tick",-.75,b->{
+        test("alpha_yeti","ice_cloud_tick",-1.5,b->{
             Entity ice=projectile("twilightforest:thrown_ice",b);ice.moveTo(player.position());
             call(ice,"onHitBlock",new Class<?>[]{BlockHitResult.class},groundHit());call(ice,"hitNearbyEntities",NONE);
             note("alpha_yeti","cloud_frosted","mechanic","Native status after cloud pulse: "+player.getActiveEffects());
@@ -232,7 +232,7 @@ final class ExhaustiveTwilight {
             check("alpha_yeti","frosted_effect_expired",player.getActiveEffects().isEmpty());
             note("alpha_yeti","full_frosted_followup","mechanic","Native impact HP="+afterImpact+", after300 real ServerPlayer lifecycle ticks="+player.getHealth()+", frozenTicks="+player.getTicksFrozen()+". No synthetic hurt; continued direct cloud exposure excluded from this status-isolation case.");
         });
-        for(float fall:new float[]{8,25,80})test("alpha_yeti","falling_ice_distance_"+fall,-3.5,b->{
+        for(float fall:new float[]{8,25,80})test("alpha_yeti","falling_ice_distance_"+fall,-5.25,b->{
             Entity ice=BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.parse("twilightforest:falling_ice")).create(level);
             if(ice==null)throw new IllegalStateException("Falling ice missing");ice.moveTo(player.position());level.addFreshEntity(ice);
             // The native method computes its own distance/difficulty-based damage, including its cap.
@@ -274,14 +274,14 @@ final class ExhaustiveTwilight {
 
     private static void hydra() {
         for(boolean secondary:new boolean[]{false,true}){
-            test("hydra",secondary?"secondary_flame":"primary_flame",1.375,b->{
+            test("hydra",secondary?"secondary_flame":"primary_flame",.75,b->{
                 Object container=((Object[])field(b,"hc"))[secondary?1:0];Entity head=(Entity)field(container,"headEntity");
                 head.moveTo(8,220,34,180,0);head.setYRot(180);head.setXRot(0);set(container,"isSecondaryAttacking",secondary);
                 headState(head,"FLAMING");check("hydra","flame_ray_selected_player",call(container,"getHeadLookTarget",NONE)==player);
                 call(container,"executeAttacks",NONE);check("hydra","flame_ignition",player.isOnFire());
             });
         }
-        test("hydra","bite",4.5,b->{Object c=((Object[])field(b,"hc"))[0];Entity h=(Entity)field(c,"headEntity");h.moveTo(player.position());headState(h,"BITING");call(c,"executeAttacks",NONE);});
+        test("hydra","bite",7,b->{Object c=((Object[])field(b,"hc"))[0];Entity h=(Entity)field(c,"headEntity");h.moveTo(player.position());headState(h,"BITING");call(c,"executeAttacks",NONE);});
         test("hydra","flame_hit_and_full_burn_followup",Double.NaN,b->{
             Object c=((Object[])field(b,"hc"))[0];Entity head=(Entity)field(c,"headEntity");head.moveTo(8,220,34,180,0);headState(head,"FLAMING");call(c,"executeAttacks",NONE);
             float direct=player.getHealth();check("hydra","followup_flame_ignites",player.isOnFire());player.moveTo(24,225,24,0,0);
@@ -289,17 +289,17 @@ final class ExhaustiveTwilight {
             check("hydra","dry_flame_has_delayed_burn_damage",player.getHealth()<direct);
             note("hydra","flame_full_burn","mechanic","Native flame HP="+direct+", after100 real ServerPlayer lifecycle ticks="+player.getHealth()+"; no further boss contact.");
         });
-        test("hydra","bite_disables_raised_shield",4.5,b->{
+        test("hydra","bite_disables_raised_shield",7,b->{
             raiseShield();Object c=((Object[])field(b,"hc"))[0];Entity h=(Entity)field(c,"headEntity");h.moveTo(player.position());headState(h,"BITING");call(c,"executeAttacks",NONE);
             check("hydra","bite_shield_disabled",player.getCooldowns().isOnCooldown(Items.SHIELD)&&!player.isUsingItem());
             eq("hydra","bite_shield_durability_cost",112,player.getOffhandItem().getDamageValue());
         });
-        for(boolean mega:new boolean[]{false,true})test("hydra",mega?"mortar_megablast":"mortar_contact_and_burn",-3.5,b->{
+        for(boolean mega:new boolean[]{false,true})test("hydra",mega?"mortar_megablast":"mortar_contact_and_burn",-5.5,b->{
             Entity mortar=hydraMortar(b);mortar.moveTo(player.position());
             if(mega)call(mortar,"setToBlasting",NONE);hit(mortar,player);
             note("hydra","mortar_burning_"+mega,"mechanic","Native fire ticks="+player.getRemainingFireTicks());
         });
-        test("hydra","mortar_megablast_unobstructed",-3.5,b->{
+        test("hydra","mortar_megablast_unobstructed",-5.5,b->{
             player.moveTo(8,225,4,180,0);Entity mortar=hydraMortar(b);mortar.moveTo(player.position());
             call(mortar,"setToBlasting",NONE);hit(mortar,player);
             note("hydra","unobstructed_exposure","mechanic","Native megablast collision5blocks above the arena, blast at player feet with zero entity distance and no floor occlusion.");
@@ -311,7 +311,7 @@ final class ExhaustiveTwilight {
             check("hydra","dry_mortar_has_delayed_burn_damage",player.getHealth()<direct);
             note("hydra","mortar_full_burn","mechanic","Native mortar HP="+direct+", after140 real ServerPlayer lifecycle ticks="+player.getHealth()+"; no further boss contact.");
         });
-        for(boolean fuse:new boolean[]{false,true})test("hydra",fuse?"mortar_ground_fuse":"mortar_wall_impact",-3.5,b->{
+        for(boolean fuse:new boolean[]{false,true})test("hydra",fuse?"mortar_ground_fuse":"mortar_wall_impact",-5.5,b->{
             Entity mortar=hydraMortar(b);mortar.moveTo(player.position());mortar.setDeltaMovement(Vec3.ZERO);mortar.setNoGravity(true);
             if(fuse){
                 mortar.moveTo(player.getX()+1.2,player.getY(),player.getZ(),0,0);
@@ -352,29 +352,29 @@ final class ExhaustiveTwilight {
     }
 
     private static void urGhast() {
-        test("ur_ghast","normal_fireball_direct",2.75,b->{Entity fireball=urBall(b);fireball.moveTo(player.position());hit(fireball,player);});
-        test("ur_ghast","normal_fireball_splash",-3,b->{Entity fireball=urBall(b);fireball.moveTo(player.position());call(fireball,"onHitBlock",new Class<?>[]{BlockHitResult.class},groundHit());
+        test("ur_ghast","normal_fireball_direct",4.5,b->{Entity fireball=urBall(b);fireball.moveTo(player.position());hit(fireball,player);});
+        test("ur_ghast","normal_fireball_splash",-6,b->{Entity fireball=urBall(b);fireball.moveTo(player.position());call(fireball,"onHitBlock",new Class<?>[]{BlockHitResult.class},groundHit());
             note("ur_ghast","ownerless_splash","mechanic","Native power1 splash has null source owner; custom boss cap cannot identify it. Its observed armored damage is recorded without claiming attribution.");});
-        test("ur_ghast","normal_fireball_splash_unobstructed",-3,b->{
+        test("ur_ghast","normal_fireball_splash_unobstructed",-6,b->{
             player.moveTo(8,225,4,180,0);Entity fireball=urBall(b);fireball.moveTo(player.position());
             call(fireball,"onHitBlock",new Class<?>[]{BlockHitResult.class},groundHit());
-            note("ur_ghast","unobstructed_ownerless_splash","mechanic","Native block-collision callback, explosion5blocks above arena at player feet, zero entity distance and no floor occlusion. Null owner means no custom cap attribution; this records unobstructed power1 damage.");
+            note("ur_ghast","unobstructed_ownerless_splash","mechanic","Native block-collision callback, explosion5blocks above arena at player feet, zero entity distance and no floor occlusion. Native ownerless explosion is attributed only through the active Ur-Ghast projectile context; the unobstructed power1 result remains below its ceiling.");
         });
-        test("ur_ghast","tantrum_tear_rain",.875,b->{b.moveTo(player.getX(),player.getY()+10,player.getZ(),0,0);call(b,"setInTantrum",new Class<?>[]{boolean.class},true);call(b,"doTantrumDamageEffects",NONE);});
+        test("ur_ghast","tantrum_tear_rain",.75,b->{b.moveTo(player.getX(),player.getY()+10,player.getZ(),0,0);call(b,"setInTantrum",new Class<?>[]{boolean.class},true);call(b,"doTantrumDamageEffects",NONE);});
         for(boolean splash:new boolean[]{false,true})test("ur_ghast",splash?"summoned_ghastling_fireball_splash":"summoned_ghastling_fireball_direct",Double.NaN,b->{
             Entity fireball=ghastlingBall(b);fireball.moveTo(player.position());
             if(splash)call(fireball,"onHit",new Class<?>[]{HitResult.class},groundHit());
             else call(fireball,"onHit",new Class<?>[]{HitResult.class},new EntityHitResult(player));
             note("ur_ghast","ghastling_scope","mechanic","Native summoned nonboss ghastling plus its own spitFireball method and vanilla collision/explosion; retains nonboss damage.");
         });
-        for(boolean splash:new boolean[]{false,true})test("ur_ghast",splash?"summoned_ghastling_splash_and_full_burn_followup":"summoned_ghastling_direct_and_full_burn_followup",splash?2.079:1.72908,b->{
+        for(boolean splash:new boolean[]{false,true})test("ur_ghast",splash?"summoned_ghastling_splash_and_full_burn_followup":"summoned_ghastling_direct_and_full_burn_followup",splash?6.28125:5.06625,b->{
             String variant=splash?"splash":"direct";
             level.setWeatherParameters(6000,0,false,false);level.setRainLevel(0f);level.setThunderLevel(0f);
             Entity fireball=ghastlingBall(b);fireball.moveTo(player.position());
             if(splash)call(fireball,"onHit",new Class<?>[]{HitResult.class},groundHit());
             else call(fireball,"onHit",new Class<?>[]{HitResult.class},new EntityHitResult(player));
             float afterImmediate=player.getHealth();int nativeIgnition=player.getRemainingFireTicks();
-            eq("ur_ghast","ghastling_"+variant+"_immediate_hearts",splash?1.539:1.18908,(20-afterImmediate)/2d);
+            eq("ur_ghast","ghastling_"+variant+"_immediate_hearts",splash?4.78125:3.56625,(20-afterImmediate)/2d);
             eq("ur_ghast","ghastling_"+variant+"_native_ignition_ticks",80,nativeIgnition);
             check("ur_ghast","ghastling_"+variant+"_ignites",player.isOnFire());
             player.moveTo(24,225,24,0,0);
@@ -384,13 +384,13 @@ final class ExhaustiveTwilight {
                 float beforeTick=player.getHealth();nativeBurnTick("ur_ghast","ghastling_"+variant,i);
                 if(player.getHealth()<beforeTick){
                     burnHits++;double hearts=(beforeTick-player.getHealth())/2d;
-                    eq("ur_ghast","ghastling_"+variant+"_burn_hit_"+burnHits+"_hearts",.18,hearts);
+                    eq("ur_ghast","ghastling_"+variant+"_burn_hit_"+burnHits+"_hearts",.5,hearts);
                     note("ur_ghast","ghastling_"+variant+"_burn_at_tick_"+i,"mechanic","Native player lifecycle tick: HP="+beforeTick+" -> "+player.getHealth()+", hearts="+hearts+"; fireTicks="+player.getRemainingFireTicks()+". Capture records the actual damage source.");
                 }
             }
             check("ur_ghast","ghastling_"+variant+"_burn_expired",!player.isOnFire());
             eq("ur_ghast","ghastling_"+variant+"_burn_hit_count",3,burnHits);
-            eq("ur_ghast","ghastling_"+variant+"_delayed_hearts",.54,(afterImmediate-player.getHealth())/2d);
+            eq("ur_ghast","ghastling_"+variant+"_delayed_hearts",1.5,(afterImmediate-player.getHealth())/2d);
             note("ur_ghast","ghastling_"+variant+"_full_burn_breakdown","mechanic","Initial HP=20; after native collision/explosion HP="+afterImmediate+" (immediate hearts="+((20-afterImmediate)/2d)+"); native ignition="+nativeIgnition+"ticks; after120 real ServerPlayer lifecycle ticks HP="+player.getHealth()+" (delayed hearts="+((afterImmediate-player.getHealth())/2d)+", combined total hearts="+((20-player.getHealth())/2d)+"). Dry isolated followup, no further boss/minion/projectile contact; immediate components are already included in the combined total.");
         });
         mechanic("ur_ghast","normal_tantrum_normal_native_transitions",b->{
@@ -418,11 +418,11 @@ final class ExhaustiveTwilight {
     }
 
     private static void snowQueen() {
-        for(String phase:List.of("SUMMON","DROP","BEAM"))test("snow_queen","shield_contact_"+phase,3,b->{
+        for(String phase:List.of("SUMMON","DROP","BEAM"))test("snow_queen","shield_contact_"+phase,6,b->{
             snowPhase(b,phase);Entity shield=(Entity)((Object[])field(b,"iceArray"))[0];shield.moveTo(player.position());
             call(b,"applyShieldCollision",new Class<?>[]{Entity.class,Entity.class},shield,player);
         });
-        test("snow_queen","beam_breath",.625,b->{snowPhase(b,"BEAM");call(b,"setBreathing",new Class<?>[]{boolean.class},true);call(b,"doBreathAttack",new Class<?>[]{Entity.class},player);});
+        test("snow_queen","beam_breath",.75,b->{snowPhase(b,"BEAM");call(b,"setBreathing",new Class<?>[]{boolean.class},true);call(b,"doBreathAttack",new Class<?>[]{Entity.class},player);});
         test("snow_queen","summoned_ice_crystal_contact",Double.NaN,b->{
             snowPhase(b,"SUMMON");Set<Entity> before=entities();call(b,"summonMinionAt",new Class<?>[]{LivingEntity.class},player);
             Mob minion=(Mob)oneNew(before,"twilightforest:ice_crystal");minion.moveTo(player.position());minion.doHurtTarget(player);

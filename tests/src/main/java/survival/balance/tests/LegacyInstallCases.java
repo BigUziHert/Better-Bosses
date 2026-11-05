@@ -15,6 +15,7 @@ import net.minecraft.world.entity.ai.attributes.Attributes;
 /** Two separate JVM runs: save native entities without the add-on, then install and reload. */
 final class LegacyInstallCases {
     private static final Path MANIFEST=Path.of("../tests/results/preinstall-manifest.json");
+    private static final Path INSTALLED_MANIFEST=Path.of("../tests/results/installed-restart-manifest.json");
     private static final Map<UUID,Map<String,Object>> LOADS=new LinkedHashMap<>();
     static void install(){
         net.neoforged.neoforge.common.NeoForge.EVENT_BUS.addListener(net.neoforged.bus.api.EventPriority.HIGHEST,LegacyInstallCases::beforeJoin);
@@ -25,12 +26,14 @@ final class LegacyInstallCases {
         Map<String,Object> row=new LinkedHashMap<>();row.put("uuid",boss.getUUID().toString());row.put("id",BuiltInRegistries.ENTITY_TYPE.getKey(boss.getType()).toString());
         row.put("beforeMax",boss.getMaxHealth());row.put("beforeHealth",boss.getHealth());
         row.put("beforeModifier",boss.getAttribute(Attributes.MAX_HEALTH).hasModifier(ResourceLocation.parse("survival_boss_balance:health")));
+        row.put("beforeProfileVersion",boss.getPersistentData().getCompound("survival_boss_balance_health").getInt("version"));
         LOADS.put(boss.getUUID(),row);
     }
     private static void afterJoin(net.neoforged.neoforge.event.entity.EntityJoinLevelEvent event){
         if(event.getLevel().isClientSide()||!(event.getEntity() instanceof LivingEntity boss))return;
         var row=LOADS.get(boss.getUUID());if(row==null)return;
         row.put("afterMax",boss.getMaxHealth());row.put("afterHealth",boss.getHealth());
+        row.put("afterProfileVersion",boss.getPersistentData().getCompound("survival_boss_balance_health").getInt("version"));
     }
     static final Map<String,Double> TARGETS=new LinkedHashMap<>();
     static {
@@ -53,7 +56,14 @@ final class LegacyInstallCases {
         level.getServer().saveEverything(true,true,true);
     }
     static void verify(ServerLevel level)throws Exception {
+        verify(level,false);
+    }
+    static void verifyKeep(ServerLevel level)throws Exception {
+        verify(level,true);
+    }
+    private static void verify(ServerLevel level,boolean keep)throws Exception {
         if(!net.neoforged.fml.ModList.get().isLoaded("survival_boss_balance"))throw new IllegalStateException("Install the balance mod first");
+        List<Map<String,Object>> installed=new ArrayList<>();
         for(var element:JsonParser.parseString(Files.readString(MANIFEST)).getAsJsonArray()){
             var row=element.getAsJsonObject();String id=row.get("id").getAsString();UUID uuid=UUID.fromString(row.get("uuid").getAsString());
             int x=row.get("x").getAsInt();level.getChunk(x>>4,0);Entity entity=level.getEntity(uuid);
@@ -67,8 +77,40 @@ final class LegacyInstallCases {
             BossBalanceTests.result("installed_saved_max",id,target,boss.getMaxHealth());
             BossBalanceTests.result("installed_saved_modifier",id,1,boss.getAttribute(Attributes.MAX_HEALTH).hasModifier(ResourceLocation.parse("survival_boss_balance:health"))?1:0);
             loaded.put("sampledHealthAfterNativeTicks",boss.getHealth());
-            boss.discard();level.setChunkForced(x>>4,0,false);
+            if(keep){
+                Map<String,Object> saved=new LinkedHashMap<>();saved.put("id",id);saved.put("uuid",uuid.toString());saved.put("x",x);saved.put("target",target);saved.put("sampledHealthBeforeSecondSave",boss.getHealth());installed.add(saved);
+            }else{boss.discard();level.setChunkForced(x>>4,0,false);}
         }
         Files.writeString(Path.of("../tests/results/preinstall-load-evidence.json"),new GsonBuilder().setPrettyPrinting().create().toJson(LOADS.values()));
+        if(keep){
+            if(installed.size()!=TARGETS.size()*2)throw new IllegalStateException("Cannot prepare incomplete installed restart: "+installed.size());
+            Files.writeString(INSTALLED_MANIFEST,new GsonBuilder().setPrettyPrinting().create().toJson(installed));
+            level.getServer().saveEverything(true,true,true);
+        }
+    }
+    /** A second JVM load of all 46 already-migrated UUIDs. Native idle healing
+     * between the save command and shutdown may legitimately change saved HP;
+     * compare health immediately across the join event to isolate rescaling. */
+    static void verifyInstalled(ServerLevel level)throws Exception {
+        if(!net.neoforged.fml.ModList.get().isLoaded("survival_boss_balance"))throw new IllegalStateException("Balance mod must remain installed");
+        var manifest=JsonParser.parseString(Files.readString(INSTALLED_MANIFEST)).getAsJsonArray();
+        if(manifest.size()!=TARGETS.size()*2)throw new IllegalStateException("Expected 46 saved installed bosses");
+        for(var element:manifest){
+            var row=element.getAsJsonObject();String id=row.get("id").getAsString();UUID uuid=UUID.fromString(row.get("uuid").getAsString());int x=row.get("x").getAsInt();
+            level.getChunk(x>>4,0);Entity entity=level.getEntity(uuid);
+            if(!(entity instanceof LivingEntity boss)){BossBalanceTests.error("installed_restart_saved_uuid",id,new IllegalStateException("Entity not loaded "+uuid));continue;}
+            var loaded=LOADS.get(uuid);
+            if(loaded==null){BossBalanceTests.error("installed_restart_load_capture",id,new IllegalStateException("No second-load evidence"));continue;}
+            double target=row.get("target").getAsDouble();
+            BossBalanceTests.result("installed_restart_max_before_join",id,target,((Number)loaded.get("beforeMax")).doubleValue());
+            BossBalanceTests.result("installed_restart_modifier_before_join",id,1,Boolean.TRUE.equals(loaded.get("beforeModifier"))?1:0);
+            BossBalanceTests.result("installed_restart_profile_before_join",id,2,((Number)loaded.get("beforeProfileVersion")).doubleValue());
+            BossBalanceTests.result("installed_restart_health_unchanged_during_join",id,((Number)loaded.get("beforeHealth")).doubleValue(),((Number)loaded.get("afterHealth")).doubleValue());
+            BossBalanceTests.result("installed_restart_max_after_join",id,target,((Number)loaded.get("afterMax")).doubleValue());
+            BossBalanceTests.result("installed_restart_profile_after_join",id,2,((Number)loaded.get("afterProfileVersion")).doubleValue());
+            BossBalanceTests.result("installed_restart_current_max",id,target,boss.getMaxHealth());
+            loaded.put("sampledHealthAfterNativeTicks",boss.getHealth());boss.discard();level.setChunkForced(x>>4,0,false);
+        }
+        Files.writeString(Path.of("../tests/results/installed-restart-load-evidence.json"),new GsonBuilder().setPrettyPrinting().create().toJson(LOADS.values()));
     }
 }

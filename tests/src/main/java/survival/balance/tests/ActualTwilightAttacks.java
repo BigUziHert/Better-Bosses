@@ -14,20 +14,20 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
 
-/** Real installed attack methods, with a normal 20-HP player and actual enchanted armor. */
+/** Real installed attack methods, with a normal 20-HP player and unenchanted diamond armor. */
 final class ActualTwilightAttacks {
     @FunctionalInterface private interface Attack { void perform(LivingEntity boss) throws Exception; }
 
     static void run(ServerLevel level,BossBalanceTests.TestPlayer victim) {
-        attack(level,victim,"naga","head",1.5,"Naga.doHurtTarget(player)",
+        attack(level,victim,"naga","head",BalanceExpectations.target("naga.head"),"Naga.doHurtTarget(player)",
             boss -> ((Mob)boss).doHurtTarget(victim));
-        attack(level,victim,"naga","body",.45,"NagaSegment.collideWithEntity(player)",boss -> {
+        attack(level,victim,"naga","body",BalanceExpectations.target("naga.body"),"NagaSegment.collideWithEntity(player)",boss -> {
             Class<?> type=Class.forName("twilightforest.entity.boss.NagaSegment");
             Object segment=type.getConstructor(boss.getClass()).newInstance(boss);
             invoke(segment,"collideWithEntity",new Class<?>[]{Entity.class},victim);
         });
 
-        attack(level,victim,"lich","bolt",2,"LichBolt.onHitEntity(actual player collision)",boss -> {
+        attack(level,victim,"lich","bolt",BalanceExpectations.target("twilight_lich.bolt"),"LichBolt.onHitEntity(actual player collision)",boss -> {
             Entity bolt=BuiltInRegistries.ENTITY_TYPE.get(ResourceLocation.parse("twilightforest:lich_bolt")).create(level);
             if(!(bolt instanceof Projectile projectile))throw new IllegalStateException("Lich bolt missing");
             try {
@@ -35,7 +35,7 @@ final class ActualTwilightAttacks {
                 invoke(bolt,"onHitEntity",new Class<?>[]{EntityHitResult.class},new EntityHitResult(victim));
             }finally{bolt.discard();}
         });
-        attack(level,victim,"lich","phase3_sword",1.5,"Lich phase3 (shield0,minions0), native golden-sword melee",boss -> {
+        attack(level,victim,"lich","phase3_sword",BalanceExpectations.target("twilight_lich.melee"),"Lich phase3 (shield0,minions0), native golden-sword melee",boss -> {
             invoke(boss,"setShieldStrength",new Class<?>[]{int.class},0);
             invoke(boss,"setMinionsToSummon",new Class<?>[]{int.class},0);
             // Native getMainHandItem supplies the phase-three golden sword; update its actual attributes.
@@ -43,29 +43,29 @@ final class ActualTwilightAttacks {
             ((Mob)boss).doHurtTarget(victim);
         });
 
-        attack(level,victim,"minoshroom","axe",2,"Minoshroom.doHurtTarget(player), native equipped axe",
+        attack(level,victim,"minoshroom","axe",BalanceExpectations.target("minoshroom.axe"),"Minoshroom.doHurtTarget(player), native equipped axe",
             boss -> ((Mob)boss).doHurtTarget(victim));
-        attack(level,victim,"knight_phantom","ordinary",1,"KnightPhantom.doHurtTarget(player), not charging",boss -> {
+        attack(level,victim,"knight_phantom","ordinary",BalanceExpectations.target("knight_phantom.ordinary"),"KnightPhantom.doHurtTarget(player), not charging",boss -> {
             invoke(boss,"setChargingAtPlayer",new Class<?>[]{boolean.class},false);
             ((Mob)boss).doHurtTarget(victim);
         });
-        attack(level,victim,"knight_phantom","charge",1.625,"KnightPhantom.doHurtTarget(player), native charging modifier enabled",boss -> {
+        attack(level,victim,"knight_phantom","charge",BalanceExpectations.target("knight_phantom.charge"),"KnightPhantom.doHurtTarget(player), native charging modifier enabled",boss -> {
             invoke(boss,"setChargingAtPlayer",new Class<?>[]{boolean.class},true);
             ((Mob)boss).doHurtTarget(victim);
         });
-        attack(level,victim,"alpha_yeti","stomp",1.5,"AlphaYeti.hitNearbyEntities(), player inside real stomp AABB",boss -> {
+        attack(level,victim,"alpha_yeti","stomp",BalanceExpectations.target("alpha_yeti.stomp"),"AlphaYeti.hitNearbyEntities(), player inside real stomp AABB",boss -> {
             invoke(boss,"setRampaging",new Class<?>[]{boolean.class},true);
             invoke(boss,"hitNearbyEntities",new Class<?>[0]);
         });
 
-        attack(level,victim,"hydra","bite",4.5,"HydraHeadContainer.executeAttacks(), BITING head overlaps player",boss -> {
+        attack(level,victim,"hydra","bite",BalanceExpectations.target("hydra.bite"),"HydraHeadContainer.executeAttacks(), BITING head overlaps player",boss -> {
             Object container=((Object[])field(boss,"hc"))[0];
             Entity head=(Entity)field(container,"headEntity");
             head.moveTo(victim.getX(),victim.getY(),victim.getZ(),0,0);
             setHeadState(head,"BITING");
             invoke(container,"executeAttacks",new Class<?>[0]);
         });
-        attack(level,victim,"hydra","flame",1.375,"HydraHeadContainer.executeAttacks(), FLAMING head's native30-block ray/endpoint search intersects player",boss -> {
+        attack(level,victim,"hydra","flame",BalanceExpectations.target("hydra.flame"),"HydraHeadContainer.executeAttacks(), FLAMING head's native30-block ray/endpoint search intersects player",boss -> {
             Object container=((Object[])field(boss,"hc"))[0];
             Entity head=(Entity)field(container,"headEntity");
             // Installed getHeadLookTarget moves its entity-search AABB to the ray endpoint.
@@ -78,19 +78,19 @@ final class ActualTwilightAttacks {
             invoke(container,"executeAttacks",new Class<?>[0]);
         });
 
-        attack(level,victim,"ur_ghast","tantrum",.875,"UrGhast.doTantrumDamageEffects(), exposed player ten blocks below boss",boss -> {
+        attack(level,victim,"ur_ghast","tantrum",BalanceExpectations.target("ur_ghast.tantrum"),"UrGhast.doTantrumDamageEffects(), exposed player ten blocks below boss",boss -> {
             boss.moveTo(victim.getX(),victim.getY()+10,victim.getZ(),0,0);
             invoke(boss,"setInTantrum",new Class<?>[]{boolean.class},true);
             invoke(boss,"doTantrumDamageEffects",new Class<?>[0]);
         });
-        attack(level,victim,"ur_ghast","fireball_direct",2.75,"UrGhastFireball.onHitEntity(), native power1 at player's feet; includes immediate secondary explosion",boss -> {
+        attack(level,victim,"ur_ghast","fireball_direct",BalanceExpectations.target("ur_ghast.fireball"),"UrGhastFireball.onHitEntity(), native power1 at player's feet; includes immediate secondary explosion",boss -> {
             Entity fireball=urFireball(level,boss);
             try {
                 fireball.moveTo(victim.position());
                 invoke(fireball,"onHitEntity",new Class<?>[]{EntityHitResult.class},new EntityHitResult(victim));
             }finally{fireball.discard();}
         });
-        attack(level,victim,"ur_ghast","fireball_native_splash",1.539,"UrGhastFireball.onHitBlock(), native power1 at feet/full exposure; ownerless splash remains vanilla, below configured3heart cap",boss -> {
+        attack(level,victim,"ur_ghast","fireball_native_splash",4.78125,"UrGhastFireball.onHitBlock(), native power1 at feet/full exposure; native power1 splash below configured6heart cap",boss -> {
             Entity fireball=urFireball(level,boss);
             try {
                 fireball.moveTo(victim.position());
@@ -98,9 +98,9 @@ final class ActualTwilightAttacks {
                 invoke(fireball,"onHitBlock",new Class<?>[]{BlockHitResult.class},collision);
             }finally{fireball.discard();}
         });
-        attack(level,victim,"snow_queen","beam",.625,"SnowQueen.doBreathAttack(player)",boss ->
+        attack(level,victim,"snow_queen","beam",BalanceExpectations.target("snow_queen.beam"),"SnowQueen.doBreathAttack(player)",boss ->
             invoke(boss,"doBreathAttack",new Class<?>[]{Entity.class},victim));
-        attack(level,victim,"snow_queen","contact",3,"SnowQueen.doHurtTarget(player), native contact damage",boss ->
+        attack(level,victim,"snow_queen","contact",BalanceExpectations.target("snow_queen.contact"),"SnowQueen.doHurtTarget(player), native contact damage",boss ->
             ((Mob)boss).doHurtTarget(victim));
     }
 

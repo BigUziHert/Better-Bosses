@@ -1,0 +1,106 @@
+{
+  "purpose": "Isolated native client playthroughs against the unchanged copied survival-server modpack",
+  "serverNeoForge": "21.1.264",
+  "serverSource": "S:/Survival (read only)",
+  "clientBase": "Copied server mods and config, not CurseForge profile",
+  "clientOnlyDependencies": [
+    "sodium-neoforge-0.8.13+mc1.21.1.jar",
+    "SimplyTooltips-neoforge-0.1.5.jar",
+    "fusion-1.3.16-neoforge-mc1.21.1.jar"
+  ],
+  "clientExcludedServerUtility": "Chunky-NeoForge-1.4.23.jar: unused on remote client; its presence triggered Distant Horizons ChunkyProvider-not-loaded exception",
+  "clientGraphicsOverrides": [
+    "Voxy disabled, including ingestion/rendering, after native buffer allocation failure",
+    "Distant Horizons rendererMode DISABLED",
+    "12-chunk render distance, 9-chunk simulation distance and 60 FPS; source-server distances matched for final encounter tracking"
+  ],
+  "clientDevelopmentProperty": "owo.handshake.enabled=false matches ordinary dedicated production mode",
+  "controller": "Test-only native key input, including installed Better Combat input hooks; not human play",
+  "gameplayConfigOverrides": "None in the copied server combat configuration; test harness stages arenas/gamerules and loadouts explicitly recorded per encounter",
+  "productionSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "testServerPort": 25576,
+  "sourceFilesAudited": 871,
+  "testClientFlightLibCompatibility": {
+    "scope": "Isolated development client only; production mod and dedicated-server settings unchanged",
+    "guard": "Requires survival.bossBalance.clientPlaytest=true and FMLLoader.isProduction()=false",
+    "problem": "FlightLib registers a development-only diamond/gold chestplate DevJetpack caster, causing unintended hover with reference diamond armor",
+    "implementation": "During FMLClientSetupEvent.enqueueWork, identify exactly one CommonSources caster that returns DevJetpack for a diamond chestplate; remove only that caster; retain all production equipment/accessory flight casters",
+    "source": "tests/client/java/survival/balance/clienttest/ProductionFlightSources.java",
+    "review": "Code reviewed; strict exactly-one-caster guard and explicit startup log",
+    "runtimeValidation": "With the pilot disabled, the native falling check moved from (8,-45,8) at 2026-11-05T02:11:20Z to (8.5,-59,8.5) by 02:11:28Z. Before the fresh queue, player flying/mayfly/invulnerable abilities were false and fallDamage was true. Fresh Naga samples show grounded movement, noGravity=false, noPhysics=false and gravity 0.08. During that encounter, a native 1-HP fall-damage event followed an airborne/downward sample and landing. The preliminary setup drop itself is not claimed to have caused damage."
+  },
+  "arenaGeometry": {
+    "nonEndFloorY": -60,
+    "surface": "Stone over bedrock at the flat world ground level",
+    "reason": "Avoid an artificial elevated-arena drop when movement leaves the arena",
+    "endFloorY": 64,
+    "endException": "Direct-spawn Dragon fixture uses an End arena, but omitted native fight-manager combat initialization and had zero crystals; see dragonFixtureLimit for the restricted claim."
+  },
+  "invalidatedClientTrials": [
+    {
+      "directory": "tests/results/full-fights/2026-11-05T01-48-26.397439800Z",
+      "status": "Invalid for endurance conclusions",
+      "reason": "Unintended FlightLib development jetpack hover"
+    },
+    {
+      "directory": "tests/results/full-fights/2026-11-05T01-58-11.377687500Z",
+      "status": "Cancelled; invalid for endurance conclusions",
+      "reason": "Unintended FlightLib development jetpack hover; cancelled first case after 2,129 ticks"
+    }
+  ],
+  "acceptedClientQueue": "tests/results/full-fights/2026-11-05T02-22-16.715609400Z",
+  "trackingDistanceCorrection": {
+    "problem": "The isolated server initially used view distance 2, clamping entity tracking to 32 blocks. Twilight Lich teleported beyond that radius and vanished from the client.",
+    "sourceServerViewDistance": 12,
+    "sourceServerSimulationDistance": 9,
+    "plannedTestServerViewDistance": 12,
+    "plannedTestServerSimulationDistance": 9,
+    "plannedClientRenderDistance": 12,
+    "plannedClientSimulationDistance": 9,
+    "status": "Final queue uses source-matching server view 12/simulation 9 and client render 12/simulation 9, verified before starting. ServerCore native live settings were first applied at 2026-11-05T02:16:35Z, persisted in the isolated server, and retained through the later helper restart.",
+    "affectedOutcome": "Twilight Lich diamond stalled in the 02-12 queue; this is invalid endurance evidence because of the tracking mismatch.",
+    "priorNagaOutcome": "Completed Naga diamond defeat remains supplemental valid evidence, separate from the eventual accepted full queue"
+  },
+  "supplementalClientQueue": "tests/results/full-fights/2026-11-05T02-12-00.235721200Z",
+  "continuousEncounterHelper": {
+    "sha256": "2CA3BA0D197C345B5CE1CFABD22833BB1EE2A22AD8BCC9EA39960D9662B78EF0",
+    "realClientLimitTicks": 3600,
+    "realClientLimitSeconds": 180,
+    "earlyNoBossHpLossCutoff": false,
+    "reason": "Protected phases can progress through reflection, crystals or minions without boss HP loss",
+    "status": "Completed all46 bounded encounters at2026-11-05T04:04:49.049266Z; outcomes remain supplemental observations, not46 passing fights"
+  },
+  "lichControllerStrategy": "When native synced shields remain, hold the sword, aim at visible bolts from approximately 12 blocks and click only within native 3-block crosshair reach. This is an automated control strategy, not a change to boss shields or projectile behavior.",
+  "nativeArenaLimitations": [
+    "The native corpse/ragdoll mods can leave prior player-death remains in the reused arena. Visible remains can affect approaches or collisions and are a disclosed fixture/modpack limitation; no active encounter is altered to remove them.",
+    "Automated controller outcomes are observations, not estimates of human win rates. Input requests alone do not prove a successful shield block or reflected Lich bolt.",
+    "Natural boss AI and protected-phase rules remain native; no HP/damage validation claim implies that every phase appeared in each bounded client encounter."
+  ],
+  "nativeGetUpAssistance": {
+    "reason": "Native nonlethal Sable ragdoll can leave the player seated when auto-expiry is disabled; the automated controller did not supply the ordinary get-up key",
+    "allowedAction": "Logged ordinary native get-up input only; no health, cooldown, movement-velocity, boss-state or configuration reset during combat",
+    "earlierLimitedCases": [
+      "07 Ur-Ghast diamond",
+      "09 Night Lich diamond"
+    ],
+    "interpretation": "These bounded outcomes include controller-limited exposure and are not full autonomous fight completion. Later native get-up assistance must be disclosed with its input log.",
+    "observedRecovery": "Monstrosity native crouch get-up at 2026-11-05T02:50:04.545Z preserved health 19.698448; another ordinary crouch toggle at 02:50:12 restored standing. This was nonlethal recovery, not revival or a health reset."
+  },
+  "nativeStateTerminology": {
+    "nonlethalDown": "Native ragdoll/down state: ordinary crouch input can get the player up; not a defeat by itself",
+    "lethalKnockout": "RagRevival lethal knockout requiring revival; harness machine outcome lost_downed is based on the native lethal event and remains a defeat. Replacement/healing can leave nonzero HP (case 37 ended at 2 HP), so HP alone is not the definition.",
+    "betweenCaseCleanup": "kill BossPlaytest is permitted only after a recorded lethal knockout while the next encounter waits for native respawn; never used as nonlethal mid-fight recovery"
+  },
+  "dragonFixtureLimit": "The direct-spawn End fixture omitted native fight-manager combat initialization. Cases22 and45 stayed in Hover (phase10), and the arena contained zero End crystals. Only HP/bar/bow-hit observations are claimed for these client samples; native Dragon attack, phase and crystal-healing checks come from the separate controlled vanilla suite. No new fixture or boss-behavior changes were introduced.",
+  "sourceFilesWithContentChanges": 1,
+  "sourceFilesWithMetadataOnlyChanges": 111,
+  "sourceFilesChangedByTask": 0,
+  "latestSourceAuditFinding": "Fresh read-only comparison records one generated timestamp-comment rewrite and 111 mtime-only changes after an independently logged source-server restart. Mod JARs and gameplay configuration values remain unchanged. See source-and-artifact-audit.md for exact scope/times and attribution limits.",
+  "completedEncounterCount": 46,
+  "completedOutcomes": {
+    "lost_downed": 28,
+    "time_limit": 17,
+    "won": 1
+  },
+  "actionEvidence": "client-encounters/action-audit.json"
+}

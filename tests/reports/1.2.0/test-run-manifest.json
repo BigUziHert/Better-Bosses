@@ -1,0 +1,49 @@
+{
+  "version": "1.2.0",
+  "productionSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "latestHelperSha256": "2CA3BA0D197C345B5CE1CFABD22833BB1EE2A22AD8BCC9EA39960D9662B78EF0",
+  "executedControlledHelpers": [
+    {
+      "sha256": "5F065867E3758A5ABB3F309F4681942570247E809F3D4654FA49B33C48172424",
+      "suites": [
+        "config_migration",
+        "damage",
+        "health",
+        "boss_bars",
+        "multiplayer_targets",
+        "actual_attacks",
+        "vanilla",
+        "exhaustive_twilight",
+        "exhaustive_bmd",
+        "exhaustive_cataclysm"
+      ]
+    },
+    {
+      "sha256": "B28200733D87A607A63024F55A1AC96C322DC80D84DCA85E775E8142FDE6CF58",
+      "suites": [
+        "fixed_health",
+        "armor_matrix",
+        "armor_effects",
+        "preinstall_verify_keep",
+        "installed_restart_verify"
+      ]
+    },
+    {
+      "sha256": "5022EA4143297AD7256C980024495BC19F9D5E4642DB5C3132C10D01DB06886D",
+      "suites": [
+        "combined_projectiles"
+      ]
+    }
+  ],
+  "assertions": 7785,
+  "failed": 0,
+  "approvedProfiles": 73,
+  "armorOutfits": 90,
+  "armorMeasurements": 13120,
+  "setEffectMeasurements": 258,
+  "budgetExhaustionScenarios": 12,
+  "continuousEncounters": 46,
+  "sourceReadOnly": true,
+  "installedIntoSurvival": false,
+  "damageReference": "hard_plain_diamond"
+}

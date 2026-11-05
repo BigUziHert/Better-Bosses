@@ -41,17 +41,17 @@ import net.minecraft.world.phys.Vec3;
 final class VanillaBossCases {
     static final Map<String,Double> ATTACKS = new LinkedHashMap<>();
     static {
-        ATTACKS.put("wither_skull_black",1.5);
-        ATTACKS.put("wither_skull_blue",1.5);
-        ATTACKS.put("wither_splash_black",1.539);
-        ATTACKS.put("wither_splash_blue",1.539);
-        ATTACKS.put("wither_spawn_explosion",5.0);
-        ATTACKS.put("dragon_head",3.5);
-        ATTACKS.put("dragon_wing",1.25);
-        ATTACKS.put("dragon_perched_breath",1.25);
-        ATTACKS.put("dragon_fireball_cloud",2.0);
-        ATTACKS.put("warden_melee",4.5);
-        ATTACKS.put("warden_sonic_boom",5.5);
+        ATTACKS.put("wither_skull_black",BalanceExpectations.target("wither.skull"));
+        ATTACKS.put("wither_skull_blue",BalanceExpectations.target("wither.skull"));
+        ATTACKS.put("wither_splash_black",BalanceExpectations.target("wither.splash"));
+        ATTACKS.put("wither_splash_blue",BalanceExpectations.target("wither.splash"));
+        ATTACKS.put("wither_spawn_explosion",BalanceExpectations.target("wither.spawn_explosion"));
+        ATTACKS.put("dragon_head",BalanceExpectations.target("ender_dragon.head"));
+        ATTACKS.put("dragon_wing",BalanceExpectations.target("ender_dragon.wing"));
+        ATTACKS.put("dragon_perched_breath",BalanceExpectations.target("ender_dragon.perched_breath"));
+        ATTACKS.put("dragon_fireball_cloud",BalanceExpectations.target("ender_dragon.fireball_cloud"));
+        ATTACKS.put("warden_melee",BalanceExpectations.target("warden.melee"));
+        ATTACKS.put("warden_sonic_boom",BalanceExpectations.target("warden.sonic_boom"));
     }
     static String bossId(String attack) {
         return "minecraft:"+(attack.startsWith("dragon_") ? "ender_dragon":attack.startsWith("wither_")?"wither":"warden");
@@ -75,7 +75,7 @@ final class VanillaBossCases {
             BossBalanceTests.resetActualPlayer(victim);
             float before=victim.getHealth();
             MobEffects.WITHER.value().applyEffectTick(victim,1);
-            BossBalanceTests.observedAttack("vanilla_wither_II_native_tick","minecraft:wither","Native WitherMobEffect.applyEffectTick",victim,before,.18);
+            BossBalanceTests.observedAttack("vanilla_wither_II_native_tick","minecraft:wither","Native WitherMobEffect.applyEffectTick",victim,before,.5);
             BossBalanceTests.result("wither_II_native_interval20","minecraft:wither",1,MobEffects.WITHER.value().shouldApplyEffectTickThisTick(20,1)?1:0);
             BossBalanceTests.result("wither_II_not_interval19","minecraft:wither",0,MobEffects.WITHER.value().shouldApplyEffectTickThisTick(19,1)?1:0);
         } catch(Throwable error) {BossBalanceTests.error("wither_status","minecraft:wither",error);}

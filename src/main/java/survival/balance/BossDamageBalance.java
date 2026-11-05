@@ -24,7 +24,7 @@ import net.minecraft.world.item.alchemy.PotionContents;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 /** Attack-specific outgoing damage. Reference targets are hearts lost on Hard
- * through armor 20, toughness 12 and Protection IV on four pieces.
+ * through plain diamond armor: 20 armor, 8 toughness, no enchantments.
  * The real damage pipeline still handles actual armor, effects and shielding.
  * This class does not change entity attack attributes or non-player victims. */
 public final class BossDamageBalance {
@@ -43,29 +43,29 @@ public final class BossDamageBalance {
 
     private static final Map<String, Double> DEFAULTS = new LinkedHashMap<>();
     static {
-        defaults("wither", "skull",1.5, "splash",2.0, "spawn_explosion",5.0);
-        defaults("ender_dragon", "head",3.5, "wing",1.25, "perched_breath",1.25, "fireball_cloud",2.0);
-        defaults("warden", "melee",4.5, "sonic_boom",5.5);
-        defaults("naga", "head",1.5, "body",0.45);
-        defaults("twilight_lich", "bolt",2.0, "bomb",3.0, "melee",1.5);
-        defaults("minoshroom", "axe",2.0, "slam",3.25);
-        defaults("knight_phantom", "ordinary",1.0, "charge",1.625);
-        defaults("alpha_yeti", "stomp",1.5, "falling_ice",3.5, "ice_bomb",0.75);
-        defaults("hydra", "flame",1.375, "bite",4.5, "mortar",3.5);
-        defaults("ur_ghast", "fireball",2.75, "explosion",3.0, "tantrum",0.875);
-        defaults("snow_queen", "contact",3.0, "beam",0.625);
-        defaults("night_lich", "missile",2.0, "comet",4.0);
-        defaults("void_blossom", "spikes",2.5, "blade",2.5, "spore",1.0);
-        defaults("nether_gauntlet", "punch",3.0, "laser",0.75, "explosion",4.5);
-        defaults("obsidilith", "spikes",3.0, "wave",1.75, "burst",1.75, "anvil",5.0);
-        defaults("netherite_monstrosity", "smash",3.0, "heavy",5.0, "flame_jet",1.25);
-        defaults("ender_guardian", "punch",3.0, "uppercut",4.5, "rune",1.5);
-        defaults("harbinger", "charge",3.0, "missile",1.5, "laser",1.125, "explosion",3.0);
-        defaults("ancient_remnant", "bite",3.5, "charge",5.0, "stomp",3.0);
-        defaults("leviathan", "tail",3.25, "bite",5.5, "beam",1.0, "orb",1.5);
-        defaults("scylla", "melee",3.5, "lightning",5.25, "lightning_pulse",1.25);
-        defaults("maledictus", "mace_min",2.0, "mace_max",4.0, "heavy",6.0, "arrow",1.25);
-        defaults("ignis", "sword",2.25, "heavy",6.0, "fireball",3.0, "flame_pulse",1.25);
+        defaults("naga", "head",4.5, "body",1.5);
+        defaults("twilight_lich", "bolt",3.75, "bomb",6, "melee",3.75);
+        defaults("minoshroom", "axe",3.5, "slam",5.5);
+        defaults("knight_phantom", "ordinary",2, "charge",3.5);
+        defaults("alpha_yeti", "stomp",4.5, "falling_ice",5.25, "ice_bomb",1.5);
+        defaults("hydra", "flame",0.75, "bite",7, "mortar",5.5);
+        defaults("ur_ghast", "fireball",4.5, "explosion",6, "tantrum",0.75, "combined",8);
+        defaults("snow_queen", "contact",6, "beam",0.75);
+        defaults("night_lich", "missile",2.5, "comet",6);
+        defaults("void_blossom", "spikes",4.5, "blade",4.5, "spore",1.125);
+        defaults("nether_gauntlet", "punch",4.5, "laser",0.5, "explosion",7);
+        defaults("obsidilith", "spikes",4, "wave",2, "burst",2, "anvil",7.5);
+        defaults("netherite_monstrosity", "smash",4.5, "heavy",7.5, "flame_jet",0.75);
+        defaults("ender_guardian", "punch",4, "uppercut",6.5, "rune",1);
+        defaults("harbinger", "charge",6, "missile",2.25, "laser",0.75, "explosion",6.75, "combined",8);
+        defaults("ancient_remnant", "bite",4.5, "charge",7, "stomp",3);
+        defaults("leviathan", "tail",4.5, "bite",8, "beam",0.5, "orb",1.5);
+        defaults("scylla", "melee",4.5, "lightning",7.5, "lightning_pulse",0.75);
+        defaults("maledictus", "mace_min",3, "mace_max",5, "heavy",8, "arrow",1.5, "anima",6.7950737127437675);
+        defaults("ignis", "sword",3.5, "heavy",8, "ultimate",9.5, "fireball",4, "flame_pulse",0.75);
+        defaults("wither", "skull",2.5, "splash",2, "spawn_explosion",7);
+        defaults("ender_dragon", "head",6, "wing",2, "perched_breath",0.75, "fireball_cloud",1.25);
+        defaults("warden", "melee",8, "sonic_boom",5.5);
     }
     private static void defaults(String boss, Object... pairs) {
         for (int i=0;i<pairs.length;i+=2) DEFAULTS.put(boss+"."+pairs[i], ((Number)pairs[i+1]).doubleValue());
@@ -85,9 +85,12 @@ public final class BossDamageBalance {
     public static void apply(LivingIncomingDamageEvent event) {
         if (event.isCanceled() || !(event.getEntity() instanceof Player victim) || victim.level().isClientSide || event.getAmount()<=0) return;
         DamageSource source=event.getSource();
+        Entity direct = source.getDirectEntity();
+        if (direct == null && source.is(DamageTypeTags.IS_EXPLOSION)) direct = ProjectileDamageBudget.explosionProjectile(source);
         // Player-reflected attacks, player-owned weapons and PVP remain untouched.
-        if (ownedByPlayer(source.getEntity(),0) || ownedByPlayer(source.getDirectEntity(),0)) return;
+        if (ownedByPlayer(source.getEntity(),0) || ownedByPlayer(direct,0)) return;
         Entity boss=findBoss(source);
+        if (boss == null) boss = walkOwner(direct, 0);
         String type=source.typeHolder().unwrapKey().map(k->k.location().toString()).orElse("");
         String bossId=boss==null ? exclusiveBossType(type) : entityId(boss);
         if (bossId.isEmpty() && isGauntletDeathExplosion(source, type)) {
@@ -107,9 +110,10 @@ public final class BossDamageBalance {
         }
         if (boolMethod(boss,"isChargingAtPlayer")) animation += " CHARGING";
         int state=intMethod(boss,"getAttackState",-1);
+        if (bossId.equals("cataclysm:ignis")) state=intMethod(boss,"getAnimationTick",-1);
         if (bossId.equals("bosses_of_mass_destruction:obsidilith")) state=intField(boss,"currentAttack",state);
         int rage=intMethod(boss,"getRageMeter",0);
-        Decision decision=evaluate(bossId,type,entityId(source.getDirectEntity()),animation,state,rage,hardAmount,
+        Decision decision=evaluate(bossId,type,entityId(direct),animation,state,rage,hardAmount,
             source.is(DamageTypeTags.BYPASSES_ARMOR),source.is(DamageTypeTags.BYPASSES_ENCHANTMENTS),
             source.is(DamageTypeTags.DAMAGES_HELMET),attackTrace());
         if (!decision.changed()) {
@@ -125,12 +129,16 @@ public final class BossDamageBalance {
                 double armorMultiplier=Math.max(0,1-0.2*brand);
                 // Vanilla floors the resulting armor attribute before computing damage reduction.
                 int referenceArmor=(int)(20*armorMultiplier);
-                raw=(float)Math.min(raw,rawForHearts(target("ignis.heavy"),
+                String ceiling = decision.profile().equals("ignis.ultimate") ? "ignis.ultimate":"ignis.heavy";
+                double referenceToughness = BalanceSettings.usesLegacyDamageReference(ceiling) ? 12:8;
+                raw=(float)Math.min(raw,rawForTarget(ceiling,target(ceiling),
                     source.is(DamageTypeTags.BYPASSES_ARMOR),source.is(DamageTypeTags.BYPASSES_ENCHANTMENTS),
-                    source.is(DamageTypeTags.DAMAGES_HELMET),referenceArmor,12*armorMultiplier));
+                    source.is(DamageTypeTags.DAMAGES_HELMET),referenceArmor,referenceToughness*armorMultiplier));
             }
         }
+        raw = ProjectileDamageBudget.limit(event, direct, bossId, raw);
         event.setAmount((float)Math.max(0,fromHard(source,victim.level().getDifficulty(),raw)));
+        ProjectileDamageBudget.observeIncoming(event, direct, bossId, raw);
         PROFILE_COUNTS.merge(decision.profile(),1L,Long::sum);
     }
 
@@ -253,14 +261,21 @@ public final class BossDamageBalance {
                 return cap(c,"scylla.lightning");
             case "cataclysm:maledictus":
                 if (c.direct.contains("arrow") || c.type.equals("cataclysm:maledictio_sagitta")) return set(c,"maledictus.arrow");
-                if (c.type.equals("cataclysm:maledictio_anima")) return cap(c,"maledictus.heavy");
+                if (c.type.equals("cataclysm:maledictio_anima")) return cap(c,"maledictus.anima");
                 double r=Math.max(0,Math.min(5,rage));
                 double desired=target("maledictus.mace_min")+(target("maledictus.mace_max")-target("maledictus.mace_min"))*r/5;
                 double ordinaryRaw=(13*(1+0.2*r)+1.6)*1.5;
-                return ratioCap(c,"maledictus.mace_rage",desired,ordinaryRaw,"maledictus.heavy");
+                double desiredRaw = BalanceSettings.usesLegacyDamageReference("maledictus.mace_min") == BalanceSettings.usesLegacyDamageReference("maledictus.mace_max")
+                    ? raw(c,"maledictus.mace_min",desired)
+                    : raw(c,"maledictus.mace_min") + (raw(c,"maledictus.mace_max")-raw(c,"maledictus.mace_min"))*r/5;
+                return decision("maledictus.mace_rage",Math.min(c.input*desiredRaw/ordinaryRaw,raw(c,"maledictus.heavy")));
             case "cataclysm:ignis":
                 if (c.type.equals("cataclysm:flame_strike")) return cap(c,"ignis.flame_pulse");
                 if (explosion || c.direct.contains("fireball")) return cap(c,"ignis.fireball");
+                if (melee(c) && c.animation.contains("ultimate_attack") && c.state == 74
+                        && (c.trace.contains("ignis_entity.areaattack(") || c.trace.contains("ignis_entity.ultimateattack("))) {
+                    return decision("ignis.ultimate",Math.min(c.input*raw(c,"ignis.sword")/22.5,raw(c,"ignis.ultimate")));
+                }
                 if (melee(c)) return scaleCap(c,"ignis.sword",22.5,"ignis.heavy");
                 return cap(c,"ignis.heavy");
             default: return unchanged(c,"outside boss scope");
@@ -269,35 +284,54 @@ public final class BossDamageBalance {
 
     private static boolean melee(Context c) { return c.type.equals("minecraft:mob_attack") || c.type.equals("twilightforest:haunt"); }
     private static Decision unchanged(Context c,String reason) { return new Decision(reason,c.input,false); }
-    private static Decision set(Context c,String key) { return decision(key,raw(c,target(key))); }
-    private static Decision cap(Context c,String key) { return decision(key+".cap",Math.min(c.input,raw(c,target(key)))); }
+    private static Decision set(Context c,String key) { return decision(key,raw(c,key)); }
+    private static Decision cap(Context c,String key) { return decision(key+".cap",Math.min(c.input,raw(c,key))); }
     private static Decision scaleCap(Context c,String key,double baseline,String capKey) { return ratioCap(c,key,target(key),baseline,capKey); }
     private static Decision ratioCap(Context c,String key,double hearts,double baseline,String capKey) {
-        return decision(key,Math.min(c.input*raw(c,hearts)/baseline,raw(c,target(capKey))));
+        return decision(key,Math.min(c.input*raw(c,key,hearts)/baseline,raw(c,capKey)));
     }
     private static Decision decision(String key,double raw) { return new Decision(key,(float)Math.max(0,raw),true); }
-    private static double raw(Context c,double hearts) { return rawForHearts(hearts,c.armorBypass,c.enchantBypass,c.helmet,20,12); }
+    private static double raw(Context c,String key) { return raw(c,key,target(key)); }
+    private static double raw(Context c,String key,double hearts) {
+        return rawForTarget(key,hearts,c.armorBypass,c.enchantBypass,c.helmet,20,BalanceSettings.usesLegacyDamageReference(key)?12:8);
+    }
+    private static double rawForTarget(String key,double hearts,boolean armorBypass,boolean enchantBypass,boolean helmet,double armor,double toughness) {
+        return findRaw(hearts,armorBypass,enchantBypass,helmet,armor,toughness,BalanceSettings.usesLegacyDamageReference(key));
+    }
 
     public static double rawForHearts(double hearts,boolean armorBypass,boolean enchantBypass,boolean helmet) {
-        return rawForHearts(hearts,armorBypass,enchantBypass,helmet,20,12);
+        return rawForHearts(hearts,armorBypass,enchantBypass,helmet,20,8);
     }
     public static double rawForHearts(double hearts,boolean armorBypass,boolean enchantBypass,boolean helmet,double armor,double toughness) {
+        return findRaw(hearts,armorBypass,enchantBypass,helmet,armor,toughness,false);
+    }
+    public static double legacyRawForHearts(double hearts,boolean armorBypass,boolean enchantBypass,boolean helmet) {
+        return findRaw(hearts,armorBypass,enchantBypass,helmet,20,12,true);
+    }
+    private static double findRaw(double hearts,boolean armorBypass,boolean enchantBypass,boolean helmet,double armor,double toughness,boolean legacyProtection) {
         if (hearts<=0) return 0;
         double lo=0,hi=Math.max(100,hearts*100);
         for(int i=0;i<80;i++) {
             double mid=(lo+hi)/2;
-            if(referenceHearts(mid,armorBypass,enchantBypass,helmet,armor,toughness)<hearts) lo=mid; else hi=mid;
+            if(referenceHearts(mid,armorBypass,enchantBypass,helmet,armor,toughness,legacyProtection)<hearts) lo=mid; else hi=mid;
         }
         return (lo+hi)/2;
     }
     public static double referenceHearts(double raw,boolean armorBypass,boolean enchantBypass,boolean helmet,double armor,double toughness) {
+        return referenceHearts(raw,armorBypass,enchantBypass,helmet,armor,toughness,false);
+    }
+    private static double referenceHearts(double raw,boolean armorBypass,boolean enchantBypass,boolean helmet,double armor,double toughness,boolean legacyProtection) {
         double d=raw*(helmet ? .75:1);
         if(!armorBypass) {
             double effective=Math.max(armor*.2,Math.min(20,armor-d/(2+toughness/4)));
             d*=1-effective/25;
         }
-        if(!enchantBypass) d*=.36;
+        if(legacyProtection && !enchantBypass) d*=.36;
         return d/2;
+    }
+
+    public static double combinedBudgetUsed(Entity projectile, Player victim) {
+        return ProjectileDamageBudget.used(projectile, victim);
     }
 
     private static String exclusiveBossType(String type) {

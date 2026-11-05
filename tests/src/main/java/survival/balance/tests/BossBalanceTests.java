@@ -3,6 +3,7 @@ package survival.balance.tests;
 import com.google.gson.GsonBuilder;
 import com.mojang.authlib.GameProfile;
 import com.mojang.brigadier.arguments.StringArgumentType;
+import com.mojang.brigadier.arguments.IntegerArgumentType;
 import java.lang.invoke.MethodHandles;
 import java.lang.invoke.MethodType;
 import java.lang.reflect.Field;
@@ -17,6 +18,7 @@ import java.util.Map;
 import java.util.UUID;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
+import net.minecraft.commands.arguments.ResourceLocationArgument;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.core.BlockPos;
@@ -94,6 +96,7 @@ public final class BossBalanceTests {
         VisibleBossDemo.install();
         ExhaustiveCapture.install();
         LegacyInstallCases.install();
+        FullFightCases.install();
     }
     private void register(RegisterCommandsEvent event) {
         var exhaustive = Commands.literal("exhaustive");
@@ -103,8 +106,25 @@ public final class BossBalanceTests {
                     runExhaustive(c.getSource(), suite, StringArgumentType.getString(c, "boss").trim()))));
         }
         event.getDispatcher().register(Commands.literal("bbtest").requires(s -> s.hasPermission(4))
+            .then(Commands.literal("fightclient").then(Commands.argument("boss",ResourceLocationArgument.id())
+                .then(Commands.argument("gear",StringArgumentType.word())
+                    .executes(c -> FullFightCases.startClient(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),3600,"BossPlaytest"))
+                    .then(Commands.argument("ticks",IntegerArgumentType.integer(200,24000))
+                        .executes(c -> FullFightCases.startClient(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),IntegerArgumentType.getInteger(c,"ticks"),"BossPlaytest"))
+                        .then(Commands.argument("player",StringArgumentType.word()).executes(c -> FullFightCases.startClient(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),IntegerArgumentType.getInteger(c,"ticks"),StringArgumentType.getString(c,"player"))))))))
+            .then(Commands.literal("fight")
+                .then(Commands.literal("status").executes(c -> FullFightCases.status(c.getSource())))
+                .then(Commands.literal("cancel").executes(c -> FullFightCases.cancel(c.getSource())))
+                .then(Commands.literal("start").then(Commands.argument("boss",ResourceLocationArgument.id())
+                    .then(Commands.argument("gear",StringArgumentType.word())
+                        .executes(c -> FullFightCases.start(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),3600))
+                        .then(Commands.argument("ticks",IntegerArgumentType.integer(200,24000)).executes(c -> FullFightCases.start(c.getSource(),fightBoss(c),StringArgumentType.getString(c,"gear"),IntegerArgumentType.getInteger(c,"ticks"))))))))
+            .then(Commands.literal("combined_projectiles").executes(c -> runExtra(c.getSource(),"combined_projectiles")))
+            .then(Commands.literal("config_migration").executes(c -> runExtra(c.getSource(),"config_migration")))
             .then(Commands.literal("preinstall_prepare").executes(c -> runLegacy(c.getSource(),false)))
             .then(Commands.literal("preinstall_verify").executes(c -> runLegacy(c.getSource(),true)))
+            .then(Commands.literal("preinstall_verify_keep").executes(c -> runLegacy(c.getSource(),"preinstall_verify_keep")))
+            .then(Commands.literal("installed_restart_verify").executes(c -> runLegacy(c.getSource(),"installed_restart_verify")))
             .then(Commands.literal("armor_effects").executes(c -> runExtra(c.getSource(),"armor_effects")))
             .then(Commands.literal("armor_matrix").executes(c -> runExtra(c.getSource(),"armor_matrix")))
             .then(Commands.literal("vanilla").executes(c -> runExtra(c.getSource(),"vanilla")))
@@ -124,6 +144,8 @@ public final class BossBalanceTests {
         ServerLevel level=setup(source,suite);
         try {
             switch(suite){
+                case "combined_projectiles" -> CompoundProjectileCases.run(level,RESULTS.resolve("combined-projectiles.json"));
+                case "config_migration" -> ConfigMigrationCases.run(RESULTS.resolve("config-migration-fixtures"));
                 case "armor_effects" -> Class.forName("survival.balance.tests.ArmorEffectsCases").getDeclaredMethod("run",ServerLevel.class,Path.class).invoke(null,level,RESULTS.resolve("armor-effects.json"));
                 case "armor_matrix" -> Class.forName("survival.balance.tests.ArmorMatrixCases").getDeclaredMethod("run",ServerLevel.class,Path.class).invoke(null,level,RESULTS.resolve("armor-matrix.json"));
                 case "vanilla" -> Class.forName("survival.balance.tests.VanillaBossCases").getDeclaredMethod("run",ServerLevel.class,TestPlayer.class).invoke(null,level,damagePlayer(level));
@@ -132,9 +154,18 @@ public final class BossBalanceTests {
         }catch(Throwable error){failure(suite,"all",error);if(error.getCause()!=null)error.getCause().printStackTrace();}
         return finish(source);
     }
+    private static String fightBoss(com.mojang.brigadier.context.CommandContext<CommandSourceStack> context) {
+        String id=ResourceLocationArgument.getId(context,"boss").toString();
+        return id.equals("minecraft:all")?"all":id;
+    }
     private static int runLegacy(CommandSourceStack source,boolean verify) {
         ServerLevel level=setup(source,verify?"preinstall_verify":"preinstall_prepare");
         try {if(verify)LegacyInstallCases.verify(level);else LegacyInstallCases.prepare(level);}catch(Throwable error){failure("preinstall", "all",error);}
+        return finish(source);
+    }
+    private static int runLegacy(CommandSourceStack source,String mode) {
+        ServerLevel level=setup(source,mode);
+        try {if(mode.equals("preinstall_verify_keep"))LegacyInstallCases.verifyKeep(level);else LegacyInstallCases.verifyInstalled(level);}catch(Throwable error){failure(mode,"all",error);}
         return finish(source);
     }
     private static ServerLevel setup(CommandSourceStack source,String requestedPhase) {
@@ -422,7 +453,7 @@ public final class BossBalanceTests {
         row.put("armorItems",List.of(EquipmentSlot.HEAD,EquipmentSlot.CHEST,EquipmentSlot.LEGS,EquipmentSlot.FEET).stream().map(slot->BuiltInRegistries.ITEM.getKey(player.getItemBySlot(slot).getItem()).toString()).toList());
         row.put("armorAfter",player.getAttributeValue(Attributes.ARMOR));row.put("toughnessAfter",player.getAttributeValue(Attributes.ARMOR_TOUGHNESS));
         row.put("expected",expectedHearts);row.put("actual",hearts);
-        row.put("passed",Math.abs(before-20)<0.001 && actualArmorBefore==20 && actualToughnessBefore==12 && actualProtectionBefore.stream().allMatch(n->n==4) && Double.isFinite(hearts) && Math.abs(expectedHearts-hearts)<0.005);
+        row.put("passed",Math.abs(before-20)<0.001 && actualArmorBefore==20 && actualToughnessBefore==8 && actualProtectionBefore.stream().allMatch(n->n==0) && Double.isFinite(hearts) && Math.abs(expectedHearts-hearts)<0.005);
         CHECKS.add(row);System.out.println("BBTEST "+new GsonBuilder().create().toJson(row));
     }
 
@@ -437,17 +468,17 @@ public final class BossBalanceTests {
         player.getAttribute(Attributes.MAX_HEALTH).setBaseValue(200);
         // The health attribute is raised only to prevent test victims dying. Per-HP attack
         // formulas are supplied as captured 20-HP-player input amounts by each test case.
-        equip(player,EquipmentSlot.HEAD,Items.NETHERITE_HELMET);
-        equip(player,EquipmentSlot.CHEST,Items.NETHERITE_CHESTPLATE);
-        equip(player,EquipmentSlot.LEGS,Items.NETHERITE_LEGGINGS);
-        equip(player,EquipmentSlot.FEET,Items.NETHERITE_BOOTS);
+        equip(player,EquipmentSlot.HEAD,Items.DIAMOND_HELMET);
+        equip(player,EquipmentSlot.CHEST,Items.DIAMOND_CHESTPLATE);
+        equip(player,EquipmentSlot.LEGS,Items.DIAMOND_LEGGINGS);
+        equip(player,EquipmentSlot.FEET,Items.DIAMOND_BOOTS);
         updateEquipment(player);
         player.setHealth(200);level.addNewPlayer(player);PLAYERS.add(player);
         return player;
     }
     private static void equip(TestPlayer player,EquipmentSlot slot,Item item) {
         ItemStack stack=new ItemStack(item);
-        stack.enchant(player.registryAccess().registryOrThrow(Registries.ENCHANTMENT).getHolderOrThrow(Enchantments.PROTECTION),4);
+        // Reference armor is unenchanted diamond. Matrix callers explicitly equip their own profiles.
         player.setItemSlot(slot,stack);
     }
     static void updateEquipment(TestPlayer player) throws Exception {
@@ -457,10 +488,12 @@ public final class BossBalanceTests {
     static void result(String test,String entity,double expected,double actual){check(test,entity,expected,actual);}
     static void error(String test,String entity,Throwable error){failure(test,entity,error);}
     static void resetDamagePlayer(TestPlayer player) throws Exception {
+        player.stopUsingItem();player.clearFire();
+        player.setItemSlot(EquipmentSlot.MAINHAND,ItemStack.EMPTY);player.setItemSlot(EquipmentSlot.OFFHAND,ItemStack.EMPTY);
         player.removeAllEffects();player.setHealth(200);player.setAbsorptionAmount(0);player.invulnerableTime=0;player.hurtTime=0;
         setField(ServerPlayer.class,player,"spawnInvulnerableTime",0);
-        equip(player,EquipmentSlot.HEAD,Items.NETHERITE_HELMET);equip(player,EquipmentSlot.CHEST,Items.NETHERITE_CHESTPLATE);
-        equip(player,EquipmentSlot.LEGS,Items.NETHERITE_LEGGINGS);equip(player,EquipmentSlot.FEET,Items.NETHERITE_BOOTS);
+        equip(player,EquipmentSlot.HEAD,Items.DIAMOND_HELMET);equip(player,EquipmentSlot.CHEST,Items.DIAMOND_CHESTPLATE);
+        equip(player,EquipmentSlot.LEGS,Items.DIAMOND_LEGGINGS);equip(player,EquipmentSlot.FEET,Items.DIAMOND_BOOTS);
         updateEquipment(player);
     }
 

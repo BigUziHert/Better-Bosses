@@ -1,0 +1,58 @@
+{
+  "queue": "2026-11-05T02-22-16.715609400Z",
+  "policy": "Retain raw outcomes. Excluded cases remain HP/damage/bar observations but do not support fair sustained-combat comparisons; retries must be separately identified.",
+  "limitedCases": [
+    {
+      "case": 7,
+      "boss": "twilightforest:ur_ghast",
+      "gear": "diamond",
+      "excludeFromFairSustainedComparison": true,
+      "reason": "Native nonlethal ragdoll left the controller seated; native dismount release logged at the time-limit cleanup is not mid-fight recovery",
+      "retry": "No retry claimed; retained as limited supplemental observations under the balance-only scope"
+    },
+    {
+      "case": 9,
+      "boss": "bosses_of_mass_destruction:lich",
+      "gear": "diamond",
+      "excludeFromFairSustainedComparison": true,
+      "reason": "Native ragdoll limited control; player also moved below the arena to approximately y=-88.04. Cleanup dismount at the time limit is not mid-fight recovery",
+      "retry": "No retry claimed; retained as limited supplemental observations under the balance-only scope"
+    },
+    {
+      "case": 10,
+      "boss": "bosses_of_mass_destruction:void_blossom",
+      "gear": "diamond",
+      "excludeFromFairSustainedComparison": true,
+      "reason": "Accessibility menus were open during the encounter while native Sneak behavior was adjusted, interrupting play inputs",
+      "interruptionStartUtc": "2026-11-05T02:46:05Z",
+      "interruptionEndUtc": "2026-11-05T02:46:34Z",
+      "retry": "No retry claimed; retained as limited supplemental observations under the balance-only scope"
+    },
+    {
+      "case": 22,
+      "boss": "minecraft:ender_dragon",
+      "gear": "diamond",
+      "excludeFromCompleteNativeEncounterClaim": true,
+      "reason": "The direct-spawn End fixture omitted native fight-manager combat initialization, leaving the Dragon in Hover phase 10 for 180 seconds; zero End crystals existed. HP/bar/bow-hit observations remain usable, but this is not a native Dragon combat/phase encounter.",
+      "retry": "No fixture development planned; controlled vanilla crystal/healing probes remain separate",
+      "excludeFromNaturalAttackPhaseCoverage": true
+    },
+    {
+      "case": 23,
+      "boss": "minecraft:warden",
+      "gear": "diamond",
+      "excludeFromNaturalAttackPhaseCoverage": true,
+      "reason": "Zero damage was exchanged during 180 seconds. This sample can record fixed HP and native boss-bar absence, but does not establish natural attack damage or phase behavior",
+      "retry": "No fixture development planned; controlled native Warden probes remain primary"
+    },
+    {
+      "case": 45,
+      "boss": "minecraft:ender_dragon",
+      "gear": "netherite_p4",
+      "excludeFromCompleteNativeEncounterClaim": true,
+      "excludeFromNaturalAttackPhaseCoverage": true,
+      "reason": "The same direct-spawn End fixture omitted native fight-manager combat initialization and had zero crystals. Only Hover phase 10 was observed; HP/bar/bow-hit observations do not establish a native Dragon combat/phase encounter.",
+      "retry": "No fixture development planned; controlled vanilla crystal/healing probes remain separate"
+    }
+  ]
+}

@@ -1,0 +1,225 @@
+{
+  "queue": "2026-11-05T02-22-16.715609400Z",
+  "completedUtc": "2026-11-05T04:04:49.049266Z",
+  "sourceSummarySha256": "FF6C00FA1195CC312640FA3F0A748C84D5E06742CB548E2C271929FF50597629",
+  "sourceClientLogSha256": "33E356F29CFE1E7FEBB91506F49E24DBDAE04E49669EA14A17792C15FA7D4BF3",
+  "summarizerSha256": "5A003F2A511B14819BCBE47BCFA85FCD07FBF7B5283BCE9A30AB1041E106F15B",
+  "reviewedNotesSha256": "5FE3EB10E7626F4223C59177067128C91C675A4E4CC138BD696B2D7EAC9471BA",
+  "continuousHelperSha256": "2CA3BA0D197C345B5CE1CFABD22833BB1EE2A22AD8BCC9EA39960D9662B78EF0",
+  "productionSha256": "871F3C0ECF84236ADFDC5457C09C9D2C8EE34BC9582CE148C899109FDA822F70",
+  "encounters": 46,
+  "gameSeconds": 4586.599999999999,
+  "outcomes": [
+    {
+      "outcome": "lost_downed",
+      "count": 28
+    },
+    {
+      "outcome": "time_limit",
+      "count": 17
+    },
+    {
+      "outcome": "won",
+      "count": 1
+    }
+  ],
+  "pairedMaxHpChecks": [
+    {
+      "boss": "bosses_of_mass_destruction:gauntlet",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1500"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "bosses_of_mass_destruction:lich",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1300"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "bosses_of_mass_destruction:obsidilith",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1700"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "bosses_of_mass_destruction:void_blossom",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1400"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:ancient_remnant",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1000"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:ender_guardian",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "850"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:ignis",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:maledictus",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:netherite_monstrosity",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1200"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:scylla",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:the_harbinger",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "950"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "cataclysm:the_leviathan",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "minecraft:ender_dragon",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "minecraft:warden",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1300"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "minecraft:wither",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "900"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:alpha_yeti",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:hydra",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1500"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:knight_phantom",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1080"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:lich",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "650"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:minoshroom",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1000"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:naga",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1000"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:snow_queen",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1200"
+      ],
+      "matched": true
+    },
+    {
+      "boss": "twilightforest:ur_ghast",
+      "loadoutCount": 2,
+      "maxHpValues": [
+        "1100"
+      ],
+      "matched": true
+    }
+  ],
+  "playerMaxHpValues": [
+    "20"
+  ],
+  "receivedBarSamples": 8929.0,
+  "receivedBarEventIds": 47,
+  "invalidBarSamples": 0.0,
+  "overlayObservationErrors": 0,
+  "controllerErrors": 0.0,
+  "missingChunkSamples": 0.0,
+  "skippedInvalidJsonLines": 0,
+  "privacyReview": "No authentication fields/private keys, server IP addresses, or workstation user paths found in published reports. UUIDs appear only as test boss entity and received boss-event identifiers; no player UUIDs were published. BossPlaytest is the intentional isolated fixture name.",
+  "outputNormalization": "fight-summary.md has one final newline; redundant final blank line trimmed. Numeric and event records unchanged.",
+  "scope": "Supplemental automated client loadout observations, not human win rates, isolated armor comparisons, or proof every natural phase appeared. Six restricted samples are classified separately. Raw outcomes retained."
+}

@@ -27,7 +27,7 @@ final class ExhaustiveBmd {
         for(String boss:new String[]{"lich","obsidilith","gauntlet","void_blossom"}) {
             if(!ExhaustiveCapture.selected(NS+boss)) continue;
             ExhaustiveCapture.note(NS+boss,"methodology","mechanic",
-                "Installed native action methods and schedulers, with action cancellation disabled for deterministic component execution; deterministic collision delivery to real 20-HP netherite/Prot-IV player. This is component integration, not an autonomous client boss fight. Each accepted projectile hit is isolated with fresh player health and invulnerability frames.");
+                "Installed native action methods and schedulers, with action cancellation disabled for deterministic component execution; deterministic collision delivery to real 20-HP unenchanted diamond player. This is component integration, not an autonomous client boss fight. Each accepted projectile hit is isolated with fresh player health and invulnerability frames.");
             if(boss.equals("lich")) lich(level,player);
             if(boss.equals("obsidilith")) obsidilith(level,player);
             if(boss.equals("gauntlet")) gauntlet(level,player);
@@ -50,7 +50,7 @@ final class ExhaustiveBmd {
                     int i=0;for(Entity e:spawned) if(e instanceof Projectile) {
                         BossBalanceTests.resetActualPlayer(p);e.moveTo(p.getX(),p.getY(),p.getZ(),0,0);
                         String move=name+"_hp"+fraction+"_projectile"+(i++);
-                        capture(p,NS+"lich",move,()->call(e,"entityHit",new EntityHitResult(p)),name.contains("Comet")?8:4,name.contains("Comet"));
+                        capture(p,NS+"lich",move,()->call(e,"entityHit",new EntityHitResult(p)),name.contains("Comet")?12:5,name.contains("Comet"));
                         if(i==1&&!name.contains("Comet"))BossBalanceTests.result("bmd_lich_missile_slowness",NS+"lich",1,p.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)?1:0);
                         e.discard();
                     }
@@ -80,14 +80,14 @@ final class ExhaustiveBmd {
         for(double fraction:new double[]{.9,.6,.4,.2}) {
             for(String name:new String[]{"BurstAction","WaveAction","SpikeAction"}) scenario(level,p,"obsidilith",name+"_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,name);
-                capture(p,NS+"obsidilith",name+"_hp"+fraction,()->call(a,"damageEntity",p),name.equals("SpikeAction")?6:3.5,false);
+                capture(p,NS+"obsidilith",name+"_hp"+fraction,()->call(a,"damageEntity",p),name.equals("SpikeAction")?8:4,false);
                 if(name.equals("SpikeAction")) BossBalanceTests.result("bmd_spike_slowness",NS+"obsidilith",1,p.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)?1:0);
                 BossBalanceTests.resetActualPlayer(p);if(name.equals("BurstAction"))p.moveTo(b.position().add(7,0,0));
-                capture(p,NS+"obsidilith",name+"_scheduler_geometry_hp"+fraction,()->{call(a,"perform");if(name.equals("SpikeAction")){tickAction(a,b,32);p.moveTo(p.position().add((Vec3)((List<?>)get(a,"circlePoints")).getFirst()));}tickAction(a,b,300);},name.equals("SpikeAction")?6:3.5,false);
+                capture(p,NS+"obsidilith",name+"_scheduler_geometry_hp"+fraction,()->{call(a,"perform");if(name.equals("SpikeAction")){tickAction(a,b,32);p.moveTo(p.position().add((Vec3)((List<?>)get(a,"circlePoints")).getFirst()));}tickAction(a,b,300);},name.equals("SpikeAction")?8:4,false);
             });
             scenario(level,p,"obsidilith","AnvilAction_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,"AnvilAction");b.moveTo(p.position());
-                capture(p,NS+"obsidilith","AnvilAction_hp"+fraction,()->call(a,"lambda$performAttack$5",p.position(),level),10,true);
+                capture(p,NS+"obsidilith","AnvilAction_hp"+fraction,()->call(a,"lambda$performAttack$5",p.position(),level),15,true);
             });
             scenario(level,p,"obsidilith","PillarAction_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,"PillarAction");call(a,"perform");tickAction(a,b,100);
@@ -111,15 +111,15 @@ final class ExhaustiveBmd {
         for(double fraction:new double[]{.9,.8,.6,.4}) {
             for(String name:new String[]{"PunchAction","SwirlPunchAction"}) scenario(level,p,"gauntlet",name+"_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,name);p.moveTo(b.position());
-                capture(p,NS+"gauntlet",name+"_entityImpact_hp"+fraction,()->call(a,"testEntityImpact"),6,false);
+                capture(p,NS+"gauntlet",name+"_entityImpact_hp"+fraction,()->call(a,"testEntityImpact"),9,false);
                 BossBalanceTests.resetActualPlayer(p);b.moveTo(p.position());set(a,"previousSpeed",3d);b.horizontalCollision=true;
                 if(name.equals("SwirlPunchAction")){call(a,"perform");BossBalanceTests.result("bmd_native_swirl_energized",NS+"gauntlet",1,Boolean.TRUE.equals(getData(b,"isEnergized"))?1:0);}
-                capture(p,NS+"gauntlet",name+"_wallImpact_hp"+fraction,()->call(a,"testBlockPhysicalImpact"),9,true);
-                if(name.equals("SwirlPunchAction")){BossBalanceTests.result("bmd_energized_punch_consumed",NS+"gauntlet",0,Boolean.TRUE.equals(getData(b,"isEnergized"))?1:0);BossBalanceTests.resetActualPlayer(p);b.moveTo(p.position());capture(p,NS+"gauntlet",name+"_unenergizedWallImpact_hp"+fraction,()->call(a,"testBlockPhysicalImpact"),9,true);}
+                capture(p,NS+"gauntlet",name+"_wallImpact_hp"+fraction,()->call(a,"testBlockPhysicalImpact"),14,true);
+                if(name.equals("SwirlPunchAction")){BossBalanceTests.result("bmd_energized_punch_consumed",NS+"gauntlet",0,Boolean.TRUE.equals(getData(b,"isEnergized"))?1:0);BossBalanceTests.resetActualPlayer(p);b.moveTo(p.position());capture(p,NS+"gauntlet",name+"_unenergizedWallImpact_hp"+fraction,()->call(a,"testBlockPhysicalImpact"),14,true);}
             });
             scenario(level,p,"gauntlet","LaserAction_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,"LaserAction");Vec3 end=b.getEyePosition().add(p.getEyePosition().subtract(b.getEyePosition()).scale(2));
-                capture(p,NS+"gauntlet","LaserAction_hp"+fraction,()->call(a,"applyLaserToEntities",end),1.5,false);
+                capture(p,NS+"gauntlet","LaserAction_hp"+fraction,()->call(a,"applyLaserToEntities",end),1,false);
             });
             scenario(level,p,"gauntlet","BlindnessAction_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,"BlindnessAction");ExhaustiveCapture.begin(NS+"gauntlet","BlindnessAction_hp"+fraction,p);
@@ -140,14 +140,14 @@ final class ExhaustiveBmd {
     private static void gauntletDeath(ServerLevel level,BossBalanceTests.TestPlayer p){
         scenario(level,p,"gauntlet","ordinary_ownerless_explosion_control",b->{
             Vec3 center=new Vec3(8,250,8);p.moveTo(center.add(3,0,0));Map<?,?> before=new HashMap<>((Map<?,?>)Class.forName("survival.balance.BossDamageBalance").getMethod("profileCounts").invoke(null));
-            capture(p,NS+"gauntlet","ordinary_ownerless_explosion_control",()->level.explode(null,center.x,center.y,center.z,4,net.minecraft.world.level.Level.ExplosionInteraction.MOB),8.794600486755371,false);
+            capture(p,NS+"gauntlet","ordinary_ownerless_explosion_control",()->level.explode(null,center.x,center.y,center.z,4,net.minecraft.world.level.Level.ExplosionInteraction.MOB),BalanceExpectations.diamondHearts(44.15625)*2,false);
             Map<?,?> after=(Map<?,?>)Class.forName("survival.balance.BossDamageBalance").getMethod("profileCounts").invoke(null);
             BossBalanceTests.result("bmd_ownerless_nonboss_profile_unchanged",NS+"gauntlet",1,before.equals(after)?1:0);
             ExhaustiveCapture.note(NS+"gauntlet","ordinary_ownerless_explosion_control","mechanic","Ordinary ownerless power4 explosion at3 blocks in open air, with no native Gauntlet death frame; damage/profile regression control.");
         });
         for(double distance:new double[]{3,0})scenario(level,p,"gauntlet","death_explosion_distance"+distance,b->{
             Object death=find(b,"ServerGauntletDeathHandler");b.moveTo(8,250,8,0,0);b.setHealth(0);b.deathTime=49;p.moveTo(b.position().add(distance,0,0));
-            capture(p,NS+"gauntlet","death_explosion_native_tick50_distance"+distance,()->call(death,"tick",level),9,true);
+            capture(p,NS+"gauntlet","death_explosion_native_tick50_distance"+distance,()->call(death,"tick",level),14,true);
             ExhaustiveCapture.note(NS+"gauntlet","death_explosion_native_tick50_distance"+distance,"mechanic","Native zero-health death handler detonates power4 at deathTime50 with null owner; distance="+distance+", player remaining HP="+p.getHealth()+". Hit record retains full native post-mitigation damage even if greater than available20HP. Point-blank probe runs last so a lethal result cannot contaminate other scenarios.");
             clearDeathLoot(level,250);
         });
@@ -158,7 +158,7 @@ final class ExhaustiveBmd {
             b.moveTo(8,270,8,0,0);p.moveTo(b.position());boolean enabled=(Boolean)get(get(b,"mobConfig"),"spawnPillarOnDeath");b.setHealth(0);
             ExhaustiveCapture.begin(NS+"obsidilith","death_explosion_native_die",p);List<ExhaustiveCapture.Hit> hits;
             try{b.die(level.damageSources().playerAttack(p));}finally{hits=ExhaustiveCapture.end();}
-            if(enabled)validateHits(NS+"obsidilith","death_explosion_native_die",hits,10,true);else BossBalanceTests.result("bmd_death_explosion_disabled",NS+"obsidilith",0,hits.size());
+            if(enabled)validateHits(NS+"obsidilith","death_explosion_native_die",hits,15,true);else BossBalanceTests.result("bmd_death_explosion_disabled",NS+"obsidilith",0,hits.size());
             tickLevelScheduler(level,110);clearDeathLoot(level,270);
             ExhaustiveCapture.note(NS+"obsidilith","death_explosion_native_die","mechanic","Native die invokes owner-attributed power2 explosion when spawnPillarOnDeath is enabled; installed flag="+enabled+". Reward pillar/loot scheduler drained after measurement.");
         });
@@ -170,19 +170,19 @@ final class ExhaustiveBmd {
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,name);
                 ExhaustiveCapture.begin(NS+"void_blossom",name+"_hp"+fraction,p);List<ExhaustiveCapture.Hit> hits;
                 try{call(a,"perform");if(name.equals("SpikeAction")){tickAction(a,b,32);p.moveTo(p.position().add((Vec3)((List<?>)get(a,"circlePoints")).getFirst()));}tickAction(a,b,400);}finally{hits=ExhaustiveCapture.end();}
-                validateHits(NS+"void_blossom",name,hits,5,false);
+                validateHits(NS+"void_blossom",name,hits,9,false);
             });
             for(String name:new String[]{"BladeAction","SporeAction"}) scenario(level,p,"void_blossom",name+"_hp"+fraction,b->{
                 b.setHealth((float)(b.getMaxHealth()*fraction));Object a=action(b,name);Set<Integer> before=entities(level);
                 call(a,"perform");tickAction(a,b,300);List<Entity> spawned=added(level,before);int count=0;
                 for(Entity e:spawned) if(e instanceof Projectile) {BossBalanceTests.resetActualPlayer(p);e.moveTo(p.position());
-                    capture(p,NS+"void_blossom",name+"_hp"+fraction+"_projectile"+(count++),()->call(e,"entityHit",new EntityHitResult(p)),name.equals("BladeAction")?5:2,false);
+                    capture(p,NS+"void_blossom",name+"_hp"+fraction+"_projectile"+(count++),()->call(e,"entityHit",new EntityHitResult(p)),name.equals("BladeAction")?9:2.25,false);
                     if(name.equals("SporeAction")){
                         BossBalanceTests.resetActualPlayer(p);e.moveTo(p.position());
-                        capture(p,NS+"void_blossom","SporeAction_ground_burst_hp"+fraction,()->{call(e,"onImpact");p.moveTo(e.position().add((Vec3)((List<?>)get(e,"circlePoints")).getFirst()).add(.5,0,.5));tickLevelScheduler(level,40);},2,false);
+                        capture(p,NS+"void_blossom","SporeAction_ground_burst_hp"+fraction,()->{call(e,"onImpact");p.moveTo(e.position().add((Vec3)((List<?>)get(e,"circlePoints")).getFirst()).add(.5,0,.5));tickLevelScheduler(level,40);},2.25,false);
                         BossBalanceTests.result("bmd_spore_poison_applied",NS+"void_blossom",1,p.hasEffect(MobEffects.POISON)?1:0);
                         var poison=p.getEffect(MobEffects.POISON);if(poison!=null){p.setHealth(20);int ticks=poison.getDuration();
-                            capture(p,NS+"void_blossom","SporeAction_poison_ticks_hp"+fraction,()->{for(int tick=0;tick<ticks;tick++){if(p.invulnerableTime>0)p.invulnerableTime--;poison.tick(p,()->{});}},.36,false);
+                            capture(p,NS+"void_blossom","SporeAction_poison_ticks_hp"+fraction,()->{for(int tick=0;tick<ticks;tick++){if(p.invulnerableTime>0)p.invulnerableTime--;poison.tick(p,()->{});}},1,false);
                         }
                     }
                     e.discard();}

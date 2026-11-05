@@ -15,9 +15,9 @@ import net.minecraft.world.phys.Vec3;
 final class ActualBmdAttacks {
     static void run(ServerLevel level,BossBalanceTests.TestPlayer victim) {
         for(String[] row:new String[][]{
-            {"bosses_of_mass_destruction:lich","bosses_of_mass_destruction:blue_fireball","2.0"},
-            {"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:petal_blade","2.5"},
-            {"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:spore_ball","1.0"}
+            {"bosses_of_mass_destruction:lich","bosses_of_mass_destruction:blue_fireball","2.5"},
+            {"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:petal_blade","4.5"},
+            {"bosses_of_mass_destruction:void_blossom","bosses_of_mass_destruction:spore_ball","1.125"}
         }) {
             LivingEntity boss=null;Entity projectile=null;
             try {
@@ -36,7 +36,7 @@ final class ActualBmdAttacks {
         try {
             BossBalanceTests.resetActualPlayer(victim);boss=BossBalanceTests.damageBoss(level,"bosses_of_mass_destruction:gauntlet");
             double before=victim.getHealth();((Mob)boss).doHurtTarget(victim);
-            BossBalanceTests.observedAttack("gauntlet_punch","bosses_of_mass_destruction:gauntlet","GauntletEntity.doHurtTarget",victim,before,3);
+            BossBalanceTests.observedAttack("gauntlet_punch","bosses_of_mass_destruction:gauntlet","GauntletEntity.doHurtTarget",victim,before,4.5);
         }catch(Throwable ex){BossBalanceTests.error("gauntlet_punch","bosses_of_mass_destruction:gauntlet",ex);}finally{if(boss!=null)boss.discard();}
         for(String action:new String[]{"WaveAction","BurstAction","SpikeAction"}) {
             boss=null;
@@ -46,7 +46,7 @@ final class ActualBmdAttacks {
                 Object instance=clazz.getConstructor(action.equals("BurstAction")?LivingEntity.class:Mob.class).newInstance(boss);
                 Method method=clazz.getDeclaredMethod("damageEntity",LivingEntity.class);method.setAccessible(true);
                 double before=victim.getHealth();method.invoke(instance,victim);
-                BossBalanceTests.observedAttack("obsidilith_"+action,"bosses_of_mass_destruction:obsidilith",action+".damageEntity",victim,before,action.equals("SpikeAction")?3:1.75);
+                BossBalanceTests.observedAttack("obsidilith_"+action,"bosses_of_mass_destruction:obsidilith",action+".damageEntity",victim,before,action.equals("SpikeAction")?4:2);
             }catch(Throwable ex){BossBalanceTests.error("obsidilith_"+action,"bosses_of_mass_destruction:obsidilith",ex);}finally{if(boss!=null)boss.discard();}
         }
         boss=null;
@@ -59,7 +59,7 @@ final class ActualBmdAttacks {
             Method method=clazz.getDeclaredMethod("applyLaserToEntities",Vec3.class);method.setAccessible(true);
             Vec3 end=boss.getEyePosition().add(victim.getEyePosition().subtract(boss.getEyePosition()).scale(2));
             double before=victim.getHealth();method.invoke(instance,end);
-            BossBalanceTests.observedAttack("gauntlet_laser","bosses_of_mass_destruction:gauntlet","LaserAction.applyLaserToEntities (ray through player)",victim,before,.75);
+            BossBalanceTests.observedAttack("gauntlet_laser","bosses_of_mass_destruction:gauntlet","LaserAction.applyLaserToEntities (ray through player)",victim,before,.5);
         }catch(Throwable ex){BossBalanceTests.error("gauntlet_laser","bosses_of_mass_destruction:gauntlet",ex);}finally{if(boss!=null)boss.discard();}
     }
     private static Method findMethod(Class<?> type,String name,Class<?>...args) throws NoSuchMethodException {

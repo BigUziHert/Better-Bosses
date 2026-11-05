@@ -333,7 +333,7 @@ final class ExhaustiveCataclysm {
                         armDelayedProjectile(effect,victim);
                         reset(victim,boss,2);
                         if(!active) invoke(boss,"setAnimation",new Class<?>[]{uppercut.getClass()},boss.getClass().getField("NO_ANIMATION").get(null));
-                        expected=1.5;
+                        expected=1;
                         ExhaustiveCapture.begin(id,label+"/native_bullet_hit",victim);
                         invoke(effect,"onHitEntity",new Class<?>[]{EntityHitResult.class},new EntityHitResult(victim));
                     } else if(id.endsWith("ancient_remnant")) {
@@ -342,7 +342,7 @@ final class ExhaustiveCataclysm {
                         boss.aiStep();
                         effect=newEntities(level,baseline).stream().filter(e->type(e).equals(PREFIX+"sandstorm")).findFirst().orElseThrow();
                         invoke(boss,"setAttackState",new Class<?>[]{int.class},active?11:0);
-                        expected=1.89;
+                        expected=5.25;
                         ExhaustiveCapture.begin(id,label+"/native_sandstorm_contact",victim);
                         invoke(effect,"damage",new Class<?>[]{LivingEntity.class},victim);
                     } else {
@@ -354,7 +354,7 @@ final class ExhaustiveCataclysm {
                         Object current=boss.getClass().getField(active?"LEVIATHAN_BITE":"NO_ANIMATION").get(null);
                         invoke(boss,"setAnimation",new Class<?>[]{current.getClass()},current);
                         effect.tickCount=5;
-                        expected=2.7;
+                        expected=7.5;
                         ExhaustiveCapture.begin(id,label+"/native_rift_contact",victim);
                         invoke(effect,"damage",new Class<?>[]{LivingEntity.class},victim);
                     }
@@ -399,7 +399,7 @@ final class ExhaustiveCataclysm {
                 invoke(boss,"setAttackState",new Class<?>[]{int.class},1);field(boss.getClass(),"attackTicks").setInt(boss,25);
                 ExhaustiveCapture.begin(id,label,victim);boss.aiStep();
                 List<ExhaustiveCapture.Hit> hits=ExhaustiveCapture.end();
-                BossBalanceTests.result("exhaustive_maledictus_rage_"+rage,id,2+.4*rage,hits.stream().mapToDouble(ExhaustiveCapture.Hit::damageHp).sum()/2);
+                BossBalanceTests.result("exhaustive_maledictus_rage_"+rage,id,3+.4*rage,hits.stream().mapToDouble(ExhaustiveCapture.Hit::damageHp).sum()/2);
             }catch(Throwable error){report(id,label,error);}finally{ExhaustiveCapture.end();for(Entity entity:newEntities(level,baseline))if(entity!=victim)entity.discard();if(boss!=null)boss.discard();}
         }
         id=PREFIX+"ignis";
@@ -416,11 +416,11 @@ final class ExhaustiveCataclysm {
                 ExhaustiveCapture.begin(id,label,victim);boss.aiStep();
                 List<ExhaustiveCapture.Hit> hits=ExhaustiveCapture.end();
                 double hearts=hits.stream().mapToDouble(ExhaustiveCapture.Hit::damageHp).sum()/2;
-                if(heavy)BossBalanceTests.result("exhaustive_ignis_heavy_brand_"+brand,id,6,hearts);
-                else if(brand==0)BossBalanceTests.result("exhaustive_ignis_opening_no_brand",id,2.25,hearts);
-                else if(brand==5)BossBalanceTests.result("exhaustive_ignis_opening_brand_v",id,5.2124057783,hearts);
-                else BossBalanceTests.result("exhaustive_ignis_opening_brand_"+brand+"_within_cap",id,1,hearts>2.25&&hearts<=6?1:0);
-                ExhaustiveCapture.note(id,label,"mechanic","Pre-existing Brand "+brand+"; original netherite ProtectionIV equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.");
+                if(heavy)BossBalanceTests.result("exhaustive_ignis_heavy_brand_"+brand,id,9.5,hearts);
+                else if(brand==0)BossBalanceTests.result("exhaustive_ignis_opening_no_brand",id,3.5,hearts);
+                else if(brand==5)BossBalanceTests.result("exhaustive_ignis_opening_brand_v",id,BalanceExpectations.brandOpening(5),hearts);
+                else BossBalanceTests.result("exhaustive_ignis_opening_brand_"+brand+"_within_cap",id,1,hearts>3.5&&hearts<=8?1:0);
+                ExhaustiveCapture.note(id,label,"mechanic","Pre-existing Brand "+brand+"; original unenchanted diamond equipment retained while native armor/toughness modifiers apply. Native attack may then add another Brand stack after this hit.");
             }catch(Throwable error){report(id,label,error);}finally{ExhaustiveCapture.end();for(Entity entity:newEntities(level,baseline))if(entity!=victim)entity.discard();if(boss!=null)boss.discard();}
         }
     }
@@ -483,7 +483,7 @@ final class ExhaustiveCataclysm {
                     for(int index=0;index<projectiles.size();index++) {
                         Entity spear=projectiles.get(index).entity;
                         BossBalanceTests.resetActualPlayer(victim);victim.moveTo(8,220,20,180,0);victim.setOnGround(true);victim.setDeltaMovement(Vec3.ZERO);
-                        ExhaustiveCapture.note(id,label+"/projectile"+(index+1),"setup","Native emitted spear flies from its unchanged launch position and velocity toward the stationary launch target. Each projectile receives a fresh20HP netherite ProtectionIV player. First accepted impact is measured using native projectile ticks.");
+                        ExhaustiveCapture.note(id,label+"/projectile"+(index+1),"setup","Native emitted spear flies from its unchanged launch position and velocity toward the stationary launch target. Each projectile receives a fresh20HP unenchanted diamond player. First accepted impact is measured using native projectile ticks.");
                         spearFirstPlayerHit(victim,id,label+"/projectile"+(index+1),spear,water);
                     }
                 } else {
@@ -509,8 +509,8 @@ final class ExhaustiveCataclysm {
                         List<Entity> areas=children.stream().filter(e->type(e).equals(PREFIX+"lightning_area_effect")).toList();
                         BossBalanceTests.result("exhaustive_"+label+"_native_storm_count",id,1,storms.size());
                         BossBalanceTests.result("exhaustive_"+label+"_native_area_count",id,1,areas.size());
-                        for(Entity storm:storms)firstAnchorChildHit(level,victim,id,label+"/storm",storm,"Lightning_Storm_Entity.damage",7.2,1.25);
-                        for(Entity area:areas)firstAnchorChildHit(level,victim,id,label+"/area",area,"Lightning_Area_Effect_Entity.damage",6,1.25);
+                        for(Entity storm:storms)firstAnchorChildHit(level,victim,id,label+"/storm",storm,"Lightning_Storm_Entity.damage",7.2,.75);
+                        for(Entity area:areas)firstAnchorChildHit(level,victim,id,label+"/area",area,"Lightning_Area_Effect_Entity.damage",6,.75);
                     }
                 }
             }catch(Throwable error){report(id,label,error);}
@@ -527,10 +527,10 @@ final class ExhaustiveCataclysm {
         List<ExhaustiveCapture.Hit> matching=hits.stream().filter(h->h.nativeCallers().stream().anyMatch(c->c.endsWith(caller))).toList();
         BossBalanceTests.result("exhaustive_"+label+"_native_hit_caller",id,1,matching.isEmpty()?0:1);
         if(!matching.isEmpty()) {
-            ExhaustiveCapture.Hit hit=matching.get(0);double hearts=water?1.39104:5.25;
+            ExhaustiveCapture.Hit hit=matching.get(0);double hearts=water?4.305:7.5;
             BossBalanceTests.result("exhaustive_"+label+"_native_raw",id,21,hit.originalIncomingHp());
             BossBalanceTests.result("exhaustive_"+label+"_armor",id,20,hit.armor());
-            BossBalanceTests.result("exhaustive_"+label+"_toughness",id,12,hit.toughness());
+            BossBalanceTests.result("exhaustive_"+label+"_toughness",id,8,hit.toughness());
             BossBalanceTests.result("exhaustive_"+label+"_hearts",id,hearts,hit.damageHp()/2);
             BossBalanceTests.result("exhaustive_"+label+"_remaining_hp",id,20-2*hearts,hit.afterHp());
             BossBalanceTests.result("exhaustive_"+label+"_damage_type",id,1,hit.type().equals(water?"minecraft:mob_projectile":"cataclysm:lightning")?1:0);
@@ -588,8 +588,8 @@ final class ExhaustiveCataclysm {
                     BossBalanceTests.result("exhaustive_"+sparkLabel+"_native_storm_count",id,1,storms.size());
                     BossBalanceTests.result("exhaustive_"+sparkLabel+"_native_area_count",id,1,areas.size());
                     ExhaustiveCapture.note(id,sparkLabel,"emissions","Native Spark flew "+ticks+" ticks with its native launch velocity and gravity, then emitted "+storms.size()+" lightning storms and "+areas.size()+" area effects. Every Spark from this anchor is exercised.");
-                    for(Entity storm:storms)firstAnchorChildHit(level,victim,id,sparkLabel+"/storm",storm,"Lightning_Storm_Entity.damage",16.2,5.25);
-                    for(Entity area:areas)firstAnchorChildHit(level,victim,id,sparkLabel+"/area",area,"Lightning_Area_Effect_Entity.damage",6,1.25);
+                    for(Entity storm:storms)firstAnchorChildHit(level,victim,id,sparkLabel+"/storm",storm,"Lightning_Storm_Entity.damage",16.2,7.5);
+                    for(Entity area:areas)firstAnchorChildHit(level,victim,id,sparkLabel+"/area",area,"Lightning_Area_Effect_Entity.damage",6,.75);
                 }
             }catch(Throwable error){report(id,label,error);}
             finally {ExhaustiveCapture.end();victim.stopRiding();for(Entity entity:newEntities(level,baseline))if(entity!=victim)entity.discard();if(boss!=null)boss.discard();try{BossBalanceTests.resetActualPlayer(victim);}catch(Exception error){report(id,label+"_reset",error);}}
@@ -599,7 +599,7 @@ final class ExhaustiveCataclysm {
     private static void firstAnchorChildHit(ServerLevel level,BossBalanceTests.TestPlayer victim,String id,String label,Entity effect,String nativeCaller,double expectedRaw,double expectedHearts) throws Exception {
         BossBalanceTests.resetActualPlayer(victim);
         victim.moveTo(effect.getX(),effect.getY()+.05,effect.getZ(),180,0);victim.setOnGround(true);victim.setDeltaMovement(Vec3.ZERO);
-        ExhaustiveCapture.note(id,label,"setup","First accepted native child-effect tick against a fresh20HP full-netherite ProtectionIV player. No HP/effect/hurt-cooldown reset occurs within this contact probe. Child remains at the position created by Spark's actual ground collision.");
+        ExhaustiveCapture.note(id,label,"setup","First accepted native child-effect tick against a fresh20HP unenchanted diamond player. No HP/effect/hurt-cooldown reset occurs within this contact probe. Child remains at the position created by Spark's actual ground collision.");
         ExhaustiveCapture.begin(id,label+"/native_first_hit",victim);
         for(int tick=0;tick<60&&!effect.isRemoved()&&victim.getHealth()>=20;tick++)nativeEntityTick(effect);
         List<ExhaustiveCapture.Hit> hits=ExhaustiveCapture.end();
@@ -609,7 +609,7 @@ final class ExhaustiveCataclysm {
             ExhaustiveCapture.Hit hit=matching.get(0);
             BossBalanceTests.result("exhaustive_"+label+"_native_raw",id,expectedRaw,hit.originalIncomingHp());
             BossBalanceTests.result("exhaustive_"+label+"_armor",id,20,hit.armor());
-            BossBalanceTests.result("exhaustive_"+label+"_toughness",id,12,hit.toughness());
+            BossBalanceTests.result("exhaustive_"+label+"_toughness",id,8,hit.toughness());
             BossBalanceTests.result("exhaustive_"+label+"_hearts",id,expectedHearts,hit.damageHp()/2);
             BossBalanceTests.result("exhaustive_"+label+"_remaining_hp",id,20-expectedHearts*2,hit.afterHp());
         }else ExhaustiveCapture.note(id,label,"uncovered","Native child effect produced no accepted hit at its emitted position.");
@@ -639,7 +639,7 @@ final class ExhaustiveCataclysm {
                 BossBalanceTests.result("exhaustive_tongue_native_mount_"+context.label,id,1,victim.getVehicle()==tongue?1:0);
                 if(!matching.isEmpty()) {
                     BossBalanceTests.result("exhaustive_tongue_native_raw_"+context.label,id,9,matching.get(0).originalIncomingHp());
-                    BossBalanceTests.result("exhaustive_tongue_hearts_"+context.label,id,scaledReferenceHearts(9,24.3,3.25),matching.get(0).damageHp()/2);
+                    BossBalanceTests.result("exhaustive_tongue_hearts_"+context.label,id,scaledReferenceHearts(9,24.3,4.5),matching.get(0).damageHp()/2);
                 }
             }catch(Throwable error){report(id,label,error);}
             finally {ExhaustiveCapture.end();victim.stopRiding();for(Entity entity:newEntities(level,baseline))if(entity!=victim)entity.discard();if(boss!=null)boss.discard();try{invoke(victim,"useNativeRiding",new Class<?>[]{boolean.class},false);BossBalanceTests.resetActualPlayer(victim);}catch(Exception error){report(id,label+"_reset",error);}}
@@ -653,7 +653,7 @@ final class ExhaustiveCataclysm {
                 double[] point=arcPoint(2,distance,2.5);
                 double raw=(13*(1+.2*context.value)+.6)*1.5;
                 double reference=(13*(1+.2*context.value)+1.6)*1.5;
-                directionalCase(level,victim,id,context,"flying_smash2_shockwave_ring"+distance,null,9,4+2*distance,point[0],point[1],"ShieldSmashDamage",raw,scaledReferenceHearts(raw,reference,2+.4*context.value));
+                directionalCase(level,victim,id,context,"flying_smash2_shockwave_ring"+distance,null,9,4+2*distance,point[0],point[1],"ShieldSmashDamage",raw,scaledReferenceHearts(raw,reference,3+.4*context.value));
             }
         }
         id=PREFIX+"ignis";
@@ -661,11 +661,11 @@ final class ExhaustiveCataclysm {
             for(int distance:new int[]{3,7}) {
                 double[] point=arcPoint(.4,distance,0);
                 double raw=(14*(distance==7?1.1:1)+20*(distance==7?.12:.03))*1.5;
-                directionalCase(level,victim,id,context,"upperslash_shockwave_ring"+distance,"SWING_UPPERSLASH",null,distance==3?26:30,point[0],point[1],"ShieldSmashDamage",raw,scaledReferenceHearts(raw,22.5,2.25));
+                directionalCase(level,victim,id,context,"upperslash_shockwave_ring"+distance,"SWING_UPPERSLASH",null,distance==3?26:30,point[0],point[1],"ShieldSmashDamage",raw,scaledReferenceHearts(raw,22.5,3.5));
             }
             for(double side:new double[]{1.5,-5.5}) {
                 double raw=(14*1.5+20*.15)*1.5;
-                directionalCase(level,victim,id,context,"ultimate_outer_lane"+side,"ULTIMATE_ATTACK",null,74,side,12,"UltimateAttack",raw,scaledReferenceHearts(raw,22.5,2.25));
+                directionalCase(level,victim,id,context,"ultimate_outer_lane"+side,"ULTIMATE_ATTACK",null,74,side,12,"UltimateAttack",raw,BalanceExpectations.scaled(raw,22.5,3.5,9.5));
             }
         }
         if(ExhaustiveCapture.selected(PREFIX+"scylla")) ExhaustiveCapture.note(PREFIX+"scylla","Whip_private_helper","dormant","Installed Scylla bytecode contains the private Whip declaration but no invocation. Active electric_whip/whip_and_spear states instead use AreaAttack and Spark/lightning, which have separate native captures. Calling this dormant helper directly would manufacture an unreachable attack.");
@@ -679,15 +679,15 @@ final class ExhaustiveCataclysm {
     }
 
     private static double scaledReferenceHearts(double raw,double baseline,double hearts) {
-        // Independent vanilla full-netherite/Prot-IV reference, no status effects.
+        // Independent vanilla unenchanted-diamond reference, no status effects.
         double lo=0,hi=100;
         for(int i=0;i<60;i++){double mid=(lo+hi)/2;if(referenceHearts(mid)<hearts)lo=mid;else hi=mid;}
-        return Math.min(6,referenceHearts(raw*((lo+hi)/2)/baseline));
+        return Math.min(8,referenceHearts(raw*((lo+hi)/2)/baseline));
     }
 
     private static double referenceHearts(double raw) {
-        double armor=Math.max(4,Math.min(20,20-raw/5));
-        return raw*(1-armor/25)*.36/2;
+        double armor=Math.max(4,Math.min(20,20-raw/4));
+        return raw*(1-armor/25)/2;
     }
 
     private static void directionalCase(ServerLevel level,BossBalanceTests.TestPlayer victim,String id,Context context,String name,String animationName,Integer state,int frame,double dx,double dz,String caller,double expectedRaw,double expectedHearts) {

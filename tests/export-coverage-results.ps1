@@ -10,11 +10,11 @@ $scenarios=[System.Collections.Generic.List[object]]::new()
 $suites=[System.Collections.Generic.List[object]]::new()
 foreach($file in (Get-ChildItem -LiteralPath $ResultsDirectory -File -Filter '*.json' | Sort-Object Name)){
     $data=Get-Content -LiteralPath $file.FullName -Raw | ConvertFrom-Json
-    if($data -isnot [array] -and $data.PSObject.Properties.Name -contains 'checks'){
+    if($data -isnot [array] -and $null -ne $data.phase -and $data.PSObject.Properties.Name -contains 'checks'){
         $suites.Add([pscustomobject]@{Suite=$data.phase;Checks=$data.total;Failed=$data.failed;Source=$file.Name})
         foreach($row in $data.checks){$checks.Add($row)}
     }
-    if($file.Name -like '*-attacks.json'){
+    if($file.Name -like '*-attacks.json' -or $file.Name -eq 'combined-projectiles.json'){
         foreach($row in $data){
             $hits=@($row.hits | Where-Object {$null -ne $_})
             $max=if($hits.Count -gt 0){($hits | Measure-Object -Property damageHp -Maximum).Maximum/2}else{$null}

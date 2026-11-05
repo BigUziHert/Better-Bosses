@@ -193,7 +193,7 @@ final class FixedHealthCases {
             boss=(Mob)BossBalanceTests.damageBoss(level,id);boss.setInvulnerable(false);join(level,boss);
             double attack=attackValue(boss);boss.setTarget(victim);boss.setHealth(600);
             boss.doHurtTarget(victim);
-            eq(id,"native_melee_one_player_hearts",2,(20-victim.getHealth())/2d);
+            eq(id,"native_melee_one_player_hearts",3.5,(20-victim.getHealth())/2d);
             stable(id,"native_boss_damage_one_player",boss,1000,600);
             boss.invulnerableTime=0;boss.hurtTime=0;
             // The ordinary player strike follows Player.attack(), including its real damage event.
@@ -206,7 +206,7 @@ final class FixedHealthCases {
             boss=(Mob)reload(level,id,boss);stable(id,"attacked_boss_nbt_rejoin",boss,1000,wounded);
             yes(id,"attacked_boss_uuid_preserved",uuid.equals(boss.getUUID()));
             BossBalanceTests.resetActualPlayer(victim);boss.doHurtTarget(victim);
-            eq(id,"native_melee_five_players_after_reload_hearts",2,(20-victim.getHealth())/2d);
+            eq(id,"native_melee_five_players_after_reload_hearts",3.5,(20-victim.getHealth())/2d);
             stable(id,"outgoing_hit_after_reload",boss,1000,wounded);sameAttack(id,"native_combat",boss,attack);
         }catch(Throwable error){BossBalanceTests.error("fixed_native_damage_regression",id,error);}
         finally{if(boss!=null)boss.discard();removePlayers(players);}

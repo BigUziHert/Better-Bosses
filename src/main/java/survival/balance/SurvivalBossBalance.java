@@ -16,6 +16,9 @@ public final class SurvivalBossBalance {
         NeoForge.EVENT_BUS.addListener(BossHealthBalance::onKnightTick);
         NeoForge.EVENT_BUS.addListener(BossHealthBalance::onHeal);
         NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, BossDamageBalance::apply);
-        BalanceSettings.LOG.info("Survival Boss Balance 1.1.0 loaded: 23 fixed-health bosses, attack tuning, Naga phase and Wither charge corrections");
+        NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, ProjectileDamageBudget::beforeDamage);
+        NeoForge.EVENT_BUS.addListener(EventPriority.LOWEST, ProjectileDamageBudget::afterDamage);
+        NeoForge.EVENT_BUS.addListener(EventPriority.HIGHEST, ProjectileDamageBudget::onExplosionStart);
+        BalanceSettings.LOG.info("Survival Boss Balance 1.2.0 loaded: 23 fixed-health bosses, plain-diamond attack reference, per-projectile combined budgets");
     }
 }
