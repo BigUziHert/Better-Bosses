@@ -14,10 +14,13 @@ import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.AreaEffectCloud;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.item.alchemy.PotionContents;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 
 /** Attack-specific outgoing damage. Reference targets are hearts lost on Hard
@@ -28,6 +31,7 @@ public final class BossDamageBalance {
     private BossDamageBalance() {}
 
     public static final Set<String> BOSS_IDS = Set.of(
+        "minecraft:wither", "minecraft:ender_dragon", "minecraft:warden",
         "twilightforest:naga", "twilightforest:lich", "twilightforest:minoshroom",
         "twilightforest:hydra", "twilightforest:knight_phantom", "twilightforest:ur_ghast",
         "twilightforest:alpha_yeti", "twilightforest:snow_queen",
@@ -39,6 +43,9 @@ public final class BossDamageBalance {
 
     private static final Map<String, Double> DEFAULTS = new LinkedHashMap<>();
     static {
+        defaults("wither", "skull",1.5, "splash",2.0, "spawn_explosion",5.0);
+        defaults("ender_dragon", "head",3.5, "wing",1.25, "perched_breath",1.25, "fireball_cloud",2.0);
+        defaults("warden", "melee",4.5, "sonic_boom",5.5);
         defaults("naga", "head",1.5, "body",0.45);
         defaults("twilight_lich", "bolt",2.0, "bomb",3.0, "melee",1.5);
         defaults("minoshroom", "axe",2.0, "slam",3.25);
@@ -95,6 +102,9 @@ public final class BossDamageBalance {
         double scale=difficultyRatio(source, victim.level().getDifficulty(), event.getAmount());
         float hardAmount=(float)(event.getAmount()/scale);
         String animation=animationName(boss);
+        if (bossId.equals("minecraft:ender_dragon") && source.getDirectEntity() instanceof AreaEffectCloud cloud) {
+            animation += dragonCloudKind(cloud);
+        }
         if (boolMethod(boss,"isChargingAtPlayer")) animation += " CHARGING";
         int state=intMethod(boss,"getAttackState",-1);
         if (bossId.equals("bosses_of_mass_destruction:obsidilith")) state=intField(boss,"currentAttack",state);
@@ -136,6 +146,26 @@ public final class BossDamageBalance {
         if (rawHard<=0) return unchanged(c,"zero");
         boolean explosion=c.type.contains("explosion") || c.type.equals("twilightforest:lich_bomb");
         switch (bossId) {
+            case "minecraft:wither":
+                if (explosion) return cap(c,c.direct.equals("minecraft:wither") ? "wither.spawn_explosion":"wither.splash");
+                if (c.type.equals("minecraft:wither_skull") || c.direct.equals("minecraft:wither_skull")) return set(c,"wither.skull");
+                return unchanged(c,"unmatched wither attack");
+            case "minecraft:ender_dragon":
+                if (c.direct.equals("minecraft:area_effect_cloud") && c.type.equals("minecraft:indirect_magic")) {
+                    if (c.animation.contains("dragon_fireball_cloud")) return set(c,"ender_dragon.fireball_cloud");
+                    if (c.animation.contains("dragon_perched_breath")) return set(c,"ender_dragon.perched_breath");
+                    return unchanged(c,"unrecognized dragon cloud effect");
+                }
+                if (melee(c)) {
+                    if (c.trace.contains("enderdragon.knockback(")) return set(c,"ender_dragon.wing");
+                    if (c.trace.contains("enderdragon.hurt(")) return set(c,"ender_dragon.head");
+                    return set(c,rawHard <= 7.5F ? "ender_dragon.wing":"ender_dragon.head");
+                }
+                return unchanged(c,"unmatched dragon attack");
+            case "minecraft:warden":
+                if (c.type.equals("minecraft:sonic_boom")) return set(c,"warden.sonic_boom");
+                if (melee(c)) return set(c,"warden.melee");
+                return unchanged(c,"unmatched warden attack");
             case "twilightforest:naga":
                 if(c.trace.contains("nagasegment")) return set(c,"naga.body");
                 if(c.trace.contains("naga.dohurttarget")) return set(c,"naga.head");
@@ -355,6 +385,28 @@ public final class BossDamageBalance {
         try { return ((Number)o.getClass().getField(name).get(o)).intValue(); } catch(ReflectiveOperationException|RuntimeException ignored) {return fallback;}
     }
     private static final Map<Class<?>,Field[]> ANIMATION_FIELDS=new ConcurrentHashMap<>();
+    private static volatile Field cloudPotionContents;
+    /** Read the cloud's saved effect, not the dragon's current phase: a fireball
+     * cloud can still be active after the dragon lands. */
+    private static String dragonCloudKind(AreaEffectCloud cloud) {
+        try {
+            Field field = cloudPotionContents;
+            if (field == null) {
+                field = AreaEffectCloud.class.getDeclaredField("potionContents");
+                field.setAccessible(true);
+                cloudPotionContents = field;
+            }
+            for (MobEffectInstance effect : ((PotionContents)field.get(cloud)).getAllEffects()) {
+                if (effect.is(MobEffects.HARM)) {
+                    if (effect.getAmplifier() == 0) return " dragon_perched_breath";
+                    if (effect.getAmplifier() == 1) return " dragon_fireball_cloud";
+                }
+            }
+            return "";
+        } catch (ReflectiveOperationException error) {
+            throw new IllegalStateException("Cannot identify native dragon breath effects", error);
+        }
+    }
     private static String animationName(Entity boss) {
         Object active=invoke(boss,"getAnimation");
         if(active==null || boss==null) return "";
@@ -366,7 +418,8 @@ public final class BossDamageBalance {
     }
     private static String attackTrace() {
         return StackWalker.getInstance().walk(s->s.filter(f->{String n=f.getClassName();return n.startsWith("twilightforest.")
-            || n.startsWith("com.github.L_Ender.cataclysm.") || n.startsWith("com.cerbon.bosses_of_mass_destruction.");})
+            || n.startsWith("com.github.L_Ender.cataclysm.") || n.startsWith("com.cerbon.bosses_of_mass_destruction.")
+            || n.equals("net.minecraft.world.entity.boss.enderdragon.EnderDragon");})
             .limit(12).map(f->f.getClassName()+"."+f.getMethodName()+"(").collect(Collectors.joining(";")));
     }
 }

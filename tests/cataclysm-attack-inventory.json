@@ -1,0 +1,1151 @@
+{
+  "source": "Installed L_Ender's Cataclysm 1.21.1-3.33.jar decompiled locally with CFR 0.152; source line numbers refer to local decompilation.",
+  "scope": "Inventory, not a claim of complete runtime coverage. Death/lifecycle states are separate. Native emission callbacks, impacts and random branches can need additional fixtures.",
+  "bosses": [
+    {
+      "boss": "Ender_Guardian_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/AnimationMonster/BossMonsters/Ender_Guardian_Entity.java",
+      "animations": [
+        {
+          "name": "GUARDIAN_RIGHT_STRONG_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_LEFT_STRONG_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_RIGHT_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_LEFT_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_BURST_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_UPPERCUT_AND_BULLET",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_RAGE_UPPERCUT",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_STOMP",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_RAGE_STOMP",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_MASS_DESTRUCTION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_FALLEN",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_HUG_ME",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_AIR_STRIKE1",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_AIR_STRIKE2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_RIGHT_SWING",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_LEFT_SWING",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_BLACKHOLE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "GUARDIAN_ROCKETPUNCH",
+          "nativeDurationArguments": "(int"
+        }
+      ],
+      "states": [],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 364,
+          "code": "if ((attack = super.hurt(source, damage)) && this.getIsHelmetless()) {"
+        },
+        {
+          "method": "AreaAttack",
+          "line": 704,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage, (double)(entityHit.getMaxHealth() * hpdamage))));"
+        },
+        {
+          "method": "MassDestruction",
+          "line": 728,
+          "code": "entityHit.hurt(damagesource, (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) * damage);"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 399,
+          "code": "this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 628,
+          "code": "return this.getHealth() <= this.getMaxHealth() / 2.0f;"
+        }
+      ]
+    },
+    {
+      "boss": "Netherite_Monstrosity_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/InternalAnimationMonster/IABossMonsters/NewNetherite_Monstrosity/Netherite_Monstrosity_Entity.java",
+      "animations": [],
+      "states": [
+        {
+          "state": 0,
+          "name": "sleepAnimationState"
+        },
+        {
+          "state": 2,
+          "name": "awakeAnimationState"
+        },
+        {
+          "state": 3,
+          "name": "smashsAnimationState"
+        },
+        {
+          "state": 4,
+          "name": "phaseAnimationState"
+        },
+        {
+          "state": 5,
+          "name": "deathAnimationState"
+        },
+        {
+          "state": 6,
+          "name": "fireAnimationState"
+        },
+        {
+          "state": 7,
+          "name": "drainAnimationState"
+        },
+        {
+          "state": 8,
+          "name": "shouldercheckAnimationState"
+        },
+        {
+          "state": 9,
+          "name": "overpowerAnimationState"
+        },
+        {
+          "state": 10,
+          "name": "flareshotAnimationState"
+        }
+      ],
+      "damageCallsites": [
+        {
+          "method": "attackEntityFromPart",
+          "line": 301,
+          "code": "return this.hurt(source, amount);"
+        },
+        {
+          "method": "hurt",
+          "line": 314,
+          "code": "if ((attack = super.hurt(source, damage)) && !this.getIsAwaken() && this.isAlive()) {"
+        },
+        {
+          "method": "hurtParts",
+          "line": 324,
+          "code": "boolean attack = super.hurt(source, damage);"
+        },
+        {
+          "method": "aiStep",
+          "line": 762,
+          "code": "if (this.isAlliedTo((Entity)Lentity) || Lentity instanceof Netherite_Monstrosity_Entity || Lentity == this || !(flag = Lentity.hurt(damagesource, (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 0.4f))) continue;"
+        },
+        {
+          "method": "spawnBlocks",
+          "line": 953,
+          "code": "boolean flag = entity.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage));"
+        },
+        {
+          "method": "EarthQuake",
+          "line": 1003,
+          "code": "boolean flag = entity.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(entity.getMaxHealth() * (float)CMCommonConfig.NetheriteMonstrosity.SmashHpdamage))));"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 269,
+          "code": "this.goalSelector.addGoal(0, (Goal)new MonstrosityPhaseChangeGoal(this, 0, 4, 0, 54));"
+        },
+        {
+          "line": 614,
+          "code": "this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 1148,
+          "code": "return this.getHealth() <= this.getMaxHealth() * 0.4f;"
+        }
+      ]
+    },
+    {
+      "boss": "The_Harbinger_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/AnimationMonster/BossMonsters/The_Harbinger_Entity.java",
+      "animations": [
+        {
+          "name": "DEATHLASER_ANIMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "CHARGE_ANIMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "DEATH_ANIMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LAUNCH_ANIAMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "MISSILE_FIRE_ANIAMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "MISSILE_FIRE_FAST_ANIAMATION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "STUN_ANIAMATION",
+          "nativeDurationArguments": "(int"
+        }
+      ],
+      "states": [],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 322,
+          "code": "return super.hurt(source, damage);"
+        },
+        {
+          "method": "blockbreak",
+          "line": 509,
+          "code": "if (this.isAlliedTo((Entity)Lentity) || Lentity instanceof The_Harbinger_Entity || Lentity == this || !(flag = Lentity.hurt(this.damageSources().mobAttack((LivingEntity)this), (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) + (float)this.random.nextInt(5)) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(Lentity.getMaxHealth() * (float)CMCommonConfig.Harbinger.ChargeHpDamage))))) || !Lentity.onGround()) continue;"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 354,
+          "code": "this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 834,
+          "code": "return this.getHealth() <= this.getMaxHealth() / 2.0f;"
+        }
+      ]
+    },
+    {
+      "boss": "Ancient_Remnant_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/InternalAnimationMonster/IABossMonsters/Ancient_Remnant/Ancient_Remnant_Entity.java",
+      "animations": [],
+      "states": [
+        {
+          "state": 0,
+          "name": "sleepAnimationState"
+        },
+        {
+          "state": 2,
+          "name": "awakenAnimationState"
+        },
+        {
+          "state": 3,
+          "name": "deathAnimationState"
+        },
+        {
+          "state": 4,
+          "name": "rightbiteAnimationState"
+        },
+        {
+          "state": 5,
+          "name": "threetailhitAnimationState"
+        },
+        {
+          "state": 6,
+          "name": "sandstormroarAnimationState"
+        },
+        {
+          "state": 7,
+          "name": "phaseroarAnimationState"
+        },
+        {
+          "state": 8,
+          "name": "rightstompAnimationState"
+        },
+        {
+          "state": 9,
+          "name": "leftstompAnimationState"
+        },
+        {
+          "state": 10,
+          "name": "chargeprepareAnimationState"
+        },
+        {
+          "state": 11,
+          "name": "chargeAnimationState"
+        },
+        {
+          "state": 12,
+          "name": "chargestunAnimationState"
+        },
+        {
+          "state": 13,
+          "name": "rightDoubleStompAnimationState"
+        },
+        {
+          "state": 14,
+          "name": "leftDoubleStompAnimationState"
+        },
+        {
+          "state": 15,
+          "name": "groundtailAnimationState"
+        },
+        {
+          "state": 16,
+          "name": "tailswingAnimationState"
+        },
+        {
+          "state": 17,
+          "name": "monolithAnimationState"
+        }
+      ],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 345,
+          "code": "return super.hurt(source, damage);"
+        },
+        {
+          "method": "Charge",
+          "line": 709,
+          "code": "if (this.isAlliedTo((Entity)Lentity) || Lentity instanceof Ancient_Remnant_Entity || Lentity == this || !(flag = Lentity.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 2.0f) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 2.0, (double)(Lentity.getMaxHealth() * (float)CMCommonConfig.AncientRemnant.ChargeHpDamage))))) || !Lentity.onGround()) continue;"
+        },
+        {
+          "method": "AreaAttack",
+          "line": 1279,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage, (double)(entityHit.getMaxHealth() * hpdamage))));"
+        },
+        {
+          "method": "TailAreaAttack",
+          "line": 1310,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage, (double)(entityHit.getMaxHealth() * hpdamage))));"
+        },
+        {
+          "method": "spawnBlocks",
+          "line": 1392,
+          "code": "boolean flag = entity.hurt(damagesource, finalDamage);"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 238,
+          "code": "this.goalSelector.addGoal(0, (Goal)new RemnantPhaseChangeGoal(this, 0, 7, 0, 60, 13));"
+        },
+        {
+          "line": 655,
+          "code": "this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 695,
+          "code": "return this.getHealth() <= this.getMaxHealth() / 2.0f;"
+        }
+      ]
+    },
+    {
+      "boss": "The_Leviathan_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/AnimationMonster/BossMonsters/The_Leviathan/The_Leviathan_Entity.java",
+      "animations": [
+        {
+          "name": "LEVIATHAN_GRAB",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_GRAB_BITE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_BITE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_ABYSS_BLAST",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_ABYSS_BLAST_FIRE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_RUSH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_STUN",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_ABYSS_BLAST_PORTAL",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_STRIKE_UPPER_R",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_STRIKE_LOWER_R",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_STRIKE_UPPER_L",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_STRIKE_LOWER_L",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_HOLD",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TENTACLE_HOLD_BLAST",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_TAIL_WHIPS",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_BREAK_DIMENSION",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_PHASE2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_DEATH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "LEVIATHAN_MINE",
+          "nativeDurationArguments": "(int"
+        }
+      ],
+      "states": [],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 425,
+          "code": "boolean attack = super.hurt(source, damage);"
+        },
+        {
+          "method": "attackEntityFromPart",
+          "line": 462,
+          "code": "return this.hurt(source, amount);"
+        },
+        {
+          "method": "TailWhips",
+          "line": 953,
+          "code": "boolean flag = entity.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(entity.getMaxHealth() * (float)CMCommonConfig.Leviathan.TailSwingHpDamage))));"
+        },
+        {
+          "method": "chargeDamage",
+          "line": 1093,
+          "code": "boolean flag = Lentity.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(Lentity.getMaxHealth() * (float)CMCommonConfig.Leviathan.RushHpDamage))));"
+        },
+        {
+          "method": "biteattack",
+          "line": 1121,
+          "code": "boolean flag = target.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)) * 1.5 + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 1.5, (double)(target.getMaxHealth() * (float)CMCommonConfig.Leviathan.TentacleHpDamage))));"
+        },
+        {
+          "method": "Tentacleattack",
+          "line": 1147,
+          "code": "boolean flag = target.hurt(damagesource, (float)((double)((float)this.getAttributeValue(Attributes.ATTACK_DAMAGE)) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(target.getMaxHealth() * (float)CMCommonConfig.Leviathan.TentacleHpDamage))));"
+        },
+        {
+          "method": "TentacleHoldattack",
+          "line": 1175,
+          "code": "boolean flag = target.hurt(damagesource, (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) + target.getMaxHealth() * 0.1f);"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 488,
+          "code": "this.bossInfo.setProgress((this.getHealth() - halfHealth) / (this.getMaxHealth() - halfHealth));"
+        },
+        {
+          "line": 490,
+          "code": "this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 990,
+          "code": "return this.getHealth() <= this.getMaxHealth() / 2.0f;"
+        }
+      ]
+    },
+    {
+      "boss": "Scylla_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/InternalAnimationMonster/IABossMonsters/Scylla/Scylla_Entity.java",
+      "animations": [],
+      "states": [
+        {
+          "state": 0,
+          "name": "CrossSwingAnimationState"
+        },
+        {
+          "state": 2,
+          "name": "CrossSwing2AnimationState"
+        },
+        {
+          "state": 3,
+          "name": "DoubleSwingAnimationState"
+        },
+        {
+          "state": 4,
+          "name": "SwingSmashAnimationState"
+        },
+        {
+          "state": 5,
+          "name": "SmashAnimationState"
+        },
+        {
+          "state": 6,
+          "name": "backstepanimationState"
+        },
+        {
+          "state": 7,
+          "name": "spinAnimationState"
+        },
+        {
+          "state": 8,
+          "name": "waveAnimationState"
+        },
+        {
+          "state": 9,
+          "name": "lightningexplosionAnimationState"
+        },
+        {
+          "state": 10,
+          "name": "LightningSpearAnimationState"
+        },
+        {
+          "state": 11,
+          "name": "WaterSpearAnimationState"
+        },
+        {
+          "state": 12,
+          "name": "DeathAnimationState"
+        },
+        {
+          "state": 13,
+          "name": "AnchorShotAnimationState"
+        },
+        {
+          "state": 14,
+          "name": "AnchorShotPullAnimationState"
+        },
+        {
+          "state": 15,
+          "name": "ChainJump1AnimationState"
+        },
+        {
+          "state": 16,
+          "name": "ChainJump2AnimationState"
+        },
+        {
+          "state": 17,
+          "name": "ChainJump3AnimationState"
+        },
+        {
+          "state": 18,
+          "name": "AnchorExplosionAnimationState"
+        },
+        {
+          "state": 19,
+          "name": "ParryAnimationState"
+        },
+        {
+          "state": 20,
+          "name": "ElectricWhipAnimationState"
+        },
+        {
+          "state": 21,
+          "name": "Enchant1AnimationState"
+        },
+        {
+          "state": 22,
+          "name": "Enchant2AnimationState"
+        },
+        {
+          "state": 23,
+          "name": "SpawnIdleAnimationState"
+        },
+        {
+          "state": 24,
+          "name": "SpawnAnimationState"
+        },
+        {
+          "state": 25,
+          "name": "WhipAndSpearAnimationState"
+        },
+        {
+          "state": 26,
+          "name": "SummonSnakeAnimationState"
+        },
+        {
+          "state": 27,
+          "name": "GrabSmashAnimationState"
+        }
+      ],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 464,
+          "code": "if ((flag = super.hurt(source, damage)) && this.canBlockFaceSource(source) && this.getParryCount() < 18) {"
+        },
+        {
+          "method": "handleDamageEvent",
+          "line": 484,
+          "code": "this.hurt(this.damageSources().generic(), 0.0f);"
+        },
+        {
+          "method": "aiStep",
+          "line": 1266,
+          "code": "entity.hurt(CMDamageTypes.causeLightningMobDamage((LivingEntity)this), (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(entity.getMaxHealth() * (float)CMCommonConfig.Scylla.HpDamage))));"
+        },
+        {
+          "method": "aiStep",
+          "line": 1343,
+          "code": "entity.hurt(CMDamageTypes.causeLightningMobDamage((LivingEntity)this), (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(entity.getMaxHealth() * (float)CMCommonConfig.Scylla.HpDamage))));"
+        },
+        {
+          "method": "aiStep",
+          "line": 1358,
+          "code": "entity.hurt(CMDamageTypes.causeLightningMobDamage((LivingEntity)this), (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE), (double)(entity.getMaxHealth() * (float)CMCommonConfig.Scylla.HpDamage))));"
+        },
+        {
+          "method": "Whip",
+          "line": 1735,
+          "code": "entity.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + (double)Math.min((float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage), entity.getMaxHealth() * hpdamage)));"
+        },
+        {
+          "method": "SpinDamage",
+          "line": 1805,
+          "code": "boolean flag = entity.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage, (double)(entity.getMaxHealth() * hpdamage))));"
+        },
+        {
+          "method": "AreaAttack",
+          "line": 1946,
+          "code": "boolean hurt = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + Math.min(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage, (double)(entityHit.getMaxHealth() * (float)CMCommonConfig.Scylla.HpDamage))));"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 259,
+          "code": "this.goalSelector.addGoal(0, (Goal)new Scylla_EntityPhaseChangeGoal(this, 0, 21, 0, 55, 1, 0.6666667f));"
+        },
+        {
+          "line": 260,
+          "code": "this.goalSelector.addGoal(0, (Goal)new Scylla_EntityPhaseChangeGoal(this, 0, 22, 0, 68, 2, 0.33333334f));"
+        },
+        {
+          "line": 961,
+          "code": "this.bossEvent.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 2142,
+          "code": "return this.entity.isPhase() < this.phasestate && this.entity.getAttackState() == this.getattackstate && this.entity.getHealth() <= this.entity.getMaxHealth() * this.health;"
+        }
+      ]
+    },
+    {
+      "boss": "Maledictus_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/InternalAnimationMonster/IABossMonsters/Maledictus/Maledictus_Entity.java",
+      "animations": [],
+      "states": [
+        {
+          "state": 0,
+          "name": "swingAnimationState"
+        },
+        {
+          "state": 2,
+          "name": "shotAnimationState"
+        },
+        {
+          "state": 3,
+          "name": "flyingshotAnimationState"
+        },
+        {
+          "state": 4,
+          "name": "fallloopAnimationState"
+        },
+        {
+          "state": 5,
+          "name": "falllendAnimationState"
+        },
+        {
+          "state": 6,
+          "name": "deathAnimationState"
+        },
+        {
+          "state": 7,
+          "name": "masseffectAnimationState"
+        },
+        {
+          "state": 8,
+          "name": "flyingsmash1AnimationState"
+        },
+        {
+          "state": 9,
+          "name": "flyingsmash2AnimationState"
+        },
+        {
+          "state": 10,
+          "name": "BackstepAnimationState"
+        },
+        {
+          "state": 11,
+          "name": "BackstepRushAnimationState"
+        },
+        {
+          "state": 12,
+          "name": "BackstepRushNobackstepAnimationState"
+        },
+        {
+          "state": 13,
+          "name": "dash1AnimationState"
+        },
+        {
+          "state": 14,
+          "name": "dash1NobackstepAnmationState"
+        },
+        {
+          "state": 15,
+          "name": "dash2AnmationState"
+        },
+        {
+          "state": 16,
+          "name": "dash2NobackstepAnmationState"
+        },
+        {
+          "state": 17,
+          "name": "dash3AnimationState"
+        },
+        {
+          "state": 18,
+          "name": "spinslashesAnimationState"
+        },
+        {
+          "state": 19,
+          "name": "combofirstAnimationState"
+        },
+        {
+          "state": 20,
+          "name": "combofirstendAnimationState"
+        },
+        {
+          "state": 21,
+          "name": "combosecondAnimationState"
+        },
+        {
+          "state": 22,
+          "name": "uppercutrightAnimationState"
+        },
+        {
+          "state": 23,
+          "name": "uppercutleftAnimationState"
+        },
+        {
+          "state": 24,
+          "name": "flyinghalberdsmash1AnimationState"
+        },
+        {
+          "state": 25,
+          "name": "flyinghalberdsmash2AnimationState"
+        },
+        {
+          "state": 26,
+          "name": "radagonAnimationState"
+        },
+        {
+          "state": 27,
+          "name": "halberdswingAnimationState"
+        },
+        {
+          "state": 28,
+          "name": "grab_startAnimationState"
+        },
+        {
+          "state": 29,
+          "name": "grab_loopAnimationState"
+        },
+        {
+          "state": 30,
+          "name": "grab_failAnimationState"
+        },
+        {
+          "state": 31,
+          "name": "grab_successAnimationState"
+        },
+        {
+          "state": 32,
+          "name": "grab_success_loopAnimationState"
+        },
+        {
+          "state": 33,
+          "name": "grab_success_endAnimationState"
+        }
+      ],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 430,
+          "code": "return super.hurt(source, damage);"
+        },
+        {
+          "method": "aiStep",
+          "line": 1060,
+          "code": "entity.hurt(damagesource, this.DMG() * 1.5f + Math.min(this.DMG() * 1.5f, entity.getMaxHealth() * (float)CMCommonConfig.Maledictus.AOEHpDamage));"
+        },
+        {
+          "method": "aiStep",
+          "line": 1091,
+          "code": "if (this.isAlliedTo((Entity)entity) || entity == this || !(flag = entity.hurt(damagesource, this.DMG() * 1.25f + Math.min(this.DMG() * 1.25f, entity.getMaxHealth() * (float)CMCommonConfig.Maledictus.FlyingSmashHpDamage)))) continue;"
+        },
+        {
+          "method": "aiStep",
+          "line": 1285,
+          "code": "if (this.isAlliedTo((Entity)entity) || entity == this || !(flag = entity.hurt(damagesource, this.DMG() * 1.25f + Math.min(this.DMG() * 1.25f, entity.getMaxHealth() * (float)CMCommonConfig.Maledictus.FlyingSmashHpDamage)))) continue;"
+        },
+        {
+          "method": "aiStep",
+          "line": 1301,
+          "code": "if (this.isAlliedTo((Entity)entity) || entity == this || !(flag = entity.hurt(damagesource, this.DMG() * 1.25f + Math.min(this.DMG() * 1.25f, entity.getMaxHealth() * (float)CMCommonConfig.Maledictus.FlyingSmashHpDamage)))) continue;"
+        },
+        {
+          "method": "aiStep",
+          "line": 1410,
+          "code": "entity.hurt(damagesource, this.DMG() * 1.75f + Math.min(this.DMG() * 1.75f, entity.getMaxHealth() * (float)CMCommonConfig.Maledictus.AOEHpDamage));"
+        },
+        {
+          "method": "ComboAreaAttack",
+          "line": 1604,
+          "code": "boolean flag = entityHit.hurt(damagesource, this.DMG() * damage + Math.min(this.DMG() * damage, entityHit.getMaxHealth() * hpdamage));"
+        },
+        {
+          "method": "Grab",
+          "line": 1629,
+          "code": "boolean flag = entity.hurt(damagesource, this.DMG() * damage + Math.min(this.DMG() * damage, entity.getMaxHealth() * hpdamage));"
+        },
+        {
+          "method": "ShieldSmashDamage",
+          "line": 1693,
+          "code": "if (this.isAlliedTo((Entity)entity) || entity == this || !(flag = entity.hurt(damageSource, finalDamage = baseDamage + Math.min(baseDamage, entity.getMaxHealth() * hpdamage)))) continue;"
+        },
+        {
+          "method": "Rushattack",
+          "line": 1812,
+          "code": "boolean flag = entity.hurt(damagesource, this.DMG() * damage + Math.min(this.DMG() * damage, entity.getMaxHealth() * hpdamage));"
+        },
+        {
+          "method": "uppercut",
+          "line": 1835,
+          "code": "boolean flag = entity.hurt(damagesource, this.DMG() * damage + Math.min(this.DMG() * damage, entity.getMaxHealth() * hpdamage));"
+        },
+        {
+          "method": "AreaAttack",
+          "line": 1870,
+          "code": "boolean flag = entityHit.hurt(damagesource, this.DMG() * damage + Math.min(this.DMG() * damage, entityHit.getMaxHealth() * hpdamage));"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 930,
+          "code": "this.bossEvent1.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 966,
+          "code": "float healthAmount = this.getHealth() / this.getMaxHealth();"
+        },
+        {
+          "line": 971,
+          "code": "float healthAmount = this.getHealth() / this.getMaxHealth();"
+        }
+      ]
+    },
+    {
+      "boss": "Ignis_Entity",
+      "file": "com/github/L_Ender/cataclysm/entity/AnimationMonster/BossMonsters/Ignis_Entity.java",
+      "animations": [
+        {
+          "name": "SWING_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SWING_ATTACK_SOUL",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SWING_ATTACK_BERSERK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "HORIZONTAL_SWING_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "HORIZONTAL_SWING_ATTACK_SOUL",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SHIELD_SMASH_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "PHASE_2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "POKE_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "POKE_ATTACK2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "POKE_ATTACK3",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "POKED_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "PHASE_3",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "MAGIC_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SMASH_IN_AIR",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SMASH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK1",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK3",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK4",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK_SOUL1",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK_SOUL2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK_SOUL3",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BODY_CHECK_ATTACK_SOUL4",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "IGNIS_DEATH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "COUNTER",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "STRIKE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "COMBO1",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "COMBO2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "BREAK_THE_SHIELD",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SWING_UPPERCUT",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SWING_UPPERSLASH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SPIN_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "EARTH_SHUDDERS_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "HORIZONTAL_SMALL_SWING_ATTACK",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "HORIZONTAL_SMALL_SWING_ALT_ATTACK2",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "REINFORCED_SMASH_IN_AIR",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "REINFORCED_SMASH",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "REINFORCED_SMASH_IN_AIR_SOUL",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "REINFORCED_SMASH_SOUL",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SHIELD_BREAK_COUNTER",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "SHIELD_BREAK_STRIKE",
+          "nativeDurationArguments": "(int"
+        },
+        {
+          "name": "ULTIMATE_ATTACK",
+          "nativeDurationArguments": "(int"
+        }
+      ],
+      "states": [],
+      "damageCallsites": [
+        {
+          "method": "hurt",
+          "line": 402,
+          "code": "boolean attack = super.hurt(source, damage);"
+        },
+        {
+          "method": "aiStep",
+          "line": 1048,
+          "code": "entity.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 1.5 + (double)(entity.getMaxHealth() * 0.15f)));"
+        },
+        {
+          "method": "aiStep",
+          "line": 1154,
+          "code": "boolean flag = entity.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * 1.5 + (double)(entity.getMaxHealth() * 0.15f)));"
+        },
+        {
+          "method": "AreaAttack",
+          "line": 1738,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + (double)(entityHit.getMaxHealth() * hpdamage)));"
+        },
+        {
+          "method": "BodyCheckAttack",
+          "line": 1787,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + (double)(entityHit.getMaxHealth() * hpdamage)));"
+        },
+        {
+          "method": "Poke",
+          "line": 1821,
+          "code": "boolean flag = entityHit.hurt(damagesource, (float)this.getAttributeValue(Attributes.ATTACK_DAMAGE) + entityHit.getMaxHealth() * 0.1f);"
+        },
+        {
+          "method": "positionRider",
+          "line": 1857,
+          "code": "if (!this.level().isClientSide && (flag = living.hurt(this.damageSources().mobAttack((LivingEntity)this), 4.0f + living.getMaxHealth() * 0.02f))) {"
+        },
+        {
+          "method": "ShieldSmashDamage",
+          "line": 2060,
+          "code": "boolean flag = entity.hurt(damagesource, finalDamage);"
+        },
+        {
+          "method": "UltimateAttack",
+          "line": 2120,
+          "code": "boolean flag = entity.hurt(damagesource, finalDamage);"
+        },
+        {
+          "method": "Phase_Transition",
+          "line": 2253,
+          "code": "if (this.isAlliedTo((Entity)entityHit) || entityHit instanceof Ignis_Entity || entityHit == this || !(flag = entityHit.hurt(damagesource, (float)(this.getAttributeValue(Attributes.ATTACK_DAMAGE) * (double)damage + (double)(entityHit.getMaxHealth() * hpdamage))))) continue;"
+        }
+      ],
+      "phaseEvidence": [
+        {
+          "line": 381,
+          "code": "if ((this.getAnimation() == ULTIMATE_ATTACK || this.getBossPhase() == 1 && this.getHealth() <= this.getMaxHealth() * 1.0f / 3.0f || this.getBossPhase() == 0 && this.getHealth() <= this.getMaxHealth() * 2.0f / 3.0f) && !source.is(DamageTypeTags.BYPASSES_INVULNERABILITY)) {"
+        },
+        {
+          "line": 537,
+          "code": "return Crackiness.byFraction(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 639,
+          "code": "this.bossInfo.setProgress(this.getHealth() / this.getMaxHealth());"
+        },
+        {
+          "line": 790,
+          "code": "} else if (!this.isNoAi() && this.getAnimation() == NO_ANIMATION && this.getHealth() <= this.getMaxHealth() * 2.0f / 3.0f && this.getBossPhase() < 1) {"
+        },
+        {
+          "line": 792,
+          "code": "} else if (!this.isNoAi() && this.getAnimation() == NO_ANIMATION && this.getHealth() <= this.getMaxHealth() * 1.0f / 3.0f && this.getBossPhase() < 2) {"
+        }
+      ]
+    }
+  ]
+}

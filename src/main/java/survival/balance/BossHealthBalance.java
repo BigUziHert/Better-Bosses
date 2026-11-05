@@ -3,6 +3,7 @@ package survival.balance;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.util.Map;
+import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -11,11 +12,13 @@ import net.minecraft.nbt.Tag;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.boss.wither.WitherBoss;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.neoforged.neoforge.event.entity.EntityJoinLevelEvent;
 import net.neoforged.neoforge.event.tick.EntityTickEvent;
+import net.neoforged.neoforge.event.entity.living.LivingHealEvent;
 
 /** Fixed boss health profiles and migration of saved bosses. */
 public final class BossHealthBalance {
@@ -28,8 +31,13 @@ public final class BossHealthBalance {
     private static final System.Logger LOG = System.getLogger("SurvivalBossBalance");
     private static final Map<Class<?>, Field> NAGA_FIELDS = new ConcurrentHashMap<>();
     private static final Map<Class<?>, Method> LICH_CLONE_METHODS = new ConcurrentHashMap<>();
+    private record KnightAccess(Field total, Method update, Method nearby) {}
+    private static final Map<Class<?>, KnightAccess> KNIGHT_ACCESS = new ConcurrentHashMap<>();
 
     private static final Map<String, Double> DEFAULT_HEALTH = Map.ofEntries(
+            Map.entry("minecraft:wither", 900.0),
+            Map.entry("minecraft:ender_dragon", 1100.0),
+            Map.entry("minecraft:warden", 1300.0),
             Map.entry("twilightforest:naga", 1000.0),
             Map.entry("twilightforest:lich", 650.0),
             Map.entry("twilightforest:minoshroom", 1000.0),
@@ -73,6 +81,20 @@ public final class BossHealthBalance {
         }
     }
 
+    /** Vanilla charges from one-third health with 10 HP heals. Keep that charge
+     * proportional so a higher-HP Wither does not begin combat half empty. */
+    public static void onHeal(LivingHealEvent event) {
+        if (!event.isCanceled() && !event.getEntity().level().isClientSide()
+                && event.getEntity() instanceof WitherBoss wither
+                && wither.getInvulnerableTicks() > 0
+                && Math.abs(event.getAmount() - 10.0F) < 0.0001F
+                && StackWalker.getInstance().walk(frames -> frames.anyMatch(frame ->
+                    frame.getClassName().equals("net.minecraft.world.entity.boss.wither.WitherBoss")
+                        && frame.getMethodName().equals("customServerAiStep")))) {
+            event.setAmount(event.getAmount() * wither.getMaxHealth() / 300.0F);
+        }
+    }
+
     /**
      * Installing the same jar on a client also preserves the Naga's visual segment count.
      * On a dedicated server this handler maintains only the authoritative server threshold.
@@ -82,6 +104,44 @@ public final class BossHealthBalance {
         if (event.getEntity() instanceof LivingEntity boss
                 && "twilightforest:naga".equals(entityId(boss))) {
             updateNagaThreshold(boss);
+        }
+    }
+
+    /** The native solo-Knight numbering path leaves Integer.MIN_VALUE as the
+     * group size, overflowing the shared health-bar denominator. Wait for the
+     * entity tick so a naturally spawned group has finished joining, let the
+     * native group numbering run, and repair only the remaining solo sentinel.
+     * A repaired solo may discover companions on a later tick. Never shrink an
+     * established group total after a teammate dies/unloads. */
+    public static void onKnightTick(EntityTickEvent.Pre event) {
+        if (!(event.getEntity() instanceof LivingEntity knight) || knight.level().isClientSide()
+                || !knight.isAlive() || !"twilightforest:knight_phantom".equals(entityId(knight))) return;
+        try {
+            KnightAccess access = KNIGHT_ACCESS.computeIfAbsent(knight.getClass(), type -> {
+                try {
+                    Field total = type.getDeclaredField("totalKnownKnights");
+                    total.setAccessible(true);
+                    Method update = type.getDeclaredMethod("updateMyNumber");
+                    update.setAccessible(true);
+                    return new KnightAccess(total, update, type.getMethod("getNearbyKnights"));
+                } catch (ReflectiveOperationException error) {
+                    throw new IllegalStateException("Cannot inspect Knight Phantom group size", error);
+                }
+            });
+            int total = access.total().getInt(knight);
+            if (total == 1) {
+                List<?> nearby = (List<?>)access.nearby().invoke(knight);
+                if (nearby.size() > 1) access.update().invoke(knight);
+                return;
+            }
+            if (total != Integer.MIN_VALUE) return;
+            access.update().invoke(knight);
+            if (access.total().getInt(knight) == Integer.MIN_VALUE) {
+                List<?> nearby = (List<?>)access.nearby().invoke(knight);
+                if (nearby.size() == 1 && nearby.getFirst() == knight) access.total().setInt(knight, 1);
+            }
+        } catch (ReflectiveOperationException error) {
+            throw new IllegalStateException("Cannot repair Knight Phantom's unknown solo group size", error);
         }
     }
 

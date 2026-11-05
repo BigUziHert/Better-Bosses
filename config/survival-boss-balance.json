@@ -19,7 +19,10 @@
     "cataclysm:the_leviathan": 1100,
     "cataclysm:scylla": 1100,
     "cataclysm:maledictus": 1100,
-    "cataclysm:ignis": 1100
+    "cataclysm:ignis": 1100,
+    "minecraft:wither": 900,
+    "minecraft:ender_dragon": 1100,
+    "minecraft:warden": 1300
   },
   "damageTargets": {
     "naga.head": 1.5,
@@ -81,6 +84,15 @@
     "ignis.sword": 2.25,
     "ignis.heavy": 6,
     "ignis.fireball": 3,
-    "ignis.flame_pulse": 1.25
+    "ignis.flame_pulse": 1.25,
+    "wither.skull": 1.5,
+    "wither.splash": 2,
+    "wither.spawn_explosion": 5,
+    "ender_dragon.head": 3.5,
+    "ender_dragon.wing": 1.25,
+    "ender_dragon.perched_breath": 1.25,
+    "ender_dragon.fireball_cloud": 2,
+    "warden.melee": 4.5,
+    "warden.sonic_boom": 5.5
   }
 }

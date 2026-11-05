@@ -1,0 +1,13 @@
+Read-only survival audit — 4 November 2026
+
+S:\Survival was only read. No agent command wrote a file there or launched a server from it. Testing and all modifications used a separate local copy.
+
+The final SHA-256 comparison at 23:55:50 UTC checked the original 871 files under mods, config, defaultconfigs, world\serverconfig, and kubejs. 870 files remain byte-identical. The only changed file is config\zfastnoise.mixin.properties, last written at 23:41:27 UTC while the user's independently started production server was running. Its present contents are the generated 17:41:27 CST header and the two settings mixin.perf.biome=true and mixin.perf.noise=true. This is consistent with the mod's startup header rewrite; the initial full file text was not separately retained, so the hash evidence alone cannot prove the old/new difference was exclusively that header. All 220 active mod JARs and all boss/combat configuration files remain unchanged.
+
+Authoritative runtime versions come from S:\Survival\logs\latest.log startup arguments: Minecraft 1.21.1, NeoForge 21.1.264, Eclipse Adoptium Java 21.0.11+10. The old run.bat refers to NeoForge 21.1.250 and is not the active runtime. Actual installed boss/armor JARs include Twilight Forest 4.8.3345, Bosses of Mass Destruction 1.3.3, Cataclysm 3.33, Aether 1.5.10, Deep Aether 1.1.5.1, Deeper and Darker 1.4.1, and YUNG's Better End Island 3.1.2. The existing production balance mod is survival-boss-balance 1.0.2; the new candidate has not been installed into Survival.
+
+Installed v1.0.2 bytecode has fixed health targets with no player-count multiplier. The old config description still mentions 4/5-player scaling, but those description/partyRadius fields are obsolete and ignored. Twilight's own multiplayerFightAdjuster is NONE. Cataclysm's PlayerCounter changes a displayed LifeRemain counter, not health or attack damage. Its Retry method is empty in this installed version.
+
+Combat test context: AttributeFix permits health/armor/toughness up to 1,000,000; Aether armor set abilities require gloves; Skyjade rework is disabled; login/respawn immunity is 600 ticks and dimension immunity 400 ticks. RagRevival changes lethal outcomes into downing. Artifacts can alter max HP, invulnerability windows, lightning immunity, and fire resistance. KubeJS scripts are examples only and InControl only limits natural glare spawns.
+
+Boss-bar evidence is server-side native event state, visibility and tracking, not visual client rendering. Final candidate bar run at 17:58:41 CST passed all 367 checks with zero failures. This includes the additional delayed Knight-group join, death-before-formation-update, and saved survivor reload regressions.

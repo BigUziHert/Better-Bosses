@@ -4,3 +4,10 @@ run/
 runs/
 .idea/
 *.iml
+run-regression/
+research/
+audit/
+tests/build/
+tests/results/
+tests/evidence/
+outputs/

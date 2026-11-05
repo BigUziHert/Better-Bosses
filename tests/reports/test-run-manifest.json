@@ -1,0 +1,12 @@
+{
+  "version": "1.1.0",
+  "productionSha256": "135D556668DC93906689E85E2697B8A18EA508FA4CFAACEFBEA8EEE879B86709",
+  "helperSha256": "0DA21B69BE3F9314CA3129EA2F37D645296BD0A158FB877305252357D71E250A",
+  "assertions": 6790,
+  "failed": 0,
+  "armorOutfits": 90,
+  "armorMeasurements": 12464,
+  "setEffectMeasurements": 258,
+  "sourceReadOnly": true,
+  "installedIntoSurvival": false
+}
